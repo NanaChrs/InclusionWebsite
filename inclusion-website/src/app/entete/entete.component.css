@@ -1,0 +1,62 @@
+#header
+{
+    background-color: none;
+}
+
+#test
+{
+    width: 100px;
+    height: 50px;
+    background-color: blanchedalmond;
+}
+
+
+/*#accessibilite_contacts
+{
+    padding: 4px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+    background-color: #631514;
+}
+
+#accessibilite_contacts:hover
+{
+    color:wheat;
+}
+
+#bloc_logo
+{
+    width: 100%;
+    float: left;
+    margin-left: 50px;
+}
+
+#content
+{
+    background-color: #631514;
+    font-size: 24px;
+    padding: 40px;
+    width: 33%;
+}
+
+a
+{
+    text-decoration: none;
+    color:white;
+}
+
+a:hover
+{
+    color: wheat;
+}
+
+#nav
+{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}*/
