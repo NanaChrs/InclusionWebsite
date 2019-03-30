@@ -8,18 +8,17 @@ import { PageService } from '../Page/page.service';
   styleUrls: ['./nav-admin.component.css']
 })
 export class NavAdminComponent implements OnInit {
-  pages : Page[];
+  pages: Page[];
 
-  constructor(private pageService: PageService ) { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit() {
     this.getPages();
   }
 
-  getPages(): void{
-    //Subscribe --> attend que la reque^te soit terminée pour effectuer l'ction dans le callback
-    this.pageService.getHeroes().subscribe(heroes => this.pages = heroes);
+  getPages(): void {
+    //Subscribe --> attend que la requête soit terminée pour effectuer l'ction dans le callback
+    this.pageService.getPages().subscribe(heroes => this.pages = heroes);
   }
-  
 
 }

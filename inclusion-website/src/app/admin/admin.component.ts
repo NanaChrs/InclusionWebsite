@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavAdminComponent } from "../nav-admin/nav-admin.component";
 
 @Component({
   selector: 'app-admin',

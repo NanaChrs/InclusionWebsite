@@ -10,7 +10,7 @@ export class PageService {
 
   constructor() { }
 
-  getHeroes(): Observable<Page[]>{
-    return of (PAGES);
+  getPages(): Observable<Page[]> {
+    return of(PAGES);
   }
 }
