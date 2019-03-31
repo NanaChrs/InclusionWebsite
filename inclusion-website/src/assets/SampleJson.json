@@ -1,5 +1,3 @@
 {
-    "Post": "Sample Json",
-    "CanEdit": true,
-    "Version": 7
+    "text": "Ceci est le texte à remplacer"
 }

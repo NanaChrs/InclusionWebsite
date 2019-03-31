@@ -8,8 +8,11 @@ import SampleJson from '../../assets/SampleJson.json';
   styleUrls: ['./content-admin.component.css']
 })
 export class ContentAdminComponent implements OnInit {
+  private jsonToDisplay;
 
-  constructor() { }
+  constructor() {
+    this.jsonToDisplay = SampleJson;
+  }
 
   ngOnInit() {
     this.displayJson();
@@ -19,5 +22,4 @@ export class ContentAdminComponent implements OnInit {
     console.log('Reading local json files');
     console.log(SampleJson);
   }
-
 }
