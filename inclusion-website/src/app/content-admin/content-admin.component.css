@@ -1,0 +1,43 @@
+#global-container-img
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.simple-container-img{
+    position: relative;
+    margin: 5px;
+    border:1px solid black;
+    border-radius: 5px;
+}
+
+.img-text-container-img
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.img-modif
+{
+    height: 150px;
+    padding: 10px;
+}
+
+.img-croix-rouge{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    cursor: pointer;
+}
+
+.simple-container-img:hover .img-croix-rouge{
+    display: block;
+}
+
+#img-add
+{
+    cursor: pointer;
+}

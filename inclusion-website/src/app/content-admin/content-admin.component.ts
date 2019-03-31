@@ -9,6 +9,7 @@ import SampleJson from '../../assets/SampleJson.json';
 })
 export class ContentAdminComponent implements OnInit {
   private jsonToDisplay;
+  private pathToImages = "../../assets/img";
 
   constructor() {
     this.jsonToDisplay = SampleJson;

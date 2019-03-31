@@ -1,3 +1,17 @@
 {
-    "text": "Ceci est le texte à remplacer"
+    "text": "Ceci est le texte à remplacer",
+    "images": [
+        {
+            "source": "../../assets/img/Francois1.jpeg",
+            "alt": "Description de l'image 1"
+        },
+        {
+            "source": "../../assets/img/Francois2.jpg",
+            "alt": "Description de l'image 2"
+        },
+        {
+            "source": "../../assets/img/Francois3.jpg",
+            "alt": "Description de l'image 3"
+        }
+    ]
 }
