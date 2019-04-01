@@ -18,7 +18,7 @@ export class NavAdminComponent implements OnInit {
 
   getPages(): void {
     //Subscribe --> attend que la requête soit terminée pour effectuer l'ction dans le callback
-    this.pageService.getPages().subscribe(heroes => this.pages = heroes);
+    this.pageService.getPages().subscribe(pages => this.pages = pages);
   }
 
 }
