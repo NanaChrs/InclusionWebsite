@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnteteComponent } from './entete.component';
+import { SlideshowComponent } from './slideshow.component';
 
-describe('EnteteComponent', () => {
-  let component: EnteteComponent;
-  let fixture: ComponentFixture<EnteteComponent>;
+describe('SlideshowComponent', () => {
+  let component: SlideshowComponent;
+  let fixture: ComponentFixture<SlideshowComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EnteteComponent ]
+      declarations: [ SlideshowComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EnteteComponent);
+    fixture = TestBed.createComponent(SlideshowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,46 @@
+footer {
+    position: fixed;
+    bottom: 0; 
+    left:0px;
+  }
+
+.footer-general{
+	background-color: rgb(136, 24, 28);
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px 30px;
+	margin-top: 40px;
+}
+
+.footer-general .footer-left,
+.footer-general .footer-center,
+.footer-general .footer-center-right,
+.footer-general .footer-right
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-general .footer-left
+{
+	width: 30%;
+}
+
+.footer-general .footer-center
+{
+	width: 28%;
+}
+.footer-general .footer-center-right
+{
+    width: 20%;
+}
+
+.footer-general .footer-right
+{
+	width: 20%;
+}
+.footer-general p
+{
+    font: 1em sans-serif;
+    color: antiquewhite;
+}
