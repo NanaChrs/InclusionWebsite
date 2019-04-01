@@ -23,26 +23,26 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     LoginComponent,
     TextContentComponent,
     PhotoContentComponent,
-    ContentAdminComponent
+    ContentAdminComponent,
     MyDialogComponent,
     PopupComponent,
     EnteteComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-    MatCardModule
+    AppRoutingModule,
+    MatCardModule,
     MatDialogModule,
     MatButtonModule,
     MatDialogModule,
     BrowserAnimationsModule,
   ],
-  entryComponents:[
+  entryComponents: [
     MyDialogComponent
   ],
 
-  exports:[
-    PopupComponent,
+  exports: [
+    PopupComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
