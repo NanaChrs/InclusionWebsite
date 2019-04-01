@@ -39,3 +39,44 @@
     font: 1em sans-serif;
     color: white;
 }
+
+table{
+	color: white;
+}
+
+#googlemap{
+	width: 400px;
+	height: 200px;
+}
+
+@media screen and (max-width: 1280px) {
+
+}
+
+@media screen and (max-width: 980px) {
+	.footer-general{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.footer-general .footer-left,
+	.footer-general .footer-center,
+	.footer-general .footer-center-right,
+	.footer-general .footer-right{
+		text-align: center;
+		width: 100%;
+	}
+
+	table{
+		margin: auto;
+	}
+
+	#googlemap{
+		width: 100%;
+		height: 200px;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	
+}
