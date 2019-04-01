@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material';
 import { EnteteComponent } from './entete/entete.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AccueilComponent } from './accueil/accueil.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MyDialogComponent,
     PopupComponent,
     EnteteComponent,
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,
