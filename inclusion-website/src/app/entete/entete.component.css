@@ -80,12 +80,56 @@ a:hover
     border-radius: 8px;
 }
 
+@media screen and (max-width: 1280px)
+{}
 
-@media (max-width: 426px)
+@media screen and (max-width: 980px)
 {
+
+}
+
+@media screen and (max-width:736px){
     #bandeau_navigation
     {
+        display: inline;
+    }
+
+    #bloc_image
+    {
+        background-color: #88181c;
+    }
+
+    #header
+    {
+        position: relative;
+    }
+
+    #sous_bandeau
+    {
         display: none;
+    }
+
+    #vecteurmenu
+    {
+        display: inline;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }    
+
+    #lien
+    {
+        list-style-type: none;
+    }
+
+    .lien-liste-telephone
+    {
+        color: black;
+    }
+
+    #logo_menu_deroulant
+    {
+        display: inline;
     }
 
     #navigation_telephone
@@ -93,16 +137,12 @@ a:hover
         display: none;
     }
 
-    #logo_menu_deroulant:active
+    #vecteurmenu:active #navigation_telephone
     {
-        background-color: aqua;
-    }
-
-    #logo_menu_deroulant:active #navigation_telephone
-    {
-        background-color: brown;
         display: inline;
     }
 
+    
 }
+
 
