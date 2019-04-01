@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MyDialogComponent } from '../my-dialog/my-dialog.component';
 
+
 @Component({
-  selector: 'app-entete',
-  templateUrl: './entete.component.html',
-  styleUrls: ['./entete.component.css']
+  selector: 'app-popupfenetre',
+  templateUrl: './popup.component.html',
+  styleUrls: ['./popup.component.css']
 })
-export class EnteteComponent implements OnInit {
+export class PopupComponent implements OnInit {
+  
 
   constructor(public dialog: MatDialog) {}
  
@@ -18,11 +20,12 @@ export class EnteteComponent implements OnInit {
   openDialog() {
     let dialogRef = this.dialog.open(MyDialogComponent, {
       width: '25%',
-      height: '25%',
+      data: 'Modifier la taille des caractères'
     });
 
     dialogRef.afterClosed().subscribe(result => {console.log('Dialog closed: ${result');
     this.dialogResult = result;
   })
   }
+
 }

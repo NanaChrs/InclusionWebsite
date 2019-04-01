@@ -2,4 +2,30 @@
 body, html
 {
 	margin: 0;
+	height: 100%;
+	font-family: 'Quan';
+}
+
+ 
+
+/*
+#cdk-overlay-2
+{
+    background-color: green;
+}
+
+.mat-dialog-container
+{
+    background-color: blue;
+}*/
+
+
+/* Style de la fenêtre popup */
+#cdk-overlay-10
+{
+
+}
+
+.mat-dialog-container {
+   
 }
