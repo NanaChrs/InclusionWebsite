@@ -8,10 +8,10 @@ import { AccueilComponent } from "./accueil/accueil.component";
 import { ContentAdminComponent } from "./content-admin/content-admin.component";
 
 const routes: Routes = [
-  { path: "**", redirectTo: "/accueil" },
-  { path: "accueil" , component: AccueilComponent},
+  { path: "accueil", component: AccueilComponent },
   { path: "admin", component: AdminComponent },
-  { path: "admin/:id", component: ContentAdminComponent }
+  { path: "admin/:id", component: ContentAdminComponent },
+  { path: "**", redirectTo: "/accueil" }
 ];
 
 @NgModule({
