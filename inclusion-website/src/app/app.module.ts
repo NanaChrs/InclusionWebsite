@@ -10,7 +10,7 @@ import { PhotoContentComponent } from './photo-content/photo-content.component';
 import { ContentAdminComponent } from './content-admin/content-admin.component';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
-
+import { FooterComponent } from './footer/footer.component';
 import { MatButtonModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material';
@@ -30,6 +30,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     SlideshowComponent,
     EnteteComponent,
     AccueilComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
