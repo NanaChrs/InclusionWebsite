@@ -5,6 +5,7 @@ footer {
   }
 
 .footer-general{
+	font-family: 'Calibri';
 	background-color: rgb(136, 24, 28);
 	box-sizing: border-box;
 	width: 100%;
@@ -42,5 +43,5 @@ footer {
 .footer-general p
 {
     font: 1em sans-serif;
-    color: antiquewhite;
+    color: white;
 }
