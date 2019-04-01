@@ -9,7 +9,7 @@ import { TextContentComponent } from './text-content/text-content.component';
 import { PhotoContentComponent } from './photo-content/photo-content.component';
 import { ContentAdminComponent } from './content-admin/content-admin.component';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
-import { PopupComponent } from './popup/popup.component';
+
 import { MatButtonModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material';
@@ -26,7 +26,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     PhotoContentComponent,
     ContentAdminComponent,
     MyDialogComponent,
-    PopupComponent,
+ 
     EnteteComponent,
     AccueilComponent,
   ],
@@ -44,9 +44,9 @@ import { AccueilComponent } from './accueil/accueil.component';
   ],
 
   exports: [
-    PopupComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
