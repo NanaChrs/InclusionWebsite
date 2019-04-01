@@ -1,0 +1,3 @@
+<div class="sidenav">
+  <a *ngFor="let page of pages" (click)="displayJson()" routerLink="/admin/{{page.id}}">{{page.name}}</a>
+</div>
