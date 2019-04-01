@@ -1,9 +1,3 @@
-footer {
-    position: fixed;
-    bottom: 0; 
-    left:0px;
-  }
-
 .footer-general{
 	font-family: 'Calibri';
 	background-color: rgb(136, 24, 28);
@@ -22,23 +16,23 @@ footer {
 	vertical-align: top;
 }
 
-.footer-general .footer-left
+.footer-left
 {
-	width: 30%;
+	width: 25%;
 }
 
 .footer-general .footer-center
 {
-	width: 28%;
+	width: 25%;
 }
 .footer-general .footer-center-right
 {
-    width: 20%;
+    width: 18%;
 }
 
 .footer-general .footer-right
 {
-	width: 20%;
+	width: 30%;
 }
 .footer-general p
 {
