@@ -1,45 +1,65 @@
+#vecteurmenu
+{
+    display: none;
+}
+
+/*Bloc principal*/
 #header
 {
-    background-color: none;
-}
-
-#test
-{
-    width: 100px;
-    height: 50px;
-    background-color: blanchedalmond;
-}
-
-
-/*#accessibilite_contacts
-{
-    padding: 4px;
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 28px;
-    text-decoration: none;
-    color: white;
-    background-color: #631514;
-}
-
-#accessibilite_contacts:hover
-{
-    color:wheat;
-}
-
-#bloc_logo
-{
     width: 100%;
-    float: left;
-    margin-left: 50px;
+    background-color: none;
+    letter-spacing: .2em;
+    font-family: 'Calibri';
 }
 
-#content
+#sous_bandeau
 {
-    background-color: #631514;
-    font-size: 24px;
-    padding: 40px;
-    width: 33%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#liste_logo
+{
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#bandeau_navigation
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0;
+    background-color: #88181c;    
+}
+
+#icone
+{
+    margin-right: 1%;
+}
+
+#lien
+{
+    cursor: pointer;
+}
+
+#lien:hover
+{
+    color: #88181c;
+    background-color: whitesmoke;
+}
+/*Partie inférieure du header*/
+#navigation
+{
+    text-align: center;
+    width: 80%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
 }
 
 a
@@ -50,13 +70,39 @@ a
 
 a:hover
 {
-    color: wheat;
+    color: brown;
 }
 
-#nav
+#logoFacebook:hover, #logoInstagram:hover, #logoTwitter:hover, #logoTripadvisor:hover
 {
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-}*/
+    /*border: 1px solid #631514*/
+    background-color: black;
+    border-radius: 8px;
+}
+
+
+@media (max-width: 426px)
+{
+    #bandeau_navigation
+    {
+        display: none;
+    }
+
+    #navigation_telephone
+    {
+        display: none;
+    }
+
+    #logo_menu_deroulant:active
+    {
+        background-color: aqua;
+    }
+
+    #logo_menu_deroulant:active #navigation_telephone
+    {
+        background-color: brown;
+        display: inline;
+    }
+
+}
+
