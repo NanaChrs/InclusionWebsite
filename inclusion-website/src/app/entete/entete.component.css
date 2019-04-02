@@ -90,25 +90,19 @@ a:hover
 }
 
 @media screen and (max-width:736px){
-    #bandeau_navigation
-    {
-        display: none;
-    }
-
-
-    #bloc_image
-    {
-        background-color: #88181c;
-    }
-
     #header
     {
         position: relative;
     }
 
-    #sous_bandeau
+    #bandeau_navigation
     {
         display: none;
+    }
+
+    #bloc_image
+    {
+        background-color: #88181c;
     }
 
     #vecteurmenu
@@ -148,7 +142,6 @@ a:hover
 
     #navigation_telephone
     {
-        display: none;
         width: 100%;
         text-align: center;
         background-color: #616161;
@@ -167,8 +160,6 @@ a:hover
     {
         display: inline;
     }*/
-
-    
 }
 
 
