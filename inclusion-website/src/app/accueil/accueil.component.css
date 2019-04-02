@@ -50,26 +50,30 @@
 
 #zoneclicable{
     display: flex;
+    height: 85%;
+    margin: auto;
+    justify-content: space-between;
+
 }
 
 #zoneclicgauche{
-    width: 50%;
-    height: 650px;  
+    width: 20%;
+
     z-index: 10000;
 }
 
 #zoneclicgauche:hover{
-    cursor: url('../../assets/accueil/fleche-gauche-souris.png'), pointer;
+    cursor: url('../../assets/accueil/fleche-gauche-souris.png') 25 50 , pointer;
 }
 
 #zoneclicdroite{
-    width: 50%;
-    height: 650px;
+    width: 20%;
+
     z-index: 10000;  
 }
 
 #zoneclicdroite:hover{
-    cursor: url('../../assets/accueil/fleche-droite-souris.png'), pointer;   
+    cursor: url('../../assets/accueil/fleche-droite-souris.png') 75 50, pointer;   
 }
 
 #presentation-restaurant{
