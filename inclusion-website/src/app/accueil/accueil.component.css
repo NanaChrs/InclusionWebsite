@@ -1,10 +1,11 @@
 #global{
     z-index: -10;
-    background: wheat;
+    display: flex;
+    flex-direction: column;
 }
 
 #slideshow-container {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     top: 0;
@@ -12,17 +13,14 @@
     margin: 0 auto;
 }
 
-#text-diapo{
-    font-family: "Calibri";
-}
-
 #slideshow {
     width: 100%;
     height: 100%;
     opacity: 1;
     transition: opacity 2s;
-    z-index: -5;
+    position: absolute;
 }
+
 #slideshow.fadeOut {
     opacity: 0;
 }
@@ -31,12 +29,53 @@
     display: none;
 }
 
+#fleche-gauche{
+    top: 45%;
+    left:0;
+    margin: 0;
+    border: none;
+    outline-style: none;
+    background: transparent;
+    position: absolute;
+}
+
+#fleche-droite{
+    top: 45%;
+    right: 0;
+    border: none;
+    outline-style: none;
+    background: transparent;
+    position: absolute;
+}
+
+#zoneclicable{
+    display: flex;
+}
+
+#zoneclicgauche{
+    width: 50%;
+    height: 650px;  
+    z-index: 10000;
+}
+
+#zoneclicgauche:hover{
+    cursor: url('../../assets/accueil/fleche-gauche-souris.png'), pointer;
+}
+
+#zoneclicdroite{
+    width: 50%;
+    height: 650px;
+    z-index: 10000;  
+}
+
+#zoneclicdroite:hover{
+    cursor: url('../../assets/accueil/fleche-droite-souris.png'), pointer;   
+}
+
 #presentation-restaurant{
     font-family: "Calibri";
-    padding: 10px 30px;
 }
 
 h1{
-    justify-content: space-between;
     text-align: center;
 }
