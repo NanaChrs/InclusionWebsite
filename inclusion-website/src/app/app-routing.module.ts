@@ -8,7 +8,7 @@ import { ContentAdminComponent } from "./content-admin/content-admin.component";
 
 const routes: Routes = [
   { path: "accueil", component: AccueilComponent },
-  { path: "admin/:id", component: ContentAdminComponent },
+  { path: "admin/:url", component: ContentAdminComponent },
   { path: "admin", component: AdminComponent },
   { path: "**", redirectTo: "/accueil" }
 ];
