@@ -1,10 +1,5 @@
-footer {
-    position: fixed;
-    bottom: 0; 
-    left:0px;
-  }
-
 .footer-general{
+	font-family: 'Calibri';
 	background-color: rgb(136, 24, 28);
 	box-sizing: border-box;
 	width: 100%;
@@ -21,26 +16,67 @@ footer {
 	vertical-align: top;
 }
 
-.footer-general .footer-left
+.footer-left
 {
-	width: 30%;
+	width: 25%;
 }
 
 .footer-general .footer-center
 {
-	width: 28%;
+	width: 25%;
 }
 .footer-general .footer-center-right
 {
-    width: 20%;
+    width: 18%;
 }
 
 .footer-general .footer-right
 {
-	width: 20%;
+	width: 30%;
 }
 .footer-general p
 {
     font: 1em sans-serif;
-    color: antiquewhite;
+    color: white;
+}
+
+table{
+	color: white;
+}
+
+#googlemap{
+	width: 400px;
+	height: 200px;
+}
+
+@media screen and (max-width: 1280px) {
+
+}
+
+@media screen and (max-width: 980px) {
+	.footer-general{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.footer-general .footer-left,
+	.footer-general .footer-center,
+	.footer-general .footer-center-right,
+	.footer-general .footer-right{
+		text-align: center;
+		width: 100%;
+	}
+
+	table{
+		margin: auto;
+	}
+
+	#googlemap{
+		width: 100%;
+		height: 200px;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	
 }
