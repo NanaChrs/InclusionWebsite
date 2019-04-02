@@ -1,11 +1,12 @@
-h1 {
+h3 
+{
     color: rgb(0, 0, 0);
     margin-bottom: 32px;
     text-align: center;
-    font-size: 64px;
 }
 
-#slideshow-container {
+#slideshow-container 
+{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -15,16 +16,19 @@ h1 {
     margin: 0 auto;
 }
 
-#slideshow {
+#slideshow 
+{
     width: 100%;
     height: 100%;
     opacity: 1;
     transition: opacity 1s;
 }
-#slideshow.fadeOut {
+#slideshow.fadeOut 
+{
     opacity: 0;
 }
 
-.slideshow-image {
+.slideshow-image 
+{
     display: none;
 }

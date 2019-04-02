@@ -21,8 +21,20 @@ export class EnteteComponent implements OnInit {
       height: '25%',
     });
 
-    dialogRef.afterClosed().subscribe(result => {console.log('Dialog closed: ${result');
-    this.dialogResult = result;
-  })
+      dialogRef.afterClosed().subscribe(result => {console.log('Dialog closed: ${result');
+      this.dialogResult = result;
+    })
   }
+
+  openMenu() {
+   
+    var x = document.getElementById('menu_navigation_telephone');
+  if (x.style.display === 'none') {
+    x.style.display = 'inline';
+  } else {
+    x.style.display = 'none';
+  }
+  }
+
+
 }
