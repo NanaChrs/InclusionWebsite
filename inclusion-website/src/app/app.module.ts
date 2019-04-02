@@ -9,7 +9,6 @@ import { TextContentComponent } from './text-content/text-content.component';
 import { PhotoContentComponent } from './photo-content/photo-content.component';
 import { ContentAdminComponent } from './content-admin/content-admin.component';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
-import { SlideshowComponent } from './slideshow/slideshow.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatButtonModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
@@ -29,7 +28,6 @@ import { HttpClientModule } from "@angular/common/http";
     PhotoContentComponent,
     ContentAdminComponent,
     MyDialogComponent,
-    SlideshowComponent,
     EnteteComponent,
     AccueilComponent,
     FooterComponent
