@@ -3,17 +3,18 @@
         <!-- Cette section ne s'affiche que sur les téléphones -->
         <img id="logo_menu_deroulant" src="./assets/vecteurmenu.png" alt="" width="50" height="50">
         <ul id="navigation_telephone">
-            <li id="lien"><a class="lien-liste-telephone" href="#">MENUS</a></li>
-            <li id="lien"><a class="lien-liste-telephone" href="#">CONTACT</a></li>
-            <li id="lien"><a class="lien-liste-telephone" href="#">L'EQUIPE</a></li>
-            <li id="lien"><a class="lien-liste-telephone" id="accessibilite" (click)="openDialog()">ACCESSIBILITE</a></li>
+            <li id="lien"><a class="lien-liste-telephone" [routerLink]="['/menus']">MENUS</a></li>
+            <li id="lien"><a class="lien-liste-telephone" [routerLink]="['/contact']">CONTACT</a></li>
+            <li id="lien"><a class="lien-liste-telephone" [routerLink]="['/equipe']">L'EQUIPE</a></li>
+            <li id="lien"><a class="lien-liste-telephone" id="accessibilite" (click)="openDialog()">ACCESSIBILITE</a>
+            </li>
         </ul>
     </div>
 
     <div id="bandeau_navigation">
         <div id="bloc_image">
-            <a href="accueil"><img id="logoSite" alt="logo du site inclusion" src="./assets/imgHeader/logoInclusion.png" height="100"
-                    width="300" /></a>
+            <a [routerLink]="['/admin']"><img id="logoSite" alt="logo du site inclusion"
+                    src="./assets/imgHeader/logoInclusion.png" height="100" width="300" /></a>
         </div>
         <div id="sous_bandeau">
 
@@ -29,13 +30,14 @@
                             src="../assets/imgHeader/twitter.png" height="30" width="30"></a></li>
                 <li id="icone"><a href="https://www.tripadvisor.fr/"
                         onclick="window.open(this.href); return false;"><img id="logoTripadvisor"
-                            alt="logo de trip advisor" src="../assets/imgHeader/tripadvisor.png" height="30" width="30"></a></li>
+                            alt="logo de trip advisor" src="../assets/imgHeader/tripadvisor.png" height="30"
+                            width="30"></a></li>
             </ul>
 
             <ul id="navigation">
-                <li id="lien"><a href="#">MENUS</a></li>
-                <li id="lien"><a href="#">CONTACT</a></li>
-                <li id="lien"><a href="#">L'EQUIPE</a></li>
+                <li id="lien"><a [routerLink]="['/menus']">MENUS</a></li>
+                <li id="lien"><a [routerLink]="['/contact']">CONTACT</a></li>
+                <li id="lien"><a [routerLink]="['/equipe']">L'EQUIPE</a></li>
                 <li id="lien"><a id="accessibilite" (click)="openDialog()">ACCESSIBILITE</a></li>
             </ul>
         </div>

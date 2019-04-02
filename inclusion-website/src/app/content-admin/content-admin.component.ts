@@ -9,7 +9,7 @@ import SampleJson from '../../assets/SampleJson.json';
   styleUrls: ['./content-admin.component.css']
 })
 export class ContentAdminComponent implements OnInit {
-  private jsonToDisplay;
+  public jsonToDisplay;
 
   constructor() {
     this.jsonToDisplay = SampleJson;
