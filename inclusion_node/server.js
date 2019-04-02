@@ -37,3 +37,4 @@ app.route("/api/pages/:name").put((req, res) => {
 app.route("/api/pages/:name").delete((req, res) => {
     res.sendStatus(204);
 });
+
