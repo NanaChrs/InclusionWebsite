@@ -1,14 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MyDialogComponent } from '../my-dialog/my-dialog.component';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-entete',
   templateUrl: './entete.component.html',
-  styleUrls: ['./entete.component.css']
+  styleUrls: ['entete.component.css']
 })
+
 export class EnteteComponent implements OnInit {
 
+  isOpen = true;
+ 
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
   constructor(public dialog: MatDialog) {}
  
   dialogResult = "";
@@ -28,10 +35,10 @@ export class EnteteComponent implements OnInit {
 
   openMenu() {
       var x = document.getElementById('menu_navigation_telephone');
-        if (x.style.display === 'none') {
-          x.style.display = 'inline';
+        if (x.style.display === 'inline') {
+          x.style.display = 'none';
         } else {
-       x.style.display = 'none';
+       x.style.display = 'inline';
       }
   }
 
