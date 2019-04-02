@@ -148,8 +148,7 @@ a:hover
 
     #navigation_telephone
     {
-        animation: fadein 2s;
-        transition: 1s max-height 0.3s;
+        display: none;
         width: 100%;
         text-align: center;
         background-color: #616161;

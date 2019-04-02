@@ -27,13 +27,12 @@ export class EnteteComponent implements OnInit {
   }
 
   openMenu() {
-   
-    var x = document.getElementById('menu_navigation_telephone');
-  if (x.style.display === 'none') {
-    x.style.display = 'inline';
-  } else {
-    x.style.display = 'none';
-  }
+      var x = document.getElementById('menu_navigation_telephone');
+        if (x.style.display === 'none') {
+          x.style.display = 'inline';
+        } else {
+       x.style.display = 'none';
+      }
   }
 
 

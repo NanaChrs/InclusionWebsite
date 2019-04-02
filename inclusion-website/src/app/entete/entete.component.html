@@ -2,7 +2,7 @@
     <!-- Cette section ne s'affiche que sur les téléphones -->
     <div id="vecteurmenu">
         <!-- Cette section ne s'affiche que sur les téléphones -->
-        <img id="logo_menu_deroulant" src="./assets/vecteurmenu.png" alt="" width="50" height="50">
+        <button id="logo_menu_deroulant" (click)="openMenu()"></button> 
         <ul id="navigation_telephone">
             <li id="lien"><a class="lien-liste-telephone" [routerLink]="['/menus']">MENUS</a></li>
             <li id="lien"><a class="lien-liste-telephone" [routerLink]="['/contact']">CONTACT</a></li>
@@ -10,6 +10,11 @@
             <li id="lien"><a class="lien-liste-telephone" id="accessibilite" (click)="openDialog()">ACCESSIBILITE</a>
             </li>
         </ul>
+
+        <div id="bloc_image">
+                <a [routerLink]="['/admin']"><img id="logoSite" alt="logo du site inclusion"
+                        src="./assets/imgHeader/logoInclusion.png" height="100" width="300" /></a>
+            </div>
     </div>
 
     <div id="bandeau_navigation">
