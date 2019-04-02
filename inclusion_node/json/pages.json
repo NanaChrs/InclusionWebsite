@@ -1,0 +1,26 @@
+{
+    "accueil":{
+        "name": "Accueil",
+        "text-content": "[]",
+        "photo-content": "[]"},
+    "footer":{
+        "name":"Footer",
+        "text-content": "[]"
+    },
+    "equipe":{
+        "name":"L'équipe",
+        "text-content": "[]",
+        "photo-content": "[]"
+    },
+    "carte":{
+        "name":"Carte",
+        "text-content": "[]",
+        "photo-content": "[]"
+    },
+    "contact":{
+        "name":"Contact",
+        "text-content": "[]",
+        "photo-content": "[]"
+    }
+
+}
