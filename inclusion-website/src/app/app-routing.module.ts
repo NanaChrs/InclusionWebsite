@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -9,8 +8,8 @@ import { ContentAdminComponent } from "./content-admin/content-admin.component";
 
 const routes: Routes = [
   { path: "accueil", component: AccueilComponent },
-  { path: "admin", component: AdminComponent },
   { path: "admin/:id", component: ContentAdminComponent },
+  { path: "admin", component: AdminComponent },
   { path: "**", redirectTo: "/accueil" }
 ];
 

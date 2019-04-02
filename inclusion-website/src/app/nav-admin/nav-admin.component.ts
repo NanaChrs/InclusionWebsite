@@ -15,12 +15,12 @@ export class NavAdminComponent implements OnInit {
 
   constructor(
     private pageService: PageService,
-    private testService: TestService
-    ) { }
+    // private testService: TestService
+  ) { }
 
   ngOnInit() {
     this.getPages();
-    this.geturl();
+    //this.geturl();
   }
 
   getPages(): void {
@@ -28,10 +28,11 @@ export class NavAdminComponent implements OnInit {
     this.pageService.getPages().subscribe(pages => this.pages = pages);
   }
 
-  geturl(){
-    this.testService.getAll().subscribe((pages) =>{ 
-      this.log = pages;
-      console.log(pages)});
-  }
+  // geturl() {
+  //   this.testService.getAll().subscribe((pages) => {
+  //     this.log = pages;
+  //     console.log(pages)
+  //   });
+  // }
 
 }

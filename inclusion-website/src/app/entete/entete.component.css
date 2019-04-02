@@ -45,6 +45,7 @@
 #lien
 {
     cursor: pointer;
+    padding: 5px;
 }
 
 #lien:hover
@@ -89,9 +90,14 @@ a:hover
 }
 
 @media screen and (max-width:736px){
+    #header
+    {
+        position: relative;
+    }
+
     #bandeau_navigation
     {
-        display: inline;
+        display: none;
     }
 
     #bloc_image
@@ -99,22 +105,14 @@ a:hover
         background-color: #88181c;
     }
 
-    #header
-    {
-        position: relative;
-    }
-
-    #sous_bandeau
-    {
-        display: none;
-    }
-
     #vecteurmenu
     {
-        display: inline;
-        position: absolute;
-        top: 0;
-        right: 0;
+        display: flex;
+        justify-content: space-around;
+        background-color: #88181c;
+        /*position: absolute;
+        top: 25%;
+        right: 0;*/
     }    
 
     #lien
@@ -130,19 +128,38 @@ a:hover
     #logo_menu_deroulant
     {
         display: inline;
+        position: absolute;
+        top: 25%;
+        left: 1%;
+        outline-style: none;
+        border: 2px solid rgb(104, 104, 104);
+        border-radius: 5px;
+        background-color: #88181c;
+        background-image: url("../../assets/vecteurmenu.png");
+        width: 50px;
+        height: 50px;
     }
 
     #navigation_telephone
     {
-        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #616161;
+        margin: 0;
+        margin-left: 0;
+        padding-left: 0;
     }
 
-    #vecteurmenu:active #navigation_telephone
+    #menu_navigation_telephone
+    {
+        width: 100%;
+        margin-top: 104px;
+        position: absolute;
+    }
+    /*#vecteurmenu:active #navigation_telephone
     {
         display: inline;
-    }
-
-    
+    }*/
 }
 
 

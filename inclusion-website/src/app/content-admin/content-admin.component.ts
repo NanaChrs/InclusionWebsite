@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavAdminComponent } from "../nav-admin/nav-admin.component";
+import { ActivatedRoute } from '@angular/router';
 
 import SampleJson from '../../assets/SampleJson.json';
 
@@ -9,18 +10,18 @@ import SampleJson from '../../assets/SampleJson.json';
   styleUrls: ['./content-admin.component.css']
 })
 export class ContentAdminComponent implements OnInit {
-  private jsonToDisplay;
+  public jsonToDisplay;
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     this.jsonToDisplay = SampleJson;
   }
 
   ngOnInit() {
-    this.displayJson();
+    //this.displayJson();
   }
 
   displayJson(): void {
-    console.log('Reading local json files');
-    console.log(SampleJson);
+    //console.log('Reading local json files');
+    //console.log(SampleJson);
   }
 }
