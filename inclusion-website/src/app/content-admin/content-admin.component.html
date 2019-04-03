@@ -12,7 +12,7 @@
 <div id="global-container-img">
  
   <div class="simple-container-img" *ngFor="let item of imageContent">
-    <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png">
+    <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)">
     <div class="img-text-container-img">
       <img class="img-modif" src="{{item.source}}" alt="">
       <input type="text" value="{{item.alt}}">
@@ -23,4 +23,4 @@
   </div>
 </div>
 
-<button>Save</button>
+<button class="save-button">Save</button>

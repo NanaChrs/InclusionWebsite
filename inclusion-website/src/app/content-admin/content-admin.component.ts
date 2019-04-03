@@ -6,6 +6,7 @@ import { Location } from "@angular/common"
 import { filter } from 'rxjs/operators';
 import { TextContentComponent } from '../text-content/text-content.component';
 import { CommonModule } from "@angular/common";
+import { jsonpCallbackContext } from '@angular/common/http/src/module';
 
 @Component({
   selector: 'app-content-admin',
@@ -34,13 +35,31 @@ export class ContentAdminComponent {
 
 
   getPage(): void{
-    this.jsonContentService.getPageByName(this.route.snapshot.paramMap.get('url'))
+    this.jsonContentService.getPageByName('/'+this.route.snapshot.paramMap.get('url'))
     .subscribe((page) => {
+      this.url = this.route.snapshot.paramMap.get('url');
       this.pageContent=page;
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
     
     });
+  }
+
+  onClickSuppr(url:String){
+    var i = this.getIdOfPhoto(url);
+    const link = this.url + '/'+ i;
+    this.jsonContentService.deletePageById(link).subscribe(()=> console.log("Photo deleted"));
+  }
+
+  getIdOfPhoto(url: String): number {
+    for (var i=0; i<this.imageContent.length; i++){
+      if (this.imageContent!=null){
+        if(this.imageContent[i]["source"]==url){
+          return i;
+        }
+      }
+     
+    }
   }
  
 }

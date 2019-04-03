@@ -7,7 +7,8 @@ import { catchError, map, tap } from "rxjs/operators";
   providedIn: 'root'
 })
 export class JsoncontentService {
-  private urlPages: string= "http://localhost:8000/api/pages/";
+  
+  private urlPages: string= "http://localhost:8000/api/pages";
 
   constructor(private http: HttpClient) { }
 
@@ -15,4 +16,12 @@ export class JsoncontentService {
     const url = this.urlPages+name;
     return this.http.get<String>(url);
   }
+
+  deletePageById(link: string){
+    const url = `${this.urlPages}/${link}`;
+    console.log(url);
+    return this.http.delete(url);
+  }
+
+  
 }
