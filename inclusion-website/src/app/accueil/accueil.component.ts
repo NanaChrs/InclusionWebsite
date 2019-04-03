@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-  public animation = false;
+  public animation = true;
   //duré d'une photo dans le diapo
   duration = 4;
   i = 0;
