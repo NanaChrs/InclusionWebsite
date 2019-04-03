@@ -1,7 +1,12 @@
 {
     "accueil":{
         "name": "Accueil",
-        "text-content": "[]",
+        "text-content": [
+            {
+                "emplacement": "Titre1",
+                "contenu": "Blablablabla"
+            }
+        ],
         "photo-content": "[]"},
     "footer":{
         "name":"Footer",

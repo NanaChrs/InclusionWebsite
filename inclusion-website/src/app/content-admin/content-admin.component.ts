@@ -4,6 +4,8 @@ import { ActivatedRoute, Router, RouterEvent, NavigationEnd } from '@angular/rou
 import { JsoncontentService } from "./jsoncontent.service";
 import { Location } from "@angular/common"
 import { filter } from 'rxjs/operators';
+import { TextContentComponent } from '../text-content/text-content.component';
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: 'app-content-admin',
@@ -12,6 +14,10 @@ import { filter } from 'rxjs/operators';
 })
 export class ContentAdminComponent {
   pageContent: String;
+  url: String;
+  textContent: String[];
+  imageContent: String[];
+
 
   constructor(
     private route: ActivatedRoute,
@@ -19,8 +25,7 @@ export class ContentAdminComponent {
     public router: Router
     ) {
       this.router.events.subscribe((e) => {
-        if (e instanceof NavigationEnd){
-          this.pageContent = e.url.slice(7); 
+        if (e instanceof NavigationEnd && e.url!="/admin/param"){
           this.getPage();
         }
         
@@ -31,8 +36,12 @@ export class ContentAdminComponent {
   getPage(): void{
     this.jsonContentService.getPageByName(this.route.snapshot.paramMap.get('url'))
     .subscribe((page) => {
-      console.log(page);
-      this.pageContent=page;});
+      this.pageContent=page;
+      console.log(this.pageContent)
+      this.textContent = this.pageContent["text-content"];
+      
+    
+    });
   }
  
 }

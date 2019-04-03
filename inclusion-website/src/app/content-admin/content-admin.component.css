@@ -42,3 +42,12 @@
 {
     cursor: pointer;
 }
+
+.textContent{
+    min-width: 60%;
+
+}
+
+.formText{
+    margin-left:30%;
+}
