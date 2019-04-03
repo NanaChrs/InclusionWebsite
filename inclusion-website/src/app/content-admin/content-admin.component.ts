@@ -20,8 +20,6 @@ export class ContentAdminComponent {
     ) {
       this.router.events.subscribe((e) => {
         if (e instanceof NavigationEnd){
-          console.log("hey");
-          console.log(e);
           this.pageContent = e.url.slice(7); 
           this.getPage();
         }
