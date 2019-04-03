@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
+import { catchError, map, tap } from "rxjs/operators";
+
 @Injectable({
   providedIn: 'root'
 })
 export class JsoncontentService {
-  url: string= "http://localhost:8000/api/pages/";
+  private urlPages: string= "http://localhost:8000/api/pages/";
 
   constructor(private http: HttpClient) { }
 
-  getPageById(name: string): Observable<String>{
-    return this.http.get<String>(this.url+name);
+  getPageByName(name: string): Observable<String>{
+    const url = this.urlPages+name;
+    return this.http.get<String>(url);
   }
 }

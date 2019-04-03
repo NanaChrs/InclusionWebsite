@@ -21,6 +21,10 @@
         "name":"Contact",
         "text-content": "[]",
         "photo-content": "[]"
+    },
+    "header":{
+        "name":"Header",
+        "text-content":"[]"
     }
 
 }
