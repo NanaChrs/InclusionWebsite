@@ -7,11 +7,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
   public animation = true;
-  //duré d'une photo dans le diapo
-  duration = 4;
   i = 0;
+  
+  //duré d'une photo dans le diapo
+  duration = 10;
+
   //hauteur du diaporama
-  height = 650;
+  height = 625;
   
   
   //recupération des element slideshowcontainer et slideshow
@@ -28,18 +30,9 @@ export class AccueilComponent implements OnInit {
 
 
   play = function(){
-
-
-    // on incremente i afin de changer la photo qui sera affichée dans le slideshow
-    this.i++;
-    //quand on arrive à la derniere diapo, on retourne à la premiere
-    if(this.i>this.slideshow.nativeElement.childElementCount-1)
-    {
-      this.i=0;
-    } 
-
-    // application de la classe fadeOut pour application la transition apparition petit à petit
+    // application de la classe fadeOut pour appliquer la transition apparition petit à petit
     this.slideshow.nativeElement.className = 'fadeOut';
+    
 
     setTimeout(() => {
       // changement du background de l'element slideshow
@@ -47,8 +40,11 @@ export class AccueilComponent implements OnInit {
       this.slideshow.nativeElement.style.backgroundSize = 'cover';
       // on retire la class fadeOut afin de faire l'effet de transition inverse
       this.slideshow.nativeElement.className = '';
-    }, 2000);
+    }, 1000);
 
+    
+    this.i++;
+    if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
 
 
     // fonction qui permet de lancer le diapo en boucle 
@@ -56,7 +52,6 @@ export class AccueilComponent implements OnInit {
       this.play();
     }, this.duration*1000);
   }
-
 
   onNext(){
     this.i++;
@@ -79,11 +74,14 @@ export class AccueilComponent implements OnInit {
   ngOnInit() {
     if ((this.height)>0){
       this.setContainerStyle();
-    }
-    if(this.animation){
+    }    
+    if (this.animation){
       this.play();
     }
-    
   }
 
 }
+
+
+
+
