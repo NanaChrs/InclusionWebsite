@@ -37,9 +37,8 @@ export class ContentAdminComponent {
     this.jsonContentService.getPageByName(this.route.snapshot.paramMap.get('url'))
     .subscribe((page) => {
       this.pageContent=page;
-      console.log(this.pageContent)
       this.textContent = this.pageContent["text-content"];
-      
+      this.imageContent = this.pageContent["photo-content"];
     
     });
   }

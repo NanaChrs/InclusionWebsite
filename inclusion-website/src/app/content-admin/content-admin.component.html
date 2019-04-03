@@ -5,12 +5,13 @@
   <mat-form-field class="textContent">
     <textarea matInput placeholder="Contenu" value="{{text.contenu}}"></textarea>
   </mat-form-field>
-
 </div>
 
 
-<!-- <div id="global-container-img">
-  <div class="simple-container-img" *ngFor="let item of jsonToDisplay.images">
+<h1 style= "margin-left:30%">Photos</h1>
+<div id="global-container-img">
+ 
+  <div class="simple-container-img" *ngFor="let item of imageContent">
     <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png">
     <div class="img-text-container-img">
       <img class="img-modif" src="{{item.source}}" alt="">
@@ -20,6 +21,6 @@
   <div class="simple-container-img">
     <img id="img-add" class="img-modif" src="../../assets/img/plus.png" alt="">
   </div>
-</div>  -->
+</div>
 
 <button>Save</button>

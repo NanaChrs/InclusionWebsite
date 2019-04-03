@@ -5,9 +5,26 @@
             {
                 "emplacement": "Titre1",
                 "contenu": "Blablablabla"
+            },
+            {
+                "emplacement": "Titre2",
+                "contenu": "Blablablabla"
             }
         ],
-        "photo-content": "[]"},
+        "photo-content": [
+            {
+                "source": "../../assets/accueil/1.jpg",
+                "alt": "Blabla"
+            },
+            {
+                "source": "../../assets/accueil/2.jpg",
+                "alt": "Blabla"
+            },
+            {
+                "source": "../../assets/accueil/3.jpg",
+                "alt": "Blabla"
+            }
+        ]},
     "footer":{
         "name":"Footer",
         "text-content": "[]"
