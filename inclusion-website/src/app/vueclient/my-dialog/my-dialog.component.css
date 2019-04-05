@@ -1,4 +1,4 @@
-#bloc_taille_texte
+#bloc_taille_texte, #bloc_animations
 {
     width: auto;
     text-align: center;
@@ -7,7 +7,7 @@
     padding: 0;
 }
 
-#taille_texte
+#taille_texte, #animationsOn, #animationsOff
 {
     cursor: pointer;
     margin: 3px;
@@ -30,6 +30,18 @@
 }
 
 #taille_texte:focus
+{
+    background-color: whitesmoke;
+    border: none;
+}
+
+#animationsOn:focus
+{
+    background-color: whitesmoke;
+    border: none;
+}
+
+#animationsOff:focus
 {
     background-color: whitesmoke;
     border: none;
