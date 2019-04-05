@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Page } from "../Page/Page";
 import { PageService } from '../Page/page.service';
 import { TestService } from "../test.service";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,12 +16,15 @@ export class NavAdminComponent implements OnInit {
 
   constructor(
     private pageService: PageService,
-    // private testService: TestService
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.getPages();
-    //this.geturl();
+  }
+
+  ngAfterViewInit() {
+    this.colorSelectedPage();
   }
 
   getPages(): void {
@@ -28,11 +32,17 @@ export class NavAdminComponent implements OnInit {
     this.pageService.getPages().subscribe(pages => this.pages = pages);
   }
 
-  // geturl() {
-  //   this.testService.getAll().subscribe((pages) => {
-  //     this.log = pages;
-  //     console.log(pages)
-  //   });
-  // }
+  colorSelectedPage(): void {
+    //Reset element to general class
+    var elements = document.getElementsByClassName("div-element-menu-selected");
+    if (elements.length > 0) {
+      elements[0].className = "div-element-menu";
+    }
+
+    //Set class "selected" to the corresponding element
+    var url = this.router.url.split('/');
+    let doc = document.getElementById(url[url.length - 1]);
+    doc.className = "div-element-menu-selected";
+  }
 
 }

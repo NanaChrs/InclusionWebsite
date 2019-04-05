@@ -7,10 +7,22 @@
     left: 0;
     background-color: #6b0b0b; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: column;
+  }
+
+  /* Navigation div container of each link */
+  .div-element-menu{
+    background-color: #6b0b0b;
+  }
+
+  .div-element-menu:hover{
+    background-color: #dd5050;
+  }
+
+  .div-element-menu-selected{
+    background-color: #dd5050;
   }
   
   /* The navigation menu links */
