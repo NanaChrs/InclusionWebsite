@@ -10,7 +10,7 @@ import { PhotoContentComponent } from './photo-content/photo-content.component';
 import { ContentAdminComponent } from './content-admin/content-admin.component';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import { FooterComponent } from './footer/footer.component';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material';
 import { EnteteComponent } from './entete/entete.component';
@@ -42,10 +42,12 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
     MatButtonModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   entryComponents: [
-    MyDialogComponent
+    MyDialogComponent,
   ],
 
   exports: [

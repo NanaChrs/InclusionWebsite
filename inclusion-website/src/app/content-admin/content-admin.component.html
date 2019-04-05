@@ -1,11 +1,18 @@
 <app-nav-admin></app-nav-admin>
 
-<!-- <textarea id="area" rows="5" cols="50" name="text"
-  style="margin-left: 25%; margin-top:2%;">{{jsonToDisplay.text | json}}</textarea>
+<div class="formText" *ngFor="let text of textContent">
+  <h1>{{text.emplacement}}</h1>
+  <mat-form-field class="textContent">
+    <textarea matInput placeholder="Contenu" value="{{text.contenu}}"></textarea>
+  </mat-form-field>
+</div>
 
+
+<h1 style= "margin-left:30%">Photos</h1>
 <div id="global-container-img">
-  <div class="simple-container-img" *ngFor="let item of jsonToDisplay.images">
-    <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png">
+ 
+  <div class="simple-container-img" *ngFor="let item of imageContent">
+    <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)">
     <div class="img-text-container-img">
       <img class="img-modif" src="{{item.source}}" alt="">
       <input type="text" value="{{item.alt}}">
@@ -14,6 +21,6 @@
   <div class="simple-container-img">
     <img id="img-add" class="img-modif" src="../../assets/img/plus.png" alt="">
   </div>
-</div> -->
+</div>
 
-<button>Save</button>
+<button class="save-button">Save</button>

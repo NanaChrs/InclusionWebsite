@@ -7,21 +7,14 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-  [x: string]: any;
-  @Input() message:string;
-
-
-  constructor(private cookieService: CookieService) { }
-
+  public animation = true;
+  i = 0;
   
-
-  // public animation = false;
-  public animation: string = this.cookieService.get('animation');
   //duré d'une photo dans le diapo
   duration = 4;
-  i = 0;
+
   //hauteur du diaporama
-  height = 650;
+  height = 625;
   
   
   //recupération des element slideshowcontainer et slideshow
@@ -38,35 +31,30 @@ export class AccueilComponent implements OnInit {
 
   
   play = function(){
+    
+    if (this.animation){ 
+      // application de la classe fadeOut pour appliquer la transition apparition petit à petit
+      this.slideshow.nativeElement.className = 'fadeOut';
 
+      setTimeout(() => {
+        // changement du background de l'element slideshow
+        this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+        this.slideshow.nativeElement.style.backgroundSize = 'cover';
+        // on retire la class fadeOut afin de faire l'effet de transition inverse
+        this.slideshow.nativeElement.className = '';
+      }, 1100);
+    }
 
-    // on incremente i afin de changer la photo qui sera affichée dans le slideshow
+    
     this.i++;
-    //quand on arrive à la derniere diapo, on retourne à la premiere
-    if(this.i>this.slideshow.nativeElement.childElementCount-1)
-    {
-      this.i=0;
-    } 
-
-    // application de la classe fadeOut pour application la transition apparition petit à petit
-    this.slideshow.nativeElement.className = 'fadeOut';
-
-    setTimeout(() => {
-      // changement du background de l'element slideshow
-      this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-      this.slideshow.nativeElement.style.backgroundSize = 'cover';
-      // on retire la class fadeOut afin de faire l'effet de transition inverse
-      this.slideshow.nativeElement.className = '';
-    }, 2000);
+    if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
 
 
-
-    // fonction qui permet de lancer le diapo en boucle 
+    // permet de lancer le diapo en boucle
     setTimeout(() => {
       this.play();
     }, this.duration*1000);
   }
-
 
   onNext(){
     console.log('test', this.animation);
@@ -83,8 +71,20 @@ export class AccueilComponent implements OnInit {
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
+  onAnnim(){
+    this.animation=true;
 
-  
+  }
+
+  offAnnim(){
+    this.animation=false;
+  }
+
+
+  constructor() { 
+    
+  }
+
 
 
   ngOnInit() {
@@ -93,11 +93,15 @@ export class AccueilComponent implements OnInit {
 
     if ((this.height)>0){
       this.setContainerStyle();
-    }
-    if(this.animation == "true"){
-      this.play();
-    }
-    
+
+    }    
+
+    this.play();
+
   }
 
 }
+
+
+
+

@@ -17,6 +17,9 @@
     </div>
     <div id="presentation-restaurant">
         <h1>Présentation du restaurant INCLUSION</h1>
+        <p>animation</p>
+        <button *ngIf="!animation" (click)="onAnnim()">on</button>
+        <button *ngIf="animation"(click)="offAnnim()">off</button>
         <div id="text">
             <p>LA</p>
             <p>ON</p>
