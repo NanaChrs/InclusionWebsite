@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-accueil',
@@ -28,7 +29,7 @@ export class AccueilComponent implements OnInit {
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
-
+  
   play = function(){
     
     if (this.animation){ 
@@ -56,6 +57,7 @@ export class AccueilComponent implements OnInit {
   }
 
   onNext(){
+    console.log('test', this.animation);
     this.i++;
     if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
     this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
@@ -84,12 +86,18 @@ export class AccueilComponent implements OnInit {
   }
 
 
+
   ngOnInit() {
+    // this.data.currentMessage.subscribe(this.message => this.message = this.message);
+
+
     if ((this.height)>0){
       this.setContainerStyle();
+
     }    
 
     this.play();
+
   }
 
 }

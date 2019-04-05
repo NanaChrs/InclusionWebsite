@@ -7,15 +7,12 @@
             <img src="../../assets/accueil/2.jpg" alt="Image 2" class="slideshow-image">
             <img src="../../assets/accueil/3.jpg" alt="Image 3" class="slideshow-image">           
         </div>
-        <div id="slideshow-text">
-            <h1>INCLUSION</h1>
-            <p>TASTE YOUR DIFFERENCE!</p>
-        </div>      
-        <button *ngIf="!animation" id="fleche-gauche" (click)="onPrev()"><img src="../../assets/accueil/fleche-gauche.png" alt="bouton précédent"></button>
-        <button *ngIf="!animation" id="fleche-droite" (click)="onNext()"><img src="../../assets/accueil/fleche-droite.png" alt="bouton précédent"></button>
-        <div *ngIf="animation" id="zoneclicable">
-            <div  id="zoneclicgauche" (click)="onPrev()"></div>
-            <div  id="zoneclicdroite" (click)="onNext()"></div>
+        
+        <button *ngIf="animation == 'false'" id="fleche-gauche" (click)="onPrev()"><img src="../../assets/accueil/fleche-gauche.png" alt="bouton précédent"></button>
+        <button *ngIf="animation == 'false'" id="fleche-droite" (click)="onNext()"><img src="../../assets/accueil/fleche-droite.png" alt="bouton précédent"></button>
+        <div *ngIf="animation == 'true'" id="zoneclicable">
+            <div id="zoneclicgauche" (click)="onPrev()"></div>
+            <div id="zoneclicdroite" (click)="onNext()"></div>
         </div>
     </div>
     <div id="presentation-restaurant">
@@ -36,7 +33,8 @@
             <p>POUR</p>
             <p>TESTER</p>
         </div>
+        <p>{{animation}}</p>
+        <p>Transfert says : {{ message }}</p>
     </div>
 </div>
-
 <app-footer></app-footer>
