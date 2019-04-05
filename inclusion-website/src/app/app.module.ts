@@ -45,7 +45,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatInputModule
   ],
   entryComponents: [
-    MyDialogComponent
+    MyDialogComponent,
   ],
 
   exports: [
