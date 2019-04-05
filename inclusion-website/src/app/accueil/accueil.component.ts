@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-accueil',
@@ -6,7 +7,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-  public animation = true;
+  [x: string]: any;
+  @Input() message:string;
+
+
+  constructor(private cookieService: CookieService) { }
+
+  
+
+  // public animation = false;
+  public animation: string = this.cookieService.get('animation');
   //duré d'une photo dans le diapo
   duration = 4;
   i = 0;
@@ -26,7 +36,7 @@ export class AccueilComponent implements OnInit {
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
-
+  
   play = function(){
 
 
@@ -59,6 +69,7 @@ export class AccueilComponent implements OnInit {
 
 
   onNext(){
+    console.log('test', this.animation);
     this.i++;
     if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
     this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
@@ -73,14 +84,17 @@ export class AccueilComponent implements OnInit {
   }
 
 
-  constructor() { }
+  
 
 
   ngOnInit() {
+    // this.data.currentMessage.subscribe(this.message => this.message = this.message);
+
+
     if ((this.height)>0){
       this.setContainerStyle();
     }
-    if(this.animation){
+    if(this.animation == "true"){
       this.play();
     }
     

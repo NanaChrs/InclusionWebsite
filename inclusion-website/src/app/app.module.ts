@@ -17,6 +17,8 @@ import { EnteteComponent } from './entete/entete.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AccueilComponent } from './accueil/accueil.component';
 import { HttpClientModule } from "@angular/common/http";
+import { CookieService } from 'ngx-cookie-service';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { HttpClientModule } from "@angular/common/http";
     MyDialogComponent,
     EnteteComponent,
     AccueilComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,9 @@ import { HttpClientModule } from "@angular/common/http";
 
   exports: [
   ],
-  providers: [],
+  providers: [
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 
