@@ -7,7 +7,10 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-  public animation = true;
+  
+  animationOFF: boolean = this.cookieService.check('animationOFF');
+
+  // const cookieExists: boolean = cookieService.check('animation');
   i = 0;
   
   //duré d'une photo dans le diapo
@@ -15,7 +18,6 @@ export class AccueilComponent implements OnInit {
 
   //hauteur du diaporama
   height = 625;
-  
   
   //recupération des element slideshowcontainer et slideshow
   @ViewChild('myslideshowcontainer') slideshowcontainer;
@@ -31,11 +33,9 @@ export class AccueilComponent implements OnInit {
 
   
   play = function(){
-    
-    if (this.animation){ 
+    if (!this.animationOFF){ 
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = 'fadeOut';
-
       setTimeout(() => {
         // changement du background de l'element slideshow
         this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
@@ -45,19 +45,18 @@ export class AccueilComponent implements OnInit {
       }, 1100);
     }
 
-    
     this.i++;
     if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
-
-
+    
     // permet de lancer le diapo en boucle
     setTimeout(() => {
       this.play();
     }, this.duration*1000);
   }
 
+
+  //fleches d'animations 
   onNext(){
-    console.log('test', this.animation);
     this.i++;
     if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
     this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
@@ -71,37 +70,33 @@ export class AccueilComponent implements OnInit {
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
+
+  //Boutons activation animations
   onAnnim(){
-    this.animation=true;
+    this.animationOFF=false;
+    this.cookieService.delete( 'animationOFF');
 
   }
 
   offAnnim(){
-    this.animation=false;
+    this.animationOFF=true;
+    this.cookieService.set('animationOFF','');
+
   }
 
 
-  constructor() { 
-    
+
+  constructor( private cookieService: CookieService) {  
   }
-
-
 
   ngOnInit() {
-    // this.data.currentMessage.subscribe(this.message => this.message = this.message);
-
-
     if ((this.height)>0){
       this.setContainerStyle();
-
-    }    
-
+    }
     this.play();
-
   }
 
 }
-
 
 
 

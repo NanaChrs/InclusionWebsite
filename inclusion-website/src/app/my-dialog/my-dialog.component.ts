@@ -26,37 +26,5 @@ export class MyDialogComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  // @Input() value: string;
-
-  
-  // ngOnChanges(changes: SimpleChanges) {
-  //   this.cookieService.set('animation', this.value);
-  // }
-  
-
-  // onCloseConfirm() {
-  //   this.thisDialogRef.close('Confirm');
-  // }
-
-  // onCloseCancel() {
-  //   this.thisDialogRef.close('Cancel');
-  // }
-
-  // setCookieAnimationsFalse() {
-  //   this.value = "false";
-  //   // window.location.reload(false);
-  //   this.cookieService.set('animation' , this.value);
-  //   this.cookieService.delete('animation');
-  // }
-  // setCookieAnimationsTrue() {
-  //   this.value = "true";
-  //   // window.location.reload(false);
-  //   this.cookieService.set('animation', this.value);
-    
-  // }
-
-  
-
   
 }
