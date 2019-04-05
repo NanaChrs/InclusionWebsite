@@ -17,6 +17,7 @@ import { EnteteComponent } from './entete/entete.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AccueilComponent } from './accueil/accueil.component';
 import { HttpClientModule } from "@angular/common/http";
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { HttpClientModule } from "@angular/common/http";
 
   exports: [
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
 })
 
