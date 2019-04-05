@@ -50,6 +50,7 @@
     outline: 0;
     background: transparent;
     position: absolute;
+    cursor: pointer;
 }
 
 #fleche-droite{
@@ -59,6 +60,7 @@
     outline-style: none;
     background: transparent;
     position: absolute;
+    cursor: pointer;
 }
 
 #zoneclicable{

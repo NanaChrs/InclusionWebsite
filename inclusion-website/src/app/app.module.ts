@@ -53,7 +53,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
   exports: [
   ],
-  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }, CookieService],
   bootstrap: [AppComponent]
 })
 
