@@ -1,0 +1,5 @@
+<div class="sidenav">
+  <div (click)="colorSelectedPage()" *ngFor="let page of pages" id="{{page.url}}" class="div-element-menu">
+    <a [routerLink]="['/admin/', page.url]">{{page.name}}</a>
+  </div>
+</div>
