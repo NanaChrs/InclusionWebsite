@@ -76,7 +76,7 @@
 }
 
 #zoneclicgauche:hover{
-    cursor: url('../../assets/accueil/fleche-gauche-souris.png') 25 50 , pointer;
+    cursor: url('../../../assets/accueil/fleche-gauche-souris.png') 25 50 , pointer;
 }
 
 #zoneclicdroite{
@@ -86,7 +86,7 @@
 }
 
 #zoneclicdroite:hover{
-    cursor: url('../../assets/accueil/fleche-droite-souris.png') 75 50, pointer;   
+    cursor: url('../../../assets/accueil/fleche-droite-souris.png') 75 50, pointer;   
 }
 
 #presentation-restaurant{

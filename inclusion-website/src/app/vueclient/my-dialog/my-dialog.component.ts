@@ -15,16 +15,11 @@ export class MyDialogComponent implements OnInit {
 
   constructor(public thisDialogRef:MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: String, private cookieService: CookieService) { }
 
-  message = "hello world";
-
-  private messageSource = new BehaviorSubject<string>("defaultmessage");
-  currentMessage = this.messageSource.asObservable();
-
-  changeMessage(message : string) {
-    this.messageSource.next(message);
+  ngOnInit() {
   }
 
-  ngOnInit() {
+  onCloseCancel(){
+    this.thisDialogRef.close();
   }
   
 }

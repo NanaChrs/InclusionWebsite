@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent } from "./admin/admin.component";
 import { AppComponent } from "./app.component";
-import { AccueilComponent } from "./accueil/accueil.component";
+import { AccueilComponent } from "./vueclient/accueil/accueil.component";
 import { ContentAdminComponent } from "./content-admin/content-admin.component";
 
 const routes: Routes = [
