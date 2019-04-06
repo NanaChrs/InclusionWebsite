@@ -1,0 +1,38 @@
+<app-entete></app-entete>
+
+<div id="global">
+    <div #myslideshowcontainer id="slideshow-container">
+        <div #myslideshow id="slideshow">
+            <img src="../../../assets/accueil/1.jpg" alt="Image 1" class="slideshow-image">
+            <img src="../../../assets/accueil/2.jpg" alt="Image 2" class="slideshow-image">
+            <img src="../../../assets/accueil/3.jpg" alt="Image 3" class="slideshow-image">           
+        </div>
+        
+        <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()"><img src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent"></button>
+        <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()"><img src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent"></button>
+        <div *ngIf="!animationOFF" id="zoneclicable">
+            <div id="zoneclicgauche" (click)="onPrev()"></div>
+            <div id="zoneclicdroite" (click)="onNext()"></div>
+        </div>
+    </div>
+    <div id="presentation-restaurant">
+        <h1>Présentation du restaurant INCLUSION</h1>
+        <p>animation</p>
+        <button *ngIf="animationOFF" (click)="onAnnim()">on</button>
+        <button *ngIf="!animationOFF"(click)="offAnnim()">off</button>
+        <div id="text">
+            <p>LA</p>
+            <p>ON</p>
+            <p>PRESENTE</p>
+            <p>LE</p>
+            <p>RESTAURANT</p>
+            <p>JE</p>
+            <p>RAJOUTE</p>
+            <p>DES</p>
+            <p>MTS</p>
+            <p>POUR</p>
+            <p>TESTER</p>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
