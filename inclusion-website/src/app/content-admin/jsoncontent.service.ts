@@ -19,7 +19,6 @@ export class JsoncontentService {
 
   deletePageById(link: string){
     const url = `${this.urlPages}/${link}`;
-    console.log(url);
     return this.http.delete(url);
   }
 

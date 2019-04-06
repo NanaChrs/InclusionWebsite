@@ -49,6 +49,8 @@ export class ContentAdminComponent {
     var i = this.getIdOfPhoto(url);
     const link = this.url + '/'+ i;
     this.jsonContentService.deletePageById(link).subscribe(()=> console.log("Photo deleted"));
+    console.log(this.imageContent["source"]);
+    this.imageContent["source"].filter(h => h!=url);
   }
 
   getIdOfPhoto(url: String): number {

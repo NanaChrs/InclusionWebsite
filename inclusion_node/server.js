@@ -1,10 +1,27 @@
 var express = require("express");
-var fs = require("fs");
+var fs = require("fs-extra");
 const BodyParser = require ("body-parser");
 const cors = require('cors');
-var jsonPages = require("./json/pages.json")
+var jsonPages = require("./json/pages.json");
+const multer = require("multer");
+const path = require("path");
 
 const app = express();
+
+let upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, callback) => {
+      let userId = req.params.name;
+      let path = `./assets/${userId}`;
+      fs.mkdirsSync(path);
+      callback(null, path);
+    },
+    filename: (req, file, callback) => {
+      //originalname is the uploaded file's name with extn
+      callback(null, file.originalname);
+    }
+  })
+});
 
 app.listen(8000, () => {
     console.log('Server started!')
@@ -61,4 +78,25 @@ app.route("/api/pages/:name/:id").delete((req, res) => {
     res.sendStatus(204);
     console.log(json);
 });
+
+app.route("/api/pages/:name/dir").get((req, res)=>{
+  dir= "./assets/" + req.params.name;
+  console.log("dir"+dir);
+  res.send(201, req.body);
+})
+
+app.post("/api/pages/:name/upload", upload.single('photo'),(req,res)=>{
+  if (!req.file) {
+    console.log("No file received");
+    return res.send({
+      success: false
+    });
+
+  } else {
+    console.log('file received successfully');
+    return res.send({
+      success: true
+    })
+  }
+})
 
