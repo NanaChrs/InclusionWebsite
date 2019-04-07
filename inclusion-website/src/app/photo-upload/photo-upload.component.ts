@@ -20,7 +20,6 @@ export class PhotoUploadComponent implements OnInit {
       }
 
   ngOnInit() {
-    // this.photoService.sendReq(this.uploadURL+this.route.snapshot.paramMap.get('url')).subscribe();
     this.uploadURL += this.route.snapshot.paramMap.get('url')+ "/upload";
     this.uploader = new FileUploader({url: this.uploadURL, itemAlias: 'photo'});
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
