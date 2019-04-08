@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges, Input } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, Input, OnInit } from '@angular/core';
 import { NavAdminComponent } from "../nav-admin/nav-admin.component";
 import { ActivatedRoute, Router, RouterEvent, NavigationEnd } from '@angular/router';
 import { JsoncontentService } from "./jsoncontent.service";
@@ -12,7 +12,7 @@ import { jsonpCallbackContext } from '@angular/common/http/src/module';
   templateUrl: './content-admin.component.html',
   styleUrls: ['./content-admin.component.css']
 })
-export class ContentAdminComponent {
+export class ContentAdminComponent implements OnInit {
   pageContent: String;
   url: String;
   textContent: String[];
@@ -32,6 +32,10 @@ export class ContentAdminComponent {
     });
   }
 
+  ngOnInit() {
+
+  }
+
 
   getPage(): void {
     this.jsonContentService.getPageByName(this.route.snapshot.paramMap.get('url'))
@@ -44,7 +48,7 @@ export class ContentAdminComponent {
       });
   }
 
-  onClickSuppr(url: String) {
+  onClickSuppr(url: string) {
     var i = this.getIdOfPhoto(url);
     const link = this.url + '/' + i;
     this.jsonContentService.deletePageById(link).subscribe(() => console.log("Photo deleted"));

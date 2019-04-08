@@ -8,16 +8,16 @@
 </div>
 
 
-<h1 style= "margin-left:30%">Photos</h1>
+<h1 style="margin-left:30%">Photos</h1>
 <div id="global-container-img">
- 
+
   <div class="simple-container-img" *ngFor="let item of imageContent">
     <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)">
     <div class="img-text-container-img">
       <img class="img-modif" src="{{item.source}}" alt="">
       <input type="text" value="{{item.alt}}">
     </div>
-    
+
   </div>
   <app-photo-upload></app-photo-upload>
 </div>
