@@ -36,11 +36,10 @@ export class ContentAdminComponent {
   getPage(): void {
     this.jsonContentService.getPageByName('/' + this.route.snapshot.paramMap.get('url'))
       .subscribe((page) => {
-        this.url = this.route.snapshot.paramMap.get('id');
+        this.url = this.route.snapshot.paramMap.get('url');
         this.pageContent = page;
         this.textContent = this.pageContent["text-content"];
         this.imageContent = this.pageContent["photo-content"];
-        console.log(this.textContent);
       });
   }
 
