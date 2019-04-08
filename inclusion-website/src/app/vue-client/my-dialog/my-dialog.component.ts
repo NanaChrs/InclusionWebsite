@@ -14,12 +14,48 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class MyDialogComponent implements OnInit {
 
   constructor(public thisDialogRef:MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: String, private cookieService: CookieService) { }
+  
+  animationOFF: boolean = this.cookieService.check('animationOFF');
 
   ngOnInit() {
+    var bouttonOff = document.getElementById('animationsOff');
+    var bouttonOn = document.getElementById('animationsOn');
+    if(this.animationOFF)
+    {
+      bouttonOff.style.backgroundColor = 'whitesmoke';
+      bouttonOn.style.backgroundColor = '';
+    }
+    else{
+    bouttonOn.style.backgroundColor = 'whitesmoke';
+    bouttonOff.style.backgroundColor = '';
+    }
   }
 
   onCloseCancel(){
     this.thisDialogRef.close();
   }
+
+
+   //Boutons activation animations
+   onAnnim(){
+    // this.animationOFF=false;
+    var bouttonOff = document.getElementById('animationsOff');
+    var bouttonOn = document.getElementById('animationsOn');
+    this.cookieService.delete('animationOFF');
+    bouttonOn.style.backgroundColor = 'white'
+    bouttonOff.style.backgroundColor = '';
+
+  }
+
+  offAnnim(){
+    // this.animationOFF=true;
+    var bouttonOff = document.getElementById('animationsOff');
+    var bouttonOn = document.getElementById('animationsOn');
+    this.cookieService.set('animationOFF','');
+    bouttonOn.style.backgroundColor = '';
+    bouttonOff.style.backgroundColor = 'white'
+
+  }
+
   
 }

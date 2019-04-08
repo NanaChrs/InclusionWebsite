@@ -23,14 +23,9 @@ export class EnteteComponent implements OnInit {
   }
 
   openDialog() {
-    let dialogRef = this.dialog.open(MyDialogComponent, {
+    this.dialog.open(MyDialogComponent, {
       width: '25%',
-      height: '25%',
     });
-
-      dialogRef.afterClosed().subscribe(result => {console.log('Dialog closed: ${result');
-      this.dialogResult = result;
-    })
   }
 
   openMenu() {

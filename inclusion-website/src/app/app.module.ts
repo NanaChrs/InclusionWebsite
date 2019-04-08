@@ -24,6 +24,7 @@ import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { FileSelectDirective } from "ng2-file-upload";
 import { FormsModule } from "@angular/forms";
 import { VueClientComponent } from './vue-client/vue-client.component';
+import { MenuComponent } from './vue-client/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { VueClientComponent } from './vue-client/vue-client.component';
     FooterComponent,
     PhotoUploadComponent,
     FileSelectDirective,
-    VueClientComponent
+    VueClientComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
