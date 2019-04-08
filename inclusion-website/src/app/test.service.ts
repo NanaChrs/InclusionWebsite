@@ -6,6 +6,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class TestService {
   url: string = "https://dev.inclusion-restaurant.fr/Api/Channels";
+  /*Sert a rien */
 
   constructor(private http: HttpClient) { }
 

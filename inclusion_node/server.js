@@ -70,6 +70,7 @@ app.route("/api/pages/:name/:id").delete((req, res) => {
   const name = req.params['name'];
   const id = req.params['id'];
   var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+  fs.unlinkSync(json[name]['photo-content'][id]['source']);
   delete json[name]["photo-content"][id];
   json[name]["photo-content"] = json[name]["photo-content"].filter(function (col) {
     return col.Source != 'Foo';
