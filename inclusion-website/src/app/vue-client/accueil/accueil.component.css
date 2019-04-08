@@ -1,3 +1,7 @@
+#text{
+    font-size: 1em;
+}
+
 #global{
     z-index: -10;
     display: flex;
@@ -35,7 +39,7 @@
     position: absolute;
     font-family: "Calibri";
     letter-spacing: .2em;
-    font-size: 50px;
+    font-size: 3em;
     width: 100%;
     top:15%;
     text-align: center;
