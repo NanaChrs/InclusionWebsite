@@ -7,7 +7,10 @@
             <img src="../../../assets/accueil/2.jpg" alt="Image 2" class="slideshow-image">
             <img src="../../../assets/accueil/3.jpg" alt="Image 3" class="slideshow-image">           
         </div>
-        
+        <div id="slideshow-text">
+            <h1>INCLUSION</h1>
+            <p>TAST YOUR DIFFERENCE!</p>
+        </div>
         <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()"><img src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent"></button>
         <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()"><img src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent"></button>
         <div *ngIf="!animationOFF" id="zoneclicable">
@@ -16,13 +19,17 @@
         </div>
     </div>
     <div>
-        <p>animation</p>
-        <button *ngIf="animationOFF" (click)="onAnnim()">on</button>
-        <button *ngIf="!animationOFF"(click)="offAnnim()">off</button>
+        <h1>ACCESSIBILTE</h1>
+        <p>Animation</p>
+        <button (click)="offAnnim()">off</button>
+        <button  (click)="onAnnim()">on</button>
+        <p>Taille police</p>
+        <button (click)="onDownFontsize()">A-</button>
+        <button (click)="onUpFontsize()">A+</button>
     </div>
     <div id="presentation-restaurant">
         <h1>Présentation du restaurant INCLUSION</h1>
-        <div id="text">
+        <div  class="texttt">
             <p>LA</p>
             <p>ON</p>
             <p>PRESENTE</p>

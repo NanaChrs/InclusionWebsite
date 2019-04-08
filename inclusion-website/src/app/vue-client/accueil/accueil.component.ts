@@ -1,28 +1,56 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
+
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-  
   animationOFF: boolean = this.cookieService.check('animationOFF');
-
-  // const cookieExists: boolean = cookieService.check('animation');
-  i = 0;
+  taillePolice = 1;
   
   //duré d'une photo dans le diapo
   duration = 4;
 
   //hauteur du diaporama
   height = 625;
+
+  i = 0;
   
-  //recupération des element slideshowcontainer et slideshow
+  // recupération des element sur la page internet
   @ViewChild('myslideshowcontainer') slideshowcontainer;
   @ViewChild('myslideshow') slideshow;
+  text;
+
+
+  constructor( private cookieService: CookieService) {  
+  }
+
+  ngOnInit() {
+    if ((this.height)>0){
+      this.setContainerStyle();
+    }
+    this.text = document.getElementsByClassName("texttt")
+    console.log('texte', this.text);  
+
+  }
+
+  ngAfterViewInit(){
+    this.play();
+    // this.checkanim();
+
+  }
+
   
+  
+  checkanim = function(){  
+    console.log('testboucle');  
+    setTimeout(() => {
+      this.checkanim();
+  }, 100);
+  }
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
   setContainerStyle = function(){
@@ -55,7 +83,7 @@ export class AccueilComponent implements OnInit {
   }
 
 
-  //fleches d'animations 
+  // fleches d'animations 
   onNext(){
     this.i++;
     if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
@@ -71,32 +99,40 @@ export class AccueilComponent implements OnInit {
   }
 
 
-  //Boutons activation animations
-  onAnnim(){
-    this.animationOFF=false;
-    this.cookieService.delete( 'animationOFF');
-
-  }
-
+  //Boutons activation animations  
   offAnnim(){
     this.animationOFF=true;
     this.cookieService.set('animationOFF','');
-
+  }
+  
+  onAnnim(){
+    this.animationOFF=false;
+    this.cookieService.delete( 'animationOFF');
   }
 
 
-
-  constructor( private cookieService: CookieService) {  
-  }
-
-  ngOnInit() {
-    if ((this.height)>0){
-      this.setContainerStyle();
+  //Boutons modification taille text
+  onDownFontsize(){
+    if(this.taillePolice>1){
+      this.taillePolice-=0.1;
+      
     }
-    this.play();
+    this.text[0].style.fontSize= (this.taillePolice).toFixed(2)+'em'
+    console.log('taille police', this.text[0].style.fontSize);  
+    
+    // console.log('taillepolice', (this.taillePolice).toFixed(2));
+    // this.cookieService.set('taillePolice', '1');
+  }
+
+  onUpFontsize(){
+    if(this.taillePolice<3){
+      this.taillePolice+=0.1;
+
+    }
+    this.text[0].style.fontSize= (this.taillePolice).toFixed(2)+'em';
+    console.log('taille police', this.text[0].style.fontSize);  
+    // console.log('taillepolice', (this.taillePolice).toFixed(2));
+    // this.cookieService.set('taillePolice','1');
   }
 
 }
-
-
-
