@@ -34,7 +34,7 @@ export class ContentAdminComponent {
 
 
   getPage(): void {
-    this.jsonContentService.getPageByName('/' + this.route.snapshot.paramMap.get('url'))
+    this.jsonContentService.getPageByName(this.route.snapshot.paramMap.get('url'))
       .subscribe((page) => {
         this.url = this.route.snapshot.paramMap.get('url');
         this.pageContent = page;

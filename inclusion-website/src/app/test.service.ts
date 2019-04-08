@@ -5,12 +5,13 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class TestService {
-  url:string= "http://localhost:8080/Api/Channels";
+  url: string = "https://dev.inclusion-restaurant.fr/Api/Channels";
+  /*Sert a rien */
 
   constructor(private http: HttpClient) { }
 
-  getAll(){
+  getAll() {
     return this.http.get<Array<String>>(this.url);
   }
-  
+
 }

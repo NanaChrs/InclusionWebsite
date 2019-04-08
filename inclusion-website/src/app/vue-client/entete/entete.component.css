@@ -1,0 +1,166 @@
+#vecteurmenu
+{
+    display: none;
+}
+
+/*Bloc principal*/
+#header
+{
+    width: 100%;
+    background-color: none;
+    letter-spacing: .2em;
+    font-family: 'Calibri';
+}
+
+#sous_bandeau
+{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#liste_logo
+{
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#bandeau_navigation
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0;
+    background-color: #88181c;    
+}
+
+#icone
+{
+    margin-right: 1%;
+}
+
+#lien
+{
+    cursor: pointer;
+    padding: 5px;
+}
+
+#lien:hover
+{
+    color: #88181c;
+    background-color: whitesmoke;
+}
+/*Partie inférieure du header*/
+#navigation
+{
+    text-align: center;
+    width: 80%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+a
+{
+    text-decoration: none;
+    color:white;
+}
+
+a:hover
+{
+    color: brown;
+}
+
+#logoFacebook:hover, #logoInstagram:hover, #logoTwitter:hover, #logoTripadvisor:hover
+{
+    /*border: 1px solid #631514*/
+    background-color: black;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 1280px)
+{}
+
+@media screen and (max-width: 980px)
+{
+
+}
+
+@media screen and (max-width:736px){
+    #header
+    {
+        position: relative;
+    }
+
+    #bandeau_navigation
+    {
+        display: none;
+    }
+
+    #bloc_image
+    {
+        background-color: #88181c;
+    }
+
+    #vecteurmenu
+    {
+        display: flex;
+        justify-content: space-around;
+        background-color: #88181c;
+        /*position: absolute;
+        top: 25%;
+        right: 0;*/
+    }    
+
+    #lien
+    {
+        list-style-type: none;
+    }
+
+    .lien-liste-telephone
+    {
+        color: black;
+    }
+    
+    #logo_menu_deroulant
+    {
+        display: inline;
+        position: absolute;
+        top: 25%;
+        left: 1%;
+        outline-style: none;
+        border: 2px solid rgb(104, 104, 104);
+        border-radius: 5px;
+        background-color: #88181c;
+        background-image: url("../../../assets/vecteurmenu.png");
+        width: 50px;
+        height: 50px;
+    }
+
+    #navigation_telephone
+    {
+        width: 100%;
+        text-align: center;
+        background-color: #616161;
+        margin: 0;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    #menu_navigation_telephone
+    {
+        display: none;
+        width: 100%;
+        margin-top: 104px;
+        position: absolute;
+    }
+    /*#vecteurmenu:active #navigation_telephone
+    {
+        display: inline;
+    }*/
+}
+
+

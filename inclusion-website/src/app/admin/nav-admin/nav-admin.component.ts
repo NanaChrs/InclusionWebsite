@@ -41,7 +41,9 @@ export class NavAdminComponent implements OnInit {
     //Set class "selected" to the corresponding element
     var url = this.router.url.split('/');
     let doc = document.getElementById(url[url.length - 1]);
-    doc.className = "div-element-menu-selected";
+    if (doc != null) {
+      doc.className = "div-element-menu-selected";
+    }
   }
 
 }

@@ -6,11 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class PhotoUploadService {
-  private UrlPages = "localhost:8000/api/pages/";
-  constructor(private http: HttpClient) {   }
+  // private UrlPages = "https://dev.inclusion-restaurant.fr/api/pages/";
+  private UrlPages: string = "http://localhost:8000/api/pages/";
 
-  sendReq(url: string){
-    const link = url+"/dir";
+  constructor(private http: HttpClient) { }
+
+  sendReq(url: string) {
+    const link = url + "/dir";
     return this.http.get(url);
   }
 }

@@ -8,14 +8,14 @@ import { LoginComponent } from './login/login.component';
 import { TextContentComponent } from './admin/text-content/text-content.component';
 import { PhotoContentComponent } from './admin/photo-content/photo-content.component';
 import { ContentAdminComponent } from './admin/content-admin/content-admin.component';
-import { MyDialogComponent } from './vueclient/my-dialog/my-dialog.component';
-import { FooterComponent } from './vueclient/footer/footer.component';
+import { MyDialogComponent } from './vue-client/my-dialog/my-dialog.component';
+import { FooterComponent } from './vue-client/footer/footer.component';
 import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material';
-import { EnteteComponent } from './vueclient/entete/entete.component';
+import { EnteteComponent } from './vue-client/entete/entete.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { AccueilComponent } from './vueclient/accueil/accueil.component';
+import { AccueilComponent } from './vue-client/accueil/accueil.component';
 import { HttpClientModule } from "@angular/common/http";
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
@@ -23,6 +23,8 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { FileSelectDirective } from "ng2-file-upload";
 import { FormsModule } from "@angular/forms";
+import { VueClientComponent } from './vue-client/vue-client.component';
+import { MenuComponent } from './vue-client/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { FormsModule } from "@angular/forms";
     AccueilComponent,
     FooterComponent,
     PhotoUploadComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    VueClientComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
