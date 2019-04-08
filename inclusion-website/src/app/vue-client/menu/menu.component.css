@@ -1,0 +1,22 @@
+.menu{
+    font-family: 'Calibri';
+    padding: 20px 30px;
+    background-color: #fff2e2;
+    margin: 0;
+    
+}
+.menu p{
+    font-size: 150%;
+    text-align: center;
+}
+.menu ul{
+    list-style-type:none;
+    font-size: 110%;
+    text-align: center
+}
+.otro .forma1, .otro .forma2, .otro .forma3{
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    
+}
