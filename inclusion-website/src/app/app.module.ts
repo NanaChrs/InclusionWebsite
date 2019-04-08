@@ -23,6 +23,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { FileSelectDirective } from "ng2-file-upload";
 import { FormsModule } from "@angular/forms";
+import { VueClientComponent } from './vue-client/vue-client.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FormsModule } from "@angular/forms";
     AccueilComponent,
     FooterComponent,
     PhotoUploadComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    VueClientComponent
   ],
   imports: [
     BrowserModule,
