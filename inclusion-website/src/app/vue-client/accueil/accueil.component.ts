@@ -9,14 +9,14 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AccueilComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check('animationOFF');
-  taillePolice = 1;
-  
+  taillePolice;
   //duré d'une photo dans le diapo
   duration = 4;
 
   //hauteur du diaporama
   height = 625;
 
+  //numero de la photo en cours sur le diapo
   i = 0;
   
   // recupération des element sur la page internet
@@ -29,22 +29,29 @@ export class AccueilComponent implements OnInit {
   }
 
   ngOnInit() {
+    // application de la hauteur du dipoa et la position relative
     if ((this.height)>0){
       this.setContainerStyle();
     }
-    this.text = document.getElementsByClassName("texttt")
+    // recuperation de element de class "text"
+    this.text = document.getElementsByClassName("text")
   }
+
 
   ngAfterViewInit(){
+    // lancement du diapo
     this.play();
-    this.checkanim();
+    // lancement de la fonction permettant de verifier les modifications "accessibilité"
+    this.checkaccess();
   }
 
-  
-  checkanim = function(){ 
+  // fonction permettant de verifier les modifications "accessibilité"
+  checkaccess = function(){ 
     this.animationOFF = this.cookieService.check('animationOFF');
+    this.taillePolice = this.cookieService.get("fontSize");
+    this.text[0].style.fontSize= this.taillePolice+'em';
     setTimeout(() => {
-      this.checkanim();
+      this.checkaccess();
     }, 100);
   }
 
@@ -96,16 +103,16 @@ export class AccueilComponent implements OnInit {
   }
 
 
-  //Boutons activation animations  
-  offAnnim(){
-    this.animationOFF=true;
-    this.cookieService.set('animationOFF','');
-  }
+  // Boutons activation animations  
+  // offAnnim(){
+  //   this.animationOFF=true;
+  //   this.cookieService.set('animationOFF','');
+  // }
   
-  onAnnim(){
-    this.animationOFF=false;
-    this.cookieService.delete( 'animationOFF');
-  }
+  // onAnnim(){
+  //   this.animationOFF=false;
+  //   this.cookieService.delete( 'animationOFF');
+  // }
 
 
   //Boutons modification taille text
