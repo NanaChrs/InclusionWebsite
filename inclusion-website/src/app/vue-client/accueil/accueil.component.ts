@@ -33,24 +33,21 @@ export class AccueilComponent implements OnInit {
       this.setContainerStyle();
     }
     this.text = document.getElementsByClassName("texttt")
-    console.log('texte', this.text);  
-
   }
 
   ngAfterViewInit(){
     this.play();
-    // this.checkanim();
-
+    this.checkanim();
   }
 
   
-  
-  checkanim = function(){  
-    console.log('testboucle');  
+  checkanim = function(){ 
+    this.animationOFF = this.cookieService.check('animationOFF');
     setTimeout(() => {
       this.checkanim();
-  }, 100);
+    }, 100);
   }
+
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
   setContainerStyle = function(){
@@ -61,7 +58,6 @@ export class AccueilComponent implements OnInit {
 
   
   play = function(){
-    this.animationOFF = this.cookieService.check('animationOFF');
     if (!this.animationOFF){ 
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = 'fadeOut';
@@ -117,10 +113,7 @@ export class AccueilComponent implements OnInit {
     if(this.taillePolice>1){
       this.taillePolice-=0.1;
     }
-    this.text[0].style.fontSize= (this.taillePolice).toFixed(2)+'em'
-    console.log('taille police', this.text[0].style.fontSize);  
-    // console.log('taillepolice', (this.taillePolice).toFixed(2));
-    // this.cookieService.set('taillePolice', '1');
+    this.text[0].style.fontSize= (this.taillePolice).toFixed(2)+'em';
   }
 
 
@@ -129,9 +122,5 @@ export class AccueilComponent implements OnInit {
       this.taillePolice+=0.1;
     }
     this.text[0].style.fontSize= (this.taillePolice).toFixed(2)+'em';
-    console.log('taille police', this.text[0].style.fontSize);  
-    // console.log('taillepolice', (this.taillePolice).toFixed(2));
-    // this.cookieService.set('taillePolice','1');
   }
-
 }

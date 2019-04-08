@@ -77,7 +77,6 @@
 
 #zoneclicgauche{
     width: 20%;
-
     z-index: 10000;
 }
 
@@ -87,7 +86,6 @@
 
 #zoneclicdroite{
     width: 20%;
-
     z-index: 10000;  
 }
 

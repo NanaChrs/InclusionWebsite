@@ -2,7 +2,6 @@ import { Component, OnInit, Inject, SimpleChanges, Input, Injectable } from '@an
 import { MatDialogRef } from "@angular/material";
 import { MAT_DIALOG_DATA } from "@angular/material";
 import { CookieService } from 'ngx-cookie-service';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Component({
   selector: 'app-my-dialog',
@@ -38,24 +37,18 @@ export class MyDialogComponent implements OnInit {
 
    //Boutons activation animations
    onAnnim(){
-    // this.animationOFF=false;
     var bouttonOff = document.getElementById('animationsOff');
     var bouttonOn = document.getElementById('animationsOn');
     this.cookieService.delete('animationOFF');
     bouttonOn.style.backgroundColor = 'white'
     bouttonOff.style.backgroundColor = '';
-
   }
 
   offAnnim(){
-    // this.animationOFF=true;
     var bouttonOff = document.getElementById('animationsOff');
     var bouttonOn = document.getElementById('animationsOn');
     this.cookieService.set('animationOFF','');
     bouttonOn.style.backgroundColor = '';
     bouttonOff.style.backgroundColor = 'white'
-
   }
-
-  
 }
