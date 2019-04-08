@@ -33,6 +33,7 @@ export class AccueilComponent implements OnInit {
 
   
   play = function(){
+    this.animationOFF = this.cookieService.check('animationOFF');
     if (!this.animationOFF){ 
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = 'fadeOut';
@@ -84,9 +85,7 @@ export class AccueilComponent implements OnInit {
 
   }
 
-
-
-  constructor( private cookieService: CookieService) {  
+  constructor(private cookieService: CookieService) {  
   }
 
   ngOnInit() {
