@@ -15,11 +15,13 @@
             <div id="zoneclicdroite" (click)="onNext()"></div>
         </div>
     </div>
-    <div id="presentation-restaurant">
-        <h1>Présentation du restaurant INCLUSION</h1>
+    <div>
         <p>animation</p>
         <button *ngIf="animationOFF" (click)="onAnnim()">on</button>
         <button *ngIf="!animationOFF"(click)="offAnnim()">off</button>
+    </div>
+    <div id="presentation-restaurant">
+        <h1>Présentation du restaurant INCLUSION</h1>
         <div id="text">
             <p>LA</p>
             <p>ON</p>
