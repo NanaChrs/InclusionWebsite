@@ -11,23 +11,39 @@ import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class MyDialogComponent implements OnInit {
+  animationOFF: boolean = this.cookieService.check('animationOFF');
+  checkTaillePolice: boolean = this.cookieService.check('fontSize');
+  bouttonOffAnim;
+  bouttonOnAnim;
+
+
+  taillePolice;
+  pasModificationTaillePolice = 0.2;
+
 
   constructor(public thisDialogRef:MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: String, private cookieService: CookieService) { }
-  
-  animationOFF: boolean = this.cookieService.check('animationOFF');
+
 
   ngOnInit() {
-    var bouttonOff = document.getElementById('animationsOff');
-    var bouttonOn = document.getElementById('animationsOn');
+    this.bouttonOffAnim = document.getElementById('animationsOff');
+    this.bouttonOnAnim = document.getElementById('animationsOn');
     if(this.animationOFF)
     {
-      bouttonOff.style.backgroundColor = 'whitesmoke';
-      bouttonOn.style.backgroundColor = '';
+      this.bouttonOffAnim.style.backgroundColor = 'whitesmoke';
+      this.bouttonOnAnim.style.backgroundColor = '';
     }
     else{
-    bouttonOn.style.backgroundColor = 'whitesmoke';
-    bouttonOff.style.backgroundColor = '';
+      this.bouttonOnAnim.style.backgroundColor = 'whitesmoke';
+      this.bouttonOffAnim.style.backgroundColor = '';
     }
+
+    if(!this.checkTaillePolice){
+      this.taillePolice=1;
+    }
+    else{
+      this.taillePolice=+this.cookieService.get("fontSize")
+    }
+
   }
 
   onCloseCancel(){
@@ -37,18 +53,35 @@ export class MyDialogComponent implements OnInit {
 
    //Boutons activation animations
    onAnnim(){
-    var bouttonOff = document.getElementById('animationsOff');
-    var bouttonOn = document.getElementById('animationsOn');
+    this.bouttonOffAnim = document.getElementById('animationsOff');
+    this.bouttonOnAnim = document.getElementById('animationsOn');
     this.cookieService.delete('animationOFF');
-    bouttonOn.style.backgroundColor = 'white'
-    bouttonOff.style.backgroundColor = '';
+    this.bouttonOnAnim.style.backgroundColor = 'white'
+    this.bouttonOffAnim.style.backgroundColor = '';
   }
 
   offAnnim(){
-    var bouttonOff = document.getElementById('animationsOff');
-    var bouttonOn = document.getElementById('animationsOn');
+    this.bouttonOffAnim = document.getElementById('animationsOff');
+    this.bouttonOnAnim = document.getElementById('animationsOn');
     this.cookieService.set('animationOFF','');
-    bouttonOn.style.backgroundColor = '';
-    bouttonOff.style.backgroundColor = 'white'
+    this.bouttonOnAnim.style.backgroundColor = '';
+    this.bouttonOffAnim.style.backgroundColor = 'white'
+  }
+
+  onDownFontsize(){
+    if(this.taillePolice>1){
+      this.taillePolice-=this.pasModificationTaillePolice;
+    }
+    var stock = (this.taillePolice).toFixed(1);
+    this.cookieService.set('fontSize', stock);
+  }
+
+
+  onUpFontsize(){
+    if(this.taillePolice<3){
+      this.taillePolice+=this.pasModificationTaillePolice;
+    }
+    var stock = (this.taillePolice).toFixed(1);
+    this.cookieService.set('fontSize', stock);
   }
 }
