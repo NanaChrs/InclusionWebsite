@@ -4,10 +4,10 @@
         <button id="logo_menu_deroulant" (click)="openMenu()"></button> 
         <div id="menu_navigation_telephone" class="open-close-container">
         <ul id="navigation_telephone">
-            <li id="lien"><a class="lien-liste-telephone" [routerLink]="['/menus']">MENUS</a></li>
-            <li id="lien"><a class="lien-liste-telephone" [routerLink]="['/contact']">CONTACT</a></li>
-            <li id="lien"><a class="lien-liste-telephone" [routerLink]="['/equipe']">L'EQUIPE</a></li>
-            <li id="lien"><a class="lien-liste-telephone" id="accessibilite" (click)="openDialog()">ACCESSIBILITE</a></li>
+            <li id="menustelephone" class="lien-liste-telephone" [routerLink]="['/menus']">MENUS</li>
+            <li id="contactstelephone" class="lien-liste-telephone" [routerLink]="['/contact']">CONTACT</li>
+            <li id="equipetelephone" class="lien-liste-telephone" [routerLink]="['/equipe']">L'EQUIPE</li>
+            <li id="accessibilitetelephone" class="lien-liste-telephone" (click)="openDialog()">ACCESSIBILITE</li>
         </ul>
         </div>
         <div id="bloc_image">
@@ -37,13 +37,17 @@
                         onclick="window.open(this.href); return false;"><img id="logoTripadvisor"
                             alt="logo de trip advisor" src="../../assets/imgHeader/tripadvisor.png" height="30"
                             width="30"></a></li>
+                <!-- <li id="icone"><a href="https://www.ubereats.com"
+                        onclick="window.open(this.href); return false;"><img id="logoTripadvisor"
+                            alt="logo de uber eats" src="../../assets/imgHeader/ubereatsV2.png" height="30"
+                            width="30"></a></li> -->
             </ul>
 
             <ul id="navigation">
-                <li id="lien"><a [routerLink]="['/menus']">MENUS</a></li>
-                <li id="lien"><a [routerLink]="['/contact']">CONTACT</a></li>
-                <li id="lien"><a [routerLink]="['/equipe']">L'EQUIPE</a></li>
-                <li id="lien"><a id="accessibilite" (click)="openDialog()">ACCESSIBILITE</a></li>
+                <li id="menus"  [routerLink]="['/menus']">MENUS</li>
+                <li id="contacts" [routerLink]="['/contact']">CONTACT</li>
+                <li id="equipe" [routerLink]="['/equipe']">L'EQUIPE</li>
+                <li id="lien" id="accessibilite" (click)="openDialog()">ACCESSIBILITE</li>
             </ul>
         </div>
     </div>
