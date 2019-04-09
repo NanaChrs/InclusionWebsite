@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Page } from "../Page/Page";
 import { PageService } from '../Page/page.service';
 import { Router } from '@angular/router';
+import { AuthentificationService } from '../../service/authentification.service';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class NavAdminComponent implements OnInit {
   constructor(
     private pageService: PageService,
     private router: Router,
+    private authentification : AuthentificationService,
   ) { }
 
   ngOnInit() {

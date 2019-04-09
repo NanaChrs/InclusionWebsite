@@ -22,6 +22,7 @@ import { FileSelectDirective } from "ng2-file-upload";
 import { VueClientComponent } from './vue-client/vue-client.component';
 import { MenuComponent } from './vue-client/menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -32,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdminComponent,
     NavAdminComponent,
     LoginComponent,
+    LogoutComponent,
     ContentAdminComponent,
     MyDialogComponent,
     EnteteComponent,
@@ -52,7 +54,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
     ReactiveFormsModule
   ],
   entryComponents: [

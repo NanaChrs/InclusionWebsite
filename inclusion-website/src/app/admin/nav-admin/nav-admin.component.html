@@ -3,3 +3,4 @@
     <a [routerLink]="['/admin/', page.url]">{{page.name}}</a>
   </div>
 </div>
+<a *ngIf="this.authentification.isUserLoggedIn()" [routerLink]="['/logout']" id="logout">LogOut</a>
