@@ -5,8 +5,6 @@ import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { NavAdminComponent } from './admin/nav-admin/nav-admin.component';
 import { LoginComponent } from './login/login.component';
-import { TextContentComponent } from './admin/text-content/text-content.component';
-import { PhotoContentComponent } from './admin/photo-content/photo-content.component';
 import { ContentAdminComponent } from './admin/content-admin/content-admin.component';
 import { MyDialogComponent } from './vue-client/my-dialog/my-dialog.component';
 import { FooterComponent } from './vue-client/footer/footer.component';
@@ -20,7 +18,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { FileSelectDirective } from "ng2-file-upload";
 import { FormsModule } from "@angular/forms";
 import { VueClientComponent } from './vue-client/vue-client.component';
@@ -32,14 +29,11 @@ import { MenuComponent } from './vue-client/menu/menu.component';
     AdminComponent,
     NavAdminComponent,
     LoginComponent,
-    TextContentComponent,
-    PhotoContentComponent,
     ContentAdminComponent,
     MyDialogComponent,
     EnteteComponent,
     AccueilComponent,
     FooterComponent,
-    PhotoUploadComponent,
     FileSelectDirective,
     VueClientComponent,
     MenuComponent
