@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../_models';
 
-export class Login{
+export class Login {
   constructor(
-  ) {}
+  ) { }
 }
 
 @Injectable({
@@ -13,13 +13,14 @@ export class Login{
 export class HttpClientService {
 
   constructor(
-    private httpClient:HttpClient
-  ) { 
-     }
+    private httpClient: HttpClient
+  ) {
+  }
 
-     postLogin(user: User){
-    console.log(Login);
-    return this.httpClient.post<Login[]>('http://localhost:8000/api/login',user);
+  postLogin(user: User) {
+    // console.log(Login);
+    // return this.httpClient.post<Login[]>('https://dev.inclusion-restaurant.fr/api/login', user);
+    return this.httpClient.post<Login[]>('http://localhost:8000/api/login', user);
   }
 
 }

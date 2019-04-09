@@ -32,7 +32,7 @@ export class ContentAdminComponent implements OnInit {
       if (e instanceof NavigationEnd && e.url != "/admin/param") {
         this.getPage();
       }
-      
+
     });
   }
 
@@ -62,7 +62,8 @@ export class ContentAdminComponent implements OnInit {
     const link = this.url + '/' + i;
     this.jsonContentService.deletePageById(link).subscribe(() => {
       console.log("Photo deleted");
-      this.getPage();});
+      this.getPage();
+    });
   }
 
   getIdOfPhoto(url: String): number {
