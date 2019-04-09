@@ -11,20 +11,23 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class EnteteComponent implements OnInit {
-  // text;
-  // taillePolice;
+  checkTaillePolice: boolean = this.cookieService.check('fontSize');
+  text;
+  taillePolice;
 
-
+  dialogResult = "";
   isOpen = true;
  
   toggle() {
     this.isOpen = !this.isOpen;
   }
+
   constructor(public dialog: MatDialog,private router: Router,  private cookieService: CookieService) {}
-  dialogResult = "";
+ 
 
   ngOnInit() {
-    // this.text = document.getElementsByClassName("text")
+    this.text = document.getElementsByClassName("text")
+    this.taillePolice=+this.cookieService.get("fontSize")
   }
 
 
@@ -36,7 +39,11 @@ export class EnteteComponent implements OnInit {
       idBalise.style.backgroundColor = 'whitesmoke';
       idBalise.style.color = 'brown';
     }
-    // this.checkaccess();
+    if(this.checkTaillePolice){
+      for (var y =0; y<this.text.length;y++){
+        this.text[y].style.fontSize= this.taillePolice+'em';
+      }
+    }
   }
 
   openDialog() {
