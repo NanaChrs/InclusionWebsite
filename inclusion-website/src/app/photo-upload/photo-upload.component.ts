@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FileUploader, FileSelectDirective } from "ng2-file-upload";
 import { ActivatedRoute } from '@angular/router';
 import { PhotoUploadService } from "./photo-upload.service";
@@ -16,7 +16,8 @@ export class PhotoUploadComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private photoService: PhotoUploadService
+    private photoService: PhotoUploadService,
+    
   ) {
   }
 
@@ -27,7 +28,9 @@ export class PhotoUploadComponent implements OnInit {
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
       console.log('FileUpload:uploaded:', item, status, response);
       alert('File uploaded successfully');
+
     };
+
   }
 
 

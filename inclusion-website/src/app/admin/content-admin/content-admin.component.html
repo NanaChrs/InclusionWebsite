@@ -9,7 +9,7 @@
 
 
 <h1 style="margin-left:30%">Photos</h1>
-<div id="global-container-img">
+<div id="global-container-img" (editedEmitter)="getPage()">
 
   <div class="simple-container-img" *ngFor="let item of imageContent">
     <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)">
@@ -19,7 +19,14 @@
     </div>
 
   </div>
-  <app-photo-upload></app-photo-upload>
+
+  <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+<button type="button" class="btn btn-success btn-s" 
+  (click)="upload()" 
+  [disabled]="!uploader.getNotUploadedItems().length" >
+      Upload an Image
+</button>
 </div>
 
 <button class="save-button">Save</button>

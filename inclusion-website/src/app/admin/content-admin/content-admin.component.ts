@@ -1,11 +1,11 @@
-import { Component, OnChanges, SimpleChanges, Input, OnInit } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, Input, OnInit, ChangeDetectorRef } from '@angular/core';
 import { NavAdminComponent } from "../nav-admin/nav-admin.component";
 import { ActivatedRoute, Router, RouterEvent, NavigationEnd } from '@angular/router';
 import { JsoncontentService } from "./jsoncontent.service";
 import { filter } from 'rxjs/operators';
-import { TextContentComponent } from '../text-content/text-content.component';
 import { CommonModule } from "@angular/common";
 import { jsonpCallbackContext } from '@angular/common/http/src/module';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-content-admin',
@@ -17,6 +17,10 @@ export class ContentAdminComponent implements OnInit {
   url: String;
   textContent: String[];
   imageContent: String[];
+  public uploader: FileUploader;
+  // private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
+  private uploadURL: string = "http://localhost:8000/api/pages/";
+
 
 
   constructor(
@@ -28,14 +32,20 @@ export class ContentAdminComponent implements OnInit {
       if (e instanceof NavigationEnd && e.url != "/admin/param") {
         this.getPage();
       }
-
+      
     });
   }
 
   ngOnInit() {
-
+    this.uploadURL += this.route.snapshot.paramMap.get('url') + "/upload";
+    this.uploader = new FileUploader({ url: this.uploadURL, itemAlias: 'photo' });
+    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+      console.log('FileUpload:uploaded:', item, status, response);
+      alert('File uploaded successfully');
+      this.getPage();
+    };
   }
-
 
   getPage(): void {
     this.jsonContentService.getPageByName(this.route.snapshot.paramMap.get('url'))
@@ -50,7 +60,9 @@ export class ContentAdminComponent implements OnInit {
   onClickSuppr(url: string) {
     var i = this.getIdOfPhoto(url);
     const link = this.url + '/' + i;
-    this.jsonContentService.deletePageById(link).subscribe(() => console.log("Photo deleted"));
+    this.jsonContentService.deletePageById(link).subscribe(() => {
+      console.log("Photo deleted");
+      this.getPage();});
   }
 
   getIdOfPhoto(url: String): number {
@@ -61,6 +73,11 @@ export class ContentAdminComponent implements OnInit {
         }
       }
     }
+  }
+
+  upload(): void {
+    this.uploader.uploadAll();
+    
   }
 
 }
