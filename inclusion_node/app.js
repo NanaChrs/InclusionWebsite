@@ -4,8 +4,10 @@ const BodyParser = require("body-parser");
 const cors = require('cors');
 const multer = require("multer");
 const path = require("path");
+var crypto = require('crypto');
 
 const app = express();
+
 
 app.use(express.static('./public'));
 
@@ -102,7 +104,39 @@ app.post("/api/pages/:name/upload", upload.single('photo'), (req, res) => {
             success: true
         })
     }
-})
+});
+
+app.route('/api/login').post((req, res) => {
+    console.log(req.body);
+    // On définit notre algorithme de cryptage
+    var algorithm = 'aes256';
+    // Notre clé de chiffrement, elle est souvent générée aléatoirement mais elle doit être la même pour le décryptage
+    var cle = 'l5JmP+G0/1zB%v$fd^vf^d$^é"$rnboàç_é"r8B8?2?2pcqGcL^3fe815c5';
+    // console.log(cle);
+    // //cryptage
+    // console.log(req.body['username']);
+    // console.log(req.body['password']);
+    var cipher = crypto.createCipher(algorithm, cle);
+    var utilisateur = cipher.update(req.body['username'], 'utf8', 'hex');
+    // console.log(utilisateur);
+    utilisateur += cipher.final('hex');
+    // console.log(utilisateur);
+    var cipher = crypto.createCipher(algorithm, cle);
+    var mdp = cipher.update(req.body['password'], 'utf8', 'hex');
+    mdp += cipher.final('hex');
+    // console.log(cle);
+    // console.log(mdp == '79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371');
+    // console.log(utilisateur == 'a82bdc731e23568916a7647f3f16d00a');
+    if ((mdp == '79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371') && (utilisateur == 'a82bdc731e23568916a7647f3f16d00a')) {
+        // console.log("Bijour");
+        res.send(201, true);
+    }
+    else {
+        // console.log("aurevoir");
+        res.send(201, false);
+    }
+
+});
 
 app.all('/*', function (req, res) {
     res.sendfile('public/index.html');

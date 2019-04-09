@@ -10,12 +10,12 @@ import { User } from '../_models';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private username : string;
+  private username: string;
   private password: string;
   private user: User = new User();
   private invalidLogin = false
 
-  constructor(private router: Router,private http : HttpClientService,
+  constructor(private router: Router, private http: HttpClientService,
     private loginservice: AuthentificationService) { }
 
 
@@ -25,14 +25,13 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     this.user.password = this.password;
     this.user.username = this.username;
-    this.http.postLogin(this.user).subscribe((e) => 
-    {
-      if (e){
+    this.http.postLogin(this.user).subscribe((e) => {
+      if (e) {
         this.router.navigate(['/admin']);
         sessionStorage.setItem('username', this.user.username);
         this.invalidLogin = false;
       }
-      else{
+      else {
         this.invalidLogin = true;
       };
       console.log(e);
