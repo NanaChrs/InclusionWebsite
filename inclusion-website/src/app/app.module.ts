@@ -18,7 +18,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { FileSelectDirective } from "ng2-file-upload";
 import { FormsModule } from "@angular/forms";
 import { VueClientComponent } from './vue-client/vue-client.component';
@@ -35,7 +34,6 @@ import { MenuComponent } from './vue-client/menu/menu.component';
     EnteteComponent,
     AccueilComponent,
     FooterComponent,
-    PhotoUploadComponent,
     FileSelectDirective,
     VueClientComponent,
     MenuComponent
