@@ -52,6 +52,7 @@
     outline-style: none;
 }
 
+
 #lien:hover, #accessibilite:hover, #menus:hover, #contacts:hover, #equipe:hover
 {
     color: #88181c;
@@ -69,7 +70,7 @@
     justify-content: space-between;
 }
 
-a
+/* a
 {
     text-decoration: none;
     color:white;
@@ -78,9 +79,15 @@ a
 a:hover
 {
     color: brown;
+} */
+
+#logoUber
+{
+    border-radius: 8px;
+    border: 1px solid whitesmoke;
 }
 
-#logoFacebook:hover, #logoInstagram:hover, #logoTwitter:hover, #logoTripadvisor:hover
+#logoFacebook:hover, #logoInstagram:hover, #logoTwitter:hover, #logoTripadvisor:hover, #logoUber:hover
 {
     /*border: 1px solid #631514*/
     background-color: black;
