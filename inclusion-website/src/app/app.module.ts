@@ -19,10 +19,14 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { FileSelectDirective } from "ng2-file-upload";
-import { FormsModule } from "@angular/forms";
 import { VueClientComponent } from './vue-client/vue-client.component';
 import { MenuComponent } from './vue-client/menu/menu.component';
 import { MentionsLegalesComponent } from './vue-client/mentions-legales/mentions-legales.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import { MentionsLegalesComponent } from './vue-client/mentions-legales/mentions
     AdminComponent,
     NavAdminComponent,
     LoginComponent,
+    LogoutComponent,
     ContentAdminComponent,
     MyDialogComponent,
     EnteteComponent,
@@ -51,13 +56,15 @@ import { MentionsLegalesComponent } from './vue-client/mentions-legales/mentions
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     MyDialogComponent,
   ],
 
   exports: [
+    ReactiveFormsModule
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }, CookieService],
   bootstrap: [AppComponent]
