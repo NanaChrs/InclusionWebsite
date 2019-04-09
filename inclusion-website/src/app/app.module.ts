@@ -22,6 +22,7 @@ import { FileSelectDirective } from "ng2-file-upload";
 import { FormsModule } from "@angular/forms";
 import { VueClientComponent } from './vue-client/vue-client.component';
 import { MenuComponent } from './vue-client/menu/menu.component';
+import { MentionsLegalesComponent } from './vue-client/mentions-legales/mentions-legales.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MenuComponent } from './vue-client/menu/menu.component';
     FooterComponent,
     FileSelectDirective,
     VueClientComponent,
-    MenuComponent
+    MenuComponent,
+    MentionsLegalesComponent
   ],
   imports: [
     BrowserModule,
