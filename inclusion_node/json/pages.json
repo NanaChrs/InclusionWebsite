@@ -14,9 +14,7 @@
   },
   "footer": {
     "name": "Footer",
-    "text-content": {
-      "footer": []
-    }
+    "text-content": [[]]
   },
   "carte": {
     "name": "Menu",
@@ -41,20 +39,16 @@
   },
   "equipe": {
     "name": "L'équipe",
-    "text-content": { "equipe": [] },
+    "text-content": { [[]] },
     "photo-content": []
   },
   "contact": {
     "name": "Contact",
-    "text-content": {
-      "contact": []
-    },
+    "text-content": [[]],
     "photo-content": []
   },
   "header": {
     "name": "Header",
-    "text-content": {
-      "nav": []
-    }
+    "text-content": [[]]
   }
 }
