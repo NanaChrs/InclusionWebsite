@@ -1,32 +1,43 @@
 <app-nav-admin></app-nav-admin>
 
-<div class="formText" *ngFor="let text of textContent">
-  <h1>{{text.emplacement}}</h1>
-  <mat-form-field class="textContent">
-    <textarea matInput placeholder="Contenu" value="{{text.contenu}}"></textarea>
-  </mat-form-field>
+<div class="formText" *ngFor="let item of textContent">
+  <p>{{ item }}</p>
+  <div *ngFor="let text of item">
+    <h1>{{ text.emplacement }}</h1>
+    <mat-form-field class="textContent">
+      <textarea
+        matInput
+        placeholder="Contenu"
+        value="{{ text.contenu }}"
+      ></textarea>
+    </mat-form-field>
+  </div>
 </div>
-
 
 <h1 style="margin-left:30%">Photos</h1>
 <div id="global-container-img" (editedEmitter)="getPage()">
-
   <div class="simple-container-img" *ngFor="let item of imageContent">
-    <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)">
+    <img
+      class="img-croix-rouge"
+      src="../../assets/img/croix_rouge.png"
+      (click)="onClickSuppr(item.source)"
+    />
     <div class="img-text-container-img">
-      <img class="img-modif" src="{{item.source}}" alt="">
-      <input type="text" value="{{item.alt}}">
+      <img class="img-modif" src="{{ item.source }}" alt="" />
+      <input type="text" value="{{ item.alt }}" />
     </div>
-
   </div>
 
   <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
 
-<button type="button" class="btn btn-success btn-s" 
-  (click)="upload()" 
-  [disabled]="!uploader.getNotUploadedItems().length" >
-      Upload an Image
-</button>
+  <button
+    type="button"
+    class="btn btn-success btn-s"
+    (click)="upload()"
+    [disabled]="!uploader.getNotUploadedItems().length"
+  >
+    Upload an Image
+  </button>
 </div>
 
 <button class="save-button">Save</button>

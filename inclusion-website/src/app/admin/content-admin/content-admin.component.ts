@@ -54,6 +54,7 @@ export class ContentAdminComponent implements OnInit {
         this.pageContent = page;
         this.textContent = this.pageContent["text-content"];
         this.imageContent = this.pageContent["photo-content"];
+        console.log(this.textContent);
       });
   }
 

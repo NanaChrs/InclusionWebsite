@@ -1,108 +1,58 @@
 {
-    "accueil": {
-        "text-content": [
-            {
-                "emplacement": "Titre1",
-                "contenu": "Blablablabla"
-            },
-            {
-                "emplacement": "Titre2",
-                "contenu": "Blablablabla"
-            }
-        ],
-        "photo-content": [
-            {
-                "source": "assets\\accueil\\photo-1554802879238.jpg",
-                "alt": "3.jpg"
-            },
-            {
-                "source": "assets\\accueil\\photo-1554803048171.png",
-                "alt": "fleche-droite.png"
-            },
-            {
-                "source": "assets\\accueil\\photo-1554803328970.jpg",
-                "alt": "1.jpg"
-            }
-        ]
-    },
-    "footer": {
-        "name": "Footer",
-        "text-content": "[]"
-    },
-    "menu": {
-        "name": "Menu",
-        "text-content": {
-            "titreEntree": "Titre entrées",
-            "entrees": [
-                {
-                    "contenu": "La première entrée"
-                },
-                {
-                    "contenu": "La deuxième entrée"
-                },
-                {
-                    "contenu": "La troisième entrée"
-                }
-            ],
-            "titrePlat": "Titre Plats",
-            "plats": [
-                {
-                    "contenu": "Le premier plat"
-                },
-                {
-                    "contenu": "Le deuxième plat"
-                },
-                {
-                    "contenu": "Le troisième plat"
-                }
-            ],
-            "titreDessert": "Titre Dessert",
-            "desserts": [
-                {
-                    "contenu": "Le premier dessert"
-                },
-                {
-                    "contenu": "Le deuxième dessert"
-                },
-                {
-                    "contenu": "Le troisième dessert"
-                }
-            ],
-            "titreFormules": "Titre Formules",
-            "formules": [
-                {
-                    "titre": "Formule 1",
-                    "contenu": "La première formule"
-                },
-                {
-                    "titre": "Formule 2",
-                    "contenu": "La deuxième formule"
-                },
-                {
-                    "titre": "Formule 3",
-                    "contenu": "La troisième formule"
-                }
-            ]
-        },
-        "photo-content": "[]"
-    },
-    "equipe": {
-        "name": "L'équipe",
-        "text-content": "[]",
-        "photo-content": "[]"
-    },
-    "carte": {
-        "name": "Carte",
-        "text-content": "[]",
-        "photo-content": "[]"
-    },
-    "contact": {
-        "name": "Contact",
-        "text-content": "[]",
-        "photo-content": "[]"
-    },
-    "header": {
-        "name": "Header",
-        "text-content": "[]"
+  "accueil": {
+    "name": "Accueil",
+    "text-content": [
+      { "emplacement": "Titre1", "contenu": "Blablablabla" },
+      { "emplacement": "Titre2", "contenu": "Blablablabla" }
+    ],
+    "photo-content": [
+      { "source": "assets\\accueil\\photo-1554802879238.jpg", "alt": "3.jpg" },
+      { "source": "assets\\accueil\\photo-1554803328970.jpg", "alt": "1.jpg" }
+    ]
+  },
+  "footer": {
+    "name": "Footer",
+    "text-content": {
+      "footer": []
     }
+  },
+  "carte": {
+    "name": "Menu",
+    "text-content": [
+      [
+        { "contenu": "La première entrée" },
+        { "contenu": "La deuxième entrée" },
+        { "contenu": "La troisième entrée" }
+      ],
+      [
+        { "contenu": "Le premier plat" },
+        { "contenu": "Le deuxième plat" },
+        { "contenu": "Le troisième plat" }
+      ],
+      [
+        { "contenu": "Le premier dessert" },
+        { "contenu": "Le deuxième dessert" },
+        { "contenu": "Le troisième dessert" }
+      ]
+    ],
+    "photo-content": []
+  },
+  "equipe": {
+    "name": "L'équipe",
+    "text-content": { "equipe": [] },
+    "photo-content": []
+  },
+  "contact": {
+    "name": "Contact",
+    "text-content": {
+      "contact": []
+    },
+    "photo-content": []
+  },
+  "header": {
+    "name": "Header",
+    "text-content": {
+      "nav": []
+    }
+  }
 }
