@@ -49,7 +49,11 @@ export class AccueilComponent implements OnInit {
   checkaccess = function(){ 
     this.animationOFF = this.cookieService.check('animationOFF');
     this.taillePolice = this.cookieService.get("fontSize");
+    // for (var y =0; y<this.text.lenght;y++){
+    //       this.text[y].style.fontSize= this.taillePolice+'em';
+    // }
     this.text[0].style.fontSize= this.taillePolice+'em';
+
     setTimeout(() => {
       this.checkaccess();
     }, 100);
@@ -102,32 +106,4 @@ export class AccueilComponent implements OnInit {
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
-
-  // Boutons activation animations  
-  // offAnnim(){
-  //   this.animationOFF=true;
-  //   this.cookieService.set('animationOFF','');
-  // }
-  
-  // onAnnim(){
-  //   this.animationOFF=false;
-  //   this.cookieService.delete( 'animationOFF');
-  // }
-
-
-  //Boutons modification taille text
-  onDownFontsize(){
-    if(this.taillePolice>1){
-      this.taillePolice-=0.1;
-    }
-    this.text[0].style.fontSize= (this.taillePolice).toFixed(2)+'em';
-  }
-
-
-  onUpFontsize(){
-    if(this.taillePolice<3){
-      this.taillePolice+=0.1;
-    }
-    this.text[0].style.fontSize= (this.taillePolice).toFixed(2)+'em';
-  }
 }

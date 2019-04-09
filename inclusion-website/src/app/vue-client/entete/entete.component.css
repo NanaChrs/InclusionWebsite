@@ -6,6 +6,8 @@
 /*Bloc principal*/
 #header
 {
+    /* z-index: 10000;
+    position: fixed; */
     width: 100%;
     background-color: none;
     letter-spacing: .2em;
@@ -114,9 +116,6 @@ a:hover
         display: flex;
         justify-content: space-around;
         background-color: #88181c;
-        /*position: absolute;
-        top: 25%;
-        right: 0;*/
     }    
 
     #lien, #accessibilite, #menus, #contacts, #equipe,
@@ -138,7 +137,6 @@ a:hover
 
     .lien-liste-telephone
     {
-        /* font-size: 3em; */
         color: black;
     }
     

@@ -8,7 +8,7 @@
     padding: 0;
 }
 
-#taille_texte, #animationsOn, #animationsOff
+#btnSizeDown, #btnSizeUp, #animationsOn, #animationsOff
 {
     cursor: pointer;
     margin: 3px;
@@ -30,23 +30,12 @@
     outline-style: none;
 }
 
-#taille_texte:focus
+#btnSizeDown:active, #btnSizeUp:active
 {
     background-color: whitesmoke;
     border: none;
 }
 
-#animationsOn:focus
-{
-    background-color: whitesmoke;
-    border: none;
-}
-
-#animationsOff:focus
-{
-    background-color: whitesmoke;
-    border: none;
-}
 
 #titre_popup
 {
