@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AccueilComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check('animationOFF');
-  taillePolice;
+
   //duré d'une photo dans le diapo
   duration = 4;
 
@@ -22,7 +22,6 @@ export class AccueilComponent implements OnInit {
   // recupération des element sur la page internet
   @ViewChild('myslideshowcontainer') slideshowcontainer;
   @ViewChild('myslideshow') slideshow;
-  text;
 
 
   constructor( private cookieService: CookieService) {  
@@ -33,8 +32,6 @@ export class AccueilComponent implements OnInit {
     if ((this.height)>0){
       this.setContainerStyle();
     }
-    // recuperation de element de class "text"
-    this.text = document.getElementsByClassName("text")
   }
 
 
@@ -48,12 +45,6 @@ export class AccueilComponent implements OnInit {
   // fonction permettant de verifier les modifications "accessibilité"
   checkaccess = function(){ 
     this.animationOFF = this.cookieService.check('animationOFF');
-    this.taillePolice = this.cookieService.get("fontSize");
-    // for (var y =0; y<this.text.lenght;y++){
-    //       this.text[y].style.fontSize= this.taillePolice+'em';
-    // }
-    this.text[0].style.fontSize= this.taillePolice+'em';
-
     setTimeout(() => {
       this.checkaccess();
     }, 100);

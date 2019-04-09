@@ -1,4 +1,10 @@
 <app-entete></app-entete>
+<div class="text">
+  <menu class="menu">
+    <div class="foto">
+      <p>foto</p>
+    </div>
+    <hr>
 
 <menu class="menu" *ngIf="textContent">
   <div class="foto">
@@ -35,9 +41,23 @@
     <div class="forma" *ngFor="let formule of textContent.formules">
       <p>{{formule.titre}}</p>
       <p>{{formule.contenu}}</p>
+
     </div>
+    <hr>
 
-  </div>
-</menu>
+    <div class="otro">
+      <p>otro</p>
+      <div class="forma1">
+        <p>forma1</p>
+      </div>
+      <div class="forma2">
+        <p>forma2</p>
+      </div>
+      <div class="forma3">
+        <p>forma3</p>
+      </div>
 
+    </div>
+  </menu>
+</div>
 <app-footer></app-footer>
