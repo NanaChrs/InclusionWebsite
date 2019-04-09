@@ -13,7 +13,7 @@ import { AuthGaurdService } from './service/auth-guard.service';
 const routes: Routes = [
   { path: "accueil", component: AccueilComponent, pathMatch: 'full' },
   { path: "menus", component: MenuComponent, pathMatch: 'full' },
-  { path: "admin/:url", component: ContentAdminComponent, pathMatch: 'full' },
+  { path: "admin/:url", component: ContentAdminComponent, pathMatch: 'full' ,canActivate:[AuthGaurdService]},
   { path: "admin", component: AdminComponent, pathMatch: 'full' ,canActivate:[AuthGaurdService]},
   { path: "login", component: LoginComponent },
   { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService] },
