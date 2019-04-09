@@ -77,7 +77,7 @@ export class ContentAdminComponent implements OnInit {
 
   upload(): void {
     this.uploader.uploadAll();
-    
+    this.getPage();
   }
 
 }

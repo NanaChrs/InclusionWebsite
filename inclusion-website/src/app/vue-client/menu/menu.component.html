@@ -6,30 +6,42 @@
     </div>
     <hr>
 
-    <div class="entrees">
-      <p>LES ENTRÉES</p>
-      <ul>
-        <li>entrada 1</li>
-        <li>entrada 2</li>
-      </ul>
-    </div>
-    <hr>
+<menu class="menu" *ngIf="textContent">
+  <div class="foto">
+    <p>foto</p>
+  </div>
+  <hr>
 
-    <div class="plats">
-      <p>LE PLATS</p>
-      <ul>
-        <li>plat 1</li>
-        <li>plat 2</li>
-      </ul>
-    </div>
-    <hr>
+  <div class="entrees">
+    <p>{{textContent.titreEntree}}</p>
+    <ul>
+      <li *ngFor="let entree of textContent.entrees">{{entree.contenu}}</li>
+    </ul>
+  </div>
+  <hr>
 
-    <div class="desserts">
-      <p>LES DESSERTS</p>
-      <ul>
-        <li>dessert 1</li>
-        <li>dessert 2</li>
-      </ul>
+  <div class="plats">
+    <p>{{textContent.titrePlat}}</p>
+    <ul>
+      <li *ngFor="let plat of textContent.plats">{{plat.contenu}}</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="desserts">
+    <p>{{textContent.titreDessert}}</p>
+    <ul>
+      <li *ngFor="let dessert of textContent.desserts">{{dessert.contenu}}</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="otro">
+    <p>{{textContent.titreFormule}}</p>
+    <div class="forma" *ngFor="let formule of textContent.formules">
+      <p>{{formule.titre}}</p>
+      <p>{{formule.contenu}}</p>
+
     </div>
     <hr>
 
