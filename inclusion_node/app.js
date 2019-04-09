@@ -19,7 +19,7 @@ let upload = multer({
         },
         filename: (req, file, callback) => {
             //originalname is the uploaded file's name with extn
-            callback(null, file.originalname);
+            callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
         }
     })
 });
