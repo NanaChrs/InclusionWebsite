@@ -14,7 +14,7 @@
     font-size: 110%;
     text-align: center
 }
-.otro .forma1, .otro .forma2, .otro .forma3{
+.otro .forma{
     display: inline-block;
     vertical-align: top;
     width: 30%;
