@@ -87,7 +87,7 @@ export class MyDialogComponent implements OnInit {
   }
 
   onUpFontsize(){
-    if(this.taillePolice<3){
+    if(this.taillePolice<2){
       this.taillePolice+=this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);
