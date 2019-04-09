@@ -17,7 +17,8 @@ export class MyDialogComponent implements OnInit {
   bouttonOnAnim;
 
 
-  taillePolice;
+  taillePolice = 1;
+  text;
   pasModificationTaillePolice = 0.2;
 
 
@@ -43,7 +44,11 @@ export class MyDialogComponent implements OnInit {
     else{
       this.taillePolice=+this.cookieService.get("fontSize")
     }
+    this.text = document.getElementsByClassName("text")
+  }
 
+  ngAfterViewInit() {
+    this.text = document.getElementsByClassName("text")
   }
 
   onCloseCancel(){
@@ -68,20 +73,27 @@ export class MyDialogComponent implements OnInit {
     this.bouttonOffAnim.style.backgroundColor = 'white'
   }
 
+
+  //Boutons augmentation/diminution taille text
   onDownFontsize(){
     if(this.taillePolice>1){
       this.taillePolice-=this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);
+    for (var y =0; y<this.text.length;y++){
+      this.text[y].style.fontSize= stock+'em';
+    }
     this.cookieService.set('fontSize', stock);
   }
 
-
   onUpFontsize(){
-    if(this.taillePolice<3){
+    if(this.taillePolice<2){
       this.taillePolice+=this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);
+    for (var y =0; y<this.text.length;y++){
+      this.text[y].style.fontSize= stock+'em';
+    }
     this.cookieService.set('fontSize', stock);
   }
 }
