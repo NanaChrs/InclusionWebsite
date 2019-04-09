@@ -1,7 +1,6 @@
 <app-nav-admin></app-nav-admin>
 
-<div class="formText" *ngFor="let item of textContent">
-  <p>{{ item }}</p>
+<div class="formText" *ngFor="let item of textContent; let i = index">
   <div *ngFor="let text of item">
     <h1>{{ text.emplacement }}</h1>
     <mat-form-field class="textContent">

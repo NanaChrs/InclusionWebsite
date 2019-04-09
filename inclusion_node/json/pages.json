@@ -2,8 +2,10 @@
   "accueil": {
     "name": "Accueil",
     "text-content": [
-      { "emplacement": "Titre1", "contenu": "Blablablabla" },
-      { "emplacement": "Titre2", "contenu": "Blablablabla" }
+      [
+        { "emplacement": "Titre1", "contenu": "Blablablabla" },
+        { "emplacement": "Titre2", "contenu": "Blablablabla" }
+      ]
     ],
     "photo-content": [
       { "source": "assets\\accueil\\photo-1554802879238.jpg", "alt": "3.jpg" },
