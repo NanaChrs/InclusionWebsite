@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MyDialogComponent } from '../my-dialog/my-dialog.component';
+import { Router } from "@angular/router";
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -10,16 +11,27 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 
 export class EnteteComponent implements OnInit {
-
+  
   isOpen = true;
  
   toggle() {
     this.isOpen = !this.isOpen;
   }
-  constructor(public dialog: MatDialog) {}
- 
+  constructor(public dialog: MatDialog,private router: Router) {}
   dialogResult = "";
+
   ngOnInit() {
+
+  }
+
+  ngAfterViewInit() {
+    var path = this.router.url;
+    var chemin = path.substr(1);
+    var idBalise = document.getElementById(chemin);
+    if (idBalise != null) {
+    idBalise.style.backgroundColor = 'whitesmoke';
+    idBalise.style.color = 'brown';
+    }
   }
 
   openDialog() {
