@@ -42,17 +42,21 @@
     margin-right: 1%;
 }
 
-#lien
+#lien, #accessibilite, #menus, #contacts, #equipe
 {
+    color: white;
     cursor: pointer;
     padding: 5px;
+    outline-style: none;
 }
 
-#lien:hover
+#lien:hover, #accessibilite:hover, #menus:hover, #contacts:hover, #equipe:hover
 {
     color: #88181c;
     background-color: whitesmoke;
+    outline-style: none;
 }
+
 /*Partie inférieure du header*/
 #navigation
 {
@@ -115,13 +119,26 @@ a:hover
         right: 0;*/
     }    
 
-    #lien
+    #lien, #accessibilite, #menus, #contacts, #equipe,
+    #menustelephone, #contactstelephone, #equipetelephone, #accessibilitetelephone
     {
-        list-style-type: none;
+        color: black;
+        cursor: pointer;
+        padding: 5px;
+        outline-style: none;
+    }
+
+    #menustelephone:hover, #contactstelephone:hover, #equipetelephone:hover, #accessibilitetelephone:hover
+    {
+        cursor: pointer;
+        color: black;
+        background-color: whitesmoke;
+        outline-style: none;
     }
 
     .lien-liste-telephone
     {
+        /* font-size: 3em; */
         color: black;
     }
     
@@ -152,15 +169,13 @@ a:hover
 
     #menu_navigation_telephone
     {
+        z-index: 100;
         display: none;
         width: 100%;
-        margin-top: 104px;
+        margin-top: 104px; 
         position: absolute;
     }
-    /*#vecteurmenu:active #navigation_telephone
-    {
-        display: inline;
-    }*/
+    
 }
 
 
