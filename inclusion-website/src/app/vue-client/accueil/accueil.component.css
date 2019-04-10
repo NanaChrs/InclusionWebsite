@@ -56,15 +56,12 @@
     position: absolute;
     font-family: "Calibri";
     letter-spacing: .2em;
-    font-size: 2em;
+    font-size: 1.5em;
     width: 100%;
     top:15%;
     text-align: center;
     }
 }
-
-
-
 
 #fleche-gauche{
     top: 45%;
@@ -116,8 +113,15 @@
 
 #presentation-restaurant{
     font-family: "Calibri";
+    margin: 2% 10% 2% 10%;
+}
+
+#presentation-restaurant p{
+    text-align: center;
+    margin: 5%;
 }
 
 h1{
     text-align: center;
 }
+
