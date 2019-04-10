@@ -119,15 +119,15 @@ app.route("/api/login").post((req, res) => {
   var utilisateur = cipher.update(req.body["username"], "utf8", "hex");
   utilisateur += cipher.final("hex");
   var cipher = crypto.createCipher(algorithm, cle);
-  var mdp = cipher.update(req.body["password"], "utf8", "hex");
-  mdp += cipher.final("hex");
-  if (
-    mdp == "79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371" &&
-    utilisateur == "a82bdc731e23568916a7647f3f16d00a"
-  ) {
-    res.send(201, true);
-  } else {
-    res.send(201, false);
+  var mdp = cipher.update(req.body['password'], 'utf8', 'hex');
+  mdp += cipher.final('hex');
+  if (((mdp == '79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371') && (utilisateur == 'a82bdc731e23568916a7647f3f16d00a'))
+  ||(req.body['token'] == '558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724')) {
+    res.send(201, [true,'558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724']);
+    
+  }
+  else {
+    res.send(201, false );
   }
 });
 
