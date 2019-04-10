@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JsoncontentService } from '../../admin/content-admin/jsoncontent.service';
 
 @Component({
   selector: 'app-equipe',
@@ -7,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquipeComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
-
-  }
 
   alt : "photo d'identité de ";
   public content = [
@@ -40,5 +37,37 @@ export class EquipeComponent implements OnInit {
   fonction:"Meuf cool"
 }]
 
+
+ pageContent: String;
+ textContent: String[];
+ imageContent: String[];
+ equipe: String[][];
+ descriptionGlobale: String;
+
+ constructor(private jsonContentService: JsoncontentService) {
+
+ }
+
+ ngOnInit() {
+   this.jsonContentService.getPageByName('equipe').subscribe((page) => {
+     this.pageContent = page;
+     this.textContent = this.pageContent["text-content"];
+     this.imageContent = this.pageContent["photo-content"];
+     for (let i = 0; i < this.textContent.length; i++) {
+       if (i = 0) {
+         this.descriptionGlobale = this.textContent[i];
+       }
+      else {
+       for (let y = 0; y < 2; y++) {
+         this.equipe[i][y]=this.textContent[i];
+       this.equipe[i][y]=this.textContent[i];
+       }
+      }
+       
+       
+     }
+     console.log(this.pageContent);
+   });
+ }
 
 }

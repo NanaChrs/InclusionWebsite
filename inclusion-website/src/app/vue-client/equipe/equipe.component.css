@@ -1,6 +1,9 @@
-#content
+.photo
 {
-
+    overflow: hidden;
+    border: 1px solid #88181c;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px #343434;
 }
 
 #equipe
@@ -16,9 +19,15 @@
 {
     margin: 10px;
     width: 30%;
-    border: 2px solid #0084ff;
+    border: 2px solid #88181c;
     border-radius: 5px;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 0px 0px 5px #343434;
+}
+
+#imgcontent
+{
+    margin-top: 5px;
+    text-align: center;
 }
 
 h1,h2

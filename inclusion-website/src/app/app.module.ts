@@ -44,7 +44,7 @@ import { LogoutComponent } from './logout/logout.component';
     FileSelectDirective,
     VueClientComponent,
     MenuComponent,
-    MentionsLegalesComponent
+    MentionsLegalesComponent,
     EquipeComponent
   ],
   imports: [

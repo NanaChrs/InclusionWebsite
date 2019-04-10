@@ -39,8 +39,18 @@
   },
   "equipe": {
     "name": "L'équipe",
-    "text-content": [[]],
-    "photo-content": []
+    "text-content": [
+      [
+        {"emplacement": "DescriptionGlobale", "contenu": "Le restaurant inclusion est un super resto à base d'amour et d'eau fraiche" }
+      ],
+      [
+        { "emplacement": "Nom", "contenu": "François Marien" },
+        { "emplacement": "Description", "contenu": "Créateur du restaurant et passioné de cuisine." }
+    ]
+  ],
+    "photo-content": [
+      { "source": "assets\\equipe\\francois.png", "alt": "numero1.jpg" }
+    ]
   },
   "contact": {
     "name": "Contact",
