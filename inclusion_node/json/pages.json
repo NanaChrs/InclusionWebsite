@@ -15,12 +15,16 @@
     ],
     "photo-content": [
       {
-        "source": "assets\\accueil\\photo-1554802879238.jpg",
-        "alt": "3.jpg"
+        "source": "http://localhost:4200/assets/accueil/1.jpg",
+        "alt": "1.jpg"
       },
       {
-        "source": "assets\\accueil\\photo-1554803328970.jpg",
-        "alt": "1.jpg"
+        "source": "http://localhost:4200/assets/accueil/2.jpg",
+        "alt": "2.jpg"
+      },
+      {
+        "source": "http://localhost:4200/assets/accueil/3.jpg",
+        "alt": "3.jpg"
       }
     ]
   },
