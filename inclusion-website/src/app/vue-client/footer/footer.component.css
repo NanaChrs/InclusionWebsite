@@ -44,10 +44,17 @@ table{
 	color: white;
 }
 
+.Extras:hover{
+	cursor: pointer;
+	text-decoration: underline white;
+}
+
 #googlemap{
 	width: 400px;
 	height: 200px;
 }
+
+
 
 @media screen and (max-width: 1280px) {
 

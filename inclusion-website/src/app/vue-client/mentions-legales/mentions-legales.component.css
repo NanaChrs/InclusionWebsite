@@ -1,5 +1,5 @@
 #mentionslegales{
-    top: 0px;
+    margin-top: 104px;
     left:0px;
     width: 100%;
     text-align: center;
@@ -7,10 +7,18 @@
     letter-spacing: .2em;
 }
 
+#top-mentionslegales{
+    display: flex;
+}
 #mention{
+    /* display: flex; */
     display: inline-block;
     width: 40%;
     margin: 5%;
     text-align: center;
 
+}
+
+h1{
+    text-decoration: underline;
 }
