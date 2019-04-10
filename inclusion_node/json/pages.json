@@ -3,52 +3,116 @@
     "name": "Accueil",
     "text-content": [
       [
-        { "emplacement": "Titre1", "contenu": "Blablablabla" },
-        { "emplacement": "Titre2", "contenu": "Blablablabla" }
+        {
+          "emplacement": "Titre1",
+          "contenu": "Blablablabla"
+        },
+        {
+          "emplacement": "Titre2",
+          "contenu": "Blablablabla"
+        }
       ]
     ],
     "photo-content": [
-      { "source": "assets\\accueil\\photo-1554802879238.jpg", "alt": "3.jpg" },
-      { "source": "assets\\accueil\\photo-1554803328970.jpg", "alt": "1.jpg" }
+      {
+        "source": "assets\\accueil\\photo-1554802879238.jpg",
+        "alt": "3.jpg"
+      },
+      {
+        "source": "assets\\accueil\\photo-1554803328970.jpg",
+        "alt": "1.jpg"
+      }
     ]
   },
   "footer": {
     "name": "Footer",
-    "text-content": [[]]
+    "text-content": [
+      []
+    ]
   },
   "carte": {
     "name": "Menu",
     "text-content": [
       [
-        { "emplacement": "Titre1", "contenu": "La première entrée" },
-        { "emplacement": "Titre1", "contenu": "La deuxième entrée" },
-        { "emplacement": "Titre1", "contenu": "La troisième entrée" }
+        {
+          "emplacement": "Titre entrées",
+          "contenu": "Nos entrées"
+        },
+        {
+          "emplacement": "Titre1",
+          "contenu": "La première entrée"
+        },
+        {
+          "emplacement": "Titre1",
+          "contenu": "La deuxième entrée"
+        },
+        {
+          "emplacement": "Titre1",
+          "contenu": "La troisième entrée"
+        }
       ],
       [
-        { "emplacement": "Titre1", "contenu": "Le premier plat" },
-        { "emplacement": "Titre1", "contenu": "Le deuxième plat" },
-        { "emplacement": "Titre1", "contenu": "Le troisième plat" }
+        {
+          "emplacement": "Titre plats",
+          "contenu": "Nos plats"
+        },
+        {
+          "emplacement": "Titre1",
+          "contenu": "Le premier plat"
+        },
+        {
+          "emplacement": "Titre1",
+          "contenu": "Le deuxième plat"
+        },
+        {
+          "emplacement": "Titre1",
+          "contenu": "Le troisième plat"
+        }
       ],
       [
-        { "emplacement": "Titre1", "contenu": "Le premier dessert" },
-        { "emplacement": "Titre1", "contenu": "Le deuxième dessert" },
-        { "emplacement": "Titre1", "contenu": "Le troisième dessert" }
+        {
+          "emplacement": "Titre dessers",
+          "contenu": "Nos desserts"
+        },
+        {
+          "emplacement": "Titre1",
+          "contenu": "Le premier dessert"
+        },
+        {
+          "emplacement": "Titre1",
+          "contenu": "Le deuxième dessert"
+        },
+        {
+          "emplacement": "Titre1",
+          "contenu": "Le troisième dessert"
+        }
       ]
     ],
-    "photo-content": []
+    "photo-content": [
+      {
+        "source": "assets\\accueil\\photo-1554802879238.jpg",
+        "alt": "3.jpg"
+      }
+    ]
   },
   "equipe": {
     "name": "L'équipe",
-    "text-content": [[]],
+    "text-content": [
+      []
+    ],
     "photo-content": []
   },
   "contact": {
     "name": "Contact",
-    "text-content": [[]],
+    "text-content": [
+      []
+    ],
     "photo-content": []
   },
   "header": {
     "name": "Header",
-    "text-content": [[]]
+    "text-content": [
+      []
+    ]
   }
 }
