@@ -1,22 +1,6 @@
-import {
-  Component,
-  OnChanges,
-  SimpleChanges,
-  Input,
-  OnInit,
-  ChangeDetectorRef
-} from "@angular/core";
-import { NavAdminComponent } from "../nav-admin/nav-admin.component";
-import {
-  ActivatedRoute,
-  Router,
-  RouterEvent,
-  NavigationEnd
-} from "@angular/router";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 import { JsoncontentService } from "./jsoncontent.service";
-import { filter } from "rxjs/operators";
-import { CommonModule } from "@angular/common";
-import { jsonpCallbackContext } from "@angular/common/http/src/module";
 import { FileUploader } from "ng2-file-upload";
 
 @Component({
@@ -100,5 +84,15 @@ export class ContentAdminComponent implements OnInit {
   upload(): void {
     this.uploader.uploadAll();
     this.getPage();
+  }
+
+  trackByIndex(index: number, obj: any): any {
+    return index;
+  }
+
+  save() {
+    this.jsonContentService
+      .postPageByName(this.route.snapshot.paramMap.get("url"), this.textContent)
+      .subscribe(e => console.log(e));
   }
 }

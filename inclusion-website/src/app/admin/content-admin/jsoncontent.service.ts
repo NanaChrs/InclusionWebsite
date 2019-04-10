@@ -1,18 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class JsoncontentService {
-
   // private urlPages: string = "https://dev.inclusion-restaurant.fr/api/pages/";
   private urlPages: string = "http://localhost:8000/api/pages/";
 
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getPageByName(name: string): Observable<String> {
     const url = this.urlPages + name;
@@ -24,5 +22,8 @@ export class JsoncontentService {
     return this.http.delete(url);
   }
 
-
+  postPageByName(name: string, body: String[]) {
+    const url = this.urlPages + name + "/text";
+    return this.http.post<string>(url, body);
+  }
 }

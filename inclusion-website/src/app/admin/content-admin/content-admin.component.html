@@ -1,17 +1,23 @@
 <app-nav-admin></app-nav-admin>
 
-<div class="formText" *ngFor="let item of textContent; let i = index">
-  <div *ngFor="let text of item">
+<div
+  class="formText"
+  *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
+>
+  <div *ngFor="let text of item; let j = index">
     <h1>{{ text.emplacement }}</h1>
     <mat-form-field class="textContent">
       <textarea
         matInput
+        [(ngModel)]="textContent[i][j]['contenu']"
         placeholder="Contenu"
-        value="{{ text.contenu }}"
+        name="{{ text.emplacement }}"
       ></textarea>
     </mat-form-field>
   </div>
 </div>
+<h1>Sauvegarder le contenu du texte:</h1>
+<button class="save-button" (click)="save()">Save</button>
 
 <h1 style="margin-left:30%">Photos</h1>
 <div id="global-container-img" (editedEmitter)="getPage()">
@@ -38,5 +44,3 @@
     Upload an Image
   </button>
 </div>
-
-<button class="save-button">Save</button>
