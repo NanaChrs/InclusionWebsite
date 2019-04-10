@@ -20,19 +20,19 @@
     "name": "Menu",
     "text-content": [
       [
-        { "contenu": "La première entrée" },
-        { "contenu": "La deuxième entrée" },
-        { "contenu": "La troisième entrée" }
+        { "emplacement": "Titre1", "contenu": "La première entrée" },
+        { "emplacement": "Titre1", "contenu": "La deuxième entrée" },
+        { "emplacement": "Titre1", "contenu": "La troisième entrée" }
       ],
       [
-        { "contenu": "Le premier plat" },
-        { "contenu": "Le deuxième plat" },
-        { "contenu": "Le troisième plat" }
+        { "emplacement": "Titre1", "contenu": "Le premier plat" },
+        { "emplacement": "Titre1", "contenu": "Le deuxième plat" },
+        { "emplacement": "Titre1", "contenu": "Le troisième plat" }
       ],
       [
-        { "contenu": "Le premier dessert" },
-        { "contenu": "Le deuxième dessert" },
-        { "contenu": "Le troisième dessert" }
+        { "emplacement": "Titre1", "contenu": "Le premier dessert" },
+        { "emplacement": "Titre1", "contenu": "Le deuxième dessert" },
+        { "emplacement": "Titre1", "contenu": "Le troisième dessert" }
       ]
     ],
     "photo-content": []
