@@ -4,12 +4,12 @@
     "text-content": [
       [
         {
-          "emplacement": "Titre1",
-          "contenu": "Blablablabla"
+          "emplacement": "Texte du bandeau",
+          "contenu": "Savourez votre différence !"
         },
         {
-          "emplacement": "Titre2",
-          "contenu": "Blablablabla"
+          "emplacement": "Contenu de l'introduction",
+          "contenu": "Blablabla je suis l'introduction du site blablabla"
         }
       ]
     ],
@@ -27,7 +27,16 @@
   "footer": {
     "name": "Footer",
     "text-content": [
-      []
+      [
+        {
+          "emplacement": "Texte du bandeau",
+          "contenu": "Savourez votre différence !"
+        },
+        {
+          "emplacement": "Contenu de l'introduction",
+          "contenu": "Blablabla je suis l'introduction du site blablabla"
+        }
+      ]
     ]
   },
   "carte": {
@@ -99,28 +108,30 @@
     "name": "L'équipe",
     "text-content": [
       [
-        {"emplacement": "DescriptionGlobale", "contenu": "Le restaurant inclusion est un super resto à base d'amour et d'eau fraiche" }
+        {
+          "emplacement": "DescriptionGlobale",
+          "contenu": "Le restaurant inclusion est un super resto à base d'amour et d'eau fraiche"
+        }
       ],
       [
         { "emplacement": "Nom", "contenu": "François Marien" },
-        { "emplacement": "Description", "contenu": "Créateur du restaurant et passioné de cuisine." }
-    ]
-  ],
+        {
+          "emplacement": "Description",
+          "contenu": "Créateur du restaurant et passioné de cuisine."
+        }
+      ]
+    ],
     "photo-content": [
       { "source": "assets\\equipe\\francois.png", "alt": "numero1.jpg" }
     ]
   },
   "contact": {
     "name": "Contact",
-    "text-content": [
-      []
-    ],
+    "text-content": [[]],
     "photo-content": []
   },
   "header": {
     "name": "Header",
-    "text-content": [
-      []
-    ]
+    "text-content": [[]]
   }
 }
