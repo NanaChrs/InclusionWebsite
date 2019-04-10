@@ -2,9 +2,10 @@
 <div id="global">
     <div #myslideshowcontainer id="slideshow-container">
         <div #myslideshow id="slideshow">
-            <img src="../../../assets/accueil/1.jpg" alt="Image 1" class="slideshow-image">
+            <img *ngFor = "let image of imageContent" src="{{image.source}}" alt="{{image.alt}}" class="slideshow-image">
+            <!-- <img src="../../../assets/accueil/1.jpg" alt="Image 1" class="slideshow-image">
             <img src="../../../assets/accueil/2.jpg" alt="Image 2" class="slideshow-image">
-            <img src="../../../assets/accueil/3.jpg" alt="Image 3" class="slideshow-image">
+            <img src="../../../assets/accueil/3.jpg" alt="Image 3" class="slideshow-image"> -->
         </div>
         <div id="slideshow-text">
             <p>SAVOUREZ VOTRE DIFFERENCE</p>
