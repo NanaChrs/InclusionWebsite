@@ -21,6 +21,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { FileSelectDirective } from "ng2-file-upload";
 import { VueClientComponent } from './vue-client/vue-client.component';
 import { MenuComponent } from './vue-client/menu/menu.component';
+import { EquipeComponent } from './vue-client/equipe/equipe.component';
 import { MentionsLegalesComponent } from './vue-client/mentions-legales/mentions-legales.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
@@ -44,6 +45,7 @@ import { LogoutComponent } from './logout/logout.component';
     VueClientComponent,
     MenuComponent,
     MentionsLegalesComponent
+    EquipeComponent
   ],
   imports: [
     BrowserModule,

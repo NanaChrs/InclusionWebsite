@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { AccueilComponent } from "./vue-client/accueil/accueil.component";
 import { MenuComponent } from "./vue-client/menu/menu.component";
 import { ContentAdminComponent } from "./admin/content-admin/content-admin.component";
+import { EquipeComponent } from './vue-client/equipe/equipe.component';
 import { MentionsLegalesComponent } from './vue-client/mentions-legales/mentions-legales.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -15,6 +16,7 @@ import { AuthGaurdService } from './service/auth-guard.service';
 const routes: Routes = [
   { path: "accueil", component: AccueilComponent, pathMatch: 'full' },
   { path: "menus", component: MenuComponent, pathMatch: 'full' },
+  { path: "equipe", component: EquipeComponent, pathMatch: 'full' },
   { path: "mentions-legales", component: MentionsLegalesComponent, pathMatch: 'full' },
   { path: "admin/:url", component: ContentAdminComponent, pathMatch: 'full' ,canActivate:[AuthGaurdService]},
   { path: "admin", component: AdminComponent, pathMatch: 'full' ,canActivate:[AuthGaurdService]},
