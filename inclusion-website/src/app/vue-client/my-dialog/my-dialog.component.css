@@ -1,3 +1,7 @@
+#general{
+    z-index: 1000;
+}
+
 #bloc_taille_texte, #bloc_animations
 {
     width: auto;
