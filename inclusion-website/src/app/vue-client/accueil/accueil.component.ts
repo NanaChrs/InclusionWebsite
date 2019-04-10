@@ -11,7 +11,7 @@ export class AccueilComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check('animationOFF');
 
   //duré d'une photo dans le diapo
-  duration = 4;
+  duration = 10;
 
   //hauteur du diaporama
   height = 625;

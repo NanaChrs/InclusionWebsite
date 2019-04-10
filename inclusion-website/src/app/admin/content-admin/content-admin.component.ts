@@ -30,8 +30,8 @@ export class ContentAdminComponent implements OnInit {
   textContent: String[];
   imageContent: String[];
   public uploader: FileUploader;
-  private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
-  // private uploadURL: string = "http://localhost:8000/api/pages/";
+  // private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
+  private uploadURL: string = "http://localhost:8000/api/pages/";
 
   constructor(
     private route: ActivatedRoute,

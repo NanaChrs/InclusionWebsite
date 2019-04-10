@@ -76,7 +76,7 @@ export class MyDialogComponent implements OnInit {
 
   //Boutons augmentation/diminution taille text
   onDownFontsize(){
-    if(this.taillePolice>1){
+    if(this.taillePolice>1.09){
       this.taillePolice-=this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);
@@ -87,7 +87,7 @@ export class MyDialogComponent implements OnInit {
   }
 
   onUpFontsize(){
-    if(this.taillePolice<2){
+    if(this.taillePolice<1.99){
       this.taillePolice+=this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);

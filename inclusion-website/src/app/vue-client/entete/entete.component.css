@@ -5,9 +5,10 @@
 
 /*Bloc principal*/
 #header
-{
-    /* z-index: 10000;
-    position: fixed; */
+{ 
+    z-index: 101;
+    position: fixed;
+    top: 0px;
     width: 100%;
     background-color: none;
     letter-spacing: .2em;
