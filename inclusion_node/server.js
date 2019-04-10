@@ -109,7 +109,7 @@ app.post("/api/pages/:name/upload", upload.single('photo'), (req, res) => {
   }
 });
 app.route('/api/login').post((req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   // On définit notre algorithme de cryptage
   var algorithm = 'aes256';
   // Notre clé de chiffrement, elle est souvent générée aléatoirement mais elle doit être la même pour le décryptage
@@ -129,13 +129,15 @@ app.route('/api/login').post((req, res) => {
   // console.log(cle);
   // console.log(mdp == '79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371');
   // console.log(utilisateur == 'a82bdc731e23568916a7647f3f16d00a');
-  if ((mdp == '79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371') && (utilisateur == 'a82bdc731e23568916a7647f3f16d00a')) {
+  if (((mdp == '79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371') && (utilisateur == 'a82bdc731e23568916a7647f3f16d00a'))
+  ||(req.body['token'] == '558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724')) {
     // console.log("Bijour");
-    res.send(201, true);
+    res.send(201, [true,'558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724']);
+    
   }
   else {
     // console.log("aurevoir");
-    res.send(201, false);
+    res.send(201, false );
   }
 
 });
