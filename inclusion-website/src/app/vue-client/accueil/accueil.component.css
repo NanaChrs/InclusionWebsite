@@ -43,8 +43,19 @@
     letter-spacing: .2em;
     font-size: 3em;
     width: 100%;
+    font-style: italic;
+    /* 
+    Si h1 et p
+    mettre la ligne ci-dessous
     top:15%;
+    */
+    /*
+    Si que p
+    mettre les 2 lignes ci-dessous
+    */
+    top:40%;
     text-align: center;
+
 }
 
 @media screen and (max-width:516px)
