@@ -3,7 +3,6 @@
 
 }
 
-
 #equipe
 {
     margin-left: 20%;
@@ -15,10 +14,11 @@
 
 .text
 {
+    margin: 10px;
     width: 30%;
     border: 2px solid #0084ff;
     border-radius: 5px;
-    box-shadow: 2px black;
+    box-shadow: 3px 3px 3px black;
 }
 
 h1,h2
