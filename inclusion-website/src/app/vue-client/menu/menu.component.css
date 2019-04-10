@@ -3,7 +3,6 @@
     padding: 20px 30px;
     background-color: #fff2e2;
     margin: 0;
-    
 }
 .menu p{
     font-size: 150%;
@@ -12,10 +11,20 @@
 .menu ul{
     list-style-type:none;
     font-size: 110%;
-    text-align: center
+    text-align: center;
+    padding: 0;
 }
 .otro .forma{
     display: inline-block;
     vertical-align: top;
     width: 30%;
+}
+hr{
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
 }
