@@ -3,12 +3,12 @@
         <!-- Cette section ne s'affiche que sur les téléphones -->
         <button id="logo_menu_deroulant" (click)="openMenu()"></button>
         <div id="menu_navigation_telephone" class="open-close-container">
-            <ul id="navigation_telephone">
-                <li id="menustelephone" class="lien-liste-telephone" [routerLink]="['/menus']">MENUS</li>
-                <li id="contactstelephone" class="lien-liste-telephone" [routerLink]="['/contact']">CONTACT</li>
-                <li id="equipetelephone" class="lien-liste-telephone" [routerLink]="['/equipe']">L'EQUIPE</li>
-                <li id="accessibilitetelephone" class="lien-liste-telephone" (click)="openDialog()">ACCESSIBILITE</li>
-            </ul>
+        <ul id="navigation_telephone">
+            <li id="menustelephone" class="lien-liste-telephone" [routerLink]="['/menus']">MENUS</li>
+            <li id="equipetelephone" class="lien-liste-telephone" [routerLink]="['/equipe']">L'EQUIPE</li>
+            <li id="contactstelephone" class="lien-liste-telephone" [routerLink]="['/contact']">CONTACT</li>
+            <li id="accessibilitetelephone" class="lien-liste-telephone" (click)="openDialog()">ACCESSIBILITE</li>
+        </ul>
         </div>
         <div id="bloc_image">
             <a [routerLink]="['/accueil']"><img id="logoSite" alt="logo du site inclusion"
@@ -31,8 +31,8 @@
                         onclick="window.open(this.href); return false;"><img id="logoInstagram" alt="logo d'Instagram"
                             src="../../assets/imgHeader/instagram.png" height="30" width="30"></a></li>
                 <li id="icone"><a href="https://twitter.com/Fr_Marien"
-                        onclick="window.open(this.href); return false;"><img id="logoTwitter" alt="logo de Twitter"
-                            src="../../assets/imgHeader/twitter.png" height="30" width="30"></a></li>
+                        onclick="window.open(this.href); return false;"><img id="logoUber" alt="logo d'Uber eats"
+                            src="../../assets/imgHeader/ubereats.png" height="30" width="30"></a></li>
                 <li id="icone"><a href="https://www.tripadvisor.fr/"
                         onclick="window.open(this.href); return false;"><img id="logoTripadvisor"
                             alt="logo de trip advisor" src="../../assets/imgHeader/tripadvisor.png" height="30"
@@ -43,10 +43,10 @@
                             width="30"></a></li> -->
             </ul>
 
-            <ul id="navigation" class="text">
-                <li id="menus" [routerLink]="['/menus']">MENUS</li>
-                <li id="contacts" [routerLink]="['/contact']">CONTACT</li>
+            <ul id="navigation" >
+                <li id="menus"  [routerLink]="['/menus']">MENUS</li>
                 <li id="equipe" [routerLink]="['/equipe']">L'EQUIPE</li>
+                <li id="contacts" [routerLink]="['/contact']">CONTACT</li>
                 <li id="lien" id="accessibilite" (click)="openDialog()">ACCESSIBILITE</li>
             </ul>
         </div>
