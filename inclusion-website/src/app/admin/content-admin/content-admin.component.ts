@@ -94,7 +94,6 @@ export class ContentAdminComponent implements OnInit {
       .postPageByName(this.route.snapshot.paramMap.get("url"), this.pageContent)
       .subscribe(() => {
         this.getPage();
-        console.log("hey");
       });
   }
 }

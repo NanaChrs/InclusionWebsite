@@ -78,9 +78,9 @@
   </form>
 </div>
 
-<div *ngIf="url == 'equipe'">
+<div *ngIf="url == 'equipe'" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
-    <div class="formText" *ngFor="let item of textContent; let i = index">
+    <div *ngFor="let item of textContent; let i = index">
       <div *ngFor="let text of item; let j = index">
         <h1 *ngIf="i == 0">{{ text.emplacement }}</h1>
         <h2 *ngIf="i > 0 && j < 2">{{ text.emplacement }}</h2>
@@ -151,8 +151,6 @@
         </label>
         <div id="button-add-img">
           <button
-            type="submit"
-            class="btn btn-success btn-s"
             (click)="upload()"
             [disabled]="!uploader.getNotUploadedItems().length"
           >

@@ -157,7 +157,7 @@
         },
         {
           "photo": "Numéro de la photo",
-          "source": "assets\\equipe\\jeanne.jpg"
+          "source": "assets\\equipe\\francois.png"
         }
       ],
       [
@@ -168,7 +168,7 @@
         },
         {
           "photo": "Numéro de la photo",
-          "source": "assets\\equipe\\jeanne.jpg"
+          "source": "assets\\equipe\\mathilde.jpg"
         }
       ],
       [
@@ -179,7 +179,7 @@
         },
         {
           "photo": "Numéro de la photo",
-          "source": "assets\\equipe\\jeanne.jpg"
+          "source": "assets\\equipe\\photo-1554995343821.JPG"
         }
       ],
       [
@@ -190,7 +190,7 @@
         },
         {
           "photo": "Numéro de la photo",
-          "source": "assets\\equipe\\photo-1554985029869.JPG"
+          "source": "assets\\equipe\\photo-1554995297055.JPG"
         }
       ]
     ],
@@ -199,18 +199,10 @@
       { "source": "assets\\equipe\\mathilde.jpg", "alt": "cjinrpub" },
       { "source": "assets\\equipe\\jeanne.jpg", "alt": "cjnrip" },
       { "source": "assets\\equipe\\jeanne.jpg", "alt": "crjin'vy(p" },
-      { "source": "assets\\equipe\\photo-1554985029869.JPG", "alt": "" },
-      { "source": "assets\\equipe\\photo-1554985030962.JPG", "alt": "" },
-      { "source": "assets\\equipe\\photo-1554985031634.JPG", "alt": "" }
+      { "source": "assets\\equipe\\photo-1554995297055.JPG", "alt": "" },
+      { "source": "assets\\equipe\\photo-1554995343821.JPG", "alt": "" }
     ]
   },
-  "contact": {
-    "name": "Contact",
-    "text-content": [[]],
-    "photo-content": []
-  },
-  "header": {
-    "name": "Header",
-    "text-content": [[]]
-  }
+  "contact": { "name": "Contact", "text-content": [[]], "photo-content": [] },
+  "header": { "name": "Header", "text-content": [[]] }
 }
