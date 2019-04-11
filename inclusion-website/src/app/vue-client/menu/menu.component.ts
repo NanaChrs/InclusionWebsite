@@ -49,7 +49,7 @@ export class MenuComponent implements OnInit {
       this.imageContent = this.pageContent["photo-content"];
     });
 
-    this.jsonContentService.getPageByName('accueil').subscribe((page) => {
+    this.jsonContentService.getPageByName('accueil').subscribe(page => {
       this.pageContentDiapo = page;
       this.textContentDiapo = this.pageContentDiapo["text-content"];
       this.imageContentDiapo = this.pageContentDiapo["photo-content"];
@@ -57,6 +57,7 @@ export class MenuComponent implements OnInit {
 
     // application de la hauteur du dipoa et la position relative
     if ((this.height) > 0) {
+      this.slideshowcontainer.nativeElement.style.height = this.height + "px";
       this.setContainerStyle();
     }
   }
@@ -79,10 +80,14 @@ export class MenuComponent implements OnInit {
 
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function () {
-    this.slideshowcontainer.nativeElement.style.height = this.height + 'px';
-    // this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-    // this.slideshow.nativeElement.style.backgroundSize = 'cover';
+  setContainerStyle = function(){
+    if(this.slideshow.nativeElement.children[this.i]==undefined && this.animationOFF){
+      setTimeout(() => {
+        this.setContainerStyle();
+      }, 100);
+    }
+    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+    this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
 
