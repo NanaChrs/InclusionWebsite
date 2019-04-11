@@ -1,16 +1,15 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
-import { JsoncontentService } from '../../admin/content-admin/jsoncontent.service';
-import { timeInterval } from 'rxjs/operators';
-
+import { Component, OnInit, ViewChild, Input } from "@angular/core";
+import { CookieService } from "ngx-cookie-service";
+import { JsoncontentService } from "../../admin/content-admin/jsoncontent.service";
+import { timeInterval } from "rxjs/operators";
 
 @Component({
-  selector: 'app-accueil',
-  templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.css']
+  selector: "app-accueil",
+  templateUrl: "./accueil.component.html",
+  styleUrls: ["./accueil.component.css"]
 })
 export class AccueilComponent implements OnInit {
-  animationOFF: boolean = this.cookieService.check('animationOFF');
+  animationOFF: boolean = this.cookieService.check("animationOFF");
 
   //duré d'une photo dans le diapo
   duration = 7;
@@ -22,36 +21,32 @@ export class AccueilComponent implements OnInit {
   i = 0;
 
   // Récupération Json
-  pageContent: String;
+  pageContent: String[];
   textContent: String[];
   imageContent: String[];
-  
+
   // recupération des element sur la page internet
-  @ViewChild('myslideshowcontainer') slideshowcontainer;
-  @ViewChild('myslideshow') slideshow;
+  @ViewChild("myslideshowcontainer") slideshowcontainer;
+  @ViewChild("myslideshow") slideshow;
 
-
-  constructor( 
+  constructor(
     private cookieService: CookieService,
-    private jsonContentService: JsoncontentService) {  
-  }
+    private jsonContentService: JsoncontentService
+  ) {}
 
   ngOnInit() {
-    this.jsonContentService.getPageByName('accueil').subscribe((page) => {
+    this.jsonContentService.getPageByName("accueil").subscribe(page => {
       this.pageContent = page;
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
-    
-
     });
     // application de la hauteur du dipoa et la position relative
-    if ((this.height)>0){
+    if (this.height > 0) {
       this.setContainerStyle();
     }
   }
 
-
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     // lancement du diapo
     this.play();
     // lancement de la fonction permettant de verifier les modifications "accessibilité"
@@ -59,58 +54,65 @@ export class AccueilComponent implements OnInit {
   }
 
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function(){ 
-    this.animationOFF = this.cookieService.check('animationOFF');
+  checkaccess = function() {
+    this.animationOFF = this.cookieService.check("animationOFF");
     setTimeout(() => {
       this.checkaccess();
     }, 100);
-  }
-
+  };
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function(){
-    this.slideshowcontainer.nativeElement.style.height = this.height + 'px';
+  setContainerStyle = function() {
+    this.slideshowcontainer.nativeElement.style.height = this.height + "px";
     // this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
     // this.slideshow.nativeElement.style.backgroundSize = 'cover';
-  }
+  };
 
-  
-  play = function(){
-    if (!this.animationOFF){ 
+  play = function() {
+    if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
-      this.slideshow.nativeElement.className = 'fadeOut';
+      this.slideshow.nativeElement.className = "fadeOut";
       setTimeout(() => {
         // changement du background de l'element slideshow
-        this.slideshow.nativeElement.style.background = 'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-        this.slideshow.nativeElement.style.backgroundSize = 'cover';
+        this.slideshow.nativeElement.style.background =
+          "url(" +
+          this.slideshow.nativeElement.children[this.i].src +
+          ") center";
+        this.slideshow.nativeElement.style.backgroundSize = "cover";
         // on retire la class fadeOut afin de faire l'effet de transition inverse
-        this.slideshow.nativeElement.className = '';
+        this.slideshow.nativeElement.className = "";
       }, 1100);
     }
 
     this.i++;
-    if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
-    
+    if (this.i > this.slideshow.nativeElement.childElementCount - 1) {
+      this.i = 0;
+    }
+
     // permet de lancer le diapo en boucle
     setTimeout(() => {
       this.play();
-    }, this.duration*1000);
-  }
+    }, this.duration * 1000);
+  };
 
-
-  // fleches d'animations 
-  onNext(){
+  // fleches d'animations
+  onNext() {
     this.i++;
-    if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
-    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-    this.slideshow.nativeElement.style.backgroundSize = 'cover';
+    if (this.i > this.slideshow.nativeElement.childElementCount - 1) {
+      this.i = 0;
+    }
+    this.slideshow.nativeElement.style.background =
+      "url(" + this.slideshow.nativeElement.children[this.i].src + ") center";
+    this.slideshow.nativeElement.style.backgroundSize = "cover";
   }
 
-  onPrev(){
+  onPrev() {
     this.i--;
-    if(this.i<0){ this.i=this.slideshow.nativeElement.childElementCount-1; }
-    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-    this.slideshow.nativeElement.style.backgroundSize = 'cover';
+    if (this.i < 0) {
+      this.i = this.slideshow.nativeElement.childElementCount - 1;
+    }
+    this.slideshow.nativeElement.style.background =
+      "url(" + this.slideshow.nativeElement.children[this.i].src + ") center";
+    this.slideshow.nativeElement.style.backgroundSize = "cover";
   }
-
 }

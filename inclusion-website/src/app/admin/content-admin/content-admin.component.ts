@@ -9,7 +9,7 @@ import { FileUploader } from "ng2-file-upload";
   styleUrls: ["./content-admin.component.css"]
 })
 export class ContentAdminComponent implements OnInit {
-  pageContent: String;
+  pageContent: String[];
   url: String;
   textContent: String[];
   imageContent: String[];
@@ -58,7 +58,7 @@ export class ContentAdminComponent implements OnInit {
         this.pageContent = page;
         this.textContent = this.pageContent["text-content"];
         this.imageContent = this.pageContent["photo-content"];
-        console.log(this.textContent);
+        console.log(this.textContent.length);
       });
   }
 
@@ -92,7 +92,8 @@ export class ContentAdminComponent implements OnInit {
 
   save() {
     this.jsonContentService
-      .postPageByName(this.route.snapshot.paramMap.get("url"), this.textContent)
-      .subscribe(e => console.log(e));
+      .postPageByName(this.route.snapshot.paramMap.get("url"), this.pageContent)
+      .subscribe(() => this.getPage());
+    this.upload();
   }
 }

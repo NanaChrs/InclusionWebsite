@@ -8,7 +8,7 @@ import { JsoncontentService } from "../../admin/content-admin/jsoncontent.servic
 })
 export class MenuComponent implements OnInit {
   // Récupération Json
-  pageContent: String;
+  pageContent: String[];
   textContent: String[];
   imageContent: String[];
 
