@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { JsoncontentService } from '../../admin/content-admin/jsoncontent.service';
+import { timeInterval } from 'rxjs/operators';
 
 
 @Component({
@@ -11,23 +13,37 @@ export class AccueilComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check('animationOFF');
 
   //duré d'une photo dans le diapo
-  duration = 10;
+  duration = 7;
 
   //hauteur du diaporama
   height = 625;
 
   //numero de la photo en cours sur le diapo
   i = 0;
+
+  // Récupération Json
+  pageContent: String;
+  textContent: String[];
+  imageContent: String[];
   
   // recupération des element sur la page internet
   @ViewChild('myslideshowcontainer') slideshowcontainer;
   @ViewChild('myslideshow') slideshow;
 
 
-  constructor( private cookieService: CookieService) {  
+  constructor( 
+    private cookieService: CookieService,
+    private jsonContentService: JsoncontentService) {  
   }
 
   ngOnInit() {
+    this.jsonContentService.getPageByName('accueil').subscribe((page) => {
+      this.pageContent = page;
+      this.textContent = this.pageContent["text-content"];
+      this.imageContent = this.pageContent["photo-content"];
+    
+
+    });
     // application de la hauteur du dipoa et la position relative
     if ((this.height)>0){
       this.setContainerStyle();
@@ -54,8 +70,8 @@ export class AccueilComponent implements OnInit {
   // fonction pour appliquer la hauteur du dipoa et la position relative
   setContainerStyle = function(){
     this.slideshowcontainer.nativeElement.style.height = this.height + 'px';
-    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-    this.slideshow.nativeElement.style.backgroundSize = 'cover';
+    // this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+    // this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
   
@@ -65,7 +81,7 @@ export class AccueilComponent implements OnInit {
       this.slideshow.nativeElement.className = 'fadeOut';
       setTimeout(() => {
         // changement du background de l'element slideshow
-        this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+        this.slideshow.nativeElement.style.background = 'url('+this.slideshow.nativeElement.children[this.i].src+') center';
         this.slideshow.nativeElement.style.backgroundSize = 'cover';
         // on retire la class fadeOut afin de faire l'effet de transition inverse
         this.slideshow.nativeElement.className = '';
