@@ -41,8 +41,6 @@ export class LoginComponent implements OnInit {
     this.user.password = this.password;
     this.user.username = this.username;
     this.user.token = this.cookieService.get('token');
-    console.log(Date.now()+ 50000*60*60*60)
-    console.log(formatDate(Date.now()+ 50000*60*60*60, 'dd-MM-yyyy hh:mm:ss a', 'en-FR', '+0200'));
     this.http.postLogin(this.user).subscribe((e) => {
       if (e[0]) {
         this.router.navigate(['/admin']);
@@ -53,7 +51,6 @@ export class LoginComponent implements OnInit {
       else {
         this.invalidLogin = true;
       };
-      //console.log(e);
     }
     )
     return this.user.username;
