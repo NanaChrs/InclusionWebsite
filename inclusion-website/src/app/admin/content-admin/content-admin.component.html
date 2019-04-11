@@ -22,25 +22,30 @@
 <h1 style="margin-left:30%">Photos</h1>
 <div id="global-container-img" (editedEmitter)="getPage()">
   <div class="simple-container-img" *ngFor="let item of imageContent">
-    <img
-      class="img-croix-rouge"
-      src="../../assets/img/croix_rouge.png"
-      (click)="onClickSuppr(item.source)"
-    />
+    <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)" />
     <div class="img-text-container-img">
       <img class="img-modif" src="{{ item.source }}" alt="" />
       <input type="text" value="{{ item.alt }}" />
     </div>
   </div>
 
-  <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+  <div class="simple-container-img">
+    <form action="" class="img-text-container-img">
+      <!-- Display none--><input id="input-photo" type="file" name="photo" ng2FileSelect [uploader]="uploader"
+        required="required" (change)="detectFiles($event)" />
 
-  <button
-    type="button"
-    class="btn btn-success btn-s"
-    (click)="upload()"
-    [disabled]="!uploader.getNotUploadedItems().length"
-  >
-    Upload an Image
-  </button>
+      <!-- src="../../../assets/img/plus.png" -->
+      <label id="label-input-photo" for="input-photo">
+        <img class="img-modif" [src]="url_image | safe" *ngIf="url_image">
+        <img class="img-modif" src="../../../assets/img/plus.png" alt="plus pour ajouter une photo" *ngIf="!url_image">
+      </label>
+      <input type="text" name="text" id="balise_alt" placeholder="Balise alt" required="required" />
+      <button type="submit" class="btn btn-success btn-s" (click)="upload()"
+        [disabled]="!uploader.getNotUploadedItems().length">
+        Ajouter l'image
+      </button>
+
+    </form>
+  </div>
+
 </div>
