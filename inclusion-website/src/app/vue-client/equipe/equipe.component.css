@@ -1,6 +1,14 @@
-#content{
+#content
+{
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 104px;
     background-color: #E6E5E5;
+}
+
+#presentationGlobale
+{
+    width: 100%;
+    text-align: center;
 }
 
 .photo
@@ -23,7 +31,6 @@
 .text
 {
     margin: 10px;
-    width: 30%;
     border: 2px solid #88181c;
     border-radius: 5px;
     box-shadow: 0px 0px 5px #343434;
@@ -38,4 +45,8 @@
 h1,h2
 {
     text-align: center;
+}
+
+p{
+    font-size: 42px;
 }
