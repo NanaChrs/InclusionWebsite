@@ -1,18 +1,11 @@
 <app-nav-admin></app-nav-admin>
 
-<div
-  class="formText"
-  *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
->
+<div class="formText" *ngFor="let item of textContent; let i = index; trackBy: trackByIndex">
   <div *ngFor="let text of item; let j = index">
     <h1>{{ text.emplacement }}</h1>
     <mat-form-field class="textContent">
-      <textarea
-        matInput
-        [(ngModel)]="textContent[i][j]['contenu']"
-        placeholder="Contenu"
-        name="{{ text.emplacement }}"
-      ></textarea>
+      <textarea matInput [(ngModel)]="textContent[i][j]['contenu']" placeholder="Contenu"
+        name="{{ text.emplacement }}"></textarea>
     </mat-form-field>
   </div>
 </div>
@@ -30,22 +23,24 @@
   </div>
 
   <div class="simple-container-img">
-    <form action="" class="img-text-container-img">
-      <!-- Display none--><input id="input-photo" type="file" name="photo" ng2FileSelect [uploader]="uploader"
-        required="required" (change)="detectFiles($event)" />
+    <div class="img-text-container-img" id="container-add-img">
+      <!-- Display none pour l'input en dessous-->
+      <input id="input-photo" type="file" name="photo" ng2FileSelect [uploader]="uploader" required="required"
+        (change)="detectFiles($event)" />
 
-      <!-- src="../../../assets/img/plus.png" -->
+      <!-- Label de l'input -->
       <label id="label-input-photo" for="input-photo">
         <img class="img-modif" [src]="url_image | safe" *ngIf="url_image">
         <img class="img-modif" src="../../../assets/img/plus.png" alt="plus pour ajouter une photo" *ngIf="!url_image">
       </label>
+
       <input type="text" name="text" id="balise_alt" placeholder="Balise alt" required="required" />
       <button type="submit" class="btn btn-success btn-s" (click)="upload()"
         [disabled]="!uploader.getNotUploadedItems().length">
         Ajouter l'image
       </button>
 
-    </form>
+    </div>
   </div>
 
 </div>

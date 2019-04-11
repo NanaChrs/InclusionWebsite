@@ -81,8 +81,13 @@ export class ContentAdminComponent implements OnInit {
   }
 
   upload(): void {
-    this.uploader.uploadAll();
-    this.getPage();
+    let balise_alt = document.getElementById('balise_alt') as HTMLInputElement;
+    if (balise_alt.value.length == 0) {
+      alert('La balise alt est obligatoire, il s\'agit de la descrioption de l\'image');
+    } else {
+      this.uploader.uploadAll();
+      this.getPage();
+    }
   }
 
   trackByIndex(index: number, obj: any): any {
