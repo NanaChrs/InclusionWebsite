@@ -104,10 +104,25 @@
       [
         { "emplacement": "Nom", "contenu": "François Marien" },
         { "emplacement": "Description", "contenu": "Créateur du restaurant et passioné de cuisine." }
-    ]
+    ],
+    [
+      { "emplacement": "Nom", "contenu": "Mathilde" },
+      { "emplacement": "Description", "contenu": "Assisstante principale de françois" }
+  ],
+  [
+    { "emplacement": "Nom", "contenu": "Clément" },
+    { "emplacement": "Description", "contenu": "J'ajoute encore qqn pour tester" }
+],
+[
+  { "emplacement": "Nom", "contenu": "Thibaut" },
+  { "emplacement": "Description", "contenu": "J'ajoute ENCORE qqn pour tester" }
+]
   ],
     "photo-content": [
-      { "source": "assets\\equipe\\francois.png", "alt": "numero1.jpg" }
+      { "source": "assets\\equipe\\francois.png", "alt": "numero1.jpg" },
+      { "source": "assets\\equipe\\mathilde.jpg", "alt": "numero1.jpg" },
+      { "source": "assets\\equipe\\jeanne.jpg", "alt": "numero1.jpg" },
+      { "source": "assets\\equipe\\jeanne.jpg", "alt": "numero1.jpg" }
     ]
   },
   "contact": {
