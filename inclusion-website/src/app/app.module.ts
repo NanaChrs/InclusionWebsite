@@ -27,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { SafePipe } from './admin/content-admin/safe-pipe';
 import { PlanSiteComponent } from './vue-client/plan-site/plan-site.component';
+import { ContactComponent } from './vue-client/contact/contact.component';
 
 
 
@@ -49,7 +50,8 @@ import { PlanSiteComponent } from './vue-client/plan-site/plan-site.component';
     MentionsLegalesComponent,
     EquipeComponent,
     SafePipe,
-    PlanSiteComponent
+    PlanSiteComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
