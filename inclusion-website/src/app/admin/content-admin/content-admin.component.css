@@ -10,6 +10,8 @@
     margin: 5px;
     border:1px solid black;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .img-text-container-img
@@ -55,4 +57,17 @@
 .save-button{
     margin-left:30%;
     margin-top: 30px;
+}
+
+#input-photo{
+    display: none;
+}
+
+#label-input-photo{
+    cursor: pointer;
+}
+
+#button-add-img{
+    padding: 8px;
+    margin: auto;
 }

@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
 
   //numero de la photo en cours sur le diapo
   i = 0;
-  
+
   // recupération des element sur la page internet
   @ViewChild('myslideshowcontainer') slideshowcontainer;
   @ViewChild('myslideshow') slideshow;
@@ -40,7 +40,7 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private cookieService: CookieService,
-    private jsonContentService: JsoncontentService) {}
+    private jsonContentService: JsoncontentService) { }
 
   ngOnInit() {
     this.jsonContentService.getPageByName("carte").subscribe(page => {
@@ -56,13 +56,13 @@ export class MenuComponent implements OnInit {
     });
 
     // application de la hauteur du dipoa et la position relative
-    if ((this.height)>0){
+    if ((this.height) > 0) {
       this.setContainerStyle();
     }
   }
 
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     // lancement du diapo
     this.play();
     // lancement de la fonction permettant de verifier les modifications "accessibilité"
@@ -70,7 +70,7 @@ export class MenuComponent implements OnInit {
   }
 
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function(){ 
+  checkaccess = function () {
     this.animationOFF = this.cookieService.check('animationOFF');
     setTimeout(() => {
       this.checkaccess();
@@ -91,14 +91,14 @@ export class MenuComponent implements OnInit {
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
-  
-  play = function(){
-    if (!this.animationOFF){ 
+
+  play = function () {
+    if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = 'fadeOut';
       setTimeout(() => {
         // changement du background de l'element slideshow
-        this.slideshow.nativeElement.style.background = 'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+        this.slideshow.nativeElement.style.background = 'url(' + this.slideshow.nativeElement.children[this.i].src + ') center';
         this.slideshow.nativeElement.style.backgroundSize = 'cover';
         // on retire la class fadeOut afin de faire l'effet de transition inverse
         this.slideshow.nativeElement.className = '';
@@ -106,27 +106,27 @@ export class MenuComponent implements OnInit {
     }
 
     this.i++;
-    if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
-    
+    if (this.i > this.slideshow.nativeElement.childElementCount - 1) { this.i = 0; }
+
     // permet de lancer le diapo en boucle
     setTimeout(() => {
       this.play();
-    }, this.duration*1000);
+    }, this.duration * 1000);
   }
 
 
   // fleches d'animations 
-  onNext(){
+  onNext() {
     this.i++;
-    if(this.i>this.slideshow.nativeElement.childElementCount-1){ this.i=0; }
-    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+    if (this.i > this.slideshow.nativeElement.childElementCount - 1) { this.i = 0; }
+    this.slideshow.nativeElement.style.background = 'url(' + this.slideshow.nativeElement.children[this.i].src + ') center';
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
-  onPrev(){
+  onPrev() {
     this.i--;
-    if(this.i<0){ this.i=this.slideshow.nativeElement.childElementCount-1; }
-    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+    if (this.i < 0) { this.i = this.slideshow.nativeElement.childElementCount - 1; }
+    this.slideshow.nativeElement.style.background = 'url(' + this.slideshow.nativeElement.children[this.i].src + ') center';
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 }
