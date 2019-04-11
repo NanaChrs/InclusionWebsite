@@ -12,12 +12,14 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGaurdService } from './service/auth-guard.service';
 import { PlanSiteComponent } from './vue-client/plan-site/plan-site.component';
+import { ContactComponent } from './vue-client/contact/contact.component';
 
 
 const routes: Routes = [
   { path: "accueil", component: AccueilComponent, pathMatch: 'full' },
   { path: "menus", component: MenuComponent, pathMatch: 'full' },
   { path: "equipe", component: EquipeComponent, pathMatch: 'full' },
+  { path: "contact", component: ContactComponent, pathMatch: 'full' },
   { path: "mentions-legales", component: MentionsLegalesComponent, pathMatch: 'full' },
   { path: "plan-site", component: PlanSiteComponent, pathMatch: 'full' },
   { path: "admin/:url", component: ContentAdminComponent, pathMatch: 'full' ,canActivate:[AuthGaurdService]},
