@@ -204,128 +204,13 @@
       { "source": "assets\\equipe\\photo-1554985031634.JPG", "alt": "" }
     ]
   },
-  "equipe": {
-    "name": "L'équipe",
-    "text-content": [
-      [
-        {
-          "emplacement": "DescriptionGlobale",
-          "contenu": "Inclusion, ce sera donc un resto scandinave lillois qui ouvrira ses portes en septembre 2019 avec des menus en braille, des salles où la lumière et le bruit seront adaptés aux personnes autistes, où tout (on dit bien “tout”) sera accessible en fauteuil…. Ce sera aussi un endroit où il y aura des personnes en situation de handicap dans la salle, en cuisine (qui sera ouverte), mais pas que. “Je ne veux pas d’un resto réservé aux personnes handicapées, ce n’est clairement pas le but puisque je veux au contraire de la rencontre“, précise François. Il tient encore plus à inclure les étudiants dans ce projet qu’il imagine évolutif. “Ce sont les jeunes qui m’ont fait découvrir et aimer Lille, je veux leur rendre la pareille“. Du coup, Inclusion va ouvrir dans le quartier Vauban, tout près des écoles où François donne ses cours depuis un an. "
-        }
-      ],
-      [
-        {
-          "emplacement": "Nom",
-          "contenu": "François Marien"
-        },
-        {
-          "emplacement": "Description",
-          "contenu": "Quels mammifères sont les plus susceptibles de s'entretuer ? Aussi violent soit-il, l'humain n'est pas le plus meurtrier pour ses semblables, souligne "
-        }
-      ],
-      [
-        {
-          "emplacement": "Nom",
-          "contenu": "Mathilde"
-        },
-        {
-          "emplacement": "Description",
-          "contenu": "Assisstante principale de françois"
-        }
-      ],
-      [
-        {
-          "emplacement": "Nom",
-          "contenu": "Jeanne"
-        },
-        {
-          "emplacement": "Description",
-          "contenu": "Asssitante secondaire de françois"
-        }
-      ],
-      [
-        {
-          "emplacement": "Nom",
-          "contenu": "Thibaut"
-        },
-        {
-          "emplacement": "Description",
-          "contenu": "J'ajoute ENCORE qqn pour tester"
-        }
-      ],
-      [
-        {
-          "emplacement": "Nom",
-          "contenu": "Jules"
-        },
-        {
-          "emplacement": "Description",
-          "contenu": "Ln 236 Col 54 spaces 2 utf 8 json lf"
-        }
-      ],
-      [
-        {
-          "emplacement": "Nom",
-          "contenu": "Maxime"
-        },
-        {
-          "emplacement": "Description",
-          "contenu": "Le maxime est un être vif et habile sur un petit ordinateur"
-        }
-      ],
-      [
-        {
-          "emplacement": "Nom",
-          "contenu": "Julien"
-        },
-        {
-          "emplacement": "Description",
-          "contenu": "Responsable du PDD et meilleur ami de François"
-        }
-      ]
-    ],
-    "photo-content": [
-      {
-        "source": "assets\\equipe\\francois.png",
-        "alt": "numero1.jpg"
-      },
-      {
-        "source": "assets\\equipe\\mathilde.jpg",
-        "alt": "numero1.jpg"
-      },
-      {
-        "source": "assets\\equipe\\jeanne.jpg",
-        "alt": "numero1.jpg"
-      },
-      {
-        "source": "assets\\equipe\\jeanne.jpg",
-        "alt": "numero1.jpg"
-      },
-      {
-        "source": "assets\\equipe\\mathilde.jpg",
-        "alt": "numero1.jpg"
-      },
-      {
-        "source": "assets\\equipe\\francois.png",
-        "alt": "numero1.jpg"
-      },
-      {
-        "source": "assets\\equipe\\jeanne.jpg",
-        "alt": "numero1.jpg"
-      }
-    ]
-  },
   "contact": {
     "name": "Contact",
-    "text-content": [
-      []
-    ],
+    "text-content": [[]],
     "photo-content": []
   },
   "header": {
     "name": "Header",
-    "text-content": [
-      []
-    ]
+    "text-content": [[]]
   }
 }
