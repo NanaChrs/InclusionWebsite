@@ -1,38 +1,127 @@
 <app-nav-admin></app-nav-admin>
-
-<div class="formText" *ngFor="let item of textContent; let i = index; trackBy: trackByIndex">
-  <div *ngFor="let text of item; let j = index">
-    <h1>{{ text.emplacement }}</h1>
-    <mat-form-field class="textContent">
-      <textarea matInput [(ngModel)]="textContent[i][j]['contenu']" placeholder="Contenu"
-        name="{{ text.emplacement }}"></textarea>
-    </mat-form-field>
-  </div>
-</div>
-<h1>Sauvegarder le contenu du texte:</h1>
-<button class="save-button" (click)="save()">Save</button>
-
-<h1 style="margin-left:30%">Photos</h1>
-<div id="global-container-img" (editedEmitter)="getPage()">
-  <div class="simple-container-img" *ngFor="let item of imageContent">
-    <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)" />
-    <div class="img-text-container-img">
-      <img class="img-modif" src="{{ item.source }}" alt="" />
-      <input type="text" value="{{ item.alt }}" />
+<div *ngIf="url != 'equipe'">
+  <div
+    class="formText"
+    *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
+  >
+    <div *ngFor="let text of item; let j = index">
+      <h1>{{ text.emplacement }}</h1>
+      <mat-form-field class="textContent">
+        <textarea
+          matInput
+          [(ngModel)]="textContent[i][j]['contenu']"
+          placeholder="Contenu"
+          name="{{ text.emplacement }}"
+        ></textarea>
+      </mat-form-field>
     </div>
   </div>
 
-  <div class="simple-container-img">
-    <div class="img-text-container-img" id="container-add-img">
-      <!-- Display none pour l'input en dessous-->
-      <input id="input-photo" type="file" name="photo" ng2FileSelect [uploader]="uploader" required="required"
-        (change)="detectFiles($event)" />
+  <h1>Sauvegarder le contenu du texte:</h1>
+  <button class="save-button" (click)="save()">Save</button>
 
-      <!-- Label de l'input -->
-      <label id="label-input-photo" for="input-photo">
-        <img class="img-modif" [src]="url_image | safe" *ngIf="url_image">
-        <img class="img-modif" src="../../../assets/img/plus.png" alt="plus pour ajouter une photo" *ngIf="!url_image">
-      </label>
+  <h1 style="margin-left:30%">Photos</h1>
+  <div id="global-container-img" (editedEmitter)="getPage()">
+    <div class="simple-container-img" *ngFor="let item of imageContent">
+      <img
+        class="img-croix-rouge"
+        src="../../assets/img/croix_rouge.png"
+        (click)="onClickSuppr(item.source)"
+      />
+      <div class="img-text-container-img">
+        <img class="img-modif" src="{{ item.source }}" alt="" />
+        <input type="text" value="{{ item.alt }}" />
+      </div>
+    </div>
+
+    <input
+      type="file"
+      name="photo"
+      ng2FileSelect
+      [uploader]="uploader"
+      multiple
+    />
+
+    <button
+      type="button"
+      class="btn btn-success btn-s"
+      (click)="upload()"
+      [disabled]="!uploader.getNotUploadedItems().length"
+    >
+      Upload an Image
+    </button>
+  </div>
+</div>
+
+<div *ngIf="url == 'equipe'">
+  <form ngNativeValidate (ngSubmit)="save()">
+    <div
+      class="formText"
+      *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
+    >
+      <div *ngFor="let text of item; let j = index">
+        <h1 *ngIf="i == 0">{{ text.emplacement }}</h1>
+        <h2 *ngIf="i > 0 && j < 2">{{ text.emplacement }}</h2>
+        <h2 *ngIf="i > 0 && j == 2">{{ text.photo }}</h2>
+        <mat-form-field class="textContent" *ngIf="j < 2">
+          <textarea
+            required
+            matInput
+            [(ngModel)]="pageContent['text-content'][i][j]['contenu']"
+            placeholder="Contenu"
+            name="{{ text.emplacement }}"
+          ></textarea>
+        </mat-form-field>
+        <select
+          class="form-control"
+          required
+          *ngIf="j == 2 && imageContent"
+          [(ngModel)]="pageContent['text-content'][i][j]['source']"
+          name="{{ text.photo }}"
+        >
+          <option
+            *ngFor="let pow of imageContent; let h = index"
+            [value]="pow.source"
+            >Photo numéro {{ h + 1 }}</option
+          >
+        </select>
+      </div>
+      <h1 *ngIf="i < textContent.length - 1">
+        Membre de l'équipe numéro {{ i + 1 }}
+      </h1>
+    </div>
+    <h1 style="margin-left:30%">Photos :</h1>
+    <div id="global-container-img">
+      <div
+        class="simple-container-img"
+        *ngFor="let item of imageContent; let j = index"
+      >
+        <img
+          class="img-croix-rouge"
+          src="../../assets/img/croix_rouge.png"
+          (click)="onClickSuppr(item.source)"
+        />
+        <div class="img-text-container-img">
+          <img class="img-modif" src="{{ item['source'] }}" />
+        </div>
+      </div>
+
+      <input
+        type="file"
+        name="photo"
+        ng2FileSelect
+        [uploader]="uploader"
+        multiple
+      />
+
+      <input
+        type="submit"
+        class="btn btn-success btn-s"
+        value="Sauvegarder tous les changements"
+      />
+    </div>
+  </form>
+</div>
 
       <input type="text" name="text" id="balise_alt" placeholder="Balise alt" required="required" />
       <button type="submit" class="btn btn-success btn-s" (click)="upload()"

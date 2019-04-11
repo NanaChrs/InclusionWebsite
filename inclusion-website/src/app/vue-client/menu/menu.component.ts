@@ -24,7 +24,7 @@ export class MenuComponent implements OnInit {
   @ViewChild('myslideshow') slideshow;
 
   // Récupération Json
-  pageContent: String;
+  pageContent: String[];
   textContent: String[];
   imageContent: String[];
   pageContentDiapo: String;
