@@ -11,6 +11,7 @@ import { MentionsLegalesComponent } from './vue-client/mentions-legales/mentions
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGaurdService } from './service/auth-guard.service';
+import { PlanSiteComponent } from './vue-client/plan-site/plan-site.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: "menus", component: MenuComponent, pathMatch: 'full' },
   { path: "equipe", component: EquipeComponent, pathMatch: 'full' },
   { path: "mentions-legales", component: MentionsLegalesComponent, pathMatch: 'full' },
+  { path: "plan-site", component: PlanSiteComponent, pathMatch: 'full' },
   { path: "admin/:url", component: ContentAdminComponent, pathMatch: 'full' ,canActivate:[AuthGaurdService]},
   { path: "admin", component: AdminComponent, pathMatch: 'full' ,canActivate:[AuthGaurdService]},
   { path: "login", component: LoginComponent },
