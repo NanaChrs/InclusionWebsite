@@ -1,0 +1,22 @@
+#general{
+    margin-top: 104px;
+    background-color: #E6E5E5;
+    width: 100%;
+    text-align: center;
+}
+
+#googlemap{
+	width: 1000px;
+    height: 600px;
+    margin: 20px 20px 0 20px;
+}
+
+.text{
+    font-family: "Calibri";
+    letter-spacing: .2em;
+    padding: 2% 2% 5% 2%;
+}
+
+h1{
+    text-decoration: underline;
+}
