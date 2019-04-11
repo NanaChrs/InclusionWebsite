@@ -1,9 +1,13 @@
-<div class="container">
-  <div>
-    <form action="">
-      <label for="">Username :</label>
+<div id="bodylogin">
+  <div id="container">
+    <div id="bloc_image">
+      <img id="logoSite" alt="logo du site inclusion" src="./assets/imgHeader/logoInclusion.png" height="100"
+        width="300" />
+    </div>
+    <form id=login action="">
+      <label for="">Username</label>
       <input type="text" name="username" [(ngModel)]="username">
-      <label for="">Password :</label>
+      <label for="">Password</label>
       <input type="password" name="password" [(ngModel)]="password">
       <button type="submit" (click)=checkLogin() class="btn btn-success">
         Login
