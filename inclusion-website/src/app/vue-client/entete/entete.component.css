@@ -4,6 +4,11 @@
 }
 
 /*Bloc principal*/
+#bloc_image
+{
+   
+}
+
 #header
 { 
     z-index: 101;
@@ -17,14 +22,17 @@
 
 #sous_bandeau
 {
-    width: 60%;
+    top:0;
+    /* width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
+    float: right;
 }
 
 #liste_logo
 {
+    padding: 5px;
     margin: 0;
     list-style-type: none;
     display: flex;
@@ -34,19 +42,19 @@
 #bandeau_navigation
 {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 0;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
     background-color: #88181c;    
 }
 
 #icone
 {
-    margin-right: 1%;
+    margin: 5px;
 }
 
-#lien, #accessibilite, #menus, #contacts, #equipe
+#lien, #accessibilite, #menus, #contacts, #equipe, #livraison, #accueil
 {
+    bottom: 0;
     color: white;
     cursor: pointer;
     padding: 5px;
@@ -54,7 +62,7 @@
 }
 
 
-#lien:hover, #accessibilite:hover, #menus:hover, #contacts:hover, #equipe:hover
+#lien:hover, #accessibilite:hover, #menus:hover, #contacts:hover, #equipe:hover, #accueil:hover, #livraison:hover
 {
     color: #88181c;
     background-color: whitesmoke;
@@ -64,11 +72,24 @@
 /*Partie inférieure du header*/
 #navigation
 {
+    margin: 0;
+    bottom: 0;
     text-align: center;
-    width: 80%;
+
     list-style-type: none;
     display: flex;
     justify-content: space-between;
+}
+
+#conteneur
+{
+   width: 100%;
+   bottom: 0;
+}
+
+#bandeau_navigation:nth-child(2)
+{
+    flex: 1;
 }
 
 /* a
