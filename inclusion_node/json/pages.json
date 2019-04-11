@@ -86,6 +86,12 @@
     "text-content": [
       [
         {
+          "emplacement": "Texte sur le bandeau d'images",
+          "contenu": "Nos petits plats"
+        }
+      ],
+      [
+        {
           "emplacement": "Titre entrées",
           "contenu": "Nos entrées"
         },
