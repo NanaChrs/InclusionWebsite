@@ -74,7 +74,6 @@ export class ContentAdminComponent implements OnInit {
         this.pageContent = page;
         this.textContent = this.pageContent["text-content"];
         this.imageContent = this.pageContent["photo-content"];
-        console.log(this.textContent);
       });
   }
 
@@ -101,4 +100,19 @@ export class ContentAdminComponent implements OnInit {
     this.uploader.uploadAll();
     this.getPage();
   }
+
+  selectedFiles: any;
+  url_image: any;
+
+  detectFiles(event) {
+    this.selectedFiles = event.target.files;
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      reader.onload = (event: any) => {
+        this.url_image = event.target.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
 }
