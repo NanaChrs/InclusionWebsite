@@ -68,7 +68,7 @@ export class MyDialogComponent implements OnInit {
   offAnnim(){
     this.bouttonOffAnim = document.getElementById('animationsOff');
     this.bouttonOnAnim = document.getElementById('animationsOn');
-    this.cookieService.set('animationOFF','');
+    this.cookieService.set('animationOFF','',365);
     this.bouttonOnAnim.style.backgroundColor = '';
     this.bouttonOffAnim.style.backgroundColor = 'white'
   }
@@ -83,7 +83,7 @@ export class MyDialogComponent implements OnInit {
     for (var y =0; y<this.text.length;y++){
       this.text[y].style.fontSize= stock+'em';
     }
-    this.cookieService.set('fontSize', stock);
+    this.cookieService.set('fontSize', stock,365);
   }
 
   onUpFontsize(){
@@ -94,6 +94,6 @@ export class MyDialogComponent implements OnInit {
     for (var y =0; y<this.text.length;y++){
       this.text[y].style.fontSize= stock+'em';
     }
-    this.cookieService.set('fontSize', stock);
+    this.cookieService.set('fontSize', stock,365);
   }
 }

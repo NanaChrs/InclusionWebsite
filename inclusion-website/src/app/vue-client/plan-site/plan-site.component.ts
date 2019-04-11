@@ -1,60 +1,47 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { JsoncontentService } from "../../admin/content-admin/jsoncontent.service";
-import { CookieService } from "ngx-cookie-service";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { JsoncontentService } from '../../admin/content-admin/jsoncontent.service';
 
 @Component({
-  selector: "app-menu",
-  templateUrl: "./menu.component.html",
-  styleUrls: ["./menu.component.css"]
+  selector: 'app-plan-site',
+  templateUrl: './plan-site.component.html',
+  styleUrls: ['./plan-site.component.css']
 })
-export class MenuComponent implements OnInit {
+export class PlanSiteComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check('animationOFF');
 
   //duré d'une photo dans le diapo
   duration = 7;
 
   //hauteur du diaporama
-  height = 300;
+  height = 200;
 
   //numero de la photo en cours sur le diapo
   i = 0;
+
+  // Récupération Json
+  pageContent: String;
+  textContent: String[];
+  imageContent: String[];
   
   // recupération des element sur la page internet
   @ViewChild('myslideshowcontainer') slideshowcontainer;
   @ViewChild('myslideshow') slideshow;
 
-  // Récupération Json
-  pageContent: String[];
-  textContent: String[];
-  imageContent: String[];
-  pageContentDiapo: String;
-  textContentDiapo: String[];
-  imageContentDiapo: String[];
 
-  titreEntrees: String;
-  entrees: String[];
-  titrePlats: String;
-  plats: String[];
-  titreDesserts: String;
-  desserts: String[];
-
-  constructor(
+  constructor( 
     private cookieService: CookieService,
-    private jsonContentService: JsoncontentService) {}
+    private jsonContentService: JsoncontentService) {  
+  }
 
   ngOnInit() {
-    this.jsonContentService.getPageByName("carte").subscribe(page => {
+    this.jsonContentService.getPageByName('accueil').subscribe((page) => {
       this.pageContent = page;
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
-    });
+    
 
-    this.jsonContentService.getPageByName('accueil').subscribe((page) => {
-      this.pageContentDiapo = page;
-      this.textContentDiapo = this.pageContentDiapo["text-content"];
-      this.imageContentDiapo = this.pageContentDiapo["photo-content"];
     });
-
     // application de la hauteur du dipoa et la position relative
     if ((this.height)>0){
       this.setContainerStyle();

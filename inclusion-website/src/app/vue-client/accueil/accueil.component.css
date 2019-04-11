@@ -7,6 +7,7 @@
     z-index: -10;
     display: flex;
     flex-direction: column;
+    background-color: #E6E5E5;
 }
 
 #slideshow-container {
@@ -123,16 +124,8 @@
 }
 
 #presentation-restaurant{
+    text-align: center;
     font-family: "Calibri";
-    margin: 2% 10% 2% 10%;
+    margin: 5% 20% 5% 20%;
+    letter-spacing: 0.2em;
 }
-
-#presentation-restaurant p{
-    text-align: center;
-    margin: 5%;
-}
-
-h1{
-    text-align: center;
-}
-
