@@ -104,7 +104,7 @@ app.post("/api/pages/:name/upload", upload.single("photo"), (req, res) => {
     var json = JSON.parse(fs.readFileSync("./json/pages.json"));
     json[name]["photo-content"].push({
       source: req.file.path,
-      alt: req.file.originalname
+      alt: ""
     });
     fs.writeFileSync("./json/pages.json", JSON.stringify(json));
     return res.send({
@@ -119,22 +119,28 @@ app.route("/api/login").post((req, res) => {
   var utilisateur = cipher.update(req.body["username"], "utf8", "hex");
   utilisateur += cipher.final("hex");
   var cipher = crypto.createCipher(algorithm, cle);
-  var mdp = cipher.update(req.body['password'], 'utf8', 'hex');
-  mdp += cipher.final('hex');
-  if (((mdp == '79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371') && (utilisateur == 'a82bdc731e23568916a7647f3f16d00a'))
-  ||(req.body['token'] == '558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724')) {
-    res.send(201, [true,'558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724']);
-    
-  }
-  else {
-    res.send(201, false );
+  var mdp = cipher.update(req.body["password"], "utf8", "hex");
+  mdp += cipher.final("hex");
+  if (
+    (mdp ==
+      "79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371" &&
+      utilisateur == "a82bdc731e23568916a7647f3f16d00a") ||
+    req.body["token"] ==
+      "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
+  ) {
+    res.send(201, [
+      true,
+      "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
+    ]);
+  } else {
+    res.send(201, false);
   }
 });
 
 app.route("/api/pages/:name/text").post((req, res) => {
   const page = req.params["name"];
   var json = JSON.parse(fs.readFileSync("./json/pages.json"));
-  json[page]["text-content"] = req.body;
+  json[page] = req.body;
   fs.writeFileSync("./json/pages.json", JSON.stringify(json));
   res.sendStatus(204);
   console.log(json);

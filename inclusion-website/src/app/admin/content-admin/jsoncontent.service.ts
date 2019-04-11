@@ -12,9 +12,9 @@ export class JsoncontentService {
 
   constructor(private http: HttpClient) {}
 
-  getPageByName(name: string): Observable<String> {
+  getPageByName(name: string): Observable<String[]> {
     const url = this.urlPages + name;
-    return this.http.get<String>(url);
+    return this.http.get<String[]>(url);
   }
 
   deletePageById(link: string) {
