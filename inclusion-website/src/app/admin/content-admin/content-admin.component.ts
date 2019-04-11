@@ -58,7 +58,6 @@ export class ContentAdminComponent implements OnInit {
         this.pageContent = page;
         this.textContent = this.pageContent["text-content"];
         this.imageContent = this.pageContent["photo-content"];
-        console.log(this.textContent);
       });
   }
 
@@ -82,8 +81,13 @@ export class ContentAdminComponent implements OnInit {
   }
 
   upload(): void {
-    this.uploader.uploadAll();
-    this.getPage();
+    let balise_alt = document.getElementById('balise_alt') as HTMLInputElement;
+    if (balise_alt.value.length == 0) {
+      alert('La balise alt est obligatoire, il s\'agit de la descrioption de l\'image');
+    } else {
+      this.uploader.uploadAll();
+      this.getPage();
+    }
   }
 
   trackByIndex(index: number, obj: any): any {
@@ -95,4 +99,19 @@ export class ContentAdminComponent implements OnInit {
       .postPageByName(this.route.snapshot.paramMap.get("url"), this.textContent)
       .subscribe(e => console.log(e));
   }
+
+  selectedFiles: any;
+  url_image: any;
+
+  detectFiles(event) {
+    this.selectedFiles = event.target.files;
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      reader.onload = (event: any) => {
+        this.url_image = event.target.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
 }
