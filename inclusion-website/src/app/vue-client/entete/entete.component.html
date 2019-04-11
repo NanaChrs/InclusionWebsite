@@ -3,12 +3,12 @@
         <!-- Cette section ne s'affiche que sur les téléphones -->
         <button id="logo_menu_deroulant" (click)="openMenu()"></button>
         <div id="menu_navigation_telephone" class="open-close-container">
-        <ul id="navigation_telephone">
-            <li id="menustelephone" class="lien-liste-telephone" [routerLink]="['/menus']">MENUS</li>
-            <li id="equipetelephone" class="lien-liste-telephone" [routerLink]="['/equipe']">L'EQUIPE</li>
-            <li id="contactstelephone" class="lien-liste-telephone" [routerLink]="['/contact']">CONTACT</li>
-            <li id="accessibilitetelephone" class="lien-liste-telephone" (click)="openDialog()">ACCESSIBILITE</li>
-        </ul>
+            <ul id="navigation_telephone">
+                <li id="menustelephone" class="lien-liste-telephone" [routerLink]="['/menus']">MENUS</li>
+                <li id="equipetelephone" class="lien-liste-telephone" [routerLink]="['/equipe']">L'EQUIPE</li>
+                <li id="contactstelephone" class="lien-liste-telephone" [routerLink]="['/contact']">CONTACT</li>
+                <li id="accessibilitetelephone" class="lien-liste-telephone" (click)="openDialog()">ACCESSIBILITE</li>
+            </ul>
         </div>
         <div id="bloc_image">
             <a [routerLink]="['/accueil']"><img id="logoSite" alt="logo du site inclusion"
@@ -20,6 +20,16 @@
         <div id="bloc_image">
             <a [routerLink]="['/accueil']"><img id="logoSite" alt="logo du site inclusion"
                     src="./assets/imgHeader/logoInclusion.png" height="100" width="300" /></a>
+        </div>
+        <div id="conteneur">
+            <ul id="navigation" class="text">
+                <li id="accueil" [routerLink]="['/accueil']">ACCUEIL</li>
+                <li id="menus" [routerLink]="['/menus']">MENUS</li>
+                <li id="equipe" [routerLink]="['/equipe']">L'EQUIPE</li>
+                <li id="contacts" [routerLink]="['/contact']">CONTACT</li>
+                <li id="livraison" [routerLink]="['/contact']">LIVRAISON</li>
+                <li id="lien" id="accessibilite" (click)="openDialog()">ACCESSIBILITE</li>
+            </ul>
         </div>
         <div id="sous_bandeau">
 
@@ -42,13 +52,8 @@
                             alt="logo de uber eats" src="../../assets/imgHeader/ubereatsV2.png" height="30"
                             width="30"></a></li> -->
             </ul>
-
-            <ul id="navigation" class="text">
-                <li id="menus"  [routerLink]="['/menus']">MENUS</li>
-                <li id="equipe" [routerLink]="['/equipe']">L'EQUIPE</li>
-                <li id="contacts" [routerLink]="['/contact']">CONTACT</li>
-                <li id="lien" id="accessibilite" (click)="openDialog()">ACCESSIBILITE</li>
-            </ul>
         </div>
+
+
     </div>
 </div>
