@@ -135,7 +135,9 @@
       {
         "source": "assets\\carte\\photo-1554984303567.JPG",
         "alt": "P1000165.JPG"
-      }
+      },
+      { "source": "assets\\carte\\photo-1554985374639.JPG", "alt": "" },
+      { "source": "assets\\carte\\photo-1554985653957.JPG", "alt": "" }
     ]
   },
   "equipe": {
@@ -188,7 +190,7 @@
         },
         {
           "photo": "Numéro de la photo",
-          "source": "assets\\equipe\\mathilde.jpg"
+          "source": "assets\\equipe\\photo-1554985029869.JPG"
         }
       ]
     ],
@@ -196,7 +198,10 @@
       { "source": "assets\\equipe\\francois.png", "alt": "injarrpb" },
       { "source": "assets\\equipe\\mathilde.jpg", "alt": "cjinrpub" },
       { "source": "assets\\equipe\\jeanne.jpg", "alt": "cjnrip" },
-      { "source": "assets\\equipe\\jeanne.jpg", "alt": "crjin'vy(p" }
+      { "source": "assets\\equipe\\jeanne.jpg", "alt": "crjin'vy(p" },
+      { "source": "assets\\equipe\\photo-1554985029869.JPG", "alt": "" },
+      { "source": "assets\\equipe\\photo-1554985030962.JPG", "alt": "" },
+      { "source": "assets\\equipe\\photo-1554985031634.JPG", "alt": "" }
     ]
   },
   "contact": { "name": "Contact", "text-content": [[]], "photo-content": [] },

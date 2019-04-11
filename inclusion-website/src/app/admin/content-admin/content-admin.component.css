@@ -1,73 +1,67 @@
-#global-container-img
-{
-    display: flex;
-    margin-left: 25%;
-    flex-wrap: wrap;
+#global-container-img {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.simple-container-img{
-    position: relative;
-    margin: 5px;
-    border:1px solid black;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
+.simple-container-img {
+  position: relative;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
-.img-text-container-img
-{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+.img-text-container-img {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
-.img-modif
-{
-    height: 150px;
-    padding: 10px;
+.img-modif {
+  height: 150px;
+  padding: 10px;
 }
 
-.img-croix-rouge{
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 25px;
-    cursor: pointer;
+.img-croix-rouge {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  cursor: pointer;
 }
 
-.simple-container-img:hover .img-croix-rouge{
-    display: block;
+.simple-container-img:hover .img-croix-rouge {
+  display: block;
 }
 
-#img-add
-{
-    cursor: pointer;
+#img-add {
+  cursor: pointer;
 }
 
-.textContent{
-    min-width: 60%;
-
+.textContent {
+  min-width: 60%;
 }
 
-.formText{
-    margin-left:30%;
+.formText {
+  margin-left: 25%;
 }
 
-.save-button{
-    margin-left:30%;
-    margin-top: 30px;
+.save-button {
+  margin-left: 30%;
+  margin-top: 30px;
 }
 
-#input-photo{
-    display: none;
+#input-photo {
+  display: none;
 }
 
-#label-input-photo{
-    cursor: pointer;
+#label-input-photo {
+  cursor: pointer;
 }
 
-#button-add-img{
-    padding: 8px;
-    margin: auto;
+#button-add-img {
+  padding: 8px;
+  margin: auto;
 }

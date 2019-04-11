@@ -92,8 +92,10 @@ export class ContentAdminComponent implements OnInit {
   save() {
     this.jsonContentService
       .postPageByName(this.route.snapshot.paramMap.get("url"), this.pageContent)
-      .subscribe(() => this.getPage());
-    this.upload();
+      .subscribe(() => {
+        this.getPage();
+        console.log("hey");
+      });
   }
 
   // selectedFiles: any;
