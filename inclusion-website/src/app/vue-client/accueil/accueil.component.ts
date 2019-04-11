@@ -42,6 +42,7 @@ export class AccueilComponent implements OnInit {
     });
     // application de la hauteur du dipoa et la position relative
     if (this.height > 0) {
+      this.slideshowcontainer.nativeElement.style.height = this.height + "px";
       this.setContainerStyle();
     }
   }
@@ -63,13 +64,12 @@ export class AccueilComponent implements OnInit {
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
   setContainerStyle = function() {
-    if(this.slideshow.nativeElement.children[0]==undefined){
+    if(this.slideshow.nativeElement.children[this.i]==undefined && this.animationOFF){
       setTimeout(() => {
         this.setContainerStyle();
       }, 100);
     }
-    this.slideshowcontainer.nativeElement.style.height = this.height + "px";
-    this.test = this.slideshow.nativeElement.children;
+    // this.slideshowcontainer.nativeElement.style.height = this.height + "px";
     this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
   };
