@@ -1,1 +1,191 @@
-{"accueil":{"name":"Accueil","text-content":[[{"emplacement":"Texte du bandeau","contenu":"Savourez votre différence !"},{"emplacement":"Contenu de l'introduction","contenu":"Blablabla je suis l'introduction du site blablabla"}]],"photo-content":[{"source":"http://localhost:4200/assets/accueil/1.jpg","alt":"1.jpg"},{"source":"http://localhost:4200/assets/accueil/2.jpg","alt":"2.jpg"},{"source":"http://localhost:4200/assets/accueil/3.jpg","alt":"3.jpg"}]},"footer":{"name":"Footer","text-content":[[{"emplacement":"Numéro de téléphone","contenu":"0778479611"},{"emplacement":"Adresse","contenu":"adresse"},{"emplacement":"Adresse mail","contenu":"mail@inclusion-restaurant.fr"}],[{"emplacement":"Titre horaires d'ouvertures","contenu":"Heures d'ouverture"},{"emplacement":"Horaires du lundi","contenu":"Lundi:\t08h00 - 22h00"},{"emplacement":"Horaires du mardi","contenu":"Mardi:\t08h00 - 22h00"},{"emplacement":"Horaires du mercredi","contenu":"Mercredi:\t08h00 - 22h00"},{"emplacement":"Horaires du jeudi","contenu":"Jeudi:\t08h00 - 22h00"},{"emplacement":"Horaires du vendredi","contenu":"Vendredi:\t08h00 - 22h00"},{"emplacement":"Horaires du samedi","contenu":"Samedi:\t08h00 - 22h00"},{"emplacement":"Horaires du dimanche","contenu":"Dimanche:\t08h00 - 22h00"}]]},"carte":{"name":"Menu","text-content":[[{"emplacement":"Texte sur le bandeau d'images","contenu":"Nos petits plats"}],[{"emplacement":"Titre entrées","contenu":"Nos entrées"},{"emplacement":"Entrée 1","contenu":"La première entrée"},{"emplacement":"Entrée 2","contenu":"La deuxième entrée"},{"emplacement":"Entrée 3","contenu":"La troisième entrée"}],[{"emplacement":"Titre plats","contenu":"Nos plats"},{"emplacement":"Plat1","contenu":"Le premier plat"},{"emplacement":"Plat2","contenu":"Le deuxième plat"},{"emplacement":"Plat3","contenu":"Le troisième plat"}],[{"emplacement":"Titre desserts","contenu":"Nos desserts"},{"emplacement":"Dessert1","contenu":"Le premier dessert"},{"emplacement":"Dessert2","contenu":"Le deuxième dessert"},{"emplacement":"Dessert3","contenu":"Le troisième dessert"}],[{"emplacement":"Titre Boisson1","contenu":"Nos Vins Blancs & Champagnes"},{"emplacement":"VinB1","contenu":"Le premier vin"},{"emplacement":"VinB2","contenu":"Le deuxième vin"},{"emplacement":"VinB3","contenu":"Le troisième vin"}],[{"emplacement":"Vin rouges","contenu":"Nos vins rouges"},{"emplacement":"VinR1","contenu":"Le premier vin"},{"emplacement":"VinR2","contenu":"Le deuxième vin"},{"emplacement":"VinR3","contenu":"Le troisième vin"}],[{"emplacement":"Titre Bières","contenu":"Nos bières"},{"emplacement":"Bière1","contenu":"Le premier bière"},{"emplacement":"Bière2","contenu":"Le deuxième bière"},{"emplacement":"Bière3","contenu":"Le troisième bière"}]],"photo-content":[{"source":"assets\\accueil\\photo-1554802879238.jpg","alt":"3.jpg"}]},"equipe":{"name":"L'équipe","text-content":[[{"emplacement":"Description globale","contenu":"Le restaurant inclusion est un super resto à base d'amour et d'eau fraiche"}],[{"emplacement":"Nom","contenu":"François Marien"},{"emplacement":"Description","contenu":"Créateur du restaurant et passioné de cuisine."},{"photo":"Numéro de la photo","source":"assets\\equipe\\mathilde.jpg"}],[{"emplacement":"Nom","contenu":"Mathilde"},{"emplacement":"Description","contenu":"Assisstante principale de françois"},{"photo":"Numéro de la photo","source":"assets\\equipe\\jeanne.jpg"}],[{"emplacement":"Nom","contenu":"Clément"},{"emplacement":"Description","contenu":"J'ajoute encore qqn pour tester"},{"photo":"Numéro de la photo","source":"assets\\equipe\\jeanne.jpg"}],[{"emplacement":"Nom","contenu":"Thibaut"},{"emplacement":"Description","contenu":"J'ajoute ENCde qqn pour testereh bezochbhjaerg bdh&uové²"},{"photo":"Numéro de la photo","source":"assets\\equipe\\mathilde.jpg"}]],"photo-content":[{"source":"assets\\equipe\\francois.png","alt":"injarrpb"},{"source":"assets\\equipe\\mathilde.jpg","alt":"cjinrpub"},{"source":"assets\\equipe\\jeanne.jpg","alt":"cjnrip"},{"source":"assets\\equipe\\jeanne.jpg","alt":"crjin'vy(p"}]},"contact":{"name":"Contact","text-content":[[]],"photo-content":[]},"header":{"name":"Header","text-content":[[]]}}
+{
+  "accueil": {
+    "name": "Accueil",
+    "text-content": [
+      [
+        {
+          "emplacement": "Texte du bandeau",
+          "contenu": "Savourez votre différence !"
+        },
+        {
+          "emplacement": "Contenu de l'introduction",
+          "contenu": "Blablabla je suis l'introduction du site blablabla"
+        }
+      ]
+    ],
+    "photo-content": [
+      {
+        "source": "http://localhost:4200/assets/accueil/1.jpg",
+        "alt": "1.jpg"
+      },
+      {
+        "source": "http://localhost:4200/assets/accueil/2.jpg",
+        "alt": "2.jpg"
+      },
+      { "source": "http://localhost:4200/assets/accueil/3.jpg", "alt": "3.jpg" }
+    ]
+  },
+  "footer": {
+    "name": "Footer",
+    "text-content": [
+      [
+        { "emplacement": "Numéro de téléphone", "contenu": "0778479611" },
+        { "emplacement": "Adresse", "contenu": "adresse" },
+        {
+          "emplacement": "Adresse mail",
+          "contenu": "mail@inclusion-restaurant.fr"
+        }
+      ],
+      [
+        {
+          "emplacement": "Titre horaires d'ouvertures",
+          "contenu": "Heures d'ouverture"
+        },
+        {
+          "emplacement": "Horaires du lundi",
+          "contenu": "Lundi:\t08h00 - 22h00"
+        },
+        {
+          "emplacement": "Horaires du mardi",
+          "contenu": "Mardi:\t08h00 - 22h00"
+        },
+        {
+          "emplacement": "Horaires du mercredi",
+          "contenu": "Mercredi:\t08h00 - 22h00"
+        },
+        {
+          "emplacement": "Horaires du jeudi",
+          "contenu": "Jeudi:\t08h00 - 22h00"
+        },
+        {
+          "emplacement": "Horaires du vendredi",
+          "contenu": "Vendredi:\t08h00 - 22h00"
+        },
+        {
+          "emplacement": "Horaires du samedi",
+          "contenu": "Samedi:\t08h00 - 22h00"
+        },
+        {
+          "emplacement": "Horaires du dimanche",
+          "contenu": "Dimanche:\t08h00 - 22h00"
+        }
+      ]
+    ]
+  },
+  "carte": {
+    "name": "Menu",
+    "text-content": [
+      [
+        {
+          "emplacement": "Texte sur le bandeau d'images",
+          "contenu": "Nos petits plats"
+        }
+      ],
+      [
+        { "emplacement": "Titre entrées", "contenu": "Nos entrées" },
+        { "emplacement": "Entrée 1", "contenu": "La première entrée" },
+        { "emplacement": "Entrée 2", "contenu": "La deuxième entrée" },
+        { "emplacement": "Entrée 3", "contenu": "La troisième entrée" }
+      ],
+      [
+        { "emplacement": "Titre plats", "contenu": "Nos plats" },
+        { "emplacement": "Plat1", "contenu": "Le premier plat" },
+        { "emplacement": "Plat2", "contenu": "Le deuxième plat" },
+        { "emplacement": "Plat3", "contenu": "Le troisième plat" }
+      ],
+      [
+        { "emplacement": "Titre desserts", "contenu": "Nos desserts" },
+        { "emplacement": "Dessert1", "contenu": "Le premier dessert" },
+        { "emplacement": "Dessert2", "contenu": "Le deuxième dessert" },
+        { "emplacement": "Dessert3", "contenu": "Le troisième dessert" }
+      ],
+      [
+        {
+          "emplacement": "Titre Boisson1",
+          "contenu": "Nos Vins Blancs & Champagnes"
+        },
+        { "emplacement": "VinB1", "contenu": "Le premier vin" },
+        { "emplacement": "VinB2", "contenu": "Le deuxième vin" },
+        { "emplacement": "VinB3", "contenu": "Le troisième vin" }
+      ],
+      [
+        { "emplacement": "Vin rouges", "contenu": "Nos vins rouges" },
+        { "emplacement": "VinR1", "contenu": "Le premier vin" },
+        { "emplacement": "VinR2", "contenu": "Le deuxième vin" },
+        { "emplacement": "VinR3", "contenu": "Le troisième vin" }
+      ],
+      [
+        { "emplacement": "Titre Bières", "contenu": "Nos bières" },
+        { "emplacement": "Bière1", "contenu": "Le premier bière" },
+        { "emplacement": "Bière2", "contenu": "Le deuxième bière" },
+        { "emplacement": "Bière3", "contenu": "Le troisième bière" }
+      ]
+    ],
+    "photo-content": [
+      { "source": "assets\\accueil\\photo-1554802879238.jpg", "alt": "3.jpg" }
+    ]
+  },
+  "equipe": {
+    "name": "L'équipe",
+    "text-content": [
+      [
+        {
+          "emplacement": "Description globale",
+          "contenu": "Le restaurant inclusion est un super resto à base d'amour et d'eau fraiche"
+        }
+      ],
+      [
+        { "emplacement": "Nom", "contenu": "François Marien" },
+        {
+          "emplacement": "Description",
+          "contenu": "Créateur du restaurant et passioné de cuisine."
+        },
+        {
+          "photo": "Numéro de la photo",
+          "source": "assets\\equipe\\mathilde.jpg"
+        }
+      ],
+      [
+        { "emplacement": "Nom", "contenu": "Mathilde" },
+        {
+          "emplacement": "Description",
+          "contenu": "Assisstante principale de françois"
+        },
+        {
+          "photo": "Numéro de la photo",
+          "source": "assets\\equipe\\jeanne.jpg"
+        }
+      ],
+      [
+        { "emplacement": "Nom", "contenu": "Clément" },
+        {
+          "emplacement": "Description",
+          "contenu": "J'ajoute encore qqn pour tester"
+        },
+        {
+          "photo": "Numéro de la photo",
+          "source": "assets\\equipe\\jeanne.jpg"
+        }
+      ],
+      [
+        { "emplacement": "Nom", "contenu": "Thibaut" },
+        {
+          "emplacement": "Description",
+          "contenu": "J'ajoute ENCde qqn pour testereh bezochbhjaerg bdh&uové²"
+        },
+        {
+          "photo": "Numéro de la photo",
+          "source": "assets\\equipe\\mathilde.jpg"
+        }
+      ]
+    ],
+    "photo-content": [
+      { "source": "assets\\equipe\\francois.png", "alt": "injarrpb" },
+      { "source": "assets\\equipe\\mathilde.jpg", "alt": "cjinrpub" },
+      { "source": "assets\\equipe\\jeanne.jpg", "alt": "cjnrip" },
+      { "source": "assets\\equipe\\jeanne.jpg", "alt": "crjin'vy(p" }
+    ]
+  },
+  "contact": { "name": "Contact", "text-content": [[]], "photo-content": [] },
+  "header": { "name": "Header", "text-content": [[]] }
+}

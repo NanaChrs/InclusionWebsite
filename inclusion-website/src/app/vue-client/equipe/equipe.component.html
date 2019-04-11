@@ -1,29 +1,31 @@
 <app-entete></app-entete>
 <div id="content" *ngIf="textContent">
   <!-- photo equipe text imgcontent -->
-  <p>{{textContent[0][0].contenu}}</p>
+  <p>{{ textContent[0][0].contenu }}</p>
   <!-- Lecture du fichier Json qui contient "Equipe" -->
   <div id="equipe">
-  <div *ngFor="let text of textContent; let i = index">
-      
-    <!-- Lecture du tableau & si i = 0 , on prend la description globale du site -->
+    <div *ngFor="let text of textContent; let i = index">
+      <!-- Lecture du tableau & si i = 0 , on prend la description globale du site -->
       <!-- <p id="presentationGlobale" *ngIf="i==0">
         {{text[0].contenu}}
       </p> -->
-      
+
       <!--Si i différent de 0, on passe à la création des cartes -->
-      <div class="text" *ngIf="i!=0">
+      <div class="text" *ngIf="i != 0">
         <div id="imgcontent">
-          <img class="photo" src="{{imageContent[i-1].source}}" alt="{{imageContent[i-1]['alt']}}" width="100" height="100">
+          <img
+            class="photo"
+            src="{{ text[2]['source'] }}"
+            alt=" photo de {{ text[0]['contenu'] }}"
+            width="100"
+            height="100"
+          />
           <!-- <img class="photo" src="{{imageContent[0].source}}" alt=""  width="100" height="100" *ngIf="imageContent[i-1].source == 'undifined'"> -->
-            </div>
-          <div *ngFor="let item of text" >
-              {{item.contenu}}
-           </div>
+        </div>
+      </div>
     </div>
   </div>
-    </div>
-  </div>  
+</div>
 <app-footer></app-footer>
 
 <!-- <div id="imgcontent"> </div> -->

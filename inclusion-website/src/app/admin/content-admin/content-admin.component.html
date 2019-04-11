@@ -102,14 +102,7 @@
           (click)="onClickSuppr(item.source)"
         />
         <div class="img-text-container-img">
-          <img class="img-modif" src="{{ item.source }}" alt="" />
-          <input
-            type="text"
-            value="{{ item.alt }}"
-            [(ngModel)]="pageContent['photo-content'][j]['alt']"
-            name="{{ j }}"
-            required
-          />
+          <img class="img-modif" src="{{ item['source'] }}" />
         </div>
       </div>
 
