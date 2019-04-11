@@ -10,6 +10,8 @@
     margin: 5px;
     border:1px solid black;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .img-text-container-img
@@ -63,4 +65,9 @@
 
 #label-input-photo{
     cursor: pointer;
+}
+
+#button-add-img{
+    padding: 8px;
+    margin: auto;
 }
