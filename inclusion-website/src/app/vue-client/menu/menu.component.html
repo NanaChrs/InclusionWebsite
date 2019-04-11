@@ -1,34 +1,33 @@
 <app-entete></app-entete>
 <div class="menu text" *ngIf="textContent">
-
   <div class="foto">
-    <img src="{{imageContent[0].source}}" alt="{{imageContent[0].alt}}">
+    <img src="{{ imageContent[0].source }}" alt="{{ imageContent[0].alt }}" />
   </div>
-  <hr>
+  <hr />
 
   <div class="entrees">
-    <p>{{titreEntrees.contenu}}</p>
+    <p>{{ titreEntrees[0].contenu }}</p>
     <ul>
-      <li *ngFor=" let entree of entrees">{{entree.contenu}}</li>
+      <li *ngFor="let entree of entrees">{{ entree.contenu }}</li>
     </ul>
   </div>
-  <hr>
+  <hr />
 
   <div class="plats">
-    <p>{{titrePlats.contenu}}</p>
+    <p>{{ titrePlats.contenu }}</p>
     <ul>
-      <li *ngFor="let plat of plats">{{plat.contenu}}</li>
+      <li *ngFor="let plat of plats">{{ plat.contenu }}</li>
     </ul>
   </div>
-  <hr>
+  <hr />
 
   <div class="desserts">
-    <p>{{titreDesserts.contenu}}</p>
+    <p>{{ titreDesserts.contenu }}</p>
     <ul>
-      <li *ngFor="let dessert of entrees">{{dessert.contenu}}</li>
+      <li *ngFor="let dessert of dessert">{{ dessert.contenu }}</li>
     </ul>
   </div>
-  <hr>
+  <hr />
 
   <!-- <div class="otro">
     <p>{{textContent.titreFormule}}</p>
@@ -39,6 +38,5 @@
     </div>
   </div> 
   <hr> -->
-
 </div>
 <app-footer></app-footer>
