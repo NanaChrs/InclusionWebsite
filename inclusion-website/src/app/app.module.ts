@@ -25,6 +25,7 @@ import { EquipeComponent } from './vue-client/equipe/equipe.component';
 import { MentionsLegalesComponent } from './vue-client/mentions-legales/mentions-legales.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
+import { PlanSiteComponent } from './vue-client/plan-site/plan-site.component';
 
 
 
@@ -45,7 +46,8 @@ import { LogoutComponent } from './logout/logout.component';
     VueClientComponent,
     MenuComponent,
     MentionsLegalesComponent,
-    EquipeComponent
+    EquipeComponent,
+    PlanSiteComponent
   ],
   imports: [
     BrowserModule,

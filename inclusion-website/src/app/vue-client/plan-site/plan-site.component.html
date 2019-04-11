@@ -1,0 +1,30 @@
+<app-entete></app-entete>
+<div id="general">
+  <div #myslideshowcontainer id="slideshow-container">
+      <div #myslideshow id="slideshow">
+          <img *ngFor = "let image of imageContent" src="{{image.source}}" alt="{{image.alt}}" class="slideshow-image">
+      </div>
+      <div id="slideshow-text">
+          <p>Vous êtes perdu ? :O</p>
+      </div>
+      <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()"><img
+              src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent"></button>
+      <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()"><img
+              src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent"></button>
+      <div *ngIf="!animationOFF" id="zoneclicable">
+          <div id="zoneclicgauche" (click)="onPrev()"></div>
+          <div id="zoneclicdroite" (click)="onNext()"></div>
+      </div>
+  </div>
+  <div class="text">
+    <h1>INCLUSION</h1>
+
+    <div id="lien" [routerLink]="['/accueil']">ACCUEIL</div>
+    <div id="lien" [routerLink]="['/menu']">MENU</div>
+    <div id="lien" [routerLink]="['/equipe']">L'EQUIPE</div>
+    <div id="lien" [routerLink]="['/contact']">CONTACT</div>
+    <div id="lien" [routerLink]="['/mentions-legales']">MENTIONS LEGALES</div>
+
+  </div>
+</div>
+<app-footer></app-footer>
