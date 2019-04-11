@@ -1,56 +1,58 @@
 <app-nav-admin></app-nav-admin>
 <div *ngIf="url != 'equipe'">
-  <div
-    class="formText"
-    *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
-  >
-    <div *ngFor="let text of item; let j = index">
-      <h1>{{ text.emplacement }}</h1>
-      <mat-form-field class="textContent">
-        <textarea
-          matInput
-          [(ngModel)]="textContent[i][j]['contenu']"
-          placeholder="Contenu"
-          name="{{ text.emplacement }}"
-        ></textarea>
-      </mat-form-field>
-    </div>
-  </div>
-
-  <h1>Sauvegarder le contenu du texte:</h1>
-  <button class="save-button" (click)="save()">Save</button>
-
-  <h1 style="margin-left:30%">Photos</h1>
-  <div id="global-container-img" (editedEmitter)="getPage()">
-    <div class="simple-container-img" *ngFor="let item of imageContent">
-      <img
-        class="img-croix-rouge"
-        src="../../assets/img/croix_rouge.png"
-        (click)="onClickSuppr(item.source)"
-      />
-      <div class="img-text-container-img">
-        <img class="img-modif" src="{{ item.source }}" alt="" />
-        <input type="text" value="{{ item.alt }}" />
+  <form ngValidate (ngSubmit)="save()">
+    <div
+      class="formText"
+      *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
+    >
+      <div *ngFor="let text of item; let j = index">
+        <h1>{{ text.emplacement }}</h1>
+        <mat-form-field class="textContent">
+          <textarea
+            matInput
+            [(ngModel)]="textContent[i][j]['contenu']"
+            placeholder="Contenu"
+            name="{{ text.emplacement }}"
+          ></textarea>
+        </mat-form-field>
       </div>
     </div>
 
-    <input
-      type="file"
-      name="photo"
-      ng2FileSelect
-      [uploader]="uploader"
-      multiple
-    />
+    <h1>Sauvegarder le contenu du texte:</h1>
+    <button class="save-button" (click)="save()">Save</button>
 
-    <button
-      type="button"
-      class="btn btn-success btn-s"
-      (click)="upload()"
-      [disabled]="!uploader.getNotUploadedItems().length"
-    >
-      Upload an Image
-    </button>
-  </div>
+    <h1 style="margin-left:30%">Photos :</h1>
+    <div id="global-container-img" (editedEmitter)="getPage()">
+      <div class="simple-container-img" *ngFor="let item of imageContent">
+        <img
+          class="img-croix-rouge"
+          src="../../assets/img/croix_rouge.png"
+          (click)="onClickSuppr(item.source)"
+        />
+        <div class="img-text-container-img">
+          <img class="img-modif" src="{{ item.source }}" />
+          <input type="text" value="{{ item.alt }}" required />
+        </div>
+      </div>
+
+      <input
+        type="file"
+        name="photo"
+        ng2FileSelect
+        [uploader]="uploader"
+        multiple
+      />
+
+      <button
+        type="button"
+        class="btn btn-success btn-s"
+        (click)="upload()"
+        [disabled]="!uploader.getNotUploadedItems().length"
+      >
+        Upload an Image
+      </button>
+    </div>
+  </form>
 </div>
 
 <div *ngIf="url == 'equipe'">
