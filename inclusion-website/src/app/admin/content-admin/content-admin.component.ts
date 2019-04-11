@@ -82,13 +82,7 @@ export class ContentAdminComponent implements OnInit {
   }
 
   upload(): void {
-    let balise_alt = document.getElementById('balise_alt') as HTMLInputElement;
-    if (balise_alt.value.length == 0) {
-      alert('La balise alt est obligatoire, il s\'agit de la descrioption de l\'image');
-    } else {
-      this.uploader.uploadAll();
-      this.getPage();
-    }
+    this.uploader.uploadAll();
   }
 
   trackByIndex(index: number, obj: any): any {
@@ -102,18 +96,17 @@ export class ContentAdminComponent implements OnInit {
     this.upload();
   }
 
-  selectedFiles: any;
-  url_image: any;
+  // selectedFiles: any;
+  // url_image: any;
 
-  detectFiles(event) {
-    this.selectedFiles = event.target.files;
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
-      reader.onload = (event: any) => {
-        this.url_image = event.target.result;
-      }
-      reader.readAsDataURL(event.target.files[0]);
-    }
-  }
-
+  // detectFiles(event) {
+  //   this.selectedFiles = event.target.files;
+  //   if (event.target.files && event.target.files[0]) {
+  //     var reader = new FileReader();
+  //     reader.onload = (event: any) => {
+  //       this.url_image = event.target.result;
+  //     }
+  //     reader.readAsDataURL(event.target.files[0]);
+  //   }
+  // }
 }

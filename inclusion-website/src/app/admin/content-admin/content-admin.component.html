@@ -34,7 +34,6 @@
           <input type="text" value="{{ item.alt }}" required />
         </div>
       </div>
-
       <input
         type="file"
         name="photo"
@@ -42,14 +41,13 @@
         [uploader]="uploader"
         multiple
       />
-
       <button
-        type="button"
+        type="submit"
         class="btn btn-success btn-s"
         (click)="upload()"
         [disabled]="!uploader.getNotUploadedItems().length"
       >
-        Upload an Image
+        Ajouter l'image
       </button>
     </div>
   </form>
@@ -115,7 +113,14 @@
         [uploader]="uploader"
         multiple
       />
-
+      <button
+        type="submit"
+        class="btn btn-success btn-s"
+        (click)="upload()"
+        [disabled]="!uploader.getNotUploadedItems().length"
+      >
+        Ajouter l'image
+      </button>
       <input
         type="submit"
         class="btn btn-success btn-s"
@@ -123,15 +128,4 @@
       />
     </div>
   </form>
-</div>
-
-      <input type="text" name="text" id="balise_alt" placeholder="Balise alt" required="required" />
-      <button type="submit" class="btn btn-success btn-s" (click)="upload()"
-        [disabled]="!uploader.getNotUploadedItems().length">
-        Ajouter l'image
-      </button>
-
-    </div>
-  </div>
-
 </div>
