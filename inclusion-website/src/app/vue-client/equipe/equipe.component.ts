@@ -40,6 +40,7 @@ export class EquipeComponent implements OnInit {
 
  pageContent: String;
  textContent: String[];
+  descriptions: String [];
  imageContent: String[];
  equipe: String[][];
  descriptionGlobale: String;
@@ -54,7 +55,10 @@ export class EquipeComponent implements OnInit {
     this.pageContent = page;
     this.textContent = this.pageContent["text-content"];
     this.imageContent = this.pageContent["photo-content"];
-    this.descriptionGlobale = this.textContent[0][0].contenu;    
+    this.descriptionGlobale = this.textContent[0][0]['contenu'];
+    this.descriptions = this.textContent;
+    this.descriptions.splice(0,1);
+    console.log(this.descriptions);    
   });
   // for (let i = 0; i < this.pageContent.length; i++) {
   //   if (i = 0) {

@@ -1,7 +1,26 @@
 #content
 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Calibri';
     margin-top: 104px;
+}
+
+.banniereEquipe
+{
+    width: 100%;
+    opacity: 0.6;
+}
+
+#slideshow-text
+{
+    color: white;
+    text-shadow: 0px 0px 10px black;
+    position: absolute;
+    letter-spacing: .2em;
+    font-size: 3em;
+    width: 100%;
+    top:40%;
+    text-align: center;
+
 }
 
 #presentationGlobale
@@ -13,26 +32,51 @@
 .photo
 {
     overflow: hidden;
-    border: 1px solid #88181c;
-    border-radius: 50px;
-    box-shadow: 0px 0px 10px #343434;
+    /* border: 1px solid #88181c; */
+    border-radius: 100%;
+    /* box-shadow: 0px 0px 10px #343434; */
 }
 
 #equipe
 {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.text
+.card
 {
+
+    width: 20%;
     margin: 10px;
-    border: 2px solid #88181c;
+    /* border: 2px solid #88181c; */
     border-radius: 5px;
-    box-shadow: 0px 0px 5px #343434;
+    /* box-shadow: 0px 0px 5px #343434; */
+}
+
+#resume
+{
+    margin-right: 15%;
+    margin-left: 15%;
+    text-align: justify;
+    /* text-justify: inter-word; */
+    line-height: 150%;
+    text-indent: 5%;
+    font-family: 'Calibri';
+    letter-spacing: .15em;
+}
+
+#contenu
+{
+    padding: 5px;
+    text-align: center;
+}
+
+h4
+{
+    text-align: center;
 }
 
 #imgcontent
@@ -41,11 +85,46 @@
     text-align: center;
 }
 
-h1,h2
+.contenuCardText
 {
     text-align: center;
 }
 
-p{
-    font-size: 42px;
+#joinUs
+{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+#joinUs p
+{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+hr
+{
+    border: 1px solid #88181c;
+}
+
+#contenuJoinUs
+{
+    text-align: center;
+}
+
+#mailTo
+{
+    border: 2px solid #88181c;
+    border-radius: 3px;
+    padding: 8px;
+    /* background-color: #686868; */
+    color: black;
+    text-decoration: none;
+}
+
+#mailTo:hover
+{
+   background-color: #88181c;
+   color: aliceblue;
 }
