@@ -80,27 +80,24 @@
 
 <div *ngIf="url == 'equipe'">
   <form ngNativeValidate (ngSubmit)="save()">
-    <div
-      class="formText"
-      *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
-    >
+    <div class="formText" *ngFor="let item of textContent; let i = index">
       <div *ngFor="let text of item; let j = index">
         <h1 *ngIf="i == 0">{{ text.emplacement }}</h1>
         <h2 *ngIf="i > 0 && j < 2">{{ text.emplacement }}</h2>
         <h2 *ngIf="i > 0 && j == 2">{{ text.photo }}</h2>
         <mat-form-field class="textContent" *ngIf="j < 2">
           <textarea
-            required
             matInput
             [(ngModel)]="pageContent['text-content'][i][j]['contenu']"
             placeholder="Contenu"
             name="{{ text.contenu }}"
+            required
           ></textarea>
         </mat-form-field>
         <select
           class="form-control"
           required
-          *ngIf="j == 2 && imageContent"
+          *ngIf="imageContent && j == 2"
           [(ngModel)]="pageContent['text-content'][i][j]['source']"
           name="{{ text.photo }}"
         >
