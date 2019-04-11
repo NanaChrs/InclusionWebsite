@@ -103,8 +103,7 @@ app.post("/api/pages/:name/upload", upload.single("photo"), (req, res) => {
     let name = req.params["name"];
     var json = JSON.parse(fs.readFileSync("./json/pages.json"));
     json[name]["photo-content"].push({
-      source: req.file.path,
-      alt: req.file.originalname
+      source: req.file.path
     });
     fs.writeFileSync("./json/pages.json", JSON.stringify(json));
     return res.send({
