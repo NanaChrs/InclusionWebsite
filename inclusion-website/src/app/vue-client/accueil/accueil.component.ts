@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Input } from "@angular/core";
 import { CookieService } from "ngx-cookie-service";
 import { JsoncontentService } from "../../admin/content-admin/jsoncontent.service";
 import { timeInterval } from "rxjs/operators";
+import { ComponentFactoryResolver } from "@angular/core/src/render3";
 
 @Component({
   selector: "app-accueil",
@@ -10,7 +11,6 @@ import { timeInterval } from "rxjs/operators";
 })
 export class AccueilComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check("animationOFF");
-
   //duré d'une photo dans le diapo
   duration = 7;
 
@@ -63,9 +63,15 @@ export class AccueilComponent implements OnInit {
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
   setContainerStyle = function() {
+    if(this.slideshow.nativeElement.children[0]==undefined){
+      setTimeout(() => {
+        this.setContainerStyle();
+      }, 100);
+    }
     this.slideshowcontainer.nativeElement.style.height = this.height + "px";
-    // this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-    // this.slideshow.nativeElement.style.backgroundSize = 'cover';
+    this.test = this.slideshow.nativeElement.children;
+    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+    this.slideshow.nativeElement.style.backgroundSize = 'cover';
   };
 
   play = function() {

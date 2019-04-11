@@ -45,9 +45,58 @@
 
 }
 
+#fleche-gauche{
+    top: 25%;
+    left:0;
+    margin: 0;
+    border: none;
+    outline-style: none;
+    outline: 0;
+    background: transparent;
+    position: absolute;
+    cursor: pointer;
+}
+
+#fleche-droite{
+    top: 25%;
+    right: 0;
+    border: none;
+    outline-style: none;
+    background: transparent;
+    position: absolute;
+    cursor: pointer;
+}
+
+#zoneclicable{
+    display: flex;
+    height: 85%;
+    margin: auto;
+    justify-content: space-between;
+
+}
+
+#zoneclicgauche{
+    width: 20%;
+    z-index: 100;
+}
+
+#zoneclicgauche:hover{
+    cursor: url('../../../assets/accueil/fleche-gauche-souris.png') 25 50 , pointer;
+}
+
+#zoneclicdroite{
+    width: 20%;
+    z-index: 100;  
+}
+
+#zoneclicdroite:hover{
+    cursor: url('../../../assets/accueil/fleche-droite-souris.png') 75 50, pointer;   
+}
+
 .text{
     text-align: center;
     padding: 3% 0;
+    letter-spacing: .2em;
 }
 
 #lien{

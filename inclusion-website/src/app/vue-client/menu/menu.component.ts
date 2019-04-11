@@ -27,7 +27,7 @@ export class MenuComponent implements OnInit {
   pageContent: String[];
   textContent: String[];
   imageContent: String[];
-  pageContentDiapo: String;
+  pageContentDiapo: String[];
   textContentDiapo: String[];
   imageContentDiapo: String[];
 
@@ -49,7 +49,7 @@ export class MenuComponent implements OnInit {
       this.imageContent = this.pageContent["photo-content"];
     });
 
-    this.jsonContentService.getPageByName('accueil').subscribe((page) => {
+    this.jsonContentService.getPageByName('accueil').subscribe(page => {
       this.pageContentDiapo = page;
       this.textContentDiapo = this.pageContentDiapo["text-content"];
       this.imageContentDiapo = this.pageContentDiapo["photo-content"];
@@ -80,9 +80,15 @@ export class MenuComponent implements OnInit {
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
   setContainerStyle = function(){
-    this.slideshowcontainer.nativeElement.style.height = this.height + 'px';
-    // this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-    // this.slideshow.nativeElement.style.backgroundSize = 'cover';
+    if(this.slideshow.nativeElement.children[0]==undefined){
+      setTimeout(() => {
+        this.setContainerStyle();
+      }, 100);
+    }
+    this.slideshowcontainer.nativeElement.style.height = this.height + "px";
+    this.test = this.slideshow.nativeElement.children;
+    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+    this.slideshow.nativeElement.style.backgroundSize = 'cover';
   }
 
   
