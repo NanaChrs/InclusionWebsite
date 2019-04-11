@@ -93,55 +93,49 @@ app.post("/api/pages/:name/upload", upload.single("photo"), (req, res) => {
     } else {
         console.log("file received successfully");
         let name = req.params["name"];
-        var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+        // var json = JSON.parse(fs.readFileSync("./json/pages.json")); 
+        var json = JSON.parse(fs.readFileSync("./public/json/pages.json"));//dev. 
         json[name]["photo-content"].push({
-            source: req.file.path,
+            source: req.file.path.slice(7),
             alt: ""
         });
-        fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+        fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
         return res.send({
             success: true
         });
     }
 });
 
-app.route('/api/login').post((req, res) => {
-    console.log(req.body);
-    // On définit notre algorithme de cryptage
-    var algorithm = 'aes256';
-    // Notre clé de chiffrement, elle est souvent générée aléatoirement mais elle doit être la même pour le décryptage
+app.route("/api/login").post((req, res) => {
+    var algorithm = "aes256";
     var cle = 'l5JmP+G0/1zB%v$fd^vf^d$^é"$rnboàç_é"r8B8?2?2pcqGcL^3fe815c5';
-    // console.log(cle);
-    // //cryptage
-    // console.log(req.body['username']);
-    // console.log(req.body['password']);
     var cipher = crypto.createCipher(algorithm, cle);
-    var utilisateur = cipher.update(req.body['username'], 'utf8', 'hex');
-    // console.log(utilisateur);
-    utilisateur += cipher.final('hex');
-    // console.log(utilisateur);
+    var utilisateur = cipher.update(req.body["username"], "utf8", "hex");
+    utilisateur += cipher.final("hex");
     var cipher = crypto.createCipher(algorithm, cle);
-    var mdp = cipher.update(req.body['password'], 'utf8', 'hex');
-    mdp += cipher.final('hex');
-    // console.log(cle);
-    // console.log(mdp == '79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371');
-    // console.log(utilisateur == 'a82bdc731e23568916a7647f3f16d00a');
-    if ((mdp == '79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371') && (utilisateur == 'a82bdc731e23568916a7647f3f16d00a')) {
-        // console.log("Bijour");
-        res.send(201, true);
-    }
-    else {
-        // console.log("aurevoir");
+    var mdp = cipher.update(req.body["password"], "utf8", "hex");
+    mdp += cipher.final("hex");
+    if (
+        (mdp ==
+            "79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371" &&
+            utilisateur == "a82bdc731e23568916a7647f3f16d00a") ||
+        req.body["token"] ==
+        "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
+    ) {
+        res.send(201, [
+            true,
+            "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
+        ]);
+    } else {
         res.send(201, false);
     }
-
 });
 
 app.route("/api/pages/:name/text").post((req, res) => {
     const page = req.params["name"];
-    var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+    var json = JSON.parse(fs.readFileSync("./public/json/pages.json"));
     json[page] = req.body;
-    fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+    fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
     res.sendStatus(204);
     console.log(json);
 });
