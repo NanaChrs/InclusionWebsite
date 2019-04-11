@@ -49,7 +49,7 @@ import { SafePipe } from './admin/content-admin/safe-pipe';
     MenuComponent,
     MentionsLegalesComponent,
     EquipeComponent,
-    SafePipe
+    SafePipe,
     PlanSiteComponent
   ],
   imports: [
