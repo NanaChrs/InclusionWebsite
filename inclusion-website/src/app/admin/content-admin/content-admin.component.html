@@ -42,8 +42,11 @@
 <div *ngIf="url == 'equipe'" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
     <div *ngFor="let item of textContent; let i = index" class="category">
-      <h1 *ngIf="i < textContent.length && i > 0" class="category-title">
+      <h1 *ngIf="i < textContent.length - 1 && i > 0" class="category-title">
         Membre de l'équipe numéro {{ i }}
+      </h1>
+      <h1 *ngIf="i == textContent.length - 1" class="category-title">
+        Recrutement
       </h1>
       <div *ngFor="let text of item; let j = index" [ngClass]="{'category-description' : j == 1, 'item' : j!=1}">
         <h1 *ngIf="i == 0">{{ text.emplacement }}</h1>
