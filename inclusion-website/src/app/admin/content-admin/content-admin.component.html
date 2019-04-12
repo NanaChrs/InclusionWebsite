@@ -19,6 +19,42 @@
           ></textarea>
         </mat-form-field>
       </div>
+      <div class="textContent" *ngIf="url != 'carte' || i > 0">
+        <h1>Ajouter un nouveau contenu :</h1>
+        <div class="textContentFlex" *ngIf="newContent[i]">
+          <form (ngSubmit)="addNewParagraph(i)">
+            <div class="item">
+              <h2>Emplacement du nouveau paragraphe :</h2>
+              <mat-form-field class="textContent">
+                <textarea
+                  matInput
+                  placeholder="Emplacement"
+                  [(ngModel)]="newContent[i]['emplacement']"
+                  name="newContent[i]['emplacement']"
+                  required
+                ></textarea>
+              </mat-form-field>
+            </div>
+            <div class="item">
+              <h2>Contenu du nouveau paragraphe :</h2>
+              <mat-form-field class="textContent">
+                <textarea
+                  matInput
+                  placeholder="Contenu"
+                  [(ngModel)]="newContent[i]['contenu']"
+                  name="newContent[i]['contenu']"
+                  required
+                ></textarea>
+              </mat-form-field>
+            </div>
+            <input
+              type="submit"
+              class="btn btn-success btn-s"
+              value="Ajouter un nouveau paragraphe !"
+            />
+          </form>
+        </div>
+      </div>
     </div>
 
     <h1>Photos</h1>

@@ -1,4 +1,4 @@
-.category{
+.category {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -8,30 +8,35 @@
   padding: 10px;
 }
 
-.category-title{
+.category-title {
   width: 100%;
   text-align: center;
 }
 
-h1{
+h1 {
   margin: 5px auto 0;
 }
 
-.category-description{
+.category-description {
   width: 40%;
 }
 
-.item{
+.item {
   width: max-content;
   text-align: center;
 }
 
-.textContent{
+.textContent {
   width: 100%;
   text-align: center;
 }
 
-textarea{
+.textContentFlex {
+  width: 100%;
+  display: flex;
+}
+
+textarea {
   width: 100%;
 }
 
@@ -102,4 +107,8 @@ textarea{
 #button-add-img {
   padding: 8px;
   margin: auto;
+}
+
+.ajout {
+  display: flex;
 }
