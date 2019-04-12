@@ -118,6 +118,12 @@
         { "emplacement": "VinR1", "contenu": "Le premier vin" },
         { "emplacement": "VinR2", "contenu": "Le deuxième vin" },
         { "emplacement": "VinR3", "contenu": "Le troisième vin" }
+      ],
+      [
+        { "emplacement": "Titre Bières", "contenu": "Nos bières" },
+        { "emplacement": "Bière1", "contenu": "Le premier bière" },
+        { "emplacement": "Bière2", "contenu": "Le deuxième bière" },
+        { "emplacement": "Bière3", "contenu": "Le troisième bière" }
       ]
     ],
     "photo-content": [
@@ -186,7 +192,33 @@
           "photo": "Numéro de la photo",
           "source": "assets\\equipe\\photo-1554995297055.JPG"
         }
+      ],
+      [
+        {
+          "emplacement": "Recrutement Titre",
+          "contenu": "Nous rejoindre..."
+        },
+        {
+          "emplacement": "Texte de recrutement",
+          "contenu": "Vous avez des questions ? Vous voulez rejoindre l'équipe du restaurant inclusion ? Vous pouvez nous envoyer un mail"
+        },
+        {
+          "emplacement": "Adresse Email de recrutement",
+          "contenu": "info@inclusion-restaurant.fr"
+        },
+        {
+          "emplacement": "Texte du bouton d'envoi de mail de recrutement",
+          "contenu": "Nous écrire"
+        }
       ]
+    ],
+    "photo-content": [
+      { "source": "assets\\equipe\\francois.png", "alt": "injarrpb" },
+      { "source": "assets\\equipe\\mathilde.jpg", "alt": "cjinrpub" },
+      { "source": "assets\\equipe\\jeanne.jpg", "alt": "cjnrip" },
+      { "source": "assets\\equipe\\jeanne.jpg", "alt": "crjin'vy(p" },
+      { "source": "assets\\equipe\\photo-1554995297055.JPG", "alt": "" },
+      { "source": "assets\\equipe\\photo-1554995343821.JPG", "alt": "" }
     ]
   },
   "contact": { "name": "Contact", "text-content": [[]], "photo-content": [] },

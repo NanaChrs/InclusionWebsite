@@ -17,13 +17,13 @@ export class EquipeComponent implements OnInit {
 
   //numero de la photo en cours sur le diapo
   i = 0;
-
   pageContent: String[];
   textContent: String[];
   imageContent: String[];
   equipe: String[][];
   descriptionGlobale: String;
   descriptions: String[];
+  nousRejoindre: String[];
   nom: String;
 
   // recupération des element sur la page internet
@@ -35,13 +35,17 @@ export class EquipeComponent implements OnInit {
     private jsonContentService: JsoncontentService) { }
 
   ngOnInit() {
-    this.jsonContentService.getPageByName('equipe').subscribe((page) => {
+    this.jsonContentService.getPageByName("equipe").subscribe(page => {
       this.pageContent = page;
       this.textContent = this.pageContent["text-content"];
-      this.descriptionGlobale = this.textContent[0][0]['contenu'];
+      this.descriptionGlobale = this.textContent[0][0]["contenu"];
       this.imageContent = this.pageContent["photo-content"];
       this.descriptions = this.textContent;
       this.descriptions.splice(0, 1);
+      this.nousRejoindre = this.descriptions.splice(
+        this.descriptions.length - 1,
+        1
+      );
       this.lancementdiapo();
     });
   }

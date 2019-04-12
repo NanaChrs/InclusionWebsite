@@ -37,12 +37,6 @@
   <!-- Lecture du fichier Json qui contient "Equipe" -->
   <div id="equipe" *ngIf="descriptions"  class="text">
     <div class="card" *ngFor="let text of descriptions; let i = index">
-      <!-- Lecture du tableau & si i = 0 , on prend la description globale du site -->
-      <p id="presentationGlobale" *ngIf="i==0">
-        {{text[0].contenu}}
-      </p>
-
-      <!--Si i différent de 0, on passe à la création des cartes -->
       <div id="test">
         <div id="imgcontent">
           <img
@@ -52,7 +46,6 @@
             width="150"
             height="150"
           />
-          <!-- <img class="photo" src="{{imageContent[0].source}}" alt=""  width="100" height="100" *ngIf="imageContent[i-1].source == 'undifined'"> -->
         </div>
         <div id="contenu">
           <h4>{{ text[0]["contenu"] }}</h4>
@@ -62,15 +55,16 @@
     </div>
   </div>
 
-  <div id="joinUs" class="text">
-    <p>Nous rejoindre ...</p>
+  <div id="joinUs" class="text" *ngIf="nousRejoindre">
+    <p>{{ nousRejoindre[0][0]["contenu"] }}</p>
   </div>
   <div id="contenuJoinUs" class="text">
     <p>
-      Vous avez des questions ? Vous voulez rejoindre l'équipe du restaurant
-      inclusion ? Vous pouvez nous envoyer un mail
+      {{ nousRejoindre[0][1]["contenu"] }}
     </p>
-    <a id="mailTo" href="mailto:info@inclusion-restaurant.fr">Nous écrire</a>
+    <a id="mailTo" href="mailto:{{ nousRejoindre[0][2]['contenu'] }}">{{
+      nousRejoindre[0][3]["contenu"]
+    }}</a>
     <br />
     <br />
   </div>
