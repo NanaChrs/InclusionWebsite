@@ -145,6 +145,10 @@
     "text-content": [
       [
         {
+          "emplacement": "Texte du bandeau Photo",
+          "contenu": "L'Equipe !"
+        },
+        {
           "emplacement": "Description globale",
           "contenu": "Le restaurant inclusion est un super resto à base d'amour et d'eau fraiche"
         }
@@ -212,14 +216,7 @@
         }
       ]
     ],
-    "photo-content": [
-      { "source": "assets\\equipe\\francois.png", "alt": "injarrpb" },
-      { "source": "assets\\equipe\\mathilde.jpg", "alt": "cjinrpub" },
-      { "source": "assets\\equipe\\jeanne.jpg", "alt": "cjnrip" },
-      { "source": "assets\\equipe\\jeanne.jpg", "alt": "crjin'vy(p" },
-      { "source": "assets\\equipe\\photo-1554995297055.JPG", "alt": "" },
-      { "source": "assets\\equipe\\photo-1554995343821.JPG", "alt": "" }
-    ]
+    "photo-content": []
   },
   "contact": { "name": "Contact", "text-content": [[]], "photo-content": [] },
   "header": { "name": "Header", "text-content": [[]] }
