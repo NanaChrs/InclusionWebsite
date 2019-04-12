@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <input type="submit" class="btn btn-success btn-s" value="Sauvegarder tous les changements" />
+    <input id="btn-sauvegarder" type="submit" class="btn btn-success btn-s" value="Sauvegarder tous les changements" />
   </form>
 </div>
 
@@ -57,7 +57,7 @@
             name="{{ text.contenu }}" required></textarea>
         </mat-form-field>
         <select class="form-control" required *ngIf="imageContent && j == 2"
-          [(ngModel)]="pageContent['text-content'][i][j]['source']" name="{{ text.photo }}">
+          [(ngModel)]="pageContent['text-content'][i][j]['source']" name="{{ text.photo }}{{i}}">
           <option *ngFor="let pow of imageContent; let h = index" [value]="pow.source">Photo numéro {{ h + 1 }}</option>
         </select>
       </div>
@@ -88,7 +88,8 @@
           </button>
         </div>
       </div>
-      <input type="submit" class="btn btn-success btn-s" value="Sauvegarder tous les changements" />
+      <input id="btn-sauvegarder" type="submit" class="btn btn-success btn-s"
+        value="Sauvegarder tous les changements" />
     </div>
   </form>
 </div>
