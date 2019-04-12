@@ -138,7 +138,8 @@
       },
       { "source": "assets\\carte\\photo-1554985374639.JPG", "alt": "" },
       { "source": "assets\\carte\\photo-1554985653957.JPG", "alt": "" }
-    ]
+    ],
+    "bandeau": []
   },
   "equipe": {
     "name": "L'équipe",
@@ -216,7 +217,13 @@
         }
       ]
     ],
-    "photo-content": []
+    "photo-content": [
+      {
+        "source": "assets\\equipe\\photo-1554995297055.JPG"
+      },
+      {}
+    ],
+    "bandeau": []
   },
   "contact": { "name": "Contact", "text-content": [[]], "photo-content": [] },
   "header": { "name": "Header", "text-content": [[]] }
