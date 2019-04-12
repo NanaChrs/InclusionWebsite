@@ -8,7 +8,7 @@
 .banniereEquipe
 {
     width: 100%;
-    opacity: 0.6;
+    opacity: 0.9;
 }
 
 #slideshow-text
@@ -19,9 +19,8 @@
     letter-spacing: .2em;
     font-size: 3em;
     width: 100%;
-    top:40%;
+    top: 30%;
     text-align: center;
-
 }
 
 #presentationGlobale
@@ -71,7 +70,6 @@
 
 #contenu
 {
-    padding: 5px;
     text-align: center;
 }
 
@@ -156,11 +154,32 @@ hr
         flex-direction: column;
     }
 
+    #contenu
+    {
+        text-align: center;
+    }
+
     .card
     {
         width: 100%;
         margin: 10px;
         /* border: 2px solid #88181c; */
         /* box-shadow: 0px 0px 5px #343434; */
+    }
+
+    #joinUs
+    {
+        width: 100%;
+        text-align: center;
+    }
+
+    #contenuJoinUs
+    {
+        text-align: center;
+    }
+
+    #joinUs p
+    {
+       width: 80%;
     }
 }
