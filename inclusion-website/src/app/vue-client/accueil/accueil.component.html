@@ -1,25 +1,38 @@
 <app-entete></app-entete>
-<div id="global">
-    <div #myslideshowcontainer id="slideshow-container">
-        <div #myslideshow id="slideshow">
-            <img *ngFor = "let image of imageContent" src="{{image.source}}" alt="{{image.alt}}" class="slideshow-image">
-        </div>
-        <div id="slideshow-text">
-            <p>SAVOUREZ VOTRE DIFFERENCE</p>
-        </div>
-        <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()"><img
-                src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent"></button>
-        <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()"><img
-                src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent"></button>
-        <div *ngIf="!animationOFF" id="zoneclicable">
-            <div id="zoneclicgauche" (click)="onPrev()"></div>
-            <div id="zoneclicdroite" (click)="onNext()"></div>
-        </div>
+<div id="global" *ngIf="textContent">
+  <div #myslideshowcontainer id="slideshow-container">
+    <div  #myslideshow id="slideshow" >
+      <img
+        *ngFor="let image of imageContent"
+        src="{{ image.source }}"
+        alt="{{ image.alt }}"
+        class="slideshow-image"
+      />
     </div>
-    <div id="presentation-restaurant" class="text">
-        En plein cœur de Lille, à deux pas du théâtre le Sébastopol « Inclusion » est un nouveau  restaurant à la fois gourmand, inclusif et festif. 
-        <br><br>
-        Les produits locaux et de saison vous seront proposés mais surtout sublimés par notre Chef François.
+    <div id="slideshow-text">
+      <p>{{ textContent[0][0]["contenu"] }}</p>
     </div>
+    <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
+      <img
+        src="../../../assets/accueil/fleche-gauche.png"
+        alt="bouton précédent"
+      />
+    </button>
+
+    <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
+      <img
+        src="../../../assets/accueil/fleche-droite.png"
+        alt="bouton précédent"
+      />
+    </button>
+
+    <div *ngIf="!animationOFF" id="zoneclicable">
+      <div id="zoneclicgauche" (click)="onPrev()"></div>
+      <div id="zoneclicdroite" (click)="onNext()"></div>
+    </div>
+  </div>
+  <div id="presentation-restaurant" class="text">
+    {{ textContent[0][1]["contenu"] }}
+  </div>
 </div>
 <app-footer></app-footer>

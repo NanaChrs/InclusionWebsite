@@ -1,14 +1,41 @@
 <app-entete></app-entete>
-<div id="content" *ngIf="textContent" class="text">
-  <!-- photo equipe text imgcontent -->
-  <img class="banniereEquipe" src="../../../assets/equipe/greece.jpg" alt="" />
-  <div id="slideshow-text">
-    <h1 id="descriptionGlobale">Découvrez notre équipe</h1>
+<div id="content" *ngIf="textContent">
+  <div #myslideshowcontainer id="slideshow-container">
+    <div  #myslideshow id="slideshow" >
+      <img
+        *ngFor="let image of imageContent"
+        src="{{ image.source }}"
+        alt="{{ image.alt }}"
+        class="slideshow-image"
+      />
+    </div>
+    <div id="slideshow-text">
+      <p>{{ textContent[0][0]["contenu"] }}</p>
+    </div>
+    <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
+      <img
+        src="../../../assets/accueil/fleche-gauche.png"
+        alt="bouton précédent"
+      />
+    </button>
+
+    <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
+      <img
+        src="../../../assets/accueil/fleche-droite.png"
+        alt="bouton précédent"
+      />
+    </button>
+
+    <div *ngIf="!animationOFF" id="zoneclicable">
+      <div id="zoneclicgauche" (click)="onPrev()"></div>
+      <div id="zoneclicdroite" (click)="onNext()"></div>
+    </div>
   </div>
+
   <p id="resume">{{ descriptionGlobale }}</p>
-  <hr />
+  <hr/>
   <!-- Lecture du fichier Json qui contient "Equipe" -->
-  <div id="equipe" *ngIf="descriptions">
+  <div id="equipe" *ngIf="descriptions"  class="text">
     <div class="card" *ngFor="let text of descriptions; let i = index">
       <div id="test">
         <div id="imgcontent">
