@@ -24,6 +24,7 @@ h1 {
 .item {
   width: max-content;
   text-align: center;
+  margin: auto;
 }
 
 .textContent {
@@ -122,6 +123,64 @@ textarea {
 	font:bold 12px Verdana;
 	padding: 6px;
 }
+
 .ajout {
   display: flex;
+}
+
+.add-contenu{
+  border-top: 1px solid #4C3C1B;
+  width: max-content;
+}
+
+.textContentFlex{
+  margin-top: 5px;
+}
+
+.textContentFlex form{
+  margin: auto;
+}
+
+.textContentFlex .item h2{
+  margin: auto;
+}
+
+.btn-add-contenu
+{
+  background:#6b0b0b;
+  color:#fff;
+  border:none;
+  position:relative;
+  font-size:1em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+
+.btn-add-contenu:hover{
+  background:#fff;
+  color:#6b0b0b;
+}
+
+.btn-add-contenu:before,.btn-add-contenu:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #6b0b0b;
+  transition:400ms ease all;
+}
+
+.btn-add-contenu:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-add-contenu:hover:before,.btn-add-contenu:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
