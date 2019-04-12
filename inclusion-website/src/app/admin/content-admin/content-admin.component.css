@@ -1,3 +1,40 @@
+.category{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px 0 10px 0;
+  border-bottom: 3px dashed #ddd;
+  text-align: center;
+  padding: 10px;
+}
+
+.category-title{
+  width: 100%;
+  text-align: center;
+}
+
+h1{
+  margin: 5px auto 0;
+}
+
+.category-description{
+  width: 40%;
+}
+
+.item{
+  width: max-content;
+  text-align: center;
+}
+
+.textContent{
+  width: 100%;
+  text-align: center;
+}
+
+textarea{
+  width: 100%;
+}
+
 #global-container-img {
   display: flex;
   flex-wrap: wrap;
@@ -46,6 +83,7 @@
 
 .formText {
   margin-left: 25%;
+  margin: 10px 5% 0 25%;
 }
 
 .save-button {
