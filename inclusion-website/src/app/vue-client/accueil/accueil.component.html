@@ -1,7 +1,7 @@
 <app-entete></app-entete>
 <div id="global" *ngIf="textContent">
   <div #myslideshowcontainer id="slideshow-container">
-    <div #myslideshow id="slideshow">
+    <div  #myslideshow id="slideshow" >
       <img
         *ngFor="let image of imageContent"
         src="{{ image.source }}"
