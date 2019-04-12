@@ -70,27 +70,33 @@
 }
 
 /*Partie inférieure du header*/
-#navigation
-{
-    margin: 0;
-    bottom: 0;
-    text-align: center;
-
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-}
-
 #conteneur
 {
    width: 100%;
-   bottom: 0;
+   position: relative;
+   
 }
 
-#bandeau_navigation:nth-child(2)
+#listeNavigation
+{
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+}
+
+#navigation
+{
+    margin: 0;
+    list-style-type: none;
+    display: flex; 
+    justify-content: space-between;   
+}
+
+
+/* #bandeau_navigation:nth-child(2)
 {
     flex: 1;
-}
+} */
 
 /* a
 {

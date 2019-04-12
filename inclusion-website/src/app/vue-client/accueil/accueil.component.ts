@@ -80,6 +80,7 @@ export class AccueilComponent implements OnInit {
     }
     this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
+    
   } 
 
 
