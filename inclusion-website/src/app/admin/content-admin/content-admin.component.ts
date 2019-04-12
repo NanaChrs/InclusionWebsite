@@ -9,11 +9,12 @@ import { FileUploader } from "ng2-file-upload";
   styleUrls: ["./content-admin.component.css"]
 })
 export class ContentAdminComponent implements OnInit {
-  pageContent: String[];
-  url: String;
-  textContent: String[];
-  imageContent: String[];
+  private pageContent: String[];
+  private url: String;
+  private textContent: String[][];
+  private imageContent: String[];
   public uploader: FileUploader;
+  private newContent;
   // private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
   private uploadURL: string = "http://localhost:8000/api/pages/";
 
@@ -51,6 +52,7 @@ export class ContentAdminComponent implements OnInit {
   }
 
   getPage(): void {
+    this.newContent = [];
     this.jsonContentService
       .getPageByName(this.route.snapshot.paramMap.get("url"))
       .subscribe(page => {
@@ -58,7 +60,13 @@ export class ContentAdminComponent implements OnInit {
         this.pageContent = page;
         this.textContent = this.pageContent["text-content"];
         this.imageContent = this.pageContent["photo-content"];
-        console.log(this.textContent.length);
+        for (var i = 0; i < this.textContent.length; i++) {
+          this.newContent.push({
+            emplacement: "",
+            contenu: ""
+          });
+        }
+        console.log(this.newContent);
       });
   }
 
@@ -95,5 +103,11 @@ export class ContentAdminComponent implements OnInit {
       .subscribe(() => {
         this.getPage();
       });
+  }
+
+  addNewParagraph(i) {
+    this.textContent[i].push(this.newContent[i]);
+    this.save();
+    console.log(this.textContent);
   }
 }

@@ -39,21 +39,54 @@ export class AccueilComponent implements OnInit {
       this.pageContent = page;
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
+      this.lancementdiapo();
     });
-    // application de la hauteur du dipoa et la position relative
-    if (this.height > 0) {
-      this.slideshowcontainer.nativeElement.style.height = this.height + "px";
-      this.setContainerStyle();
-    }
   }
 
   ngAfterViewInit() {
-    // lancement du diapo
-    this.play();
     // lancement de la fonction permettant de verifier les modifications "accessibilité"
     this.checkaccess();
   }
 
+
+
+
+
+  lancementdiapo(){
+    if (this.slideshow!=undefined && this.slideshowcontainer!=undefined){    
+      if ((this.height) > 0) {
+        this.slideshowcontainer.nativeElement.style.height = this.height + "px";
+        this.setContainerStyle();
+      }
+      this.play();
+    }
+    else{
+      setTimeout(()=>{
+        this.lancementdiapo();
+      },100);
+    }
+  }
+
+
+
+
+
+  // fonction pour appliquer la hauteur du dipoa et la position relative
+  setContainerStyle = function(){
+    if(this.slideshow.nativeElement.children[this.i]==undefined && this.animationOFF){
+      setTimeout(() => {
+        this.setContainerStyle();
+      }, 100);
+    }
+    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+    this.slideshow.nativeElement.style.backgroundSize = 'cover';
+    
+  } 
+
+
+
+
+  
   // fonction permettant de verifier les modifications "accessibilité"
   checkaccess = function() {
     this.animationOFF = this.cookieService.check("animationOFF");
@@ -62,17 +95,9 @@ export class AccueilComponent implements OnInit {
     }, 100);
   };
 
-  // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function() {
-    if(this.slideshow.nativeElement.children[this.i]==undefined && this.animationOFF){
-      setTimeout(() => {
-        this.setContainerStyle();
-      }, 100);
-    }
-    // this.slideshowcontainer.nativeElement.style.height = this.height + "px";
-    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-    this.slideshow.nativeElement.style.backgroundSize = 'cover';
-  };
+
+
+
 
   play = function() {
     if (!this.animationOFF) {
@@ -100,6 +125,10 @@ export class AccueilComponent implements OnInit {
       this.play();
     }, this.duration * 1000);
   };
+
+
+
+
 
   // fleches d'animations
   onNext() {

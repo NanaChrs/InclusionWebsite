@@ -1,3 +1,45 @@
+.category {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px 0 10px 0;
+  border-bottom: 3px dashed #ddd;
+  text-align: center;
+  padding: 10px;
+}
+
+.category-title {
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  margin: 5px auto 0;
+}
+
+.category-description {
+  width: 40%;
+}
+
+.item {
+  width: max-content;
+  text-align: center;
+}
+
+.textContent {
+  width: 100%;
+  text-align: center;
+}
+
+.textContentFlex {
+  width: 100%;
+  display: flex;
+}
+
+textarea {
+  width: 100%;
+}
+
 #global-container-img {
   display: flex;
   flex-wrap: wrap;
@@ -46,6 +88,7 @@
 
 .formText {
   margin-left: 25%;
+  margin: 10px 5% 0 25%;
 }
 
 .save-button {
@@ -64,4 +107,21 @@
 #button-add-img {
   padding: 8px;
   margin: auto;
+}
+
+#btn-sauvegarder{
+  cursor: pointer;
+  position: fixed;
+  right: 40px;
+  top: 0;
+  transform: translate(-40px);
+  border-radius:12px 0 12px 0;
+	background: #478bf9;
+	border:none;
+	color:#fff;
+	font:bold 12px Verdana;
+	padding: 6px;
+}
+.ajout {
+  display: flex;
 }
