@@ -28,7 +28,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { SafePipe } from './admin/content-admin/safe-pipe';
 import { PlanSiteComponent } from './vue-client/plan-site/plan-site.component';
 import { ContactComponent } from './vue-client/contact/contact.component';
-
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { RecaptchaModule } from 'angular-google-recaptcha';
 
 
 
@@ -65,7 +66,10 @@ import { ContactComponent } from './vue-client/contact/contact.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule.forRoot({
+      siteKey: '6Leuzp0UAAAAAM4BZfnOoI8h-fGkOAnO0IiEZ4eQ',
+    }),
   ],
   entryComponents: [
     MyDialogComponent,
