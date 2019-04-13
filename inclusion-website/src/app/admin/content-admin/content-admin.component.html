@@ -1,73 +1,43 @@
 <app-nav-admin></app-nav-admin>
 <div *ngIf="url != 'equipe'" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
-    <div
-      *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
-      class="category"
-    >
-      <div
-        *ngFor="let text of item; let j = index"
-        [ngClass]="{ 'category-title': j == 0, item: j != 0 }"
-      >
+    <div *ngFor="let item of textContent; let i = index; trackBy: trackByIndex" class="category">
+      <div *ngFor="let text of item; let j = index" [ngClass]="{ 'category-title': j == 0, item: j != 0 }">
         <h1>{{ text.emplacement }}</h1>
         <mat-form-field class="textContent">
           <textarea matInput [(ngModel)]="textContent[i][j]['contenu']" placeholder="Contenu"
             name="{{ text.emplacement }}"></textarea>
         </mat-form-field>
       </div>
-      <div class="textContent" *ngIf="url != 'carte' || i > 0">
+      <div class="textContent add-contenu" *ngIf="url != 'carte' || i > 0">
         <h1>Ajouter un nouveau contenu :</h1>
         <div class="textContentFlex" *ngIf="newContent[i]">
           <form (ngSubmit)="addNewParagraph(i)">
             <div class="item">
               <h2>Emplacement du nouveau paragraphe :</h2>
               <mat-form-field class="textContent">
-                <textarea
-                  matInput
-                  placeholder="Emplacement"
-                  [(ngModel)]="newContent[i]['emplacement']"
-                  name="newContent[i]['emplacement']"
-                  required
-                ></textarea>
+                <textarea matInput placeholder="Emplacement" [(ngModel)]="newContent[i]['emplacement']"
+                  name="newContent[i]['emplacement']" required></textarea>
               </mat-form-field>
             </div>
             <div class="item">
               <h2>Contenu du nouveau paragraphe :</h2>
               <mat-form-field class="textContent">
-                <textarea
-                  matInput
-                  placeholder="Contenu"
-                  [(ngModel)]="newContent[i]['contenu']"
-                  name="newContent[i]['contenu']"
-                  required
-                ></textarea>
+                <textarea matInput placeholder="Contenu" [(ngModel)]="newContent[i]['contenu']"
+                  name="newContent[i]['contenu']" required></textarea>
               </mat-form-field>
             </div>
-            <input
-              type="submit"
-              class="btn btn-success btn-s"
-              value="Ajouter un nouveau paragraphe !"
-            />
+            <input type="submit" class="btn btn-success btn-s btn-add-contenu"
+              value="Ajouter un nouveau paragraphe !" />
           </form>
         </div>
       </div>
     </div>
 
     <h1>Photos</h1>
-    <div
-      id="global-container-img"
-      (editedEmitter)="getPage()"
-      *ngIf="imageContent"
-    >
-      <div
-        class="simple-container-img"
-        *ngFor="let item of imageContent; let j = index"
-      >
-        <img
-          class="img-croix-rouge"
-          src="../../assets/img/croix_rouge.png"
-          (click)="onClickSuppr(item.source)"
-        />
+    <div id="global-container-img" (editedEmitter)="getPage()" *ngIf="imageContent">
+      <div class="simple-container-img" *ngFor="let item of imageContent; let j = index">
+        <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)" />
         <div class="img-text-container-img">
           <img class="img-modif" src="{{ item.source }}" />
           <input type="text" [(ngModel)]="pageContent['photo-content'][j]['alt']" name="{{ j }}" required />
@@ -101,10 +71,7 @@
       <h1 *ngIf="i == textContent.length - 1" class="category-title">
         Recrutement
       </h1>
-      <div
-        *ngFor="let text of item; let j = index"
-        [ngClass]="{ 'category-description': j == 1, item: j != 1 }"
-      >
+      <div *ngFor="let text of item; let j = index" [ngClass]="{ 'category-description': j == 1, item: j != 1 }">
         <h1 *ngIf="i == 0">{{ text.emplacement }}</h1>
         <h2 *ngIf="i > 0 && j < 2">{{ text.emplacement }}</h2>
 
