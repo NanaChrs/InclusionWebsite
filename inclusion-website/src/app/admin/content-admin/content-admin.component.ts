@@ -15,6 +15,7 @@ export class ContentAdminComponent implements OnInit {
   private imageContent: String[];
   public uploader: FileUploader;
   private newContent;
+  private newPerson;
   // private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
   private uploadURL: string = "http://localhost:8000/api/pages/";
 
@@ -53,6 +54,7 @@ export class ContentAdminComponent implements OnInit {
 
   getPage(): void {
     this.newContent = [];
+    this.newPerson = [];
     this.jsonContentService
       .getPageByName(this.route.snapshot.paramMap.get("url"))
       .subscribe(page => {
@@ -60,13 +62,33 @@ export class ContentAdminComponent implements OnInit {
         this.pageContent = page;
         this.textContent = this.pageContent["text-content"];
         this.imageContent = this.pageContent["photo-content"];
-        for (var i = 0; i < this.textContent.length; i++) {
-          this.newContent.push({
-            emplacement: "",
+        if (this.url == "equipe") {
+          for (var i = 0; i < this.textContent.length; i++) {
+            this.newContent.push({
+              emplacement: "",
+              contenu: ""
+            });
+          }
+          this.newPerson.push({
+            emplacement: "Nom",
             contenu: ""
           });
+          this.newPerson.push({
+            emplacement: "Description",
+            contenu: ""
+          });
+          this.newPerson.push({
+            photo: "Numéro de la photo",
+            source: ""
+          });
+        } else {
+          for (var i = 0; i < this.textContent.length; i++) {
+            this.newContent.push({
+              emplacement: "",
+              contenu: ""
+            });
+          }
         }
-        console.log(this.newContent);
       });
   }
 
@@ -107,7 +129,10 @@ export class ContentAdminComponent implements OnInit {
 
   addNewParagraph(i) {
     this.textContent[i].push(this.newContent[i]);
-    this.save();
+  }
+
+  addNewPerson() {
+    this.textContent.splice(-2, 0, this.newPerson);
     console.log(this.textContent);
   }
 }
