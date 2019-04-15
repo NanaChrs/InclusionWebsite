@@ -4,10 +4,6 @@
 }
 
 /*Bloc principal*/
-#bloc_image
-{
-   
-}
 
 #header
 { 
@@ -115,7 +111,7 @@ a:hover
     border: 1px solid whitesmoke;
 }
 
-#logoFacebook:hover, #logoInstagram:hover, #logoTwitter:hover, #logoTripadvisor:hover, #logoUber:hover
+#logoFacebook:hover, #logoInstagram:hover, #logoTripadvisor:hover, #logoUber:hover
 {
     /*border: 1px solid #631514*/
     background-color: black;
@@ -217,14 +213,9 @@ button{
     border: none;
     font-family: 'Calibri';
     font-size: 1em; 
+    padding: 0;
 }
 
-
-#button:focus{
-    outline-style: 1px dotted #eee;
-}
-
-#icone:focus, .lien-focus:focus {
-    /* border: inherit; */
-    border: solid black;
+.lien-focus:focus {
+    border: solid white;
 }

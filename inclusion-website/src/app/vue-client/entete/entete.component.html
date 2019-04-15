@@ -19,38 +19,36 @@
     </div>
 
     <div id="bandeau_navigation">
-        <div id="bloc_image" >
-            <a [routerLink]="['/accueil']" class="lien-focus"><img id="logoSite" class="lien-focus" alt="logo du site inclusion"
-                    src="./assets/imgHeader/logoInclusion.png" height="100" width="300" /></a>
-        </div>
+        <button id="bloc_image" [routerLink]="['/accueil']" class="lien-focus"><img id="logoSite" alt="logo du site inclusion"
+                src="./assets/imgHeader/logoInclusion.png" height="100" width="300" />
+        </button>
         <div id="conteneur">
             <div id="listeNavigation">
                 <ul id="navigation" class="text">
-                    <li id="accueil" class="lien-focus" [routerLink]="['/accueil']">ACCUEIL</li>
-                    <li id="menus" class="lien-focus" [routerLink]="['/menus']">MENUS</li>
-                    <li id="equipe" class="lien-focus" [routerLink]="['/equipe']">L'EQUIPE</li>
-                    <li id="contacts" class="lien-focus" [routerLink]="['/contact']">CONTACT</li>
-                    <li id="livraison" class="lien-focus" [routerLink]="['/contact']">LIVRAISON</li>
-                    <button><li id="accessibilite" class="lien-focus" (click)="openDialog()">ACCESSIBILITE</li></button>
+                    <button class="lien-focus" [routerLink]="['/accueil']"><li id="accueil" >ACCUEIL</li></button>
+                    <button class="lien-focus" [routerLink]="['/menus']"><li id="menus" >MENUS</li></button>
+                    <button class="lien-focus" [routerLink]="['/equipe']"><li id="equipe" >L'EQUIPE</li></button>
+                    <button class="lien-focus" [routerLink]="['/contact']"><li id="contacts" >CONTACT</li></button>
+                    <button class="lien-focus" [routerLink]="['/contact']"><li id="livraison">LIVRAISON</li></button>
+                    <button class="lien-focus" (click)="openDialog()"><li id="accessibilite">ACCESSIBILITE</li></button>
                 </ul>
             </div>
         </div>
         <div id="sous_bandeau">
 
             <ul id="liste_logo">
-                <li id="icone"><a href="https://www.facebook.com/InclusionRestaurant/" class="lien-focus"
-                        onclick="window.open(this.href); return false;"><img id="logoFacebook" alt="logo de Facebook"
-                            src="../../assets/imgHeader/facebook.png" height="30" width="30" ></a></li>
-                <li id="icone"><a href="https://www.instagram.com/inclusion_restaurant/" class="lien-focus"
-                        onclick="window.open(this.href); return false;"><img id="logoInstagram" alt="logo d'Instagram"
-                            src="../../assets/imgHeader/instagram.png" height="30" width="30"></a></li>
-                <li id="icone"><a href="https://www.ubereats.com/fr-FR/stores/" class="lien-focus"
-                        onclick="window.open(this.href); return false;"><img id="logoUber" alt="logo d'Uber eats"
-                            src="../../assets/imgHeader/ubereats.png" height="30" width="30"></a></li>
-                <li id="icone"><a href="https://www.tripadvisor.fr/" class="lien-focus"
-                        onclick="window.open(this.href); return false;"><img id="logoTripadvisor"
-                            alt="logo de trip advisor" src="../../assets/imgHeader/tripadvisor.png" height="30"
-                            width="30"></a></li>
+                <a href="https://www.facebook.com/InclusionRestaurant/" class="lien-focus"
+                        onclick="window.open(this.href); return false;"><li id="icone"><img id="logoFacebook" alt="logo de Facebook"
+                            src="../../assets/imgHeader/facebook.png" height="30" width="30" ></li></a>
+                <a href="https://www.instagram.com/inclusion_restaurant/" class="lien-focus"
+                        onclick="window.open(this.href); return false;"><li id="icone"><img id="logoInstagram" alt="logo d'Instagram"
+                            src="../../assets/imgHeader/instagram.png" height="30" width="30"></li></a>
+                <a href="https://www.ubereats.com/fr-FR/stores/" class="lien-focus"
+                        onclick="window.open(this.href); return false;"><li id="icone"><img id="logoUber" alt="logo d'Uber eats"
+                            src="../../assets/imgHeader/ubereats.png" height="30" width="30"></li></a>
+                <a href="https://www.tripadvisor.fr/" class="lien-focus"
+                        onclick="window.open(this.href); return false;"><li id="icone"><img id="logoTripadvisor" alt="logo de trip advisor"
+                            src="../../assets/imgHeader/tripadvisor.png" height="30" width="30"></li></a>
                 <!-- <li id="icone"><a href="https://www.ubereats.com"
                         onclick="window.open(this.href); return false;"><img id="logoTripadvisor"
                             alt="logo de uber eats" src="../../assets/imgHeader/ubereatsV2.png" height="30"
