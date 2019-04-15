@@ -1,67 +1,127 @@
 <app-nav-admin></app-nav-admin>
 <div *ngIf="url != 'equipe'" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
-    <div *ngFor="let item of textContent; let i = index; trackBy: trackByIndex" class="category">
-      <div *ngFor="let text of item; let j = index" [ngClass]="{ 'category-title': j == 0, item: j != 0 }">
+    <div
+      *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
+      class="category"
+    >
+      <div
+        *ngFor="let text of item; let j = index"
+        [ngClass]="{ 'category-title': j == 0, item: j != 0 }"
+      >
         <h1>{{ text.emplacement }}</h1>
         <mat-form-field class="textContent">
-          <textarea matInput [(ngModel)]="textContent[i][j]['contenu']" placeholder="Contenu"
-            name="{{ text.emplacement }}"></textarea>
+          <textarea
+            matInput
+            [(ngModel)]="textContent[i][j]['contenu']"
+            placeholder="Contenu"
+            name="{{ text.emplacement }}"
+          ></textarea>
         </mat-form-field>
       </div>
       <div class="textContent add-contenu" *ngIf="url != 'carte' || i > 0">
         <h1>Ajouter un nouveau contenu :</h1>
         <div class="textContentFlex" *ngIf="newContent[i]">
-          <form (ngSubmit)="addNewParagraph(i)">
+          <form ngNativeValidate (ngSubmit)="addNewParagraph(i)">
             <div class="item">
               <h2>Emplacement du nouveau paragraphe :</h2>
               <mat-form-field class="textContent">
-                <textarea matInput placeholder="Emplacement" [(ngModel)]="newContent[i]['emplacement']"
-                  name="newContent[i]['emplacement']" required></textarea>
+                <textarea
+                  matInput
+                  placeholder="Emplacement"
+                  [(ngModel)]="newContent[i]['emplacement']"
+                  name="newContent[i]['emplacement']"
+                  required
+                ></textarea>
               </mat-form-field>
             </div>
             <div class="item">
               <h2>Contenu du nouveau paragraphe :</h2>
               <mat-form-field class="textContent">
-                <textarea matInput placeholder="Contenu" [(ngModel)]="newContent[i]['contenu']"
-                  name="newContent[i]['contenu']" required></textarea>
+                <textarea
+                  matInput
+                  placeholder="Contenu"
+                  [(ngModel)]="newContent[i]['contenu']"
+                  name="newContent[i]['contenu']"
+                  required
+                ></textarea>
               </mat-form-field>
             </div>
-            <input type="submit" class="btn btn-success btn-s btn-add-contenu"
-              value="Ajouter un nouveau paragraphe !" />
+            <input
+              type="submit"
+              class="btn btn-success btn-s btn-add-contenu"
+              value="Ajouter un nouveau paragraphe !"
+            />
           </form>
         </div>
       </div>
     </div>
 
     <h1>Photos</h1>
-    <div id="global-container-img" (editedEmitter)="getPage()" *ngIf="imageContent">
-      <div class="simple-container-img" *ngFor="let item of imageContent; let j = index">
-        <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)" />
+    <div
+      id="global-container-img"
+      (editedEmitter)="getPage()"
+      *ngIf="imageContent"
+    >
+      <div
+        class="simple-container-img"
+        *ngFor="let item of imageContent; let j = index"
+      >
+        <img
+          class="img-croix-rouge"
+          src="../../assets/img/croix_rouge.png"
+          (click)="onClickSuppr(item.source)"
+        />
         <div class="img-text-container-img">
           <img class="img-modif" src="{{ item.source }}" />
-          <input type="text" [(ngModel)]="pageContent['photo-content'][j]['alt']" name="{{ j }}" required />
+          <input
+            type="text"
+            [(ngModel)]="pageContent['photo-content'][j]['alt']"
+            name="{{ j }}"
+            required
+          />
         </div>
       </div>
       <div class="simple-container-img">
-        <input id="input-photo" type="file" name="photo" ng2FileSelect [uploader]="uploader" multiple />
+        <input
+          id="input-photo"
+          type="file"
+          name="photo"
+          ng2FileSelect
+          [uploader]="uploader"
+          multiple
+        />
         <label id="label-input-photo" for="input-photo">
           <img class="img-modif" [src]="url_image | safe" *ngIf="url_image" />
-          <img class="img-modif" src="../../../assets/img/plus.png" alt="plus pour ajouter une photo"
-            *ngIf="!url_image" />
+          <img
+            class="img-modif"
+            src="../../../assets/img/plus.png"
+            alt="plus pour ajouter une photo"
+            *ngIf="!url_image"
+          />
         </label>
         <div id="button-add-img">
-          <button type="submit" class="btn btn-success btn-s" (click)="upload()"
-            [disabled]="!uploader.getNotUploadedItems().length">
+          <button
+            type="submit"
+            class="btn btn-success btn-s"
+            (click)="upload()"
+            [disabled]="!uploader.getNotUploadedItems().length"
+          >
             Ajouter l'image
           </button>
         </div>
       </div>
     </div>
-    <input id="btn-sauvegarder" type="submit" class="btn btn-success btn-s" value="Sauvegarder tous les changements" />
+    <input
+      id="btn-sauvegarder"
+      type="submit"
+      class="btn btn-success btn-s"
+      value="Sauvegarder tous les changements"
+    />
   </form>
 </div>
 
+<!-- Page admin de la page Equipe -->
 <div *ngIf="url == 'equipe'" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
     <div *ngFor="let item of textContent; let i = index" class="category">
@@ -71,25 +131,135 @@
       <h1 *ngIf="i == textContent.length - 1" class="category-title">
         Recrutement
       </h1>
-      <div *ngFor="let text of item; let j = index" [ngClass]="{ 'category-description': j == 1, item: j != 1 }">
+      <div
+        *ngFor="let text of item; let j = index"
+        [ngClass]="{ 'category-description': j == 1, item: j != 1 }"
+      >
         <h1 *ngIf="i == 0">{{ text.emplacement }}</h1>
         <h2 *ngIf="i > 0 && j < 2">{{ text.emplacement }}</h2>
 
         <h2 *ngIf="i > 0 && j == 2">{{ text.photo }}</h2>
         <mat-form-field class="textContent" *ngIf="j < 2">
-          <textarea matInput [(ngModel)]="pageContent['text-content'][i][j]['contenu']" placeholder="Contenu"
-            name="{{ text.contenu }}" required></textarea>
+          <textarea
+            matInput
+            [(ngModel)]="pageContent['text-content'][i][j]['contenu']"
+            placeholder="Contenu"
+            name="{{ text.contenu }}"
+            required
+          ></textarea>
         </mat-form-field>
-        <select class="form-control" required *ngIf="imageContent && j == 2"
-          [(ngModel)]="pageContent['text-content'][i][j]['source']" name="{{ text.photo }}{{i}}">
-          <option *ngFor="let pow of imageContent; let h = index" [value]="pow.source">Photo numéro {{ h + 1 }}</option>
+        <select
+          class="form-control"
+          required
+          *ngIf="imageContent && j == 2"
+          [(ngModel)]="pageContent['text-content'][i][j]['source']"
+          name="{{ text.photo }}{{ i }}"
+        >
+          <option
+            *ngFor="let pow of imageContent; let h = index"
+            [value]="pow.source"
+            >Photo numéro {{ h + 1 }}</option
+          >
         </select>
       </div>
+      <form
+        ngNativeValidate
+        (ngSubmit)="addNewParagraph(i)"
+        *ngIf="newContent && (i == 0 || i == newContent.length - 1)"
+      >
+        <div class="item">
+          <h2>
+            Emplacement du nouveau paragraphe :
+          </h2>
+          <mat-form-field class="textContent">
+            <textarea
+              matInput
+              placeholder="Emplacement"
+              [(ngModel)]="newContent[i]['emplacement']"
+              name="newContent[i]['emplacement']"
+              required
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div class="item">
+          <h2>Contenu du nouveau paragraphe :</h2>
+          <mat-form-field class="textContent">
+            <textarea
+              matInput
+              placeholder="Contenu"
+              [(ngModel)]="newContent[i]['contenu']"
+              name="newContent[i]['contenu']"
+              required
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <input
+          type="submit"
+          class="btn btn-success btn-s btn-add-contenu"
+          value="Ajouter un nouveau paragraphe !"
+        />
+      </form>
     </div>
+    <form
+      ngNativeValidate
+      (ngSubmit)="addNewPerson()"
+      *ngIf="newPerson"
+      class="formText"
+    >
+      <h1>Ajouter une nouvelle personne:</h1>
+      <h2>Nom :</h2>
+      <mat-form-field class="textContent">
+        <textarea
+          matInput
+          [(ngModel)]="newPerson[0]['contenu']"
+          placeholder="Contenu"
+          name="{{ newPerson[0]['contenu'] }}0"
+          required
+        ></textarea>
+      </mat-form-field>
+      <h2>Description :</h2>
+      <mat-form-field class="textContent">
+        <textarea
+          matInput
+          [(ngModel)]="newPerson[1]['contenu']"
+          placeholder="Contenu"
+          name="{{ newPerson[1]['contenu'] }}1"
+          required
+        ></textarea>
+      </mat-form-field>
+      <div>
+      <h2>Photo de la personne (modifiable par la suite):</h2>
+      <select
+        class="form-control"
+        required
+        *ngIf="imageContent"
+        [(ngModel)]="newPerson[1]['source']"
+        name="{{ newPerson[1]['source'] }}2"
+      >
+        <option
+          *ngFor="let pow of imageContent; let h = index"
+          [value]="pow.source"
+          >Photo numéro {{ h + 1 }}</option
+        >
+      </select>
+    </div>
+      <input
+        type="submit"
+        class="btn btn-success btn-s btn-add-contenu"
+        value="Ajouter une nouvelle personne"
+      />
+    </form>
     <h1>Photos</h1>
     <div id="global-container-img">
-      <div class="simple-container-img" *ngFor="let item of imageContent; let j = index">
-        <img class="img-croix-rouge" src="../../assets/img/croix_rouge.png" (click)="onClickSuppr(item.source)" />
+      <div
+        class="simple-container-img"
+        *ngFor="let item of imageContent; let j = index"
+      >
+        <img
+          class="img-croix-rouge"
+          src="../../assets/img/croix_rouge.png"
+          (click)="onClickSuppr(item.source)"
+        />
         <div class="img-text-container-img">
           <img class="img-modif" src="{{ item['source'] }}" />
         </div>
@@ -97,22 +267,40 @@
 
       <div class="simple-container-img">
         <!-- Display none pour l'input en dessous-->
-        <input id="input-photo" type="file" name="photo" ng2FileSelect [uploader]="uploader" multiple
-          (change)="detectFiles($event)" />
+        <input
+          id="input-photo"
+          type="file"
+          name="photo"
+          ng2FileSelect
+          [uploader]="uploader"
+          multiple
+        />
+        <!-- (change)="detectFiles($event)" -->
         <!-- Label de l'input -->
         <label id="label-input-photo" for="input-photo">
           <img class="img-modif" [src]="url_image | safe" *ngIf="url_image" />
-          <img class="img-modif" src="../../../assets/img/plus.png" alt="plus pour ajouter une photo"
-            *ngIf="!url_image" />
+          <img
+            class="img-modif"
+            src="../../../assets/img/plus.png"
+            alt="plus pour ajouter une photo"
+            *ngIf="!url_image"
+          />
         </label>
         <div id="button-add-img">
-          <button (click)="upload()" [disabled]="!uploader.getNotUploadedItems().length">
-            Ajouter l'image
-          </button>
+          <input
+            type="button"
+            (click)="upload()"
+            [disabled]="!uploader.getNotUploadedItems().length"
+            value="Ajouter l'image"
+          />
         </div>
       </div>
-      <input id="btn-sauvegarder" type="submit" class="btn btn-success btn-s"
-        value="Sauvegarder tous les changements" />
+      <input
+        id="btn-sauvegarder"
+        type="submit"
+        class="btn btn-success btn-s"
+        value="Sauvegarder tous les changements"
+      />
     </div>
   </form>
 </div>
