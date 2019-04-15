@@ -4,12 +4,12 @@
       <img id="logoSite" alt="logo du site inclusion" src="./assets/imgHeader/logoInclusion.png" height="100"
         width="300" />
     </div>
-    <form #declarativeForm="ngForm" id=login action="">
+    <form #declarativeForm="ngForm" id="login" action="">
       <label for="">Username</label>
       <input type="text" name="username" [(ngModel)]="username" required>
       <label for="">Password</label>
       <input type="password" name="password" [(ngModel)]="password" required>
-      <recaptcha [(ngModel)]="declarativeFormCaptchaValue" name="captcha" required></recaptcha>
+      <recaptcha id="captcha" [(ngModel)]="declarativeFormCaptchaValue" name="captcha" required></recaptcha>
       <button [disabled]="!declarativeForm.valid" type="submit" (click)=checkLogin() class="btn btn-success">
         Login
       </button>
