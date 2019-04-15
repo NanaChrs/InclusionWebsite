@@ -3,6 +3,10 @@
     background-color: #E6E5E5;
 }
 
+/* _______________________________________________________________________________ */
+/* DEBUT DIAPO____________________________________________________________________ */
+/* _______________________________________________________________________________ */
+
 #slideshow-container {
     position: relative;
     width: 100%;
@@ -38,12 +42,29 @@
     font-size: 3em;
     width: 100%;
     font-style: italic;
-    top:20%;
+    top:50%;
+    transform: translate(0,-50%);
     text-align: center;
 }
 
+@media screen and (max-width:516px)
+{
+    #slideshow-text
+    {
+    color: white;
+    text-shadow: 0px 0px 10px black;
+    position: absolute;
+    font-family: "Calibri";
+    letter-spacing: .2em;
+    font-size: 1.5em;
+    width: 100%;
+    top:15%;
+    text-align: center;
+    }
+}
+
 #fleche-gauche{
-    top: 30%;
+    top: 45%;
     left:0;
     margin: 0;
     border: none;
@@ -55,7 +76,7 @@
 }
 
 #fleche-droite{
-    top: 30%;
+    top: 45%;
     right: 0;
     border: none;
     outline-style: none;
@@ -89,6 +110,11 @@
 #zoneclicdroite:hover{
     cursor: url('../../../assets/accueil/fleche-droite-souris.png') 75 50, pointer;   
 }
+
+
+/* _______________________________________________________________________________ */
+/* FIN DIAPO______________________________________________________________________ */
+/* _______________________________________________________________________________ */
 
 .menu{
     font-family: 'Calibri';
