@@ -157,10 +157,22 @@ export class ContentAdminComponent implements OnInit {
 
   addNewParagraph(i) {
     this.textContent[i].push(this.newContent[i]);
+    this.save();
   }
 
   addNewPerson() {
-    this.textContent.splice(-2, 0, this.newPerson);
+    this.textContent.splice(-1, 0, this.newPerson);
+    this.save();
     console.log(this.textContent);
+  }
+
+  onClickSupprCategory(i) {
+    this.textContent.splice(i, 1);
+    this.save();
+  }
+
+  onClickSupprItem(i, j) {
+    this.textContent[i].splice(j, 1);
+    this.save();
   }
 }

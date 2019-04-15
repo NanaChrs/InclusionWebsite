@@ -1,8 +1,20 @@
 <app-nav-admin></app-nav-admin>
 <div *ngIf="url != 'equipe'" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
-    <div *ngFor="let item of textContent; let i = index; trackBy: trackByIndex" class="category">
-      <div *ngFor="let text of item; let j = index" [ngClass]="{ 'category-title': j == 0, item: j != 0 }">
+    <div
+      *ngFor="let item of textContent; let i = index; trackBy: trackByIndex"
+      class="category"
+    >
+      <div
+        *ngFor="let text of item; let j = index"
+        [ngClass]="{ 'category-title': j == 0, item: j != 0 }"
+      >
+        <img
+          class="div-img-croix"
+          src="../../assets/img/croix_rouge.png"
+          (click)="onClickSupprItem(i, j)"
+          *ngIf="j > 1"
+        />
         <h1>{{ text.emplacement }}</h1>
         <mat-form-field class="textContent">
           <textarea matInput [(ngModel)]="textContent[i][j]['contenu']" placeholder="Contenu"
@@ -94,28 +106,74 @@
 <div *ngIf="url == 'equipe'" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
     <div *ngFor="let item of textContent; let i = index" class="category">
+      <img
+        class="div-img-croix"
+        src="../../assets/img/croix_rouge.png"
+        (click)="onClickSupprCategory(i)"
+        *ngIf="i > 0 && i < newContent.length - 1"
+      />
       <h1 *ngIf="i < textContent.length - 1 && i > 0" class="category-title">
         Membre de l'équipe numéro {{ i }}
       </h1>
       <h1 *ngIf="i == textContent.length - 1" class="category-title">
         Recrutement
       </h1>
-      <div *ngFor="let text of item; let j = index" [ngClass]="{ 'category-description': j == 1, item: j != 1 }">
+      <div
+        *ngFor="let text of item; let j = index"
+        [ngClass]="{ 'category-description': j == 1, item: j != 1 }"
+      >
+        <img
+          class="div-img-croix"
+          src="../../assets/img/croix_rouge.png"
+          (click)="onClickSupprItem(i, j)"
+          *ngIf="(j > 1 && i == 0) || (i == newContent.length - 1 && j > 3)"
+        />
         <h1 *ngIf="i == 0">{{ text.emplacement }}</h1>
-        <h2 *ngIf="i > 0 && j < 2">{{ text.emplacement }}</h2>
-
-        <h2 *ngIf="i > 0 && j == 2">{{ text.photo }}</h2>
-        <mat-form-field class="textContent" *ngIf="j < 2">
-          <textarea matInput [(ngModel)]="pageContent['text-content'][i][j]['contenu']" placeholder="Contenu"
-            name="{{ text.contenu }}" required></textarea>
+        <h2 *ngIf="i > 0 && j != 2 && i < newContent.length - 1">
+          {{ text.emplacement }}
+        </h2>
+        <h2 *ngIf="i == newContent.length - 1">
+          {{ text.emplacement }}
+        </h2>
+        <h2 *ngIf="i > 0 && i < newContent.length - 1 && j == 2">
+          {{ text.photo }}
+        </h2>
+        <mat-form-field
+          class="textContent"
+          *ngIf="
+            (i > 0 && i < newContent.length - 1 && j < 2) ||
+            i == 0 ||
+            i == newContent.length - 1
+          "
+        >
+          <textarea
+            matInput
+            [(ngModel)]="pageContent['text-content'][i][j]['contenu']"
+            placeholder="Contenu"
+            name="{{ text.contenu }}"
+            required
+          ></textarea>
         </mat-form-field>
-        <select class="form-control" required *ngIf="imageContent && j == 2"
-          [(ngModel)]="pageContent['text-content'][i][j]['source']" name="{{ text.photo }}{{ i }}">
-          <option *ngFor="let pow of imageContent; let h = index" [value]="pow.source">Photo numéro {{ h + 1 }}</option>
+        <select
+          class="form-control"
+          required
+          *ngIf="imageContent && j == 2 && i < newContent.length - 1 && i > 0"
+          [(ngModel)]="pageContent['text-content'][i][j]['source']"
+          name="{{ text.photo }}{{ i }}"
+        >
+          <option
+            *ngFor="let pow of imageContent; let h = index"
+            [value]="pow.source"
+            >Photo numéro {{ h + 1 }}</option
+          >
         </select>
       </div>
-      <form ngNativeValidate (ngSubmit)="addNewParagraph(i)"
-        *ngIf="newContent && (i == 0 || i == newContent.length - 1)">
+      <form
+        ngNativeValidate
+        (ngSubmit)="addNewParagraph(i)"
+        *ngIf="newContent && (i == 0 || i == newContent.length - 1)"
+        class="textContent add-contenu"
+      >
         <div class="item">
           <h2>
             Emplacement du nouveau paragraphe :
@@ -149,12 +207,25 @@
       </mat-form-field>
       <div>
         <h2>Photo de la personne (modifiable par la suite):</h2>
-        <select class="form-control" required *ngIf="imageContent" [(ngModel)]="newPerson[1]['source']"
-          name="{{ newPerson[1]['source'] }}2">
-          <option *ngFor="let pow of imageContent; let h = index" [value]="pow.source">Photo numéro {{ h + 1 }}</option>
+        <select
+          class="form-control"
+          required
+          *ngIf="imageContent"
+          [(ngModel)]="newPerson[1]['source']"
+          name="{{ newPerson[1]['source'] }}2"
+        >
+          <option
+            *ngFor="let pow of imageContent; let h = index"
+            [value]="pow.source"
+            >Photo numéro {{ h + 1 }}</option
+          >
         </select>
       </div>
-      <input type="submit" class="btn btn-success btn-s btn-add-contenu" value="Ajouter une nouvelle personne" />
+      <input
+        type="submit"
+        class="btn btn-success btn-s btn-add-contenu"
+        value="Ajouter une nouvelle personne"
+      />
     </form>
     <h1>Photos</h1>
     <div id="global-container-img">

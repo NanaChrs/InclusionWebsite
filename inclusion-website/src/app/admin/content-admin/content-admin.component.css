@@ -6,15 +6,22 @@
   border-bottom: 3px dashed #ddd;
   text-align: center;
   padding: 10px;
+  position: relative;
 }
 
 .category-title {
   width: 100%;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 h1 {
   margin: 5px auto 0;
+}
+
+.category-description,
+.item {
+  position: relative;
 }
 
 .category-description {
@@ -25,6 +32,15 @@ h1 {
   width: max-content;
   text-align: center;
   margin: auto;
+}
+
+.div-img-croix {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
 }
 
 .textContent {
@@ -110,77 +126,78 @@ textarea {
   margin: auto;
 }
 
-#btn-sauvegarder{
+#btn-sauvegarder {
   cursor: pointer;
   position: fixed;
   right: 40px;
   top: 0;
   transform: translate(-40px);
-  border-radius:12px 0 12px 0;
-	background: #478bf9;
-	border:none;
-	color:#fff;
-	font:bold 12px Verdana;
-	padding: 6px;
+  border-radius: 12px 0 12px 0;
+  background: #478bf9;
+  border: none;
+  color: #fff;
+  font: bold 12px Verdana;
+  padding: 6px;
 }
 
 .ajout {
   display: flex;
 }
 
-.add-contenu{
-  border-top: 1px solid #4C3C1B;
+.add-contenu {
+  border-top: 1px solid #4c3c1b;
   width: max-content;
 }
 
-.textContentFlex{
+.textContentFlex {
   margin-top: 5px;
 }
 
-.textContentFlex form{
+.textContentFlex form {
   margin: auto;
 }
 
-.textContentFlex .item h2{
+.textContentFlex .item h2 {
   margin: auto;
 }
 
-.btn-add-contenu
-{
-  background:#6b0b0b;
-  color:#fff;
-  border:none;
-  position:relative;
-  font-size:1em;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-}
-
-.btn-add-contenu:hover{
-  background:#fff;
-  color:#6b0b0b;
-}
-
-.btn-add-contenu:before,.btn-add-contenu:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
+.btn-add-contenu {
   background: #6b0b0b;
-  transition:400ms ease all;
+  color: #fff;
+  border: none;
+  position: relative;
+  font-size: 1em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
 }
 
-.btn-add-contenu:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
+.btn-add-contenu:hover {
+  background: #fff;
+  color: #6b0b0b;
 }
-.btn-add-contenu:hover:before,.btn-add-contenu:hover:after{
-  width:100%;
-  transition:800ms ease all;
+
+.btn-add-contenu:before,
+.btn-add-contenu:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #6b0b0b;
+  transition: 400ms ease all;
+}
+
+.btn-add-contenu:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+.btn-add-contenu:hover:before,
+.btn-add-contenu:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }

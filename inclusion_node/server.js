@@ -6,6 +6,8 @@ var jsonPages = require("./json/pages.json");
 const multer = require("multer");
 const path = require("path");
 var crypto = require("crypto");
+const nodemailer = require("nodemailer");
+const Email = require('email-templates');
 
 const app = express();
 
@@ -167,4 +169,44 @@ app.route("/api/pages/:name/text").post((req, res) => {
   fs.writeFileSync("./json/pages.json", JSON.stringify(json));
   res.sendStatus(204);
   console.log(json);
+});
+
+app.route('/api/contact').post((req, res) => {
+  /* Notre code pour nodemailer */
+  console.log("test") // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: "inclusion.test.mail@gmail.com", // generated ethereal user
+      pass: "clementjules" // generated ethereal password
+    }
+  });
+  console.log(req.body);
+  // send mail with defined transport object
+  let mailOptions = {
+    from: req.body["name"] + req.body["sender"], // sender address
+    to: "info@inclusion-restaurant.fr", // list of receivers
+    subject: req.body["subject"], // Subject line
+
+    html: "Email : " + req.body["sender"] + "<br>" + "Nom : " + req.body["name"] + "<br>" + "Message : " + req.body["message"] // html body
+  };
+
+  // transporter.sendMail({
+
+  //   from: '"Oui" <jules.guiot@isen.yncrea.fr> ',
+  //   to: "inclusion.test.mail@gmail.com", // list of receivers
+  //   subject: req.body["subject"], // Subject line
+  //   text: req.body["message"], // plain text body
+  //   html: req.body["mail"] + "<br>" + req.body["name"] + "<br>" + req.body["message"]
+  // });
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message %s sent: %s', info.messageId, info.response);
+
+  });
+  transporter.close();
+  res.send(201, true);
 });
