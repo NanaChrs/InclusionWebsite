@@ -211,4 +211,20 @@ a:hover
     
 }
 
+/* optimisation du focus */
+button{
+    background: none;
+    border: none;
+    font-family: 'Calibri';
+    font-size: 1em; 
+}
 
+
+#button:focus{
+    outline-style: 1px dotted #eee;
+}
+
+#icone:focus, .lien-focus:focus {
+    /* border: inherit; */
+    border: solid black;
+}
