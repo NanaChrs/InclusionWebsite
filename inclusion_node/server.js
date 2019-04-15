@@ -76,7 +76,7 @@ app.route("/api/pages/:name/:id").delete((req, res) => {
   var json = JSON.parse(fs.readFileSync("./json/pages.json"));
   fs.unlinkSync(json[name]["photo-content"][id]["source"]);
   delete json[name]["photo-content"][id];
-  json[name]["photo-content"] = json[name]["photo-content"].filter(function(
+  json[name]["photo-content"] = json[name]["photo-content"].filter(function (
     col
   ) {
     return col.Source != "Foo";
@@ -126,7 +126,7 @@ app.route("/api/login").post((req, res) => {
       "79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371" &&
       utilisateur == "a82bdc731e23568916a7647f3f16d00a") ||
     req.body["token"] ==
-      "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
+    "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
   ) {
     res.send(201, [
       true,
