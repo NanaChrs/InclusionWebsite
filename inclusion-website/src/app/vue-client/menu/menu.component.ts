@@ -18,10 +18,13 @@ export class MenuComponent implements OnInit {
 
   //numero de la photo en cours sur le diapo
   i = 0;
+  i2 = 0;
 
   // recupération des element sur la page internet
   @ViewChild('myslideshowcontainer') slideshowcontainer;
   @ViewChild('myslideshow') slideshow;
+  @ViewChild('myslideshowcontainer2') slideshowcontainer2;
+  @ViewChild('myslideshow2') slideshow2;
 
   // Récupération Json
   pageContent: String[];
@@ -58,12 +61,14 @@ export class MenuComponent implements OnInit {
 
 
   lancementdiapo(){
-    if (this.slideshow!=undefined && this.slideshowcontainer!=undefined){    
+    if (this.slideshow!=undefined && this.slideshowcontainer!=undefined && this.slideshow2!=undefined && this.slideshowcontainer2!=undefined){    
       if ((this.height) > 0) {
         this.slideshowcontainer.nativeElement.style.height = this.height + "px";
+        this.slideshowcontainer2.nativeElement.style.height = this.height + "px";
         this.setContainerStyle();
       }
       this.play();
+      this.play2();
     }
     else{
       setTimeout(()=>{
@@ -78,13 +83,15 @@ export class MenuComponent implements OnInit {
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
   setContainerStyle = function(){
-    if(this.slideshow.nativeElement.children[this.i]==undefined && this.animationOFF){
+    if(this.slideshow.nativeElement.children[this.i]==undefined && this.slideshow2.nativeElement.children[this.i2]==undefined && this.animationOFF){
       setTimeout(() => {
         this.setContainerStyle();
       }, 100);
     }
     this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
+    this.slideshow2.nativeElement.style.background =  'url('+this.slideshow2.nativeElement.children[this.i2].src+') center';
+    this.slideshow2.nativeElement.style.backgroundSize = 'cover';
   } 
 
 
@@ -132,9 +139,37 @@ export class MenuComponent implements OnInit {
 
 
 
+  play2 = function() {
+    if (!this.animationOFF) {
+      // application de la classe fadeOut pour appliquer la transition apparition petit à petit
+      this.slideshow2.nativeElement.className = "fadeOut";
+      setTimeout(() => {
+        // changement du background de l'element slideshow
+        this.slideshow2.nativeElement.style.background =
+          "url(" +
+          this.slideshow2.nativeElement.children[this.i].src +
+          ") center";
+        this.slideshow2.nativeElement.style.backgroundSize = "cover";
+        // on retire la class fadeOut afin de faire l'effet de transition inverse
+        this.slideshow2.nativeElement.className = "";
+      }, 1100);
+    }
+
+    this.i2++;
+    if (this.i2 > this.slideshow2.nativeElement.childElementCount - 1) {
+      this.i2 = 0;
+    }
+
+    // permet de lancer le diapo en boucle
+    setTimeout(() => {
+      this.play2();
+    }, this.duration * 1000);
+  };
+
+
 
   
-  // fleches d'animations
+  // fleches d'animations 1
   onNext() {
     this.i++;
     if (this.i > this.slideshow.nativeElement.childElementCount - 1) {
