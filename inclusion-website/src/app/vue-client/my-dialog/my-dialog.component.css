@@ -45,3 +45,8 @@
 {
     font-size: 20px;
 }
+
+.lien-focus:focus {
+    /* border: inherit; */
+    border: solid black;
+}

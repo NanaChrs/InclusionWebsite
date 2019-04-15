@@ -4,10 +4,6 @@
 }
 
 /*Bloc principal*/
-#bloc_image
-{
-   
-}
 
 #header
 { 
@@ -115,7 +111,7 @@ a:hover
     border: 1px solid whitesmoke;
 }
 
-#logoFacebook:hover, #logoInstagram:hover, #logoTwitter:hover, #logoTripadvisor:hover, #logoUber:hover
+#logoFacebook:hover, #logoInstagram:hover, #logoTripadvisor:hover, #logoUber:hover
 {
     /*border: 1px solid #631514*/
     background-color: black;
@@ -211,4 +207,15 @@ a:hover
     
 }
 
+/* optimisation du focus */
+button{
+    background: none;
+    border: none;
+    font-family: 'Calibri';
+    font-size: 1em; 
+    padding: 0;
+}
 
+.lien-focus:focus {
+    border: solid white;
+}

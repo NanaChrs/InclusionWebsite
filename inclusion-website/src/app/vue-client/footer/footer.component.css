@@ -14,7 +14,8 @@
 	box-sizing: border-box;
 	width: 100%;
 	padding: 20px 30px;
-	/* margin-top: 40px; */
+	color: white;
+	font-size: 1em;
 }
 
 .footer-general .footer-left,
@@ -37,6 +38,7 @@
 }
 .footer-general .footer-center-right
 {
+	margin-top: 0.5%;
     width: 18%;
 }
 
@@ -44,17 +46,8 @@
 {
 	width: 30%;
 }
-.footer-general p
-{
-    font: 1em sans-serif;
-    color: white;
-}
 
-table{
-	color: white;
-}
-
-.Extras:hover{
+.lien-focus:hover{
 	cursor: pointer;
 	text-decoration: underline white;
 }
@@ -62,6 +55,21 @@ table{
 #googlemap{
 	width: 400px;
 	height: 200px;
+}
+
+/* optimisation du focus */
+button{
+    background: none;
+    border: none;
+    font-family: 'Calibri';
+    font-size: 1em; 
+	padding: 0;
+	color: white;
+	margin: 3% 0;
+}
+
+.lien-focus:focus {
+    border: solid white;
 }
 
 
