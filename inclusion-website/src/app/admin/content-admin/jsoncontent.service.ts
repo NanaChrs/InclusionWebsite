@@ -10,7 +10,7 @@ export class JsoncontentService {
   // private urlPages: string = "https://dev.inclusion-restaurant.fr/api/pages/";
   private urlPages: string = "http://localhost:8000/api/pages/";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getPageByName(name: string): Observable<String[]> {
     const url = this.urlPages + name;

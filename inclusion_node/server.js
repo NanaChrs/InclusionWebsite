@@ -112,6 +112,29 @@ app.post("/api/pages/:name/upload", upload.single("photo"), (req, res) => {
     });
   }
 });
+
+app.post("/api/pages/:name/uploadbandeau", upload.single("bandeau"), (req, res) => {
+  if (!req.file) {
+    console.log("No file received");
+    return res.send({
+      success: false
+    });
+  } else {
+    console.log("file received successfully");
+    let name = req.params["name"];
+    var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+    json[name]["bandeau"].push({
+      source: req.file.path,
+      alt: ""
+    });
+    console.log(JSON.stringify(json));
+    fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+    return res.send({
+      success: true
+    });
+  }
+});
+
 app.route("/api/login").post((req, res) => {
   var algorithm = "aes256";
   var cle = 'l5JmP+G0/1zB%v$fd^vf^d$^é"$rnboàç_é"r8B8?2?2pcqGcL^3fe815c5';
