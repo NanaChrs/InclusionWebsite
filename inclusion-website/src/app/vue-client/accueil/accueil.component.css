@@ -75,21 +75,26 @@
     left:0;
     margin: 0;
     border: none;
-    outline-style: none;
-    outline: 0;
     background: transparent;
     position: absolute;
     cursor: pointer;
+}
+
+#fleche-gauche:focus{
+    border: solid white;
 }
 
 #fleche-droite{
     top: 45%;
     right: 0;
     border: none;
-    outline-style: none;
     background: transparent;
     position: absolute;
     cursor: pointer;
+}
+
+#fleche-droite:focus{
+    border: solid white;
 }
 
 #zoneclicable{
@@ -116,6 +121,18 @@
 
 #zoneclicdroite:hover{
     cursor: url('../../../assets/accueil/fleche-droite-souris.png') 75 50, pointer;   
+}
+
+.lien-focus:focus {
+    border: solid white;
+}
+
+button:focus{
+    outline-style: 1px dotted #eee;
+}
+
+button{
+    padding: 0;
 }
 
 
