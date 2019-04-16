@@ -5,6 +5,7 @@ const cors = require('cors');
 const multer = require("multer");
 const path = require("path");
 var crypto = require('crypto');
+const nodemailer = require("nodemailer");
 
 const app = express();
 
@@ -65,15 +66,34 @@ app.route("/api/pages/:name/:id").put((req, res) => {
     res.send(201, req.body);
 });
 
-app.route("/api/pages/:name/:id").delete((req, res) => {
-    const name = req.params['name'];
-    const id = req.params['id'];
-    var json = JSON.parse(fs.readFileSync("./public/json/pages.json"));
+app.route("/api/pages/photocontent/:name/:id").delete((req, res) => {
+    const name = req.params["name"];
+    const id = req.params["id"];
+    var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+    fs.unlinkSync(json[name]["photo-content"][id]["source"]);
     delete json[name]["photo-content"][id];
-    json[name]["photo-content"] = json[name]["photo-content"].filter(function (col) {
-        return col.Source != 'Foo';
+    json[name]["photo-content"] = json[name]["photo-content"].filter(function (
+        col
+    ) {
+        return col.Source != "Foo";
     });
-    fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
+    fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+    res.sendStatus(204);
+    console.log(json);
+});
+
+app.route("/api/pages/bandeau/:name/:id").delete((req, res) => {
+    const name = req.params["name"];
+    const id = req.params["id"];
+    var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+    fs.unlinkSync(json[name]["bandeau"][id]["source"]);
+    delete json[name]["bandeau"][id];
+    json[name]["bandeau"] = json[name]["bandeau"].filter(function (
+        col
+    ) {
+        return col.Source != "Foo";
+    });
+    fs.writeFileSync("./json/pages.json", JSON.stringify(json));
     res.sendStatus(204);
     console.log(json);
 });
@@ -100,6 +120,28 @@ app.post("/api/pages/:name/upload", upload.single("photo"), (req, res) => {
             alt: ""
         });
         fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
+        return res.send({
+            success: true
+        });
+    }
+});
+
+app.post("/api/pages/:name/uploadbandeau", upload.single("bandeau"), (req, res) => {
+    if (!req.file) {
+        console.log("No file received");
+        return res.send({
+            success: false
+        });
+    } else {
+        console.log("file received successfully");
+        let name = req.params["name"];
+        var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+        json[name]["bandeau"].push({
+            source: req.file.path,
+            alt: ""
+        });
+        console.log(JSON.stringify(json));
+        fs.writeFileSync("./json/pages.json", JSON.stringify(json));
         return res.send({
             success: true
         });
@@ -138,6 +180,53 @@ app.route("/api/pages/:name/text").post((req, res) => {
     fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
     res.sendStatus(204);
     console.log(json);
+});
+
+app.route("/api/contact").post((req, res) => {
+    /* Notre code pour nodemailer */
+    console.log("test"); // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        service: "gmail",
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: "inclusion.test.mail@gmail.com", // generated ethereal user
+            pass: "clementjules" // generated ethereal password
+        }
+    });
+    console.log(req.body);
+    // send mail with defined transport object
+    let mailOptions = {
+        from: req.body["name"] + req.body["sender"], // sender address
+        to: "mathilde.christiaens@isen.yncrea.fr", // list of receivers
+        subject: req.body["subject"], // Subject line
+
+        html:
+            "Email : " +
+            req.body["sender"] +
+            "<br>" +
+            "Nom : " +
+            req.body["name"] +
+            "<br>" +
+            "Message : " +
+            req.body["message"] // html body
+    };
+
+    // transporter.sendMail({
+
+    //   from: '"Oui" <jules.guiot@isen.yncrea.fr> ',
+    //   to: "inclusion.test.mail@gmail.com", // list of receivers
+    //   subject: req.body["subject"], // Subject line
+    //   text: req.body["message"], // plain text body
+    //   html: req.body["mail"] + "<br>" + req.body["name"] + "<br>" + req.body["message"]
+    // });
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log("Message %s sent: %s", info.messageId, info.response);
+    });
+    transporter.close();
+    res.send(201, true);
 });
 
 app.all('/*', function (req, res) {
