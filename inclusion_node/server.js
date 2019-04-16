@@ -7,7 +7,6 @@ const multer = require("multer");
 const path = require("path");
 var crypto = require("crypto");
 const nodemailer = require("nodemailer");
-const Email = require('email-templates');
 
 const app = express();
 

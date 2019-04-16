@@ -93,6 +93,18 @@
     cursor: pointer;
 }
 
+#fleche-gauche:focus{
+    border: solid white;
+}
+
+#fleche-droite:focus{
+    border: solid white;
+}
+
+button{
+    padding: 0;
+}
+
 #zoneclicable{
     display: flex;
     height: 85%;
@@ -225,7 +237,7 @@ hr
     text-decoration: none;
 }
 
-#mailTo:hover
+#mailTo:hover, #mailTo:focus
 {
    background-color: #88181c;
    color: aliceblue;
