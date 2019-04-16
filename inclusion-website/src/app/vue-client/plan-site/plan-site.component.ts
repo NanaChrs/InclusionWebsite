@@ -35,18 +35,13 @@ export class PlanSiteComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.jsonContentService.getPageByName('plan-site').subscribe((page) => {
+    this.jsonContentService.getPageByName('accueil').subscribe((page) => {
       this.pageContent = page;
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
       this.lancementdiapo();
 
     });
-    // application de la hauteur du dipoa et la position relative
-    if ((this.height) > 0) {
-      this.slideshowcontainer.nativeElement.style.height = this.height + "px";
-      this.setContainerStyle();
-    }
   }
 
   ngAfterViewInit() {
