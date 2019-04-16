@@ -21,8 +21,8 @@
       <div id="zoneclicdroite" (click)="onNext()"></div>
     </div>
   </div>
-  <div id="presentation-restaurant">
-    <div id="test" class="text" *ngFor="let contenu of textContent[0]; let i = index">
+  <div id="presentation-restaurant" class="zone">
+    <div class="text" *ngFor="let contenu of textContent[0]; let i = index">
       <p *ngIf="i > 0">{{ contenu["contenu"] }}</p>
     </div>
   </div>
