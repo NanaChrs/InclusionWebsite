@@ -27,11 +27,11 @@ h1
 }
 
 .zone-focus:focus{
-    border: solid black;
+    border: solid #88181c;
 }
 
 .lien-focus:focus{
-    border: solid black;
+    border: solid #88181c;
 }
 
 #mailTo
