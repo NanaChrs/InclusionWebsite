@@ -1,5 +1,6 @@
 #general{
     z-index: 1000;
+    /* filter: invert(90%); */
 }
 
 #bloc_taille_texte, #bloc_animations, #bloc_couleur
@@ -47,5 +48,5 @@
 
 #btnSizeDown:focus, #btnSizeUp:focus, #animationsOn:focus, #animationsOff:focus, #close_popup:focus, #defaut:focus, #inverse:focus {
     /* border: inherit; */
-    border: solid white;
+    background: grey;
 }

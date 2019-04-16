@@ -12,6 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable()
 export class MyDialogComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check('animationOFF');
+  cookieinverse: boolean = this.cookieService.check('inverse');
   checkTaillePolice: boolean = this.cookieService.check('fontSize');
   bouttonOffAnim;
   bouttonOnAnim;
@@ -30,6 +31,9 @@ export class MyDialogComponent implements OnInit {
   ngOnInit() {
     this.bouttonOffAnim = document.getElementById('animationsOff');
     this.bouttonOnAnim = document.getElementById('animationsOn');
+    this.colorDefaut = document.getElementById('defaut');
+    this.colorInverse = document.getElementById('inverse');
+    var general = document.getElementById('general');
     if(this.animationOFF)
     {
       this.bouttonOffAnim.style.backgroundColor = 'whitesmoke';
@@ -38,6 +42,17 @@ export class MyDialogComponent implements OnInit {
     else{
       this.bouttonOnAnim.style.backgroundColor = 'whitesmoke';
       this.bouttonOffAnim.style.backgroundColor = '';
+    }
+
+    if(this.cookieinverse)
+    {
+      this.colorInverse.style.backgroundColor = 'whitesmoke';
+      this.colorDefaut.style.backgroundColor = '';
+      general.style.filter= "invert(90%)";
+    }
+    else{
+      this.colorDefaut.style.backgroundColor = 'whitesmoke';
+      this.colorInverse.style.backgroundColor = '';
     }
 
     if(!this.checkTaillePolice){
@@ -103,18 +118,22 @@ export class MyDialogComponent implements OnInit {
 
   //Boutons activation animations
   onDefautCouleur(){
+    var general = document.getElementById('general');
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
     this.cookieService.delete('inverse');
     this.colorDefaut.style.backgroundColor = 'white'
     this.colorInverse.style.backgroundColor = '';
+    general.style.filter= "";
   }
 
   onInverseCouleur(){
+    var general = document.getElementById('general');
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
     this.cookieService.set('inverse','',365);
     this.colorDefaut.style.backgroundColor = '';
     this.colorInverse.style.backgroundColor = 'white'
+    general.style.filter= "invert(90%)";
   }
 }

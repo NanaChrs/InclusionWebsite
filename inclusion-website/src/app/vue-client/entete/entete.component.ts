@@ -11,9 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class EnteteComponent implements OnInit {
-  checkTaillePolice: boolean = this.cookieService.check('fontSize');
-  text;
-  taillePolice;
+  inverse: boolean = this.cookieService.check("inverse");
 
   dialogResult = "";
   isOpen = true;
@@ -26,12 +24,12 @@ export class EnteteComponent implements OnInit {
  
 
   ngOnInit() {
-    this.text = document.getElementsByClassName("text")
-    this.taillePolice=+this.cookieService.get("fontSize")
+    this.checkaccess();
   }
 
 
   ngAfterViewInit() {
+    var header = document.getElementById('header');
     var path = this.router.url;
     var chemin = path.substr(1);
     var idBalise = document.getElementById(chemin);
@@ -39,10 +37,8 @@ export class EnteteComponent implements OnInit {
       idBalise.style.backgroundColor = 'whitesmoke';
       idBalise.style.color = 'brown';
     }
-    if(this.checkTaillePolice){
-      for (var y =0; y<this.text.length;y++){
-        this.text[y].style.fontSize= this.taillePolice+'em';
-      }
+    if(this.inverse){
+      header.style.filter="invert(90%)";
     }
   }
 
@@ -61,13 +57,18 @@ export class EnteteComponent implements OnInit {
       }
   }
 
-  // checkaccess = function(){ 
-  //   this.taillePolice = this.cookieService.get("fontSize");
-  //   this.text[0].style.fontSize= this.taillePolice+'em';
-  //   setTimeout(() => {
-  //     this.checkaccess();
-  //   }, 100);
-  // }
+
+  checkaccess = function() {
+    var header = document.getElementById('header');
+    this.inverse = this.cookieService.check("inverse");
+    if(this.inverse){
+      header.style.filter="invert(90%)"
+    }
+    else{header.style.filter="";}
+    setTimeout(() => {
+      this.checkaccess();
+    }, 100);
+  };
 
 
 }

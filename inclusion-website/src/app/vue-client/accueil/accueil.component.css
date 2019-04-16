@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     background-color: #E6E5E5;
+    /* filter: invert(90%); */
 }
 
 /* _______________________________________________________________________________ */
@@ -21,6 +22,7 @@
     top: 0;
     left: 0;
     margin: 0 auto;
+    /* filter: invert(90%); */
 }
 
 #slideshow {
@@ -127,10 +129,6 @@
     border: solid white;
 }
 
-button:focus{
-    outline-style: 1px dotted #eee;
-}
-
 button{
     padding: 0;
 }
@@ -144,6 +142,9 @@ button{
 #presentation-restaurant{
     text-align: center;
     font-family: "Calibri";
-    margin: 5% 20% 5% 20%;
+    padding: 5% 20%;
     letter-spacing: 0.2em;
+    background: #E6E5E5;
 }
+
+
