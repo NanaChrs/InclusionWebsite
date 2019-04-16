@@ -13,7 +13,7 @@
           class="div-img-croix"
           src="../../assets/img/croix_rouge.png"
           (click)="onClickSupprItem(i, j)"
-          *ngIf="j > 1"
+          *ngIf="textContent[i].length > 2 && j > 0"
         />
         <h1>{{ text.emplacement }}</h1>
         <mat-form-field class="textContent">

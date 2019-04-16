@@ -32,7 +32,9 @@
     </div>
   </div>
 
-  <p id="resume">{{ descriptionGlobale[1]["contenu"] }}</p>
+  <p id="resume" *ngFor="let desc of descriptionGlobale; let i = index">
+    <span *ngIf="i > 0">{{ desc["contenu"] }}</span>
+  </p>
   <hr />
   <!-- Lecture du fichier Json qui contient "Equipe" -->
   <div id="equipe" *ngIf="descriptions" class="text">

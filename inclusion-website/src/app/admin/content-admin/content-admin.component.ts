@@ -173,6 +173,7 @@ export class ContentAdminComponent implements OnInit {
 
   onClickSupprItem(i, j) {
     this.textContent[i].splice(j, 1);
+    console.log(this.textContent[i].length);
     this.save();
   }
 }
