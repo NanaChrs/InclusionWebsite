@@ -66,7 +66,7 @@
 }
 
 #fleche-gauche{
-    top: 45%;
+    top: 25%;
     left:0;
     margin: 0;
     border: none;
@@ -78,7 +78,7 @@
 }
 
 #fleche-droite{
-    top: 45%;
+    top: 25%;
     right: 0;
     border: none;
     outline-style: none;
@@ -131,6 +131,10 @@
 #lien:hover{
 	cursor: pointer;
 	text-decoration: underline black;
+}
+
+#lien:focus{
+    border: solid black; 
 }
 
 h1{

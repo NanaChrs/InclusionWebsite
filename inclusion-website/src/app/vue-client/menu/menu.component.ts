@@ -189,4 +189,26 @@ export class MenuComponent implements OnInit {
       "url(" + this.slideshow.nativeElement.children[this.i].src + ") center";
     this.slideshow.nativeElement.style.backgroundSize = "cover";
   }
+
+
+  // fleches d'animations 1
+  onNext2() {
+    this.i2++;
+    if (this.i2 > this.slideshow2.nativeElement.childElementCount - 1) {
+      this.i2 = 0;
+    }
+    this.slideshow2.nativeElement.style.background =
+      "url(" + this.slideshow2.nativeElement.children[this.i2].src + ") center";
+    this.slideshow2.nativeElement.style.backgroundSize = "cover";
+  }
+
+  onPrev2() {
+    this.i2--;
+    if (this.i2 < 0) {
+      this.i2 = this.slideshow2.nativeElement.childElementCount - 1;
+    }
+    this.slideshow2.nativeElement.style.background =
+      "url(" + this.slideshow2.nativeElement.children[this.i2].src + ") center";
+    this.slideshow2.nativeElement.style.backgroundSize = "cover";
+  }
 }
