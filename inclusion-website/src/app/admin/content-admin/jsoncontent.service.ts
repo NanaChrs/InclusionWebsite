@@ -18,7 +18,12 @@ export class JsoncontentService {
   }
 
   deletePageById(link: string) {
-    const url = `${this.urlPages}${link}`;
+    const url = `${this.urlPages}photocontent/${link}`;
+    return this.http.delete(url);
+  }
+
+  deletePageByIdBandeau(link: string) {
+    const url = `${this.urlPages}bandeau/${link}`;
     return this.http.delete(url);
   }
 

@@ -54,7 +54,8 @@ export class ContentAdminComponent implements OnInit {
       this.getPage();
     };
 
-    this.uploadbandeauURL += this.route.snapshot.paramMap.get("url") + "/uploadbandeau";
+    this.uploadbandeauURL +=
+      this.route.snapshot.paramMap.get("url") + "/uploadbandeau";
     this.uploaderbandeau = new FileUploader({
       url: this.uploadbandeauURL,
       itemAlias: "bandeau"
@@ -85,7 +86,6 @@ export class ContentAdminComponent implements OnInit {
         this.textContent = this.pageContent["text-content"];
         this.imageContent = this.pageContent["photo-content"];
         this.imageBandeau = this.pageContent["bandeau"];
-        console.log(this.imageBandeau);
         if (this.url == "equipe") {
           for (var i = 0; i < this.textContent.length; i++) {
             this.newContent.push({
@@ -105,6 +105,14 @@ export class ContentAdminComponent implements OnInit {
             photo: "Numéro de la photo",
             source: ""
           });
+        } else if (this.url == "carte") {
+          for (var i = 0; i < this.textContent.length; i++) {
+            this.newContent.push({
+              emplacement: "",
+              contenu: "",
+              prix: ""
+            });
+          }
         } else {
           for (var i = 0; i < this.textContent.length; i++) {
             this.newContent.push({
@@ -129,6 +137,27 @@ export class ContentAdminComponent implements OnInit {
     for (var i = 0; i < this.imageContent.length; i++) {
       if (this.imageContent != null) {
         if (this.imageContent[i]["source"] == url) {
+          return i;
+        }
+      }
+    }
+  }
+
+  onClickSupprBandeau(url: string) {
+    var i = this.getIdOfPhotoBandeau(url);
+    const link = this.url + "/" + i;
+    this.jsonContentService.deletePageByIdBandeau(link).subscribe(() => {
+      console.log("Photo deleted");
+      this.getPage();
+    });
+  }
+
+  getIdOfPhotoBandeau(url: String): number {
+    console.log("Le bon url ========= " + url);
+    for (var i = 0; i < this.imageBandeau.length; i++) {
+      if (this.imageBandeau != null) {
+        if (this.imageBandeau[i]["source"] == url) {
+          console.log("Le bon indice ========= " + url);
           return i;
         }
       }
