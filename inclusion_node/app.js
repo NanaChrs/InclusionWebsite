@@ -69,15 +69,16 @@ app.route("/api/pages/:name/:id").put((req, res) => {
 app.route("/api/pages/photocontent/:name/:id").delete((req, res) => {
     const name = req.params["name"];
     const id = req.params["id"];
-    var json = JSON.parse(fs.readFileSync("./json/pages.json"));
-    fs.unlinkSync(json[name]["photo-content"][id]["source"]);
+    var json = JSON.parse(fs.readFileSync("./public/json/pages.json"));
+    var source = "./public/" + json[name]["photo-content"][id]["source"];
+    fs.unlinkSync(source);
     delete json[name]["photo-content"][id];
     json[name]["photo-content"] = json[name]["photo-content"].filter(function (
         col
     ) {
         return col.Source != "Foo";
     });
-    fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+    fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
     res.sendStatus(204);
     console.log(json);
 });
@@ -85,15 +86,16 @@ app.route("/api/pages/photocontent/:name/:id").delete((req, res) => {
 app.route("/api/pages/bandeau/:name/:id").delete((req, res) => {
     const name = req.params["name"];
     const id = req.params["id"];
-    var json = JSON.parse(fs.readFileSync("./json/pages.json"));
-    fs.unlinkSync(json[name]["bandeau"][id]["source"]);
+    var json = JSON.parse(fs.readFileSync("./public/json/pages.json"));
+    var source = "./public/" + json[name]["bandeau"][id]["source"];
+    fs.unlinkSync(source);
     delete json[name]["bandeau"][id];
     json[name]["bandeau"] = json[name]["bandeau"].filter(function (
         col
     ) {
         return col.Source != "Foo";
     });
-    fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+    fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
     res.sendStatus(204);
     console.log(json);
 });
@@ -113,8 +115,7 @@ app.post("/api/pages/:name/upload", upload.single("photo"), (req, res) => {
     } else {
         console.log("file received successfully");
         let name = req.params["name"];
-        // var json = JSON.parse(fs.readFileSync("./json/pages.json")); 
-        var json = JSON.parse(fs.readFileSync("./public/json/pages.json"));//dev. 
+        var json = JSON.parse(fs.readFileSync("./public/json/pages.json"));
         json[name]["photo-content"].push({
             source: req.file.path.slice(7),
             alt: ""
@@ -135,13 +136,13 @@ app.post("/api/pages/:name/uploadbandeau", upload.single("bandeau"), (req, res) 
     } else {
         console.log("file received successfully");
         let name = req.params["name"];
-        var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+        var json = JSON.parse(fs.readFileSync("./public/json/pages.json"));
         json[name]["bandeau"].push({
-            source: req.file.path,
+            source: req.file.path.slice(7),
             alt: ""
         });
         console.log(JSON.stringify(json));
-        fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+        fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
         return res.send({
             success: true
         });

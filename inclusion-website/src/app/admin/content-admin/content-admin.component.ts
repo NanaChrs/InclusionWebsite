@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
+import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from "@angular/router";
 import { JsoncontentService } from "./jsoncontent.service";
 import { FileUploader } from "ng2-file-upload";
 
@@ -18,9 +18,9 @@ export class ContentAdminComponent implements OnInit {
   public uploaderbandeau: FileUploader;
   private newContent;
   private newPerson;
-  // private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
-  private uploadURL: string = "http://localhost:8000/api/pages/";
-  uploadbandeauURL = this.uploadURL;
+  private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
+  // private uploadURL: string = "http://localhost:8000/api/pages/";
+  uploadbandeauURL = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -30,49 +30,13 @@ export class ContentAdminComponent implements OnInit {
     this.router.events.subscribe(e => {
       if (e instanceof NavigationEnd && e.url != "/admin/param") {
         this.getPage();
+
       }
     });
   }
 
   ngOnInit() {
-    this.uploadURL += this.route.snapshot.paramMap.get("url") + "/upload";
-    this.uploader = new FileUploader({
-      url: this.uploadURL,
-      itemAlias: "photo"
-    });
-    this.uploader.onAfterAddingFile = file => {
-      file.withCredentials = false;
-    };
-    this.uploader.onCompleteItem = (
-      item: any,
-      response: any,
-      status: any,
-      headers: any
-    ) => {
-      console.log("FileUpload:uploaded:", item, status, response);
-      alert("File uploaded successfully");
-      this.getPage();
-    };
 
-    this.uploadbandeauURL +=
-      this.route.snapshot.paramMap.get("url") + "/uploadbandeau";
-    this.uploaderbandeau = new FileUploader({
-      url: this.uploadbandeauURL,
-      itemAlias: "bandeau"
-    });
-    this.uploaderbandeau.onAfterAddingFile = file => {
-      file.withCredentials = false;
-    };
-    this.uploaderbandeau.onCompleteItem = (
-      item: any,
-      response: any,
-      status: any,
-      headers: any
-    ) => {
-      console.log("FileUpload:uploaded:", item, status, response);
-      alert("File uploaded successfully");
-      this.getPage();
-    };
   }
 
   getPage(): void {
@@ -122,6 +86,45 @@ export class ContentAdminComponent implements OnInit {
           }
         }
       });
+    console.log(this.route.snapshot.paramMap.get("url"));
+    this.uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/" + this.route.snapshot.paramMap.get("url") + "/upload";
+    this.uploader = new FileUploader({
+      url: this.uploadURL,
+      itemAlias: "photo"
+    });
+    this.uploader.onAfterAddingFile = file => {
+      file.withCredentials = false;
+    };
+    this.uploader.onCompleteItem = (
+      item: any,
+      response: any,
+      status: any,
+      headers: any
+    ) => {
+      console.log("FileUpload:uploaded:", item, status, response);
+      alert("File uploaded successfully");
+      this.getPage();
+    };
+
+    this.uploadbandeauURL = "https://dev.inclusion-restaurant.fr/api/pages/" +
+      this.route.snapshot.paramMap.get("url") + "/uploadbandeau";
+    this.uploaderbandeau = new FileUploader({
+      url: this.uploadbandeauURL,
+      itemAlias: "bandeau"
+    });
+    this.uploaderbandeau.onAfterAddingFile = file => {
+      file.withCredentials = false;
+    };
+    this.uploaderbandeau.onCompleteItem = (
+      item: any,
+      response: any,
+      status: any,
+      headers: any
+    ) => {
+      console.log("FileUpload:uploaded:", item, status, response);
+      alert("File uploaded successfully");
+      this.getPage();
+    };
   }
 
   onClickSuppr(url: string) {
