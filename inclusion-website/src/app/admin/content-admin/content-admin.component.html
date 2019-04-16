@@ -24,8 +24,8 @@
             name="{{ text.emplacement }}"
           ></textarea>
         </mat-form-field>
-        <h1 *ngIf="url == 'carte'">Prix:</h1>
-        <mat-form-field class="textContent" *ngIf="url == 'carte'">
+        <h1 *ngIf="url == 'carte' && j > 0">Prix:</h1>
+        <mat-form-field class="textContent" *ngIf="url == 'carte' && j > 0">
           <textarea
             matInput
             [(ngModel)]="textContent[i][j]['prix']"

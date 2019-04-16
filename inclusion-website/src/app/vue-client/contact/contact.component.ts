@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Mail } from '../../_models';
-import { HttpClientService } from '../../service/httpclientservice.service';
+import { Component, OnInit } from "@angular/core";
+import { Mail } from "../../_models";
+import { HttpClientService } from "../../service/httpclientservice.service";
+import { JsoncontentService } from "../../admin/content-admin/jsoncontent.service";
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  selector: "app-contact",
+  templateUrl: "./contact.component.html",
+  styleUrls: ["./contact.component.css"]
 })
 export class ContactComponent implements OnInit {
   private name: string;
@@ -13,26 +14,35 @@ export class ContactComponent implements OnInit {
   private object: string;
   private message: string;
   private mail: Mail = new Mail();
-  constructor(private http: HttpClientService, ) { }
+  private pageContent: String[];
+  private textContent: String;
+  private imageContent: String;
+
+  constructor(
+    private http: HttpClientService,
+    private jsonContentService: JsoncontentService
+  ) {}
 
   ngOnInit() {
+    this.jsonContentService.getPageByName("contact").subscribe(page => {
+      this.pageContent = page;
+      this.textContent = this.pageContent["text-content"];
+      this.imageContent = this.pageContent["photo-content"];
+    });
   }
 
-
   sendMail() {
-
     this.mail.name = this.name;
-    console.log(this.mail.name)
+    console.log(this.mail.name);
     this.mail.sender = this.sender;
     this.mail.object = this.object;
     this.mail.message = this.message;
-    console.log(this.mail)
-    this.http.postMail(this.mail).subscribe((e) => {
+    console.log(this.mail);
+    this.http.postMail(this.mail).subscribe(e => {
       if (e[0]) {
         return true;
       }
       return false;
-    })
+    });
   }
-
 }
