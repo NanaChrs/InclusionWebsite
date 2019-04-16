@@ -7,7 +7,6 @@ const multer = require("multer");
 const path = require("path");
 var crypto = require("crypto");
 const nodemailer = require("nodemailer");
-const Email = require('email-templates');
 
 const app = express();
 
@@ -72,13 +71,29 @@ app.route("/api/pages/:name/:id").put((req, res) => {
   res.send(201, req.body);
 });
 
-app.route("/api/pages/:name/:id").delete((req, res) => {
+app.route("/api/pages/photocontent/:name/:id").delete((req, res) => {
   const name = req.params["name"];
   const id = req.params["id"];
   var json = JSON.parse(fs.readFileSync("./json/pages.json"));
   fs.unlinkSync(json[name]["photo-content"][id]["source"]);
   delete json[name]["photo-content"][id];
   json[name]["photo-content"] = json[name]["photo-content"].filter(function (
+    col
+  ) {
+    return col.Source != "Foo";
+  });
+  fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+  res.sendStatus(204);
+  console.log(json);
+});
+
+app.route("/api/pages/bandeau/:name/:id").delete((req, res) => {
+  const name = req.params["name"];
+  const id = req.params["id"];
+  var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+  fs.unlinkSync(json[name]["bandeau"][id]["source"]);
+  delete json[name]["bandeau"][id];
+  json[name]["bandeau"] = json[name]["bandeau"].filter(function (
     col
   ) {
     return col.Source != "Foo";
@@ -171,11 +186,11 @@ app.route("/api/pages/:name/text").post((req, res) => {
   console.log(json);
 });
 
-app.route('/api/contact').post((req, res) => {
+app.route("/api/contact").post((req, res) => {
   /* Notre code pour nodemailer */
-  console.log("test") // create reusable transporter object using the default SMTP transport
+  console.log("test"); // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     secure: false, // true for 465, false for other ports
     auth: {
       user: "inclusion.test.mail@gmail.com", // generated ethereal user
@@ -186,10 +201,18 @@ app.route('/api/contact').post((req, res) => {
   // send mail with defined transport object
   let mailOptions = {
     from: req.body["name"] + req.body["sender"], // sender address
-    to: "info@inclusion-restaurant.fr", // list of receivers
+    to: "mathilde.christiaens@isen.yncrea.fr", // list of receivers
     subject: req.body["subject"], // Subject line
 
-    html: "Email : " + req.body["sender"] + "<br>" + "Nom : " + req.body["name"] + "<br>" + "Message : " + req.body["message"] // html body
+    html:
+      "Email : " +
+      req.body["sender"] +
+      "<br>" +
+      "Nom : " +
+      req.body["name"] +
+      "<br>" +
+      "Message : " +
+      req.body["message"] // html body
   };
 
   // transporter.sendMail({
@@ -204,8 +227,7 @@ app.route('/api/contact').post((req, res) => {
     if (error) {
       return console.log(error);
     }
-    console.log('Message %s sent: %s', info.messageId, info.response);
-
+    console.log("Message %s sent: %s", info.messageId, info.response);
   });
   transporter.close();
   res.send(201, true);
