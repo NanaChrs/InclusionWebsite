@@ -143,6 +143,27 @@ export class ContentAdminComponent implements OnInit {
     }
   }
 
+  onClickSupprBandeau(url: string) {
+    var i = this.getIdOfPhotoBandeau(url);
+    const link = this.url + "/" + i;
+    this.jsonContentService.deletePageByIdBandeau(link).subscribe(() => {
+      console.log("Photo deleted");
+      this.getPage();
+    });
+  }
+
+  getIdOfPhotoBandeau(url: String): number {
+    console.log("Le bon url ========= " + url);
+    for (var i = 0; i < this.imageBandeau.length; i++) {
+      if (this.imageBandeau != null) {
+        if (this.imageBandeau[i]["source"] == url) {
+          console.log("Le bon indice ========= " + url);
+          return i;
+        }
+      }
+    }
+  }
+
   upload(): void {
     this.uploader.uploadAll();
   }
