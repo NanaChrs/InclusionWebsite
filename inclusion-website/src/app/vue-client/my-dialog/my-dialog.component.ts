@@ -15,6 +15,8 @@ export class MyDialogComponent implements OnInit {
   checkTaillePolice: boolean = this.cookieService.check('fontSize');
   bouttonOffAnim;
   bouttonOnAnim;
+  colorDefaut;
+  colorInverse;
 
 
   taillePolice = 1;
@@ -95,5 +97,24 @@ export class MyDialogComponent implements OnInit {
       this.text[y].style.fontSize= stock+'em';
     }
     this.cookieService.set('fontSize', stock,365);
+  }
+
+
+
+  //Boutons activation animations
+  onDefautCouleur(){
+    this.colorDefaut = document.getElementById('defaut');
+    this.colorInverse = document.getElementById('inverse');
+    this.cookieService.delete('inverse');
+    this.colorDefaut.style.backgroundColor = 'white'
+    this.colorInverse.style.backgroundColor = '';
+  }
+
+  onInverseCouleur(){
+    this.colorDefaut = document.getElementById('defaut');
+    this.colorInverse = document.getElementById('inverse');
+    this.cookieService.set('inverse','',365);
+    this.colorDefaut.style.backgroundColor = '';
+    this.colorInverse.style.backgroundColor = 'white'
   }
 }
