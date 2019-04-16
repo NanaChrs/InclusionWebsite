@@ -36,10 +36,7 @@
       </div>
       <div
         class="textContent add-contenu"
-        *ngIf="
-          (url == 'carte' && i > 0) ||
-          (url == 'contact' && i > 1)
-        "
+        *ngIf="(url == 'carte' && i > 0) || (url == 'contact' && i > 1)"
       >
         <h1>Ajouter un nouveau contenu :</h1>
         <div class="textContentFlex" *ngIf="newContent[i]">
@@ -90,7 +87,7 @@
       </div>
     </div>
 
-    <h1>Photos</h1>
+    <h1 *ngIf="imageContent">Photos</h1>
     <div
       id="global-container-img"
       (editedEmitter)="getPage()"

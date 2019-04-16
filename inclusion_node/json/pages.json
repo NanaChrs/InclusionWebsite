@@ -77,8 +77,12 @@
     "text-content": [
       [
         {
-          "emplacement": "Texte sur le bandeau d'images",
+          "emplacement": "Texte sur le bandeau d'images du haut/des plats",
           "contenu": "Nos petits plats"
+        },
+        {
+          "emplacement": "Texte sur le bandeau d'images du bas/des boissons",
+          "contenu": "Nos boissons"
         }
       ],
       [

@@ -8,7 +8,7 @@ import { CookieService } from "ngx-cookie-service";
   styleUrls: ["./menu.component.css"]
 })
 export class MenuComponent implements OnInit {
-  animationOFF: boolean = this.cookieService.check('animationOFF');
+  animationOFF: boolean = this.cookieService.check("animationOFF");
 
   //duré d'une photo dans le diapo
   duration = 7;
@@ -21,32 +21,28 @@ export class MenuComponent implements OnInit {
   i2 = 0;
 
   // recupération des element sur la page internet
-  @ViewChild('myslideshowcontainer') slideshowcontainer;
-  @ViewChild('myslideshow') slideshow;
-  @ViewChild('myslideshowcontainer2') slideshowcontainer2;
-  @ViewChild('myslideshow2') slideshow2;
+  @ViewChild("myslideshowcontainer") slideshowcontainer;
+  @ViewChild("myslideshow") slideshow;
+  @ViewChild("myslideshowcontainer2") slideshowcontainer2;
+  @ViewChild("myslideshow2") slideshow2;
 
   // Récupération Json
-  pageContent: String[];
-  textContent: String[];
-  imageContent: String[];
-
-  titreEntrees: String;
-  entrees: String[];
-  titrePlats: String;
-  plats: String[];
-  titreDesserts: String;
-  desserts: String[];
+  private pageContent: String[];
+  private textContent: String[];
+  private imageContent: String[];
+  private imageBandeau: String[];
 
   constructor(
     private cookieService: CookieService,
-    private jsonContentService: JsoncontentService) { }
+    private jsonContentService: JsoncontentService
+  ) {}
 
   ngOnInit() {
     this.jsonContentService.getPageByName("carte").subscribe(page => {
       this.pageContent = page;
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
+      this.imageBandeau = this.pageContent["bandeau"];
       this.lancementdiapo();
     });
   }
@@ -56,48 +52,47 @@ export class MenuComponent implements OnInit {
     this.checkaccess();
   }
 
-
-
-
-
-  lancementdiapo(){
-    if (this.slideshow!=undefined && this.slideshowcontainer!=undefined && this.slideshow2!=undefined && this.slideshowcontainer2!=undefined){    
-      if ((this.height) > 0) {
+  lancementdiapo() {
+    if (
+      this.slideshow != undefined &&
+      this.slideshowcontainer != undefined &&
+      this.slideshow2 != undefined &&
+      this.slideshowcontainer2 != undefined
+    ) {
+      if (this.height > 0) {
         this.slideshowcontainer.nativeElement.style.height = this.height + "px";
-        this.slideshowcontainer2.nativeElement.style.height = this.height + "px";
+        this.slideshowcontainer2.nativeElement.style.height =
+          this.height + "px";
         this.setContainerStyle();
       }
       this.play();
       this.play2();
-    }
-    else{
-      setTimeout(()=>{
+    } else {
+      setTimeout(() => {
         this.lancementdiapo();
-      },100);
+      }, 100);
     }
   }
 
-
-
-
-
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function(){
-    if(this.slideshow.nativeElement.children[this.i]==undefined && this.slideshow2.nativeElement.children[this.i2]==undefined && this.animationOFF){
+  setContainerStyle = function() {
+    if (
+      this.slideshow.nativeElement.children[this.i] == undefined &&
+      this.slideshow2.nativeElement.children[this.i2] == undefined &&
+      this.animationOFF
+    ) {
       setTimeout(() => {
         this.setContainerStyle();
       }, 100);
     }
-    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
-    this.slideshow.nativeElement.style.backgroundSize = 'cover';
-    this.slideshow2.nativeElement.style.background =  'url('+this.slideshow2.nativeElement.children[this.i2].src+') center';
-    this.slideshow2.nativeElement.style.backgroundSize = 'cover';
-  } 
+    this.slideshow.nativeElement.style.background =
+      "url(" + this.slideshow.nativeElement.children[this.i].src + ") center";
+    this.slideshow.nativeElement.style.backgroundSize = "cover";
+    this.slideshow2.nativeElement.style.background =
+      "url(" + this.slideshow2.nativeElement.children[this.i2].src + ") center";
+    this.slideshow2.nativeElement.style.backgroundSize = "cover";
+  };
 
-
-
-
-  
   // fonction permettant de verifier les modifications "accessibilité"
   checkaccess = function() {
     this.animationOFF = this.cookieService.check("animationOFF");
@@ -105,10 +100,6 @@ export class MenuComponent implements OnInit {
       this.checkaccess();
     }, 100);
   };
-
-
-
-
 
   play = function() {
     if (!this.animationOFF) {
@@ -137,8 +128,6 @@ export class MenuComponent implements OnInit {
     }, this.duration * 1000);
   };
 
-
-
   play2 = function() {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
@@ -166,9 +155,6 @@ export class MenuComponent implements OnInit {
     }, this.duration * 1000);
   };
 
-
-
-  
   // fleches d'animations 1
   onNext() {
     this.i++;
@@ -189,7 +175,6 @@ export class MenuComponent implements OnInit {
       "url(" + this.slideshow.nativeElement.children[this.i].src + ") center";
     this.slideshow.nativeElement.style.backgroundSize = "cover";
   }
-
 
   // fleches d'animations 1
   onNext2() {
