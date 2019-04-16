@@ -13,11 +13,14 @@ export class ContentAdminComponent implements OnInit {
   private url: String;
   private textContent: String[][];
   private imageContent: String[];
+  private imageBandeau: String[];
   public uploader: FileUploader;
+  public uploaderbandeau: FileUploader;
   private newContent;
   private newPerson;
   // private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
   private uploadURL: string = "http://localhost:8000/api/pages/";
+  uploadbandeauURL = this.uploadURL;
 
   constructor(
     private route: ActivatedRoute,
@@ -50,6 +53,25 @@ export class ContentAdminComponent implements OnInit {
       alert("File uploaded successfully");
       this.getPage();
     };
+
+    this.uploadbandeauURL += this.route.snapshot.paramMap.get("url") + "/uploadbandeau";
+    this.uploaderbandeau = new FileUploader({
+      url: this.uploadbandeauURL,
+      itemAlias: "bandeau"
+    });
+    this.uploaderbandeau.onAfterAddingFile = file => {
+      file.withCredentials = false;
+    };
+    this.uploaderbandeau.onCompleteItem = (
+      item: any,
+      response: any,
+      status: any,
+      headers: any
+    ) => {
+      console.log("FileUpload:uploaded:", item, status, response);
+      alert("File uploaded successfully");
+      this.getPage();
+    };
   }
 
   getPage(): void {
@@ -62,6 +84,8 @@ export class ContentAdminComponent implements OnInit {
         this.pageContent = page;
         this.textContent = this.pageContent["text-content"];
         this.imageContent = this.pageContent["photo-content"];
+        this.imageBandeau = this.pageContent["bandeau"];
+        console.log(this.imageBandeau);
         if (this.url == "equipe") {
           for (var i = 0; i < this.textContent.length; i++) {
             this.newContent.push({
@@ -113,6 +137,10 @@ export class ContentAdminComponent implements OnInit {
 
   upload(): void {
     this.uploader.uploadAll();
+  }
+
+  uploadBandeau(): void {
+    this.uploaderbandeau.uploadAll();
   }
 
   trackByIndex(index: number, obj: any): any {
