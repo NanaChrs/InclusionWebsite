@@ -8,7 +8,8 @@
 	display: none;
 }
 
-#footer-general{
+#footer-general
+{
 	font-family: 'Calibri';
 	background-color: #88181c;
 	color: white;
@@ -16,11 +17,6 @@
 	
 }
 
-
-#footer-general .footer-left,
-#footer-general .footer-center,
-#footer-general .footer-center-right,
-#footer-general .footer-right
 #sous_footer-general
 {
 	margin-left: 5%;
@@ -34,13 +30,21 @@
 	text-align: justify;
 }
 
-#footer-general .footer-center-right
+#plan-site
+{
+
+}
+
+#plan-site:hover
 {
 	cursor: pointer;
 	text-decoration: underline white;
 }
 
-
+#mentions-legales
+{
+	
+}
 
 #mentions-legales:hover
 {
