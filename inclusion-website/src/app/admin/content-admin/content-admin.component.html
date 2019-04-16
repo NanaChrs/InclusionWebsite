@@ -13,7 +13,7 @@
           class="div-img-croix"
           src="../../assets/img/croix_rouge.png"
           (click)="onClickSupprItem(i, j)"
-          *ngIf="textContent[i].length > 2 && j > 0"
+          *ngIf="textContent[i].length > 2 && j > 0 && url != 'contact'"
         />
         <h1>{{ text.emplacement }}</h1>
         <mat-form-field class="textContent">
@@ -34,7 +34,13 @@
           ></textarea>
         </mat-form-field>
       </div>
-      <div class="textContent add-contenu" *ngIf="url != 'carte' || i > 0">
+      <div
+        class="textContent add-contenu"
+        *ngIf="
+          (url == 'carte' && i > 0) ||
+          (url == 'contact' && i > 1)
+        "
+      >
         <h1>Ajouter un nouveau contenu :</h1>
         <div class="textContentFlex" *ngIf="newContent[i]">
           <form ngNativeValidate (ngSubmit)="addNewParagraph(i)">
