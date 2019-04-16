@@ -7,7 +7,6 @@ const multer = require("multer");
 const path = require("path");
 var crypto = require("crypto");
 const nodemailer = require("nodemailer");
-const Email = require('email-templates');
 
 const app = express();
 
@@ -78,7 +77,7 @@ app.route("/api/pages/:name/:id").delete((req, res) => {
   var json = JSON.parse(fs.readFileSync("./json/pages.json"));
   fs.unlinkSync(json[name]["photo-content"][id]["source"]);
   delete json[name]["photo-content"][id];
-  json[name]["photo-content"] = json[name]["photo-content"].filter(function (
+  json[name]["photo-content"] = json[name]["photo-content"].filter(function(
     col
   ) {
     return col.Source != "Foo";
@@ -128,7 +127,7 @@ app.route("/api/login").post((req, res) => {
       "79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371" &&
       utilisateur == "a82bdc731e23568916a7647f3f16d00a") ||
     req.body["token"] ==
-    "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
+      "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
   ) {
     res.send(201, [
       true,
@@ -148,11 +147,11 @@ app.route("/api/pages/:name/text").post((req, res) => {
   console.log(json);
 });
 
-app.route('/api/contact').post((req, res) => {
+app.route("/api/contact").post((req, res) => {
   /* Notre code pour nodemailer */
-  console.log("test") // create reusable transporter object using the default SMTP transport
+  console.log("test"); // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     secure: false, // true for 465, false for other ports
     auth: {
       user: "inclusion.test.mail@gmail.com", // generated ethereal user
@@ -163,10 +162,18 @@ app.route('/api/contact').post((req, res) => {
   // send mail with defined transport object
   let mailOptions = {
     from: req.body["name"] + req.body["sender"], // sender address
-    to: "info@inclusion-restaurant.fr", // list of receivers
+    to: "mathilde.christiaens@isen.yncrea.fr", // list of receivers
     subject: req.body["subject"], // Subject line
 
-    html: "Email : " + req.body["sender"] + "<br>" + "Nom : " + req.body["name"] + "<br>" + "Message : " + req.body["message"] // html body
+    html:
+      "Email : " +
+      req.body["sender"] +
+      "<br>" +
+      "Nom : " +
+      req.body["name"] +
+      "<br>" +
+      "Message : " +
+      req.body["message"] // html body
   };
 
   // transporter.sendMail({
@@ -181,8 +188,7 @@ app.route('/api/contact').post((req, res) => {
     if (error) {
       return console.log(error);
     }
-    console.log('Message %s sent: %s', info.messageId, info.response);
-
+    console.log("Message %s sent: %s", info.messageId, info.response);
   });
   transporter.close();
   res.send(201, true);
