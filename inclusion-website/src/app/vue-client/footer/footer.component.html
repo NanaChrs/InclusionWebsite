@@ -1,5 +1,6 @@
-<footer class="footer-general">
-  <div class="text">
+<div class="text" id="footer-general">
+  <div id="sous_footer-general">
+    <!-- Cette partie ne s'affiche que sur les téléphones (logos du header) -->
     <div id="logoFooter">
       <ul id="liste_logo">
         <li id="icone"><a href="https://www.facebook.com/InclusionRestaurant/"
@@ -20,69 +21,49 @@
                       width="30"></a></li> -->
       </ul>
     </div>
-    <div class="footer-left">
-      <p>Tel:</p>
-      <p>Address:</p>
-      <p>Mail:</p>
+
+    <div id="lientexte" *ngFor="let text of textContent; let i = index">
+
+      <div *ngIf="i==0">
+        <p>Telephone : {{text[0].contenu}}</p>
+        <p>Addresse : {{text[1].contenu}}</p>
+        <p>Mail : {{text[2].contenu}}</p>
+      </div>
+
+      <div *ngIf="i==1">
+        <div id="horaire">
+          <p>{{text[0].contenu}}</p>
+          <table>
+            <tr *ngFor="let item of horaire; let y = index">
+              <td>{{semaine[y]}} </td>
+              <td>: {{item.contenu}}</td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
     </div>
 
-    <div class="footer-center">
 
+    <div>
       <div>
-        <p>Heures d'ouverture</p>
+        <p id="plan_site" [routerLink]="['/plan-site']">Plan du site</p>
       </div>
-
-      <table>
-        <tbody>
-          <tr>
-            <td>Lundi:</td>
-            <td>08h00 - 22h00</td>
-          </tr>
-          <tr>
-            <td>Mardi:</td>
-            <td>08h00 - 22h00</td>
-          </tr>
-          <tr>
-            <td>Mercredi:</td>
-            <td>08h00 - 22h00</td>
-          </tr>
-          <tr>
-            <td>Jeudi:</td>
-            <td>08h00 - 22h00</td>
-          </tr>
-          <tr>
-            <td>Vendredi:</td>
-            <td>08h00 - 22h00</td>
-          </tr>
-          <tr>
-            <td>Samedi:</td>
-            <td>08h00 - 22h00</td>
-          </tr>
-          <tr>
-            <td>Dimanche:</td>
-            <td>08h00 - 22h00</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="footer-center-right">
-      <div class="Extras">
-        <p [routerLink]="['/plan-site']">Plan du site</p>
-      </div>
-      <div class="Extras">
-        <p [routerLink]="['/mentions-legales']">Mentions légales</p>
+      <div>
+        <p id="mentions_legales" [routerLink]="['/mentions-legales']">Mentions légales</p>
       </div>
     </div>
 
-    <div class="footer-right">
+
+    <div id="imap">
       <iframe id="googlemap"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6126113518494!2d3.046428169606164!3d50.63431288341961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sISEN+Lille!5e0!3m2!1sfr!2sfr!4v1554128878294!5m2!1sfr!2sfr"
         frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
-</footer>
+</div>
 
+<!-- Mode responsive : Bandeau avec un raccourci pour téléphoner -->
 <div id="bloc_lientelephone">
   <a id="lientelephone" href="tel:+33619459393"><img id="logotelephone" src="../../../assets/footer/phone.png"
       alt="Numéro de téléphone du restaurant" height="25" width="25"> APPELEZ-NOUS !</a>

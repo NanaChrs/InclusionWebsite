@@ -26,16 +26,28 @@
         "source": "http://localhost:4200/assets/accueil/3.jpg",
         "alt": "3.jpg"
       },
-      { "source": "assets\\accueil\\photo-1554983007498.png", "alt": "CV.png" },
-      { "source": "assets\\accueil\\photo-1554983093146.png", "alt": "CV.png" }
+      {
+        "source": "assets\\accueil\\photo-1554983007498.png",
+        "alt": "CV.png"
+      },
+      {
+        "source": "assets\\accueil\\photo-1554983093146.png",
+        "alt": "CV.png"
+      }
     ]
   },
   "footer": {
     "name": "Footer",
     "text-content": [
       [
-        { "emplacement": "Numéro de téléphone", "contenu": "0778479611" },
-        { "emplacement": "Adresse", "contenu": "adresse" },
+        {
+          "emplacement": "Numéro de téléphone",
+          "contenu": "0778479611"
+        },
+        {
+          "emplacement": "Adresse",
+          "contenu": "227 rue nationale"
+        },
         {
           "emplacement": "Adresse mail",
           "contenu": "mail@inclusion-restaurant.fr"
@@ -44,35 +56,35 @@
       [
         {
           "emplacement": "Titre horaires d'ouvertures",
-          "contenu": "Heures d'ouverture"
+          "contenu": "Heures d'ouverture :"
         },
         {
           "emplacement": "Horaires du lundi",
-          "contenu": "Lundi:\t08h00 - 22h00"
+          "contenu": "08h00 - 22h00"
         },
         {
           "emplacement": "Horaires du mardi",
-          "contenu": "Mardi:\t08h00 - 22h00"
+          "contenu": "08h00 - 22h00"
         },
         {
           "emplacement": "Horaires du mercredi",
-          "contenu": "Mercredi:\t08h00 - 22h00"
+          "contenu": "08h00 - 22h00"
         },
         {
           "emplacement": "Horaires du jeudi",
-          "contenu": "Jeudi:\t08h00 - 22h00"
+          "contenu": "08h00 - 22h00"
         },
         {
           "emplacement": "Horaires du vendredi",
-          "contenu": "Vendredi:\t08h00 - 22h00"
+          "contenu": "08h00 - 22h00"
         },
         {
           "emplacement": "Horaires du samedi",
-          "contenu": "Samedi:\t08h00 - 22h00"
+          "contenu": "08h00 - 22h00"
         },
         {
           "emplacement": "Horaires du dimanche",
-          "contenu": "Dimanche:\t08h00 - 22h00"
+          "contenu": "08h00 - 22h00"
         }
       ]
     ]
@@ -87,47 +99,119 @@
         }
       ],
       [
-        { "emplacement": "Titre entrées", "contenu": "Nos entrées" },
-        { "emplacement": "Entrée 1", "contenu": "La première entrée" },
-        { "emplacement": "Entrée 2", "contenu": "La deuxième entrée" },
-        { "emplacement": "Entrée 3", "contenu": "La troisième entrée" }
+        {
+          "emplacement": "Titre entrées",
+          "contenu": "Nos entrées"
+        },
+        {
+          "emplacement": "Entrée 1",
+          "contenu": "La première entrée"
+        },
+        {
+          "emplacement": "Entrée 2",
+          "contenu": "La deuxième entrée"
+        },
+        {
+          "emplacement": "Entrée 3",
+          "contenu": "La troisième entrée"
+        }
       ],
       [
-        { "emplacement": "Titre plats", "contenu": "Nos plats" },
-        { "emplacement": "Plat1", "contenu": "Le premier plat" },
-        { "emplacement": "Plat2", "contenu": "Le deuxième plat" },
-        { "emplacement": "Plat3", "contenu": "Le troisième plat" }
+        {
+          "emplacement": "Titre plats",
+          "contenu": "Nos plats"
+        },
+        {
+          "emplacement": "Plat1",
+          "contenu": "Le premier plat"
+        },
+        {
+          "emplacement": "Plat2",
+          "contenu": "Le deuxième plat"
+        },
+        {
+          "emplacement": "Plat3",
+          "contenu": "Le troisième plat"
+        }
       ],
       [
-        { "emplacement": "Titre desserts", "contenu": "Nos desserts" },
-        { "emplacement": "Dessert1", "contenu": "Le premier dessert" },
-        { "emplacement": "Dessert2", "contenu": "Le deuxième dessert" },
-        { "emplacement": "Dessert3", "contenu": "Le troisième dessert" }
+        {
+          "emplacement": "Titre desserts",
+          "contenu": "Nos desserts"
+        },
+        {
+          "emplacement": "Dessert1",
+          "contenu": "Le premier dessert"
+        },
+        {
+          "emplacement": "Dessert2",
+          "contenu": "Le deuxième dessert"
+        },
+        {
+          "emplacement": "Dessert3",
+          "contenu": "Le troisième dessert"
+        }
       ],
       [
         {
           "emplacement": "Titre Boisson1",
           "contenu": "Nos Vins Blancs & Champagnes"
         },
-        { "emplacement": "VinB1", "contenu": "Le premier vin" },
-        { "emplacement": "VinB2", "contenu": "Le deuxième vin" },
-        { "emplacement": "VinB3", "contenu": "Le troisième vin" }
+        {
+          "emplacement": "VinB1",
+          "contenu": "Le premier vin"
+        },
+        {
+          "emplacement": "VinB2",
+          "contenu": "Le deuxième vin"
+        },
+        {
+          "emplacement": "VinB3",
+          "contenu": "Le troisième vin"
+        }
       ],
       [
-        { "emplacement": "Vin rouges", "contenu": "Nos vins rouges" },
-        { "emplacement": "VinR1", "contenu": "Le premier vin" },
-        { "emplacement": "VinR2", "contenu": "Le deuxième vin" },
-        { "emplacement": "VinR3", "contenu": "Le troisième vin" }
+        {
+          "emplacement": "Vin rouges",
+          "contenu": "Nos vins rouges"
+        },
+        {
+          "emplacement": "VinR1",
+          "contenu": "Le premier vin"
+        },
+        {
+          "emplacement": "VinR2",
+          "contenu": "Le deuxième vin"
+        },
+        {
+          "emplacement": "VinR3",
+          "contenu": "Le troisième vin"
+        }
       ],
       [
-        { "emplacement": "Titre Bières", "contenu": "Nos bières" },
-        { "emplacement": "Bière1", "contenu": "Le premier bière" },
-        { "emplacement": "Bière2", "contenu": "Le deuxième bière" },
-        { "emplacement": "Bière3", "contenu": "Le troisième bière" }
+        {
+          "emplacement": "Titre Bières",
+          "contenu": "Nos bières"
+        },
+        {
+          "emplacement": "Bière1",
+          "contenu": "Le premier bière"
+        },
+        {
+          "emplacement": "Bière2",
+          "contenu": "Le deuxième bière"
+        },
+        {
+          "emplacement": "Bière3",
+          "contenu": "Le troisième bière"
+        }
       ]
     ],
     "photo-content": [
-      { "source": "assets\\accueil\\photo-1554802879238.jpg", "alt": "3.jpg" },
+      {
+        "source": "assets\\accueil\\photo-1554802879238.jpg",
+        "alt": "3.jpg"
+      },
       {
         "source": "assets\\carte\\photo-1554984094866.JPG",
         "alt": "P1000165.JPG"
@@ -136,8 +220,14 @@
         "source": "assets\\carte\\photo-1554984303567.JPG",
         "alt": "P1000165.JPG"
       },
-      { "source": "assets\\carte\\photo-1554985374639.JPG", "alt": "" },
-      { "source": "assets\\carte\\photo-1554985653957.JPG", "alt": "" }
+      {
+        "source": "assets\\carte\\photo-1554985374639.JPG",
+        "alt": ""
+      },
+      {
+        "source": "assets\\carte\\photo-1554985653957.JPG",
+        "alt": ""
+      }
     ],
     "bandeau": []
   },
@@ -155,7 +245,10 @@
         }
       ],
       [
-        { "emplacement": "Nom", "contenu": "François Marien" },
+        {
+          "emplacement": "Nom",
+          "contenu": "François Marien"
+        },
         {
           "emplacement": "Description",
           "contenu": "Créateur du restaurant et passioné de cuisine."
@@ -166,7 +259,10 @@
         }
       ],
       [
-        { "emplacement": "Nom", "contenu": "Mathilde" },
+        {
+          "emplacement": "Nom",
+          "contenu": "Mathilde"
+        },
         {
           "emplacement": "Description",
           "contenu": "Assisstante principale de françois"
@@ -177,7 +273,10 @@
         }
       ],
       [
-        { "emplacement": "Nom", "contenu": "Clément" },
+        {
+          "emplacement": "Nom",
+          "contenu": "Clément"
+        },
         {
           "emplacement": "Description",
           "contenu": "J'ajoute encore qqn pour tester"
@@ -188,7 +287,10 @@
         }
       ],
       [
-        { "emplacement": "Nom", "contenu": "Thibaut" },
+        {
+          "emplacement": "Nom",
+          "contenu": "Thibaut"
+        },
         {
           "emplacement": "Description",
           "contenu": "J'ajoute ENCde qqn pour testereh bezochbhjaerg bdh&uové²"
@@ -225,6 +327,17 @@
     ],
     "bandeau": []
   },
-  "contact": { "name": "Contact", "text-content": [[]], "photo-content": [] },
-  "header": { "name": "Header", "text-content": [[]] }
+  "contact": {
+    "name": "Contact",
+    "text-content": [
+      []
+    ],
+    "photo-content": []
+  },
+  "header": {
+    "name": "Header",
+    "text-content": [
+      []
+    ]
+  }
 }

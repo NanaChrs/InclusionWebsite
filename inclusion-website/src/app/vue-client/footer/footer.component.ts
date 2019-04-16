@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JsoncontentService } from '../../admin/content-admin/jsoncontent.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  pageContent: String[];
+  textContent: String[];
+  semaine = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+  horaire: String;
 
-  constructor() { }
+
+
+  constructor(private jsonContentService: JsoncontentService) { }
 
   ngOnInit() {
+    this.jsonContentService.getPageByName("footer").subscribe(page => {
+      this.pageContent = page;
+      this.textContent = this.pageContent["text-content"];
+      this.horaire = this.textContent[1].slice(1, 8);
+      console.log(this.horaire);
+    });
   }
 
 }

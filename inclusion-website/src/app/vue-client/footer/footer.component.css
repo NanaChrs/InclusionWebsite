@@ -8,58 +8,60 @@
 	display: none;
 }
 
-.footer-general{
+#footer-general
+{
 	font-family: 'Calibri';
-	background-color: rgb(136, 24, 28);
-	box-sizing: border-box;
-	width: 100%;
-	padding: 20px 30px;
-	/* margin-top: 40px; */
-}
-
-.footer-general .footer-left,
-.footer-general .footer-center,
-.footer-general .footer-center-right,
-.footer-general .footer-right
-{
-	display: inline-block;
-	vertical-align: top;
-}
-
-.footer-left
-{
-	width: 25%;
-}
-
-.footer-general .footer-center
-{
-	width: 25%;
-}
-.footer-general .footer-center-right
-{
-    width: 18%;
-}
-
-.footer-general .footer-right
-{
-	width: 30%;
-}
-.footer-general p
-{
-    font: 1em sans-serif;
-    color: white;
-}
-
-table{
+	background-color: #88181c;
 	color: white;
+	width: 100%;
+	
 }
 
-.Extras:hover{
+#sous_footer-general
+{
+	margin-left: 5%;
+	margin-right: 5%;
+	display: flex;
+	justify-content: space-between;
+}
+
+#horaire p
+{
+	text-align: justify;
+}
+
+#plan_site
+{
+
+}
+
+#plan_site:hover
+{
 	cursor: pointer;
 	text-decoration: underline white;
 }
 
-#googlemap{
+#mentions_legales
+{
+	
+}
+
+#mentions_legales:hover
+{
+	cursor: pointer;
+	text-decoration: underline white;
+}
+
+#imap
+{
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#googlemap
+{
 	width: 400px;
 	height: 200px;
 }
@@ -75,31 +77,15 @@ table{
 	#liste_logo
 	{
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		list-style-type: none;
 	}
 
 }
 
 @media screen and (max-width: 980px) {
-	.footer-general{
-		display: flex;
-		flex-direction: column;
-	}
-
-	.footer-general .footer-left,
-	.footer-general .footer-center,
-	.footer-general .footer-center-right,
-	.footer-general .footer-right{
-		text-align: center;
-		width: 100%;
-	}
-
-	table{
-		margin: auto;
-	}
-
-	#googlemap{
+	#googlemap
+	{
 		width: 100%;
 		height: 200px;
 	}
