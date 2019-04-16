@@ -8,51 +8,56 @@
 	display: none;
 }
 
-#footer-general{
+
+#footer-general
+{
 	font-family: 'Calibri';
-	background-color: rgb(136, 24, 28);
-	box-sizing: border-box;
-	width: 100%;
-	padding: 20px 30px;
+	background-color: #88181c;
 	color: white;
-	font-size: 1em;
+	width: 100%;
 }
+
 
 #footer-general .footer-left,
 #footer-general .footer-center,
 #footer-general .footer-center-right,
 #footer-general .footer-right
+#sous_footer-general
 {
-	display: inline-block;
-	vertical-align: top;
+	margin-left: 5%;
+	margin-right: 5%;
+	display: flex;
+	justify-content: space-between;
 }
 
-.footer-left
+#horaire p
 {
-	width: 25%;
+	text-align: justify;
 }
 
-#footer-general .footer-center
-{
-	width: 25%;
-}
+
 #footer-general .footer-center-right
 {
-	margin-top: 0.5%;
-    width: 18%;
-}
-
-#footer-general .footer-right
-{
-	width: 30%;
-}
-
-.lien-focus:hover{
 	cursor: pointer;
 	text-decoration: underline white;
 }
 
-#googlemap{
+#mentions-legales:hover
+{
+	cursor: pointer;
+	text-decoration: underline white;
+}
+
+#imap
+{
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#googlemap
+{
 	width: 400px;
 	height: 200px;
 }
@@ -83,31 +88,16 @@ button{
 	#liste_logo
 	{
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		list-style-type: none;
 	}
 
 }
 
 @media screen and (max-width: 980px) {
-	#footer-general{
-		display: flex;
-		flex-direction: column;
-	}
 
-	#footer-general .footer-left,
-	#footer-general .footer-center,
-	#footer-general .footer-center-right,
-	#footer-general .footer-right{
-		text-align: center;
-		width: 100%;
-	}
-
-	table{
-		margin: auto;
-	}
-
-	#googlemap{
+	#googlemap
+	{
 		width: 100%;
 		height: 200px;
 	}
@@ -117,7 +107,11 @@ button{
 	#logoFooter
 	{
 		width: 100%;
-		
+	}
+
+	#lientexte, .footer-center-right, #imap
+	{
+		display: none;
 	}
 
 	#liste_logo
@@ -125,12 +119,13 @@ button{
 		display: flex;
 		justify-content: space-around;
 		list-style-type: none;
+		margin-bottom: 60px;
 	}
 
 	#bloc_lientelephone
 	{
 		display: flex;
-		justify-content: center;
+		justify-content: space-around;
 		width: 100%;
 		background-color: #222222;
 		position: fixed;
@@ -139,15 +134,34 @@ button{
 
 	#lientelephone
 	{
-		padding: 5px;
-		font-family: calibri;
-		letter-spacing: .1em;
-		font-size: 20px;
-		background-color: #0061f1;
+		padding-right: 40px;
+		padding-left: 40px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		font-family: 'Calibri';
+		font-size: 1em;
+		/* background-color: #0060f1cc; */
+		background-color: whitesmoke;
 		text-decoration: none;
-		color: white;
-		padding: 10px;
-		border-radius: 15px;
+		color: black;
+		border-radius: 50px;
+		margin: 10px;
+	}
+
+	#lienmaps
+	{
+		margin: 10px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		padding-right: 40px;
+		padding-left: 40px;
+		font-family: 'Calibri';
+		font-size: 1em;
+		/* background-color: #f19100be; */
+		background-color: whitesmoke;
+		text-decoration: none;
+		color: black;
+		border-radius: 50px;
 	}
 
 	#logotelephone

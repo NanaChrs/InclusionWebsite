@@ -1,28 +1,42 @@
 <app-entete></app-entete>
 <div id="general">
-
   <div #myslideshowcontainer id="slideshow-container">
-      <div #myslideshow id="slideshow">
-          <img *ngFor = "let image of imageContent" src="{{image.source}}" alt="{{image.alt}}" class="slideshow-image">
-      </div>
-      <div id="slideshow-text">
-          <p>Ecco la carta !</p>
-      </div>
-      <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()"><img
-              src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent"></button>
-      <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()"><img
-              src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent"></button>
-      <div *ngIf="!animationOFF" id="zoneclicable">
-          <div id="zoneclicgauche" (click)="onPrev()"></div>
-          <div id="zoneclicdroite" (click)="onNext()"></div>
-      </div>
+    <div #myslideshow id="slideshow">
+      <img
+        *ngFor="let image of imageContent"
+        src="{{ image.source }}"
+        alt="{{ image.alt }}"
+        class="slideshow-image"
+      />
+    </div>
+    <div id="slideshow-text">
+      <p>{{ textContent[0][0]["contenu"] }}</p>
+    </div>
+    <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
+      <img
+        src="../../../assets/accueil/fleche-gauche.png"
+        alt="bouton précédent"
+      />
+    </button>
+
+    <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
+      <img
+        src="../../../assets/accueil/fleche-droite.png"
+        alt="bouton précédent"
+      />
+    </button>
+
+    <div *ngIf="!animationOFF" id="zoneclicable">
+      <div id="zoneclicgauche" (click)="onPrev()"></div>
+      <div id="zoneclicdroite" (click)="onNext()"></div>
+    </div>
   </div>
 
   <div class="menu text" *ngIf="textContent">
     <div *ngFor="let text of textContent; let i = index">
       <!-- <div class="photo" *ngIf="imageContent && i == 0"> -->
-        <!-- <img src="{{ imageContent[0].source }}" alt="{{ imageContent[0].alt }}" /> -->
-        <!-- <div>{{ text.contenu }}</div> -->
+      <!-- <img src="{{ imageContent[0].source }}" alt="{{ imageContent[0].alt }}" /> -->
+      <!-- <div>{{ text.contenu }}</div> -->
       <!-- </div> -->
       <div *ngIf="i > 0">
         <p>{{ text[0].contenu }}</p>
@@ -35,26 +49,44 @@
         </ul>
       </div>
       <hr *ngIf="i < textContent.length" />
+      <div
+        #myslideshowcontainer2
+        id="slideshow-container"
+        *ngIf="i == 3 && imageBandeau"
+      >
+        <div #myslideshow2 id="slideshow">
+          <img
+            *ngFor="let image of imageBandeau"
+            src="{{ image.source }}"
+            alt="{{ image.alt }}"
+            class="slideshow-image"
+          />
+        </div>
+        <div id="slideshow-text">
+          <p>{{ textContent[0][1]["contenu"] }}</p>
+        </div>
+        <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
+          <img
+            src="../../../assets/accueil/fleche-gauche.png"
+            alt="bouton précédent"
+          />
+        </button>
+
+        <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
+          <img
+            src="../../../assets/accueil/fleche-droite.png"
+            alt="bouton précédent"
+          />
+        </button>
+
+        <div *ngIf="!animationOFF" id="zoneclicable">
+          <div id="zoneclicgauche" (click)="onPrev()"></div>
+          <div id="zoneclicdroite" (click)="onNext()"></div>
+        </div>
+      </div>
+      <hr *ngIf="i == 3" />
     </div>
   </div>
 
-  <div #myslideshowcontainer2 id="slideshow-container">
-    <div #myslideshow2 id="slideshow">
-        <img *ngFor = "let image of imageContent" src="{{image.source}}" alt="{{image.alt}}" class="slideshow-image">
-    </div>
-    <div id="slideshow-text">
-        <p>Ecco el vino!</p>
-    </div>
-    <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev2()"><img
-            src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent"></button>
-    <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext2()"><img
-            src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent"></button>
-    <div *ngIf="!animationOFF" id="zoneclicable">
-        <div id="zoneclicgauche" (click)="onPrev2()"></div>
-        <div id="zoneclicdroite" (click)="onNext2()"></div>
-    </div>
-  </div>
-
+  <app-footer></app-footer>
 </div>
-
-<app-footer></app-footer>
