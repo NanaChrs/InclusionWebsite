@@ -30,23 +30,23 @@
 	text-align: justify;
 }
 
-#plan_site
+#plan-site
 {
 
 }
 
-#plan_site:hover
+#plan-site:hover
 {
 	cursor: pointer;
 	text-decoration: underline white;
 }
 
-#mentions_legales
+#mentions-legales
 {
 	
 }
 
-#mentions_legales:hover
+#mentions-legales:hover
 {
 	cursor: pointer;
 	text-decoration: underline white;
@@ -110,7 +110,11 @@ button{
 	#logoFooter
 	{
 		width: 100%;
-		
+	}
+
+	#lientexte, .footer-center-right, #imap
+	{
+		display: none;
 	}
 
 	#liste_logo
@@ -118,12 +122,13 @@ button{
 		display: flex;
 		justify-content: space-around;
 		list-style-type: none;
+		margin-bottom: 60px;
 	}
 
 	#bloc_lientelephone
 	{
 		display: flex;
-		justify-content: center;
+		justify-content: space-around;
 		width: 100%;
 		background-color: #222222;
 		position: fixed;
@@ -132,15 +137,34 @@ button{
 
 	#lientelephone
 	{
-		padding: 5px;
-		font-family: calibri;
-		letter-spacing: .1em;
-		font-size: 20px;
-		background-color: #0061f1;
+		padding-right: 40px;
+		padding-left: 40px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		font-family: 'Calibri';
+		font-size: 1em;
+		/* background-color: #0060f1cc; */
+		background-color: whitesmoke;
 		text-decoration: none;
-		color: white;
-		padding: 10px;
-		border-radius: 15px;
+		color: black;
+		border-radius: 50px;
+		margin: 10px;
+	}
+
+	#lienmaps
+	{
+		margin: 10px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		padding-right: 40px;
+		padding-left: 40px;
+		font-family: 'Calibri';
+		font-size: 1em;
+		/* background-color: #f19100be; */
+		background-color: whitesmoke;
+		text-decoration: none;
+		color: black;
+		border-radius: 50px;
 	}
 
 	#logotelephone

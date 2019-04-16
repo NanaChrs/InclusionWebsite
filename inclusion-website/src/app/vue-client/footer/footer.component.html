@@ -46,10 +46,10 @@
 
     <div class="footer-center-right">
       <div class="Extras">
-        <button class="lien-focus" [routerLink]="['/plan-site']">Plan du site</button>
+        <button id="plan-site" class="lien-focus" [routerLink]="['/plan-site']">Plan du site</button>
       </div>
       <div class="Extras">
-        <button class="lien-focus" [routerLink]="['/mentions-legales']">Mentions légales</button>
+        <button id="mentions-legales" class="lien-focus" [routerLink]="['/mentions-legales']">Mentions légales</button>
       </div>
     </div>
 
@@ -65,5 +65,8 @@
 <!-- Mode responsive : Bandeau avec un raccourci pour téléphoner -->
 <div id="bloc_lientelephone">
   <a id="lientelephone" href="tel:+33619459393"><img id="logotelephone" src="../../../assets/footer/phone.png"
-      alt="Numéro de téléphone du restaurant" height="25" width="25"> APPELEZ-NOUS !</a>
+      alt="Numéro de téléphone du restaurant" height="20" width="20"> APPELEZ-NOUS !</a>
+  <a id="lienmaps" href="http://maps.google.com/?q=41 boulevard Vauban, Lille, France"><img id="logotelephone"
+      src="../../../assets/footer/location.png" alt="Lien vers le plan d'accès du restaurant" height="22" width="12">
+    NOUS TROUVEZ !</a>
 </div>
