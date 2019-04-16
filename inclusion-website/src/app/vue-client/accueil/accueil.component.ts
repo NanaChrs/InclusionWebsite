@@ -11,6 +11,7 @@ import { ComponentFactoryResolver } from "@angular/core/src/render3";
 })
 export class AccueilComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check("animationOFF");
+  inverse: boolean = this.cookieService.check("inverse");
   //duré d'une photo dans le diapo
   duration = 7;
 
@@ -29,10 +30,14 @@ export class AccueilComponent implements OnInit {
   @ViewChild("myslideshowcontainer") slideshowcontainer;
   @ViewChild("myslideshow") slideshow;
 
+  zone = document.getElementById('presentation-restaurant');
+
+
+
   constructor(
     private cookieService: CookieService,
     private jsonContentService: JsoncontentService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.jsonContentService.getPageByName("accueil").subscribe(page => {
@@ -44,26 +49,31 @@ export class AccueilComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    // lancement de la fonction permettant de verifier les modifications "accessibilité"
-    this.checkaccess();
+
   }
 
 
 
 
 
-  lancementdiapo(){
-    if (this.slideshow!=undefined && this.slideshowcontainer!=undefined){    
+  lancementdiapo() {
+    if (this.slideshow != undefined && this.slideshowcontainer != undefined) {
       if ((this.height) > 0) {
         this.slideshowcontainer.nativeElement.style.height = this.height + "px";
         this.setContainerStyle();
+        var zone = document.getElementById('presentation-restaurant');
+        if (this.inverse) {
+          zone.style.filter = "invert(90%)";
+        }
       }
       this.play();
+      // lancement de la fonction permettant de verifier les modifications "accessibilité"
+      this.checkaccess();
     }
-    else{
-      setTimeout(()=>{
+    else {
+      setTimeout(() => {
         this.lancementdiapo();
-      },100);
+      }, 100);
     }
   }
 
@@ -72,24 +82,29 @@ export class AccueilComponent implements OnInit {
 
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function(){
-    if(this.slideshow.nativeElement.children[this.i]==undefined && this.animationOFF){
+  setContainerStyle = function () {
+    if (this.slideshow.nativeElement.children[this.i] == undefined && this.animationOFF) {
       setTimeout(() => {
         this.setContainerStyle();
       }, 100);
     }
-    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+    this.slideshow.nativeElement.style.background = 'url(' + this.slideshow.nativeElement.children[this.i].src + ') center';
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
-    
-  } 
+  }
 
 
 
 
-  
+
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function() {
+  checkaccess = function () {
     this.animationOFF = this.cookieService.check("animationOFF");
+    this.inverse = this.cookieService.check("inverse");
+    var zone = document.getElementById('presentation-restaurant');
+    if (this.inverse) {
+      zone.style.filter = "invert(90%)"
+    }
+    else { zone.style.filter = ""; }
     setTimeout(() => {
       this.checkaccess();
     }, 100);
@@ -99,7 +114,7 @@ export class AccueilComponent implements OnInit {
 
 
 
-  play = function() {
+  play = function () {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = "fadeOut";

@@ -1,8 +1,9 @@
 #general{
     z-index: 1000;
+    /* filter: invert(90%); */
 }
 
-#bloc_taille_texte, #bloc_animations
+#bloc_taille_texte, #bloc_animations, #bloc_couleur
 {
     width: auto;
     height: auto;
@@ -12,7 +13,7 @@
     padding: 0;
 }
 
-#btnSizeDown, #btnSizeUp, #animationsOn, #animationsOff
+#btnSizeDown, #btnSizeUp, #animationsOn, #animationsOff, #defaut, #inverse
 {
     cursor: pointer;
     margin: 3px;
@@ -45,7 +46,7 @@
     font-size: 20px;
 }
 
-#btnSizeDown:focus, #btnSizeUp:focus, #animationsOn:focus, #animationsOff:focus, #close_popup:focus {
+#btnSizeDown:focus, #btnSizeUp:focus, #animationsOn:focus, #animationsOff:focus, #close_popup:focus, #defaut:focus, #inverse:focus {
     /* border: inherit; */
-    border: solid white;
+    background: grey;
 }

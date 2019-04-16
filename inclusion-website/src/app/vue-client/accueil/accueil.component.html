@@ -2,39 +2,18 @@
 <div id="global" *ngIf="textContent">
   <div #myslideshowcontainer id="slideshow-container">
     <div #myslideshow id="slideshow">
-      <img
-        *ngFor="let image of imageContent"
-        src="{{ image.source }}"
-        alt="{{ image.alt }}"
-        class="slideshow-image"
-      />
+      <img *ngFor="let image of imageContent" src="{{ image.source }}" alt="{{ image.alt }}" class="slideshow-image" />
     </div>
     <div id="slideshow-text">
       <p>{{ textContent[0][0]["contenu"] }}</p>
     </div>
 
-    <button
-      *ngIf="animationOFF"
-      id="fleche-gauche"
-      (click)="onPrev()"
-      class="lien-focus"
-    >
-      <img
-        src="../../../assets/accueil/fleche-gauche.png"
-        alt="photo précédente"
-      />
+    <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()" class="lien-focus">
+      <img src="../../../assets/accueil/fleche-gauche.png" alt="photo précédente" />
     </button>
 
-    <button
-      *ngIf="animationOFF"
-      id="fleche-droite"
-      (click)="onNext()"
-      class="lien-focus"
-    >
-      <img
-        src="../../../assets/accueil/fleche-droite.png"
-        alt="photo suivante"
-      />
+    <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()" class="lien-focus">
+      <img src="../../../assets/accueil/fleche-droite.png" alt="photo suivante" />
     </button>
 
     <div *ngIf="!animationOFF" id="zoneclicable">
@@ -42,12 +21,10 @@
       <div id="zoneclicdroite" (click)="onNext()"></div>
     </div>
   </div>
-  <div
-    id="presentation-restaurant"
-    class="text"
-    *ngFor="let contenu of textContent[0]; let i = index"
-  >
-    <p *ngIf="i > 0">{{ contenu["contenu"] }}</p>
+  <div id="presentation-restaurant">
+    <div id="test" class="text" *ngFor="let contenu of textContent[0]; let i = index">
+      <p *ngIf="i > 0">{{ contenu["contenu"] }}</p>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>
