@@ -28,9 +28,9 @@ export class EquipeComponent implements OnInit {
   descriptions: String[];
   nousRejoindre: String[];
   nom: String;
+  private mail: String;
 
   img;
-
 
   // recupération des element sur la page internet
   @ViewChild("myslideshowcontainer") slideshowcontainer;
@@ -39,7 +39,7 @@ export class EquipeComponent implements OnInit {
   constructor(
     private cookieService: CookieService,
     private jsonContentService: JsoncontentService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.jsonContentService.getPageByName("equipe").subscribe(page => {
@@ -56,15 +56,15 @@ export class EquipeComponent implements OnInit {
       );
       this.lancementdiapo();
     });
+    this.jsonContentService.getPageByName("param").subscribe(page => {
+      this.mail = page["text-content"][0][1]["contenu"];
+    });
   }
 
   ngAfterViewInit() {
     // lancement de la fonction permettant de verifier les modifications "accessibilité"
     this.checkaccess();
   }
-
-
-
 
   lancementdiapo() {
     if (this.slideshow != undefined && this.slideshowcontainer != undefined) {
@@ -80,13 +80,8 @@ export class EquipeComponent implements OnInit {
     }
   }
 
-
-
-
-
-
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function () {
+  setContainerStyle = function() {
     if (
       this.slideshow.nativeElement.children[this.i] == undefined &&
       this.animationOFF
@@ -100,16 +95,12 @@ export class EquipeComponent implements OnInit {
     this.slideshow.nativeElement.style.backgroundSize = "cover";
   };
 
-
-
-
-
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function () {
+  checkaccess = function() {
     this.animationOFF = this.cookieService.check("animationOFF");
     this.cookieinverse = this.cookieService.check("inverse");
     if (this.cookieinverse) {
-      this.img = document.getElementsByClassName('photo');
+      this.img = document.getElementsByClassName("photo");
       for (var i = 0; i < this.img.length; i++) {
         this.img[i].style.filter = "invert(90%)";
       }
@@ -119,11 +110,7 @@ export class EquipeComponent implements OnInit {
     }, 100);
   };
 
-
-
-
-
-  play = function () {
+  play = function() {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = "fadeOut";
@@ -149,10 +136,6 @@ export class EquipeComponent implements OnInit {
       this.play();
     }, this.duration * 1000);
   };
-
-
-
-
 
   // fleches d'animations
   onNext() {
