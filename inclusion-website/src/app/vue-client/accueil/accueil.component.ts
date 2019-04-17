@@ -21,19 +21,18 @@ export class AccueilComponent implements OnInit {
   i = 0;
 
   // Récupération Json
-  pageContent: String[];
-  textContent: String[];
-  imageContent: String[];
+  private pageContent: String[];
+  private textContent: String[];
+  private imageContent: String[];
 
   // recupération des element sur la page internet
   @ViewChild("myslideshowcontainer") slideshowcontainer;
   @ViewChild("myslideshow") slideshow;
 
-
   constructor(
     private cookieService: CookieService,
     private jsonContentService: JsoncontentService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.jsonContentService.getPageByName("accueil").subscribe(page => {
@@ -44,63 +43,48 @@ export class AccueilComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit() {
-
-  }
-
-
-
-
+  ngAfterViewInit() {}
 
   lancementdiapo() {
     if (this.slideshow != undefined && this.slideshowcontainer != undefined) {
-      if ((this.height) > 0) {
+      if (this.height > 0) {
         this.slideshowcontainer.nativeElement.style.height = this.height + "px";
         this.setContainerStyle();
       }
       this.play();
       // lancement de la fonction permettant de verifier les modifications "accessibilité"
       this.checkaccess();
-    }
-    else {
+    } else {
       setTimeout(() => {
         this.lancementdiapo();
       }, 100);
     }
   }
 
-
-
-
-
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function () {
-    if (this.slideshow.nativeElement.children[this.i] == undefined && this.animationOFF) {
+  setContainerStyle = function() {
+    if (
+      this.slideshow.nativeElement.children[this.i] == undefined &&
+      this.animationOFF
+    ) {
       setTimeout(() => {
         this.setContainerStyle();
       }, 100);
     }
-    this.slideshow.nativeElement.style.background = 'url(' + this.slideshow.nativeElement.children[this.i].src + ') center';
-    this.slideshow.nativeElement.style.backgroundSize = 'cover';
-  }
-
-
-
-
+    this.slideshow.nativeElement.style.background =
+      "url(" + this.slideshow.nativeElement.children[this.i].src + ") center";
+    this.slideshow.nativeElement.style.backgroundSize = "cover";
+  };
 
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function () {
+  checkaccess = function() {
     this.animationOFF = this.cookieService.check("animationOFF");
     setTimeout(() => {
       this.checkaccess();
     }, 100);
   };
 
-
-
-
-
-  play = function () {
+  play = function() {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = "fadeOut";
@@ -126,10 +110,6 @@ export class AccueilComponent implements OnInit {
       this.play();
     }, this.duration * 1000);
   };
-
-
-
-
 
   // fleches d'animations
   onNext() {
