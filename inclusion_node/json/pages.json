@@ -254,6 +254,10 @@
         {
           "emplacement": "Titre formulaire de contact",
           "contenu": "Vous pouvez également nous écrire via le formulaire de contact ci-dessous :"
+        },
+        {
+          "emplacement": "Texte dans le bouton",
+          "contenu": "Nous contacter"
         }
       ]
     ]
