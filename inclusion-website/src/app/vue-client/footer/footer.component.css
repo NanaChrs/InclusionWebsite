@@ -30,20 +30,10 @@
 	text-align: justify;
 }
 
-#plan-site
-{
-
-}
-
 #plan-site:hover
 {
 	cursor: pointer;
 	text-decoration: underline white;
-}
-
-#mentions-legales
-{
-	
 }
 
 #mentions-legales:hover
@@ -77,6 +67,9 @@ button{
 	margin: 3% 0;
 }
 
+.lien-focus{
+	border: #88181c solid;
+}
 .lien-focus:focus {
     border: solid white;
 }

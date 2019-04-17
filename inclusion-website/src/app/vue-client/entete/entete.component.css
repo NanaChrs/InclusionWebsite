@@ -88,23 +88,6 @@
     justify-content: space-between;   
 }
 
-
-/* #bandeau_navigation:nth-child(2)
-{
-    flex: 1;
-} */
-
-/* a
-{
-    text-decoration: none;
-    color:white;
-}
-
-a:hover
-{
-    color: brown;
-} */
-
 #logoUber
 {
     border-radius: 8px;
@@ -214,6 +197,10 @@ button{
     font-family: 'Calibri';
     font-size: 1em; 
     padding: 0;
+}
+
+.lien-focus{
+    border: #88181c solid
 }
 
 .lien-focus:focus {
