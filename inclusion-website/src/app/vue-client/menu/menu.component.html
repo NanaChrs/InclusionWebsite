@@ -49,17 +49,17 @@
     <div id="slideshow-text">
       <p>{{ textContent[0][1]["contenu"] }}</p>
     </div>
-    <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
+    <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev2()">
       <img src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent" />
     </button>
 
-    <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
+    <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext2()">
       <img src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent" />
     </button>
 
     <div *ngIf="!animationOFF" id="zoneclicable">
-      <div id="zoneclicgauche" (click)="onPrev()"></div>
-      <div id="zoneclicdroite" (click)="onNext()"></div>
+      <div id="zoneclicgauche" (click)="onPrev2()"></div>
+      <div id="zoneclicdroite" (click)="onNext2()"></div>
     </div>
   </div>
 

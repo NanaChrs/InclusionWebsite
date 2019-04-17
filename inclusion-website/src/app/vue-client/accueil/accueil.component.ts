@@ -21,14 +21,13 @@ export class AccueilComponent implements OnInit {
   i = 0;
 
   // Récupération Json
-  pageContent: String[];
-  textContent: String[];
-  imageContent: String[];
+  private pageContent: String[];
+  private textContent: String[];
+  private imageContent: String[];
 
   // recupération des element sur la page internet
   @ViewChild("myslideshowcontainer") slideshowcontainer;
   @ViewChild("myslideshow") slideshow;
-
 
   constructor(
     private cookieService: CookieService,
@@ -44,9 +43,7 @@ export class AccueilComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit() {
-
-  }
+  ngAfterViewInit() { }
 
 
 
@@ -54,15 +51,14 @@ export class AccueilComponent implements OnInit {
 
   lancementdiapo() {
     if (this.slideshow != undefined && this.slideshowcontainer != undefined) {
-      if ((this.height) > 0) {
+      if (this.height > 0) {
         this.slideshowcontainer.nativeElement.style.height = this.height + "px";
         this.setContainerStyle();
       }
       this.play();
       // lancement de la fonction permettant de verifier les modifications "accessibilité"
       this.checkaccess();
-    }
-    else {
+    } else {
       setTimeout(() => {
         this.lancementdiapo();
       }, 100);
@@ -75,14 +71,18 @@ export class AccueilComponent implements OnInit {
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
   setContainerStyle = function () {
-    if (this.slideshow.nativeElement.children[this.i] == undefined && this.animationOFF) {
+    if (
+      this.slideshow.nativeElement.children[this.i] == undefined &&
+      this.animationOFF
+    ) {
       setTimeout(() => {
         this.setContainerStyle();
       }, 100);
     }
-    this.slideshow.nativeElement.style.background = 'url(' + this.slideshow.nativeElement.children[this.i].src + ') center';
-    this.slideshow.nativeElement.style.backgroundSize = 'cover';
-  }
+    this.slideshow.nativeElement.style.background =
+      "url(" + this.slideshow.nativeElement.children[this.i].src + ") center";
+    this.slideshow.nativeElement.style.backgroundSize = "cover";
+  };
 
 
 

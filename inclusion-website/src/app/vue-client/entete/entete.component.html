@@ -25,21 +25,21 @@
         <div id="conteneur">
             <div id="listeNavigation">
                 <menu id="navigation" class="text">
-                    <li> <button class="lien-focus" [routerLink]="['/accueil']">
-                            <span id="accueil">ACCUEIL</span>
-                        </button></li>
-                    <li><button class="lien-focus" [routerLink]="['/menus']">
-                            <span id="menus">MENUS</span>
-                        </button></li>
-                    <li><button class="lien-focus" [routerLink]="['/equipe']">
-                            <span id="equipe">L'ÉQUIPE</span>
-                        </button></li>
-                    <li><button class="lien-focus" [routerLink]="['/contact']">
-                            <span id="contacts">CONTACT</span>
-                        </button></li>
-                    <li> <button class="lien-focus" (click)="openDialog()">
-                            <span id="accessibilite">ACCESSIBILITÉ</span>
-                        </button></li>
+                    <button class="lien-focus" [routerLink]="['/accueil']">
+                        <li id="accueil">ACCUEIL</li>
+                    </button>
+                    <button class="lien-focus" [routerLink]="['/menus']">
+                        <li id="menus">MENUS</li>
+                    </button>
+                    <button class="lien-focus" [routerLink]="['/equipe']">
+                        <li id="equipe">L'ÉQUIPE</li>
+                    </button>
+                    <button class="lien-focus" [routerLink]="['/contact']">
+                        <li id="contact">CONTACT</li>
+                    </button>
+                    <button class="lien-focus" (click)="openDialog()">
+                        <li id="accessibilite">ACCESSIBILITÉ</li>
+                    </button>
                 </menu>
             </div>
         </div>

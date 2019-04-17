@@ -1,5 +1,5 @@
 #text{
-    font-size: 1em;
+    /* font-size: 1.2em; */
 }
 
 #global{
@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: column;
     background-color: #E6E5E5;
-    /* filter: invert(90%); */
 }
 
 /* _______________________________________________________________________________ */
@@ -22,7 +21,6 @@
     top: 0;
     left: 0;
     margin: 0 auto;
-    /* filter: invert(90%); */
 }
 
 #slideshow {

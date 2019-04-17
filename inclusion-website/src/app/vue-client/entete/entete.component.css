@@ -54,7 +54,7 @@
     margin: 5px;
 }
 
-#lien, #accessibilite, #menus, #contacts, #equipe, #livraison, #accueil
+#lien, #accessibilite, #menus, #contact, #equipe, #livraison, #accueil
 {
     bottom: 0;
     color: white;
@@ -64,11 +64,19 @@
 }
 
 
-#lien:hover, #accessibilite:hover, #menus:hover, #contacts:hover, #equipe:hover, #accueil:hover, #livraison:hover
+#lien:hover, #accessibilite:hover, #menus:hover, #contact:hover, #equipe:hover, #accueil:hover, #livraison:hover
 {
     color: #88181c;
     background-color: whitesmoke;
     outline-style: none;
+}
+
+.lien-focus{
+    border: #88181c solid
+}
+
+.lien-focus:focus {
+    border: solid white;
 }
 
 /*Partie inférieure du header*/
@@ -112,12 +120,8 @@ button{
     background: none;
     border: none;
     font-family: 'Calibri';
-    font-size: 1em; 
+    font-size: 1.2em; 
     padding: 0;
-}
-
-.lien-focus:focus {
-    border: solid white;
 }
 
 
@@ -155,7 +159,7 @@ button{
         background-color: #88181c;
     }    
 
-    #lien, #accessibilite, #menus, #contacts, #equipe,
+    #lien, #accessibilite, #menus, #contact, #equipe,
     #menustelephone, #contactstelephone, #equipetelephone, #accessibilitetelephone
     {
         color: black;
@@ -187,7 +191,7 @@ button{
         border: 2px solid rgb(104, 104, 104);
         border-radius: 5px;
         background-color: #88181c;
-        background-image: url("../../../assets/vecteurmenu.png");
+        background-image: url("../../../assets/imgHeader/vecteurmenu.png");
         width: 50px;
         height: 50px;
     }
@@ -200,6 +204,7 @@ button{
         margin: 0;
         margin-left: 0;
         padding-left: 0;
+        list-style-type: none;
     }
 
     #menu_navigation_telephone
@@ -215,6 +220,30 @@ button{
 
 @media screen and (max-width:346px)
 {
+    #menu_navigation_telephone
+    {
+        z-index: 100;
+        display: none;
+        width: 100%;
+        margin-top: 34px; 
+        position: absolute;
+    }
+
+    #logo_menu_deroulant
+    {
+        display: inline;
+        position: absolute;
+        top: 10%;
+        left: 1%;
+        outline-style: none;
+        border: 2px solid rgb(104, 104, 104);
+        border-radius: 5px;
+        background-color: #88181c;
+        background-image: url("../../../assets/imgHeader/vecteurmenu1.png");
+        height: 28px;
+        width: 28px;
+    }
+    
     #logoSite
     {
         height: 30px;
@@ -222,10 +251,4 @@ button{
     }
 }
 
-.lien-focus{
-    border: #88181c solid
-}
 
-.lien-focus:focus {
-    border: solid white;
-}

@@ -53,18 +53,18 @@ export class PlanSiteComponent implements OnInit {
 
 
 
-  lancementdiapo(){
-    if (this.slideshow!=undefined && this.slideshowcontainer!=undefined){    
+  lancementdiapo() {
+    if (this.slideshow != undefined && this.slideshowcontainer != undefined) {
       if ((this.height) > 0) {
         this.slideshowcontainer.nativeElement.style.height = this.height + "px";
         this.setContainerStyle();
       }
       this.play();
     }
-    else{
-      setTimeout(()=>{
+    else {
+      setTimeout(() => {
         this.lancementdiapo();
-      },100);
+      }, 100);
     }
   }
 
@@ -73,22 +73,22 @@ export class PlanSiteComponent implements OnInit {
 
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function(){
-    if(this.slideshow.nativeElement.children[this.i]==undefined && this.animationOFF){
+  setContainerStyle = function () {
+    if (this.slideshow.nativeElement.children[this.i] == undefined && this.animationOFF) {
       setTimeout(() => {
         this.setContainerStyle();
       }, 100);
     }
-    this.slideshow.nativeElement.style.background =  'url('+this.slideshow.nativeElement.children[this.i].src+') center';
+    this.slideshow.nativeElement.style.background = 'url(' + this.slideshow.nativeElement.children[this.i].src + ') center';
     this.slideshow.nativeElement.style.backgroundSize = 'cover';
-  } 
+  }
 
 
 
 
-  
+
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function() {
+  checkaccess = function () {
     this.animationOFF = this.cookieService.check("animationOFF");
     setTimeout(() => {
       this.checkaccess();
@@ -99,7 +99,7 @@ export class PlanSiteComponent implements OnInit {
 
 
 
-  play = function() {
+  play = function () {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = "fadeOut";

@@ -20,11 +20,12 @@ export class MyDialogComponent implements OnInit {
   colorInverse;
 
   zone;
+  map;
 
 
-  taillePolice = 1;
+  taillePolice = 1.0;
   text;
-  pasModificationTaillePolice = 0.2;
+  pasModificationTaillePolice = 0.1;
 
 
   constructor(public thisDialogRef: MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: String, private cookieService: CookieService) { }
@@ -49,6 +50,7 @@ export class MyDialogComponent implements OnInit {
       this.colorInverse.style.backgroundColor = 'whitesmoke';
       this.colorDefaut.style.backgroundColor = '';
       general.style.filter = "invert(90%)";
+      this.map = document.getElementsByClassName('googlemap');
       this.zone = document.getElementsByClassName('zone');
       for (var i = 0; i < this.zone.length; i++) {
         this.zone[i].style.filter = "invert(90%)";
@@ -108,7 +110,7 @@ export class MyDialogComponent implements OnInit {
   }
 
   onUpFontsize() {
-    if (this.taillePolice < 1.99) {
+    if (this.taillePolice < 1.59) {
       this.taillePolice += this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);
@@ -123,6 +125,7 @@ export class MyDialogComponent implements OnInit {
   //Boutons activation animations
   onDefautCouleur() {
     var general = document.getElementById('generaldial');
+    this.map = document.getElementsByClassName('googlemap');
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
     this.cookieService.delete('inverse');
@@ -133,10 +136,15 @@ export class MyDialogComponent implements OnInit {
     for (var i = 0; i < this.zone.length; i++) {
       this.zone[i].style.filter = "";
     }
+    for (var y = 0; y < this.map.length; y++) {
+      this.map[y].style.filter = "";
+    }
+
   }
 
   onInverseCouleur() {
     var general = document.getElementById('generaldial');
+    this.map = document.getElementsByClassName('googlemap');
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
     this.cookieService.set('inverse', '', 365);
@@ -146,6 +154,9 @@ export class MyDialogComponent implements OnInit {
     this.zone = document.getElementsByClassName('zone');
     for (var i = 0; i < this.zone.length; i++) {
       this.zone[i].style.filter = "invert(90%)";
+    }
+    for (var y = 0; y < this.map.length; y++) {
+      this.map[y].style.filter = "invert(90%)";
     }
   }
 }
