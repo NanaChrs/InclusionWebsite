@@ -39,7 +39,7 @@ export class EquipeComponent implements OnInit {
   constructor(
     private cookieService: CookieService,
     private jsonContentService: JsoncontentService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.jsonContentService.getPageByName("equipe").subscribe(page => {
@@ -81,7 +81,7 @@ export class EquipeComponent implements OnInit {
   }
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function() {
+  setContainerStyle = function () {
     if (
       this.slideshow.nativeElement.children[this.i] == undefined &&
       this.animationOFF
@@ -96,7 +96,7 @@ export class EquipeComponent implements OnInit {
   };
 
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function() {
+  checkaccess = function () {
     this.animationOFF = this.cookieService.check("animationOFF");
     this.cookieinverse = this.cookieService.check("inverse");
     if (this.cookieinverse) {
@@ -110,7 +110,10 @@ export class EquipeComponent implements OnInit {
     }, 100);
   };
 
-  play = function() {
+
+
+
+  play = function () {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = "fadeOut";

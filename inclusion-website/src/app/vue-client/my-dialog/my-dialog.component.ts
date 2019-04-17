@@ -21,6 +21,7 @@ export class MyDialogComponent implements OnInit {
 
   zone;
   map;
+  img;
 
 
   taillePolice = 1.0;
@@ -127,6 +128,7 @@ export class MyDialogComponent implements OnInit {
   onDefautCouleur() {
     var general = document.getElementById('generaldial');
     this.map = document.getElementsByClassName('googlemap');
+    this.img = document.getElementsByClassName('photo');
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
     this.cookieService.delete('inverse');
@@ -140,11 +142,15 @@ export class MyDialogComponent implements OnInit {
     for (var y = 0; y < this.map.length; y++) {
       this.map[y].style.filter = "";
     }
+    for (var y = 0; y < this.img.length; y++) {
+      this.img[y].style.filter = "";
+    }
   }
 
   onInverseCouleur() {
     var general = document.getElementById('generaldial');
     this.map = document.getElementsByClassName('googlemap');
+    this.img = document.getElementsByClassName('photo');
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
     this.cookieService.set('inverse', '', 365);
@@ -157,6 +163,9 @@ export class MyDialogComponent implements OnInit {
     }
     for (var y = 0; y < this.map.length; y++) {
       this.map[y].style.filter = "invert(90%)";
+    }
+    for (var y = 0; y < this.img.length; y++) {
+      this.img[y].style.filter = "invert(90%)";
     }
   }
 
