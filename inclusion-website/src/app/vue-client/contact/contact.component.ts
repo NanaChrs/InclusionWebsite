@@ -20,12 +20,14 @@ export class ContactComponent implements OnInit {
   private pageContent: String[];
   private textContent: String;
   private imageContent: String;
+  private mailtext: String;
+  private tel: String;
 
   constructor(
     private http: HttpClientService,
     private jsonContentService: JsoncontentService,
     private cookieService: CookieService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.jsonContentService.getPageByName("contact").subscribe(page => {
@@ -33,14 +35,17 @@ export class ContactComponent implements OnInit {
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
     });
+    this.jsonContentService.getPageByName("param").subscribe(page => {
+      this.tel = page["text-content"][0][0]["contenu"];
+      this.mailtext = page["text-content"][0][1]["contenu"];
+      console.log(this.mailtext);
+    });
   }
-
 
   ngAfterViewInit() {
     // lancement de la fonction permettant de verifier les modifications "accessibilité"
     this.checkaccess();
   }
-
 
   sendMail() {
     this.mail.name = this.name;
@@ -55,10 +60,10 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  checkaccess = function () {
+  checkaccess = function() {
     this.cookieinverse = this.cookieService.check("inverse");
     if (this.cookieinverse) {
-      this.map = document.getElementsByClassName('googlemap');
+      this.map = document.getElementsByClassName("googlemap");
       for (var i = 0; i < this.map.length; i++) {
         this.map[i].style.filter = "invert(90%)";
       }
@@ -67,5 +72,4 @@ export class ContactComponent implements OnInit {
       this.checkaccess();
     }, 100);
   };
-
 }

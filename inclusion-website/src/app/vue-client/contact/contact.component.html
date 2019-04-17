@@ -1,24 +1,21 @@
 <app-entete></app-entete>
-<div id="general" class="zone" *ngIf="textContent">
-  <iframe id="googlemap" class="googlemap"
+<div id="general" class="zone" *ngIf="textContent && mailtext && tel">
+  <iframe
+    id="googlemap"
+    class="googlemap"
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6126113518494!2d3.046428169606164!3d50.63431288341961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sISEN+Lille!5e0!3m2!1sfr!2sfr!4v1554128878294!5m2!1sfr!2sfr"
-    frameborder="0" style="border:0" allowfullscreen>
+    frameborder="0"
+    style="border:0"
+    allowfullscreen
+  >
   </iframe>
   <div id="contact-intro" *ngFor="let text of textContent; let i = index">
     <div id="description" class="text">
       <div *ngFor="let content of text; let j = index">
-        <h1 *ngIf="(i == 0 && (j == 0 || j == 2)) || (i == 1 && j == 0) || i == 2">
-          {{ content["contenu"] }}
-        </h1>
-        <div *ngIf="
-            !((i == 0 && (j == 0 || j == 2)) || (i == 1 && j == 0) || i == 2)
-          ">
-          <a *ngIf="content['href']" href="{{ content['href'] }}{{ content['contenu'] }}">
-            {{ content["contenu"] }}
-          </a>
-          <p *ngIf="!content['href']">
-            {{ content["contenu"] }}
-          </p>
+        <h1>{{ content["contenu"] }}</h1>
+        <div *ngIf="i == 0">
+          <a *ngIf="j == 0" href="tel:{{ tel }}"> {{ tel }}</a>
+          <a *ngIf="j == 1" href="mailto:{{ mailtext }}">{{ mailtext }}</a>
         </div>
       </div>
     </div>
@@ -31,10 +28,24 @@
         <input type="text" name="name" id="name" [(ngModel)]="name" placeholder="Nom" required />
         <hr>
         <h4>Votre mail :</h4>
-        <input type="email" name="sender" id="sender" [(ngModel)]="sender" placeholder="Votre adresse mail" required />
+        <input
+          type="email"
+          name="sender"
+          id="sender"
+          [(ngModel)]="sender"
+          placeholder="Votre adresse mail"
+          required
+        />
       </div>
       <h4>Sujet :</h4>
-      <input type="text" name="object" id="object" [(ngModel)]="object" placeholder="Sujet" required />
+      <input
+        type="text"
+        name="object"
+        id="object"
+        [(ngModel)]="object"
+        placeholder="Sujet"
+        required
+      />
       <h4>Votre message :</h4>
       <textarea name="message" id="message" [(ngModel)]="message" placeholder="Ecrivez votre message ici"></textarea>
       <br />
