@@ -77,7 +77,7 @@ export class EnteteComponent implements OnInit {
     }
     setTimeout(() => {
       this.checkaccess();
-    }, 1000);
+    }, 100);
   };
 
 
