@@ -71,6 +71,14 @@
     outline-style: none;
 }
 
+.lien-focus{
+    border: #88181c solid
+}
+
+.lien-focus:focus {
+    border: solid white;
+}
+
 /*Partie inférieure du header*/
 #conteneur
 {
@@ -114,10 +122,6 @@ button{
     font-family: 'Calibri';
     font-size: 1em; 
     padding: 0;
-}
-
-.lien-focus:focus {
-    border: solid white;
 }
 
 
@@ -222,10 +226,4 @@ button{
     }
 }
 
-.lien-focus{
-    border: #88181c solid
-}
 
-.lien-focus:focus {
-    border: solid white;
-}
