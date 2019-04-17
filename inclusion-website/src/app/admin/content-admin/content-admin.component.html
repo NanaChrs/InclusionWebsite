@@ -17,7 +17,8 @@
             textContent[i].length > 2 &&
             j > 0 &&
             url != 'contact' &&
-            url != 'mentions'
+            url != 'mentions' &&
+            url != 'param'
           "
         />
         <h1>{{ text.emplacement }}</h1>
@@ -41,6 +42,18 @@
             name="{{ text.contenu }}"
           ></textarea>
         </mat-form-field>
+        <h1 *ngIf="url == 'carte' && j > 0 && i > 0">Description du plat:</h1>
+        <mat-form-field
+          class="textContent"
+          *ngIf="url == 'carte' && j > 0 && i > 0"
+        >
+          <textarea
+            matInput
+            [(ngModel)]="textContent[i][j]['description']"
+            placeholder="Description du plat"
+            name="{{ text.contenu }}{{ i }}"
+          ></textarea>
+        </mat-form-field>
       </div>
       <div
         class="textContent add-contenu"
@@ -53,7 +66,7 @@
       >
         <h1>Ajouter un nouveau contenu :</h1>
         <div class="textContentFlex" *ngIf="newContent[i]">
-          <form ngNativeValidate (ngSubmit)="addNewParagraph(i)">
+          <form ngNativeValidate>
             <div class="item">
               <h2>Emplacement du nouveau paragraphe :</h2>
               <mat-form-field class="textContent">
@@ -90,10 +103,23 @@
                 ></textarea>
               </mat-form-field>
             </div>
+            <div class="item" *ngIf="url == 'carte'">
+              <h2>Prix du nouveau plat :</h2>
+              <mat-form-field class="textContent">
+                <textarea
+                  matInput
+                  placeholder="Contenu"
+                  [(ngModel)]="newContent[i]['description']"
+                  name="newContent[i]['description']{{ i }}"
+                  required
+                ></textarea>
+              </mat-form-field>
+            </div>
             <input
-              type="submit"
+              type="button"
               class="btn btn-success btn-s btn-add-contenu"
               value="Ajouter un nouveau paragraphe !"
+              (click)="addNewParagraph(i)"
             />
           </form>
         </div>
@@ -285,7 +311,7 @@
       <form
         ngNativeValidate
         (ngSubmit)="addNewParagraph(i)"
-        *ngIf="newContent && (i == 0 || i == newContent.length - 1)"
+        *ngIf="newContent[i] && (i == 0 || i == newContent.length - 1)"
         class="textContent add-contenu"
       >
         <div class="item">
