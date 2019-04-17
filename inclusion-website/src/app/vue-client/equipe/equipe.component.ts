@@ -22,6 +22,7 @@ export class EquipeComponent implements OnInit {
   pageContent: String[];
   textContent: String[];
   imageContent: String[];
+  bandeauContent: String[];
   equipe: String[][];
   descriptionGlobale: String;
   descriptions: String[];
@@ -46,6 +47,7 @@ export class EquipeComponent implements OnInit {
       this.textContent = this.pageContent["text-content"];
       this.descriptionGlobale = this.textContent[0];
       this.imageContent = this.pageContent["photo-content"];
+      this.bandeauContent = this.pageContent["bandeau"];
       this.descriptions = this.textContent;
       this.descriptions.splice(0, 1);
       this.nousRejoindre = this.descriptions.splice(

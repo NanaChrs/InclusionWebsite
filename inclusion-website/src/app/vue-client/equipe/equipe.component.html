@@ -2,7 +2,8 @@
 <div id="content" *ngIf="textContent">
   <div #myslideshowcontainer id="slideshow-container">
     <div #myslideshow id="slideshow">
-      <img *ngFor="let image of imageContent" src="{{ image.source }}" alt="{{ image.alt }}" class="slideshow-image" />
+      <img *ngFor="let image of bandeauContent" src="{{ image.source }}" alt="{{ image.alt }}"
+        class="slideshow-image" />
     </div>
     <div id="slideshow-text">
       <p>{{ descriptionGlobale[0]["contenu"] }}</p>
