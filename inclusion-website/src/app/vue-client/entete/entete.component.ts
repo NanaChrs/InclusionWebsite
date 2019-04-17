@@ -28,6 +28,7 @@ export class EnteteComponent implements OnInit {
 
   ngOnInit() {
     this.text = document.getElementsByClassName("text")
+
   }
 
 

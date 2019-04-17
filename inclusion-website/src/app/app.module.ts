@@ -52,7 +52,8 @@ import { RecaptchaModule } from 'angular-google-recaptcha';
     EquipeComponent,
     SafePipe,
     PlanSiteComponent,
-    ContactComponent
+    ContactComponent,
+
   ],
   imports: [
     BrowserModule,
