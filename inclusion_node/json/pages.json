@@ -237,7 +237,8 @@
         }
       ]
     ],
-    "photo-content": []
+    "photo-content": [],
+    "bandeau": []
   },
   "contact": {
     "name": "Contact",

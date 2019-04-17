@@ -55,7 +55,8 @@ import { ParamGeneraux } from "./ParamGeneraux";
     EquipeComponent,
     SafePipe,
     PlanSiteComponent,
-    ContactComponent
+    ContactComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -71,9 +72,10 @@ import { ParamGeneraux } from "./ParamGeneraux";
     FormsModule,
     ReactiveFormsModule,
     RecaptchaModule.forRoot({
-      siteKey: "6Leuzp0UAAAAAM4BZfnOoI8h-fGkOAnO0IiEZ4eQ" //Version local
-      // siteKey: '6Lf8iJ4UAAAAAEf9I9l2sch22qFhFEhjsNrRVLMs',//Version Serveur
-    })
+      // siteKey: '6Leuzp0UAAAAAM4BZfnOoI8h-fGkOAnO0IiEZ4eQ',//Version local
+      siteKey: '6Lfnt54UAAAAANYoOp9JQCdsNedIM8X4LG2Vf3U1',//Version Serveur
+
+    }),
   ],
   entryComponents: [MyDialogComponent],
 
