@@ -118,12 +118,14 @@ app.post("/api/pages/:name/upload", upload.single("photo"), (req, res) => {
   } else {
     console.log("file received successfully");
     let name = req.params["name"];
-    var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+    var json = JSON.parse(fs.readFileSync("json/pages.json"));
     json[name]["photo-content"].push({
       source: req.file.path,
       alt: ""
     });
-    fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+    console.log(json);
+    console.log(JSON.stringify(json));
+    fs.writeFileSync("json/pages.json", JSON.stringify(json));
     return res.send({
       success: true
     });
@@ -144,6 +146,7 @@ app.post("/api/pages/:name/uploadbandeau", upload.single("bandeau"), (req, res) 
       source: req.file.path,
       alt: ""
     });
+    console.log(json);
     console.log(JSON.stringify(json));
     fs.writeFileSync("./json/pages.json", JSON.stringify(json));
     return res.send({
@@ -183,7 +186,6 @@ app.route("/api/pages/:name/text").post((req, res) => {
   json[page] = req.body;
   fs.writeFileSync("./json/pages.json", JSON.stringify(json));
   res.sendStatus(204);
-  console.log(json);
 });
 
 app.route("/api/contact").post((req, res) => {
