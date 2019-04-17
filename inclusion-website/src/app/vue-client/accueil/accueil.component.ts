@@ -39,7 +39,7 @@ export class AccueilComponent implements OnInit {
       this.pageContent = page;
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
-      // this.lancementdiapo();
+      this.lancementdiapo();
     });
   }
 
