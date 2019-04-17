@@ -54,7 +54,7 @@
     margin: 5px;
 }
 
-#lien, #accessibilite, #menus, #contacts, #equipe, #livraison, #accueil
+#lien, #accessibilite, #menus, #contact, #equipe, #livraison, #accueil
 {
     bottom: 0;
     color: white;
@@ -64,7 +64,7 @@
 }
 
 
-#lien:hover, #accessibilite:hover, #menus:hover, #contacts:hover, #equipe:hover, #accueil:hover, #livraison:hover
+#lien:hover, #accessibilite:hover, #menus:hover, #contact:hover, #equipe:hover, #accueil:hover, #livraison:hover
 {
     color: #88181c;
     background-color: whitesmoke;
@@ -159,7 +159,7 @@ button{
         background-color: #88181c;
     }    
 
-    #lien, #accessibilite, #menus, #contacts, #equipe,
+    #lien, #accessibilite, #menus, #contact, #equipe,
     #menustelephone, #contactstelephone, #equipetelephone, #accessibilitetelephone
     {
         color: black;
