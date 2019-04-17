@@ -8,13 +8,4 @@ import { JsoncontentService } from "./admin/content-admin/jsoncontent.service";
 })
 export class AppComponent implements OnInit {
   title = "inclusion";
-  public paramGeneraux: String[];
-
-  constructor(private jsonContentService: JsoncontentService) {}
-
-  ngOnInit(): void {
-    this.jsonContentService.getPageByName("param").subscribe(page => {
-      this.paramGeneraux = page["param"];
-    });
-  }
 }

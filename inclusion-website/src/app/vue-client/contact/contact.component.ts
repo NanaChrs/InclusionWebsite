@@ -3,6 +3,7 @@ import { Mail } from "../../_models";
 import { HttpClientService } from "../../service/httpclientservice.service";
 import { JsoncontentService } from "../../admin/content-admin/jsoncontent.service";
 import { CookieService } from "ngx-cookie-service";
+import { ParamGeneraux } from "../../ParamGeneraux";
 
 @Component({
   selector: "app-contact",
@@ -22,8 +23,9 @@ export class ContactComponent implements OnInit {
   constructor(
     private http: HttpClientService,
     private jsonContentService: JsoncontentService,
-    private cookieService: CookieService
-  ) { }
+    private cookieService: CookieService,
+    private pg: ParamGeneraux
+  ) {}
 
   ngOnInit() {
     this.jsonContentService.getPageByName("contact").subscribe(page => {
@@ -48,10 +50,10 @@ export class ContactComponent implements OnInit {
   }
 
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function () {
+  checkaccess = function() {
     this.cookieinverse = this.cookieService.check("inverse");
     if (this.cookieinverse) {
-      this.map = document.getElementById('googlemap');
+      this.map = document.getElementById("googlemap");
       this.map.style.filter = "invert(90%)";
     }
     setTimeout(() => {
