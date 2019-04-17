@@ -39,31 +39,31 @@
                 },
                 {
                     "emplacement": "Horaires du lundi",
-                    "contenu": "Lundi:\t08h00 - 22h00"
+                    "contenu": "08h00 - 22h00"
                 },
                 {
                     "emplacement": "Horaires du mardi",
-                    "contenu": "Mardi:\t08h00 - 22h00"
+                    "contenu": "08h00 - 22h00"
                 },
                 {
                     "emplacement": "Horaires du mercredi",
-                    "contenu": "Mercredi:\t08h00 - 22h00"
+                    "contenu": "08h00 - 22h00"
                 },
                 {
                     "emplacement": "Horaires du jeudi",
-                    "contenu": "Jeudi:\t08h00 - 22h00"
+                    "contenu": "08h00 - 22h00"
                 },
                 {
                     "emplacement": "Horaires du vendredi",
-                    "contenu": "Vendredi:\t08h00 - 22h00"
+                    "contenu": "08h00 - 22h00"
                 },
                 {
                     "emplacement": "Horaires du samedi",
-                    "contenu": "Samedi:\t08h00 - 22h00"
+                    "contenu": "08h00 - 22h00"
                 },
                 {
                     "emplacement": "Horaires du dimanche",
-                    "contenu": "Dimanche:\t08h00 - 22h00"
+                    "contenu": "08h00 - 22h00"
                 }
             ]
         ]
