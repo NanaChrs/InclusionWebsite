@@ -151,7 +151,7 @@ button{
     border-top: 3px solid #000;
     border-bottom: 3px solid #000;
 }
-.menu ul{
+.menu menu{
     list-style-type:none;
     margin: 0;
     padding: 0;

@@ -25,7 +25,7 @@
     <div *ngFor="let text of plat; let i = index">
       <div>
         <p>{{ text[0].contenu }}</p>
-        <ul *ngFor="let item of text; let j = index">
+        <menu *ngFor="let item of text; let j = index">
           <li class="menu-contenu" *ngIf="j > 0">
             {{ item.contenu }}
           </li>
@@ -34,7 +34,7 @@
           </li>
           <div class="menu-separation" *ngIf="j > 0"></div>
           <li class="menu-description" *ngIf="j > 0">{{item.description}}</li>
-        </ul>
+        </menu>
       </div>
       <!-- <hr *ngIf="i < textContent.length" /> -->
     </div>
@@ -67,7 +67,7 @@
     <div *ngFor="let text of boisson; let i = index">
       <div>
         <p>{{ text[0].contenu }}</p>
-        <ul *ngFor="let item of text; let j = index">
+        <menu *ngFor="let item of text; let j = index">
           <li class="menu-contenu" *ngIf="j > 0">
             {{ item.contenu }}
           </li>
@@ -75,7 +75,7 @@
             {{ item.prix }}€
           </li>
           <div class="menu-separation" *ngIf="j > 0"></div>
-        </ul>
+        </menu>
       </div>
       <!-- <hr *ngIf="i < textContent.length" /> -->
     </div>
