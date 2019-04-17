@@ -250,12 +250,6 @@
         { "emplacement": "Titre contact mail", "contenu": "Ou par mail" }
       ],
       [
-        { "emplacement": "Adresse - Titre", "contenu": "Adresse" },
-        { "emplacement": "Numéro et rue", "contenu": "390 rue Solférino" },
-        { "emplacement": "Code postal et ville", "contenu": "59000 Lille" },
-        { "emplacement": "Pays", "contenu": "France" }
-      ],
-      [
         {
           "emplacement": "Titre formulaire de contact",
           "contenu": "Vous pouvez également nous écrire via le formulaire de contact ci-dessous :"
