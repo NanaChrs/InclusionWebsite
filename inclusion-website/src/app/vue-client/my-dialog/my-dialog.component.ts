@@ -25,7 +25,7 @@ export class MyDialogComponent implements OnInit {
 
   taillePolice = 1.0;
   text;
-  pasModificationTaillePolice = 0.1;
+  pasModificationTaillePolice = 0.2;
 
 
   constructor(public thisDialogRef: MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: String, private cookieService: CookieService) { }
@@ -111,7 +111,7 @@ export class MyDialogComponent implements OnInit {
   }
 
   onUpFontsize() {
-    if (this.taillePolice < 1.59) {
+    if (this.taillePolice < 1.99) {
       this.taillePolice += this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);
