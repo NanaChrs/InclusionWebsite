@@ -12,7 +12,9 @@ import { CookieService } from 'ngx-cookie-service';
 
 export class EnteteComponent implements OnInit {
   cookieinverse: boolean = this.cookieService.check("inverse");
+  fontsize: boolean = this.cookieService.check("fontSize");
   zone;
+  text;
 
   dialogResult = "";
   isOpen = true;
@@ -25,7 +27,7 @@ export class EnteteComponent implements OnInit {
 
 
   ngOnInit() {
-
+    this.text = document.getElementsByClassName("text")
   }
 
 
@@ -60,15 +62,22 @@ export class EnteteComponent implements OnInit {
 
   checkaccess = function () {
     this.cookieinverse = this.cookieService.check("inverse");
+    this.fontsize = this.cookieService.check("fontSize");
     if (this.cookieinverse) {
       this.zone = document.getElementsByClassName('zone');
       for (var i = 0; i < this.zone.length; i++) {
         this.zone[i].style.filter = "invert(90%)";
       }
     }
+    if (this.fontsize) {
+      var taillePolice = +this.cookieService.get("fontSize")
+      for (var y = 0; y < this.text.length; y++) {
+        this.text[y].style.fontSize = taillePolice + 'em';
+      }
+    }
     setTimeout(() => {
       this.checkaccess();
-    }, 100);
+    }, 1000);
   };
 
 

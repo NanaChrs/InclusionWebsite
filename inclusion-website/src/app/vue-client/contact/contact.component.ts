@@ -10,6 +10,8 @@ import { CookieService } from "ngx-cookie-service";
   styleUrls: ["./contact.component.css"]
 })
 export class ContactComponent implements OnInit {
+  cookieinverse: boolean = this.cookieService.check("inverse");
+
   private name: string;
   private sender: string;
   private object: string;
@@ -31,8 +33,14 @@ export class ContactComponent implements OnInit {
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
     });
+  }
+
+
+  ngAfterViewInit() {
+    // lancement de la fonction permettant de verifier les modifications "accessibilité"
     this.checkaccess();
   }
+
 
   sendMail() {
     this.mail.name = this.name;
@@ -47,15 +55,17 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  // fonction permettant de verifier les modifications "accessibilité"
   checkaccess = function () {
     this.cookieinverse = this.cookieService.check("inverse");
     if (this.cookieinverse) {
-      this.map = document.getElementById('googlemap');
-      this.map.style.filter = "invert(90%)";
+      this.map = document.getElementsByClassName('googlemap');
+      for (var i = 0; i < this.map.length; i++) {
+        this.map[i].style.filter = "invert(90%)";
+      }
     }
     setTimeout(() => {
       this.checkaccess();
     }, 100);
   };
+
 }
