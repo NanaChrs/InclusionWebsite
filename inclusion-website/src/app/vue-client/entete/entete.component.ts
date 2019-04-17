@@ -15,13 +15,13 @@ export class EnteteComponent implements OnInit {
 
   dialogResult = "";
   isOpen = true;
- 
+
   toggle() {
     this.isOpen = !this.isOpen;
   }
 
-  constructor(public dialog: MatDialog,private router: Router,  private cookieService: CookieService) {}
- 
+  constructor(public dialog: MatDialog, private router: Router, private cookieService: CookieService) { }
+
 
   ngOnInit() {
     this.checkaccess();
@@ -37,34 +37,33 @@ export class EnteteComponent implements OnInit {
       idBalise.style.backgroundColor = 'whitesmoke';
       idBalise.style.color = 'brown';
     }
-    if(this.inverse){
-      header.style.filter="invert(90%)";
+    if (this.inverse) {
+      header.style.filter = "invert(90%)";
     }
   }
 
   openDialog() {
     this.dialog.open(MyDialogComponent, {
-      width: '25%',
     });
   }
 
   openMenu() {
-      var x = document.getElementById('menu_navigation_telephone');
-        if (x.style.display === 'inline') {
-          x.style.display = 'none';
-        } else {
-       x.style.display = 'inline';
-      }
+    var x = document.getElementById('menu_navigation_telephone');
+    if (x.style.display === 'inline') {
+      x.style.display = 'none';
+    } else {
+      x.style.display = 'inline';
+    }
   }
 
 
-  checkaccess = function() {
+  checkaccess = function () {
     var header = document.getElementById('header');
     this.inverse = this.cookieService.check("inverse");
-    if(this.inverse){
-      header.style.filter="invert(90%)"
+    if (this.inverse) {
+      header.style.filter = "invert(90%)"
     }
-    else{header.style.filter="";}
+    else { header.style.filter = ""; }
     setTimeout(() => {
       this.checkaccess();
     }, 100);

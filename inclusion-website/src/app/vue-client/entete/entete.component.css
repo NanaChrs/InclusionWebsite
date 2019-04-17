@@ -1,3 +1,9 @@
+#logoSite
+{
+    height: 100px;
+    width: 300px;
+}
+
 #vecteurmenu
 {
     display: none;
@@ -118,8 +124,24 @@ a:hover
     border-radius: 8px;
 }
 
+/* optimisation du focus */
+button{
+    background: none;
+    border: none;
+    font-family: 'Calibri';
+    font-size: 1em; 
+    padding: 0;
+}
+
+.lien-focus:focus {
+    border: solid white;
+}
+
+
 @media screen and (max-width: 1280px)
-{}
+{
+
+}
 
 @media screen and (max-width: 980px)
 {
@@ -127,6 +149,7 @@ a:hover
 }
 
 @media screen and (max-width:736px){
+
     #header
     {
         position: relative;
@@ -207,15 +230,12 @@ a:hover
     
 }
 
-/* optimisation du focus */
-button{
-    background: none;
-    border: none;
-    font-family: 'Calibri';
-    font-size: 1em; 
-    padding: 0;
+@media screen and (max-width:346px)
+{
+    #logoSite
+    {
+        height: 30px;
+        width: 100px;
+    }
 }
 
-.lien-focus:focus {
-    border: solid white;
-}
