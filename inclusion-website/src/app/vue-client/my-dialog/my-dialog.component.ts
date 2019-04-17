@@ -62,7 +62,7 @@ export class MyDialogComponent implements OnInit {
     }
 
     if (!this.checkTaillePolice) {
-      this.taillePolice = 1.0;
+      this.taillePolice = 1;
     }
     else {
       this.taillePolice = +this.cookieService.get("fontSize")
@@ -110,7 +110,7 @@ export class MyDialogComponent implements OnInit {
   }
 
   onUpFontsize() {
-    if (this.taillePolice < 1.29) {
+    if (this.taillePolice < 1.59) {
       this.taillePolice += this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { JsoncontentService } from "../../admin/content-admin/jsoncontent.service";
 import { CookieService } from "ngx-cookie-service";
+import { AppComponent } from "../../app.component";
 
 @Component({
   selector: "app-menu",
@@ -36,7 +37,7 @@ export class MenuComponent implements OnInit {
   constructor(
     private cookieService: CookieService,
     private jsonContentService: JsoncontentService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.jsonContentService.getPageByName("carte").subscribe(page => {
@@ -54,10 +55,6 @@ export class MenuComponent implements OnInit {
     // lancement de la fonction permettant de verifier les modifications "accessibilité"
     this.checkaccess();
   }
-
-
-
-
 
   lancementdiapo() {
     if (
@@ -81,12 +78,8 @@ export class MenuComponent implements OnInit {
     }
   }
 
-
-
-
-
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function () {
+  setContainerStyle = function() {
     if (
       this.slideshow.nativeElement.children[this.i] == undefined &&
       this.slideshow2.nativeElement.children[this.i2] == undefined &&
@@ -104,23 +97,15 @@ export class MenuComponent implements OnInit {
     this.slideshow2.nativeElement.style.backgroundSize = "cover";
   };
 
-
-
-
-
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function () {
+  checkaccess = function() {
     this.animationOFF = this.cookieService.check("animationOFF");
     setTimeout(() => {
       this.checkaccess();
     }, 100);
   };
 
-
-
-
-
-  play = function () {
+  play = function() {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = "fadeOut";
@@ -147,11 +132,7 @@ export class MenuComponent implements OnInit {
     }, this.duration * 1000);
   };
 
-
-
-
-
-  play2 = function () {
+  play2 = function() {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow2.nativeElement.className = "fadeOut";
@@ -177,10 +158,6 @@ export class MenuComponent implements OnInit {
     }, this.duration * 1000);
   };
 
-
-
-
-
   // fleches d'animations 1
   onNext() {
     this.i++;
@@ -201,10 +178,6 @@ export class MenuComponent implements OnInit {
       "url(" + this.slideshow.nativeElement.children[this.i].src + ") center";
     this.slideshow.nativeElement.style.backgroundSize = "cover";
   }
-
-
-
-
 
   // fleches d'animations 2
   onNext2() {

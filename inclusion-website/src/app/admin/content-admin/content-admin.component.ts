@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from "@angular/router";
+import {
+  ActivatedRoute,
+  Router,
+  NavigationEnd,
+  NavigationStart
+} from "@angular/router";
 import { JsoncontentService } from "./jsoncontent.service";
 import { FileUploader } from "ng2-file-upload";
 
@@ -28,16 +33,13 @@ export class ContentAdminComponent implements OnInit {
     public router: Router
   ) {
     this.router.events.subscribe(e => {
-      if (e instanceof NavigationEnd && e.url != "/admin/param") {
+      if (e instanceof NavigationEnd) {
         this.getPage();
-
       }
     });
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   getPage(): void {
     this.newContent = [];
@@ -74,7 +76,8 @@ export class ContentAdminComponent implements OnInit {
             this.newContent.push({
               emplacement: "",
               contenu: "",
-              prix: ""
+              prix: "",
+              description: ""
             });
           }
         } else {
@@ -87,7 +90,10 @@ export class ContentAdminComponent implements OnInit {
         }
       });
     console.log(this.route.snapshot.paramMap.get("url"));
-    this.uploadURL = "http://localhost:8000/api/pages/" + this.route.snapshot.paramMap.get("url") + "/upload";
+    this.uploadURL =
+      "http://localhost:8000/api/pages/" +
+      this.route.snapshot.paramMap.get("url") +
+      "/upload";
     this.uploader = new FileUploader({
       url: this.uploadURL,
       itemAlias: "photo"
@@ -106,8 +112,10 @@ export class ContentAdminComponent implements OnInit {
       this.getPage();
     };
 
-    this.uploadbandeauURL = "http://localhost:8000/api/pages/" +
-      this.route.snapshot.paramMap.get("url") + "/uploadbandeau";
+    this.uploadbandeauURL =
+      "http://localhost:8000/api/pages/" +
+      this.route.snapshot.paramMap.get("url") +
+      "/uploadbandeau";
     this.uploaderbandeau = new FileUploader({
       url: this.uploadbandeauURL,
       itemAlias: "bandeau"
