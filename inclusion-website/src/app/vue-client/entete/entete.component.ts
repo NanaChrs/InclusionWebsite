@@ -11,25 +11,26 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class EnteteComponent implements OnInit {
-  inverse: boolean = this.cookieService.check("inverse");
+  // inverse: boolean = this.cookieService.check("inverse");
 
   dialogResult = "";
   isOpen = true;
- 
+
   toggle() {
     this.isOpen = !this.isOpen;
   }
 
-  constructor(public dialog: MatDialog,private router: Router,  private cookieService: CookieService) {}
- 
+  constructor(public dialog: MatDialog, private router: Router) { }
+  // constructor(public dialog: MatDialog, private router: Router, private cookieService: CookieService) { }
+
 
   ngOnInit() {
-    this.checkaccess();
+    // this.checkaccess();
   }
 
 
   ngAfterViewInit() {
-    var header = document.getElementById('header');
+    // var header = document.getElementById('header');
     var path = this.router.url;
     var chemin = path.substr(1);
     var idBalise = document.getElementById(chemin);
@@ -37,9 +38,9 @@ export class EnteteComponent implements OnInit {
       idBalise.style.backgroundColor = 'whitesmoke';
       idBalise.style.color = 'brown';
     }
-    if(this.inverse){
-      header.style.filter="invert(90%)";
-    }
+    // if(this.inverse){
+    //   header.style.filter="invert(90%)";
+    // }
   }
 
   openDialog() {
@@ -49,26 +50,26 @@ export class EnteteComponent implements OnInit {
   }
 
   openMenu() {
-      var x = document.getElementById('menu_navigation_telephone');
-        if (x.style.display === 'inline') {
-          x.style.display = 'none';
-        } else {
-       x.style.display = 'inline';
-      }
+    var x = document.getElementById('menu_navigation_telephone');
+    if (x.style.display === 'inline') {
+      x.style.display = 'none';
+    } else {
+      x.style.display = 'inline';
+    }
   }
 
 
-  checkaccess = function() {
-    var header = document.getElementById('header');
-    this.inverse = this.cookieService.check("inverse");
-    if(this.inverse){
-      header.style.filter="invert(90%)"
-    }
-    else{header.style.filter="";}
-    setTimeout(() => {
-      this.checkaccess();
-    }, 100);
-  };
+  // checkaccess = function () {
+  //   var header = document.getElementById('header');
+  //   this.inverse = this.cookieService.check("inverse");
+  //   if (this.inverse) {
+  //     header.style.filter = "invert(90%)"
+  //   }
+  //   else { header.style.filter = ""; }
+  //   setTimeout(() => {
+  //     this.checkaccess();
+  //   }, 100);
+  // };
 
 
 }

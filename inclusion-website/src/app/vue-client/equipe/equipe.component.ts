@@ -9,6 +9,7 @@ import { CookieService } from "ngx-cookie-service";
 })
 export class EquipeComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check("animationOFF");
+  // inverse: boolean = this.cookieService.check("inverse");
   //duré d'une photo dans le diapo
   duration = 7;
 
@@ -26,6 +27,9 @@ export class EquipeComponent implements OnInit {
   nousRejoindre: String[];
   nom: String;
 
+  // img;
+  // zone;
+
   // recupération des element sur la page internet
   @ViewChild("myslideshowcontainer") slideshowcontainer;
   @ViewChild("myslideshow") slideshow;
@@ -33,7 +37,7 @@ export class EquipeComponent implements OnInit {
   constructor(
     private cookieService: CookieService,
     private jsonContentService: JsoncontentService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.jsonContentService.getPageByName("equipe").subscribe(page => {
@@ -56,11 +60,24 @@ export class EquipeComponent implements OnInit {
     this.checkaccess();
   }
 
+
+
+
   lancementdiapo() {
     if (this.slideshow != undefined && this.slideshowcontainer != undefined) {
       if (this.height > 0) {
         this.slideshowcontainer.nativeElement.style.height = this.height + "px";
         this.setContainerStyle();
+        // this.zone = document.getElementById('zone');
+        // this.img = document.getElementsByClassName('photo');
+        // // console.log("img", img);
+        // if (this.inverse) {
+        //   this.zone.style.filter = "invert(90%)";
+        //   for (var y = 0; y < this.img.length; y++) {
+        //     this.img[y].style.filter = "invert(90%)";
+        //   }
+
+        // }
       }
       this.play();
     } else {
@@ -70,8 +87,13 @@ export class EquipeComponent implements OnInit {
     }
   }
 
+
+
+
+
+
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function() {
+  setContainerStyle = function () {
     if (
       this.slideshow.nativeElement.children[this.i] == undefined &&
       this.animationOFF
@@ -85,15 +107,23 @@ export class EquipeComponent implements OnInit {
     this.slideshow.nativeElement.style.backgroundSize = "cover";
   };
 
+
+
+
+
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function() {
+  checkaccess = function () {
     this.animationOFF = this.cookieService.check("animationOFF");
     setTimeout(() => {
       this.checkaccess();
     }, 100);
   };
 
-  play = function() {
+
+
+
+
+  play = function () {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = "fadeOut";
@@ -119,6 +149,10 @@ export class EquipeComponent implements OnInit {
       this.play();
     }, this.duration * 1000);
   };
+
+
+
+
 
   // fleches d'animations
   onNext() {

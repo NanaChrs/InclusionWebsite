@@ -1,29 +1,18 @@
 <app-entete></app-entete>
 <div id="general">
-  <div #myslideshowcontainer id="slideshow-container">
+  <div #myslideshowcontainer id="slideshow-container" *ngIf="textContent">
     <div #myslideshow id="slideshow">
-      <img
-        *ngFor="let image of imageContent"
-        src="{{ image.source }}"
-        alt="{{ image.alt }}"
-        class="slideshow-image"
-      />
+      <img *ngFor="let image of imageContent" src="{{ image.source }}" alt="{{ image.alt }}" class="slideshow-image" />
     </div>
     <div id="slideshow-text">
       <p>{{ textContent[0][0]["contenu"] }}</p>
     </div>
     <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
-      <img
-        src="../../../assets/accueil/fleche-gauche.png"
-        alt="bouton précédent"
-      />
+      <img src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent" />
     </button>
 
     <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
-      <img
-        src="../../../assets/accueil/fleche-droite.png"
-        alt="bouton précédent"
-      />
+      <img src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent" />
     </button>
 
     <div *ngIf="!animationOFF" id="zoneclicable">
@@ -32,13 +21,9 @@
     </div>
   </div>
 
-  <div class="menu text" *ngIf="textContent">
-    <div *ngFor="let text of textContent; let i = index">
-      <!-- <div class="photo" *ngIf="imageContent && i == 0"> -->
-      <!-- <img src="{{ imageContent[0].source }}" alt="{{ imageContent[0].alt }}" /> -->
-      <!-- <div>{{ text.contenu }}</div> -->
-      <!-- </div> -->
-      <div *ngIf="i > 0">
+  <div id="presmenu" class="menu text zone" *ngIf="plat">
+    <div *ngFor="let text of plat; let i = index">
+      <div>
         <p>{{ text[0].contenu }}</p>
         <ul>
           <li *ngFor="let item of text; let j = index">
@@ -49,44 +34,46 @@
         </ul>
       </div>
       <hr *ngIf="i < textContent.length" />
-      <div
-        #myslideshowcontainer2
-        id="slideshow-container"
-        *ngIf="i == 3 && imageBandeau"
-      >
-        <div #myslideshow2 id="slideshow">
-          <img
-            *ngFor="let image of imageBandeau"
-            src="{{ image.source }}"
-            alt="{{ image.alt }}"
-            class="slideshow-image"
-          />
-        </div>
-        <div id="slideshow-text">
-          <p>{{ textContent[0][1]["contenu"] }}</p>
-        </div>
-        <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
-          <img
-            src="../../../assets/accueil/fleche-gauche.png"
-            alt="bouton précédent"
-          />
-        </button>
-
-        <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
-          <img
-            src="../../../assets/accueil/fleche-droite.png"
-            alt="bouton précédent"
-          />
-        </button>
-
-        <div *ngIf="!animationOFF" id="zoneclicable">
-          <div id="zoneclicgauche" (click)="onPrev()"></div>
-          <div id="zoneclicdroite" (click)="onNext()"></div>
-        </div>
-      </div>
-      <hr *ngIf="i == 3" />
     </div>
   </div>
 
-  <app-footer></app-footer>
+
+
+  <div #myslideshowcontainer2 id="slideshow-container" *ngIf="textContent">
+    <div #myslideshow2 id="slideshow">
+      <img *ngFor="let image of imageBandeau" src="{{ image.source }}" alt="{{ image.alt }}" class="slideshow-image" />
+    </div>
+    <div id="slideshow-text">
+      <p>{{ textContent[0][1]["contenu"] }}</p>
+    </div>
+    <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
+      <img src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent" />
+    </button>
+
+    <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
+      <img src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent" />
+    </button>
+
+    <div *ngIf="!animationOFF" id="zoneclicable">
+      <div id="zoneclicgauche" (click)="onPrev()"></div>
+      <div id="zoneclicdroite" (click)="onNext()"></div>
+    </div>
+  </div>
+
+  <div id="presmenu" class="menu text zone" *ngIf="boisson">
+    <div *ngFor="let text of boisson; let i = index">
+      <div>
+        <p>{{ text[0].contenu }}</p>
+        <ul>
+          <li *ngFor="let item of text; let j = index">
+            <span *ngIf="j > 0">
+              {{ item.contenu }}
+            </span>
+          </li>
+        </ul>
+      </div>
+      <hr *ngIf="i < textContent.length" />
+    </div>
+  </div>
 </div>
+<app-footer></app-footer>
