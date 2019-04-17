@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, SimpleChanges, Input, Injectable } from '@angular/core';
+import { Component, OnInit, Inject, SimpleChanges, Input, Injectable, NgZone } from '@angular/core';
 import { MatDialogRef } from "@angular/material";
 import { MAT_DIALOG_DATA } from "@angular/material";
 import { CookieService } from 'ngx-cookie-service';
@@ -19,13 +19,15 @@ export class MyDialogComponent implements OnInit {
   colorDefaut;
   colorInverse;
 
+  zone;
+
 
   taillePolice = 1;
   text;
   pasModificationTaillePolice = 0.2;
 
 
-  constructor(public thisDialogRef:MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: String, private cookieService: CookieService) { }
+  constructor(public thisDialogRef: MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: String, private cookieService: CookieService) { }
 
 
   ngOnInit() {
@@ -33,33 +35,35 @@ export class MyDialogComponent implements OnInit {
     this.bouttonOnAnim = document.getElementById('animationsOn');
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
-    var general = document.getElementById('general');
-    if(this.animationOFF)
-    {
+    var general = document.getElementById('generaldial');
+    if (this.animationOFF) {
       this.bouttonOffAnim.style.backgroundColor = 'whitesmoke';
       this.bouttonOnAnim.style.backgroundColor = '';
     }
-    else{
+    else {
       this.bouttonOnAnim.style.backgroundColor = 'whitesmoke';
       this.bouttonOffAnim.style.backgroundColor = '';
     }
 
-    if(this.cookieinverse)
-    {
+    if (this.cookieinverse) {
       this.colorInverse.style.backgroundColor = 'whitesmoke';
       this.colorDefaut.style.backgroundColor = '';
-      general.style.filter= "invert(90%)";
+      general.style.filter = "invert(90%)";
+      this.zone = document.getElementsByClassName('zone');
+      for (var i = 0; i < this.zone.length; i++) {
+        this.zone[i].style.filter = "invert(90%)";
+      }
     }
-    else{
+    else {
       this.colorDefaut.style.backgroundColor = 'whitesmoke';
       this.colorInverse.style.backgroundColor = '';
     }
 
-    if(!this.checkTaillePolice){
-      this.taillePolice=1;
+    if (!this.checkTaillePolice) {
+      this.taillePolice = 1;
     }
-    else{
-      this.taillePolice=+this.cookieService.get("fontSize")
+    else {
+      this.taillePolice = +this.cookieService.get("fontSize")
     }
     this.text = document.getElementsByClassName("text")
   }
@@ -68,13 +72,13 @@ export class MyDialogComponent implements OnInit {
     this.text = document.getElementsByClassName("text")
   }
 
-  onCloseCancel(){
+  onCloseCancel() {
     this.thisDialogRef.close();
   }
 
 
-   //Boutons activation animations
-   onAnnim(){
+  //Boutons activation animations
+  onAnnim() {
     this.bouttonOffAnim = document.getElementById('animationsOff');
     this.bouttonOnAnim = document.getElementById('animationsOn');
     this.cookieService.delete('animationOFF');
@@ -82,58 +86,66 @@ export class MyDialogComponent implements OnInit {
     this.bouttonOffAnim.style.backgroundColor = '';
   }
 
-  offAnnim(){
+  offAnnim() {
     this.bouttonOffAnim = document.getElementById('animationsOff');
     this.bouttonOnAnim = document.getElementById('animationsOn');
-    this.cookieService.set('animationOFF','',365);
+    this.cookieService.set('animationOFF', '', 365);
     this.bouttonOnAnim.style.backgroundColor = '';
     this.bouttonOffAnim.style.backgroundColor = 'white'
   }
 
 
   //Boutons augmentation/diminution taille text
-  onDownFontsize(){
-    if(this.taillePolice>1.09){
-      this.taillePolice-=this.pasModificationTaillePolice;
+  onDownFontsize() {
+    if (this.taillePolice > 1.09) {
+      this.taillePolice -= this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);
-    for (var y =0; y<this.text.length;y++){
-      this.text[y].style.fontSize= stock+'em';
+    for (var y = 0; y < this.text.length; y++) {
+      this.text[y].style.fontSize = stock + 'em';
     }
-    this.cookieService.set('fontSize', stock,365);
+    this.cookieService.set('fontSize', stock, 365);
   }
 
-  onUpFontsize(){
-    if(this.taillePolice<1.99){
-      this.taillePolice+=this.pasModificationTaillePolice;
+  onUpFontsize() {
+    if (this.taillePolice < 1.99) {
+      this.taillePolice += this.pasModificationTaillePolice;
     }
     var stock = (this.taillePolice).toFixed(1);
-    for (var y =0; y<this.text.length;y++){
-      this.text[y].style.fontSize= stock+'em';
+    for (var y = 0; y < this.text.length; y++) {
+      this.text[y].style.fontSize = stock + 'em';
     }
-    this.cookieService.set('fontSize', stock,365);
+    this.cookieService.set('fontSize', stock, 365);
   }
 
 
 
   //Boutons activation animations
-  onDefautCouleur(){
-    var general = document.getElementById('general');
+  onDefautCouleur() {
+    var general = document.getElementById('generaldial');
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
     this.cookieService.delete('inverse');
     this.colorDefaut.style.backgroundColor = 'white'
     this.colorInverse.style.backgroundColor = '';
-    general.style.filter= "";
+    general.style.filter = "";
+    this.zone = document.getElementsByClassName('zone');
+    for (var i = 0; i < this.zone.length; i++) {
+      this.zone[i].style.filter = "";
+    }
   }
 
-  onInverseCouleur(){
-    var general = document.getElementById('general');
+  onInverseCouleur() {
+    var general = document.getElementById('generaldial');
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
-    this.cookieService.set('inverse','',365);
+    this.cookieService.set('inverse', '', 365);
     this.colorDefaut.style.backgroundColor = '';
     this.colorInverse.style.backgroundColor = 'white'
-    general.style.filter= "invert(90%)";
+    general.style.filter = "invert(90%)";
+    this.zone = document.getElementsByClassName('zone');
+    for (var i = 0; i < this.zone.length; i++) {
+      this.zone[i].style.filter = "invert(90%)";
+    }
   }
 }

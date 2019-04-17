@@ -9,7 +9,6 @@ import { CookieService } from "ngx-cookie-service";
 })
 export class MenuComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check("animationOFF");
-
   //duré d'une photo dans le diapo
   duration = 7;
 
@@ -31,11 +30,13 @@ export class MenuComponent implements OnInit {
   private textContent: String[];
   private imageContent: String[];
   private imageBandeau: String[];
+  private plat: String[];
+  private boisson: String[];
 
   constructor(
     private cookieService: CookieService,
     private jsonContentService: JsoncontentService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.jsonContentService.getPageByName("carte").subscribe(page => {
@@ -43,6 +44,8 @@ export class MenuComponent implements OnInit {
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
       this.imageBandeau = this.pageContent["bandeau"];
+      this.plat = this.textContent.slice(1, 4);
+      this.boisson = this.textContent.slice(4, 7);
       this.lancementdiapo();
     });
   }
@@ -51,6 +54,10 @@ export class MenuComponent implements OnInit {
     // lancement de la fonction permettant de verifier les modifications "accessibilité"
     this.checkaccess();
   }
+
+
+
+
 
   lancementdiapo() {
     if (
@@ -74,8 +81,12 @@ export class MenuComponent implements OnInit {
     }
   }
 
+
+
+
+
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function() {
+  setContainerStyle = function () {
     if (
       this.slideshow.nativeElement.children[this.i] == undefined &&
       this.slideshow2.nativeElement.children[this.i2] == undefined &&
@@ -93,15 +104,23 @@ export class MenuComponent implements OnInit {
     this.slideshow2.nativeElement.style.backgroundSize = "cover";
   };
 
+
+
+
+
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function() {
+  checkaccess = function () {
     this.animationOFF = this.cookieService.check("animationOFF");
     setTimeout(() => {
       this.checkaccess();
     }, 100);
   };
 
-  play = function() {
+
+
+
+
+  play = function () {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = "fadeOut";
@@ -128,7 +147,11 @@ export class MenuComponent implements OnInit {
     }, this.duration * 1000);
   };
 
-  play2 = function() {
+
+
+
+
+  play2 = function () {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow2.nativeElement.className = "fadeOut";
@@ -136,14 +159,13 @@ export class MenuComponent implements OnInit {
         // changement du background de l'element slideshow
         this.slideshow2.nativeElement.style.background =
           "url(" +
-          this.slideshow2.nativeElement.children[this.i].src +
+          this.slideshow2.nativeElement.children[this.i2].src +
           ") center";
         this.slideshow2.nativeElement.style.backgroundSize = "cover";
         // on retire la class fadeOut afin de faire l'effet de transition inverse
         this.slideshow2.nativeElement.className = "";
       }, 1100);
     }
-
     this.i2++;
     if (this.i2 > this.slideshow2.nativeElement.childElementCount - 1) {
       this.i2 = 0;
@@ -154,6 +176,10 @@ export class MenuComponent implements OnInit {
       this.play2();
     }, this.duration * 1000);
   };
+
+
+
+
 
   // fleches d'animations 1
   onNext() {
@@ -176,7 +202,11 @@ export class MenuComponent implements OnInit {
     this.slideshow.nativeElement.style.backgroundSize = "cover";
   }
 
-  // fleches d'animations 1
+
+
+
+
+  // fleches d'animations 2
   onNext2() {
     this.i2++;
     if (this.i2 > this.slideshow2.nativeElement.childElementCount - 1) {

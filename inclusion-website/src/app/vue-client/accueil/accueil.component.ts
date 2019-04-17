@@ -11,7 +11,6 @@ import { ComponentFactoryResolver } from "@angular/core/src/render3";
 })
 export class AccueilComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check("animationOFF");
-  inverse: boolean = this.cookieService.check("inverse");
   //duré d'une photo dans le diapo
   duration = 7;
 
@@ -29,9 +28,6 @@ export class AccueilComponent implements OnInit {
   // recupération des element sur la page internet
   @ViewChild("myslideshowcontainer") slideshowcontainer;
   @ViewChild("myslideshow") slideshow;
-
-  zone = document.getElementById('presentation-restaurant');
-
 
 
   constructor(
@@ -61,10 +57,6 @@ export class AccueilComponent implements OnInit {
       if ((this.height) > 0) {
         this.slideshowcontainer.nativeElement.style.height = this.height + "px";
         this.setContainerStyle();
-        var zone = document.getElementById('presentation-restaurant');
-        if (this.inverse) {
-          zone.style.filter = "invert(90%)";
-        }
       }
       this.play();
       // lancement de la fonction permettant de verifier les modifications "accessibilité"
@@ -99,12 +91,6 @@ export class AccueilComponent implements OnInit {
   // fonction permettant de verifier les modifications "accessibilité"
   checkaccess = function () {
     this.animationOFF = this.cookieService.check("animationOFF");
-    this.inverse = this.cookieService.check("inverse");
-    var zone = document.getElementById('presentation-restaurant');
-    if (this.inverse) {
-      zone.style.filter = "invert(90%)"
-    }
-    else { zone.style.filter = ""; }
     setTimeout(() => {
       this.checkaccess();
     }, 100);

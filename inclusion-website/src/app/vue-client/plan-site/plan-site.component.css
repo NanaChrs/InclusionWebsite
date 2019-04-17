@@ -124,6 +124,10 @@
     letter-spacing: .2em;
 }
 
+.zone{
+    background-color: #E6E5E5;
+}
+
 #lien{
     margin: 15px;
 }

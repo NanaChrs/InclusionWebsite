@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Mail } from "../../_models";
 import { HttpClientService } from "../../service/httpclientservice.service";
 import { JsoncontentService } from "../../admin/content-admin/jsoncontent.service";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
   selector: "app-contact",
@@ -20,8 +21,9 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private http: HttpClientService,
-    private jsonContentService: JsoncontentService
-  ) {}
+    private jsonContentService: JsoncontentService,
+    private cookieService: CookieService
+  ) { }
 
   ngOnInit() {
     this.jsonContentService.getPageByName("contact").subscribe(page => {
@@ -29,15 +31,14 @@ export class ContactComponent implements OnInit {
       this.textContent = this.pageContent["text-content"];
       this.imageContent = this.pageContent["photo-content"];
     });
+    this.checkaccess();
   }
 
   sendMail() {
     this.mail.name = this.name;
-    console.log(this.mail.name);
     this.mail.sender = this.sender;
     this.mail.object = this.object;
     this.mail.message = this.message;
-    console.log(this.mail);
     this.http.postMail(this.mail).subscribe(e => {
       if (e[0]) {
         return true;
@@ -45,4 +46,16 @@ export class ContactComponent implements OnInit {
       return false;
     });
   }
+
+  // fonction permettant de verifier les modifications "accessibilité"
+  checkaccess = function () {
+    this.cookieinverse = this.cookieService.check("inverse");
+    if (this.cookieinverse) {
+      this.map = document.getElementById('googlemap');
+      this.map.style.filter = "invert(90%)";
+    }
+    setTimeout(() => {
+      this.checkaccess();
+    }, 100);
+  };
 }

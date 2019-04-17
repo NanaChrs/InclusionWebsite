@@ -1,4 +1,4 @@
-<div id="header">
+<div id="header" class="zone">
     <div id="vecteurmenu">
         <!-- Cette section ne s'affiche que sur les téléphones -->
         <button id="logo_menu_deroulant" (click)="openMenu()"></button>
@@ -24,53 +24,49 @@
         </button>
         <div id="conteneur">
             <div id="listeNavigation">
-                <ul id="navigation" class="text">
-                    <button class="lien-focus" [routerLink]="['/accueil']">
-                        <li id="accueil">ACCUEIL</li>
-                    </button>
-                    <button class="lien-focus" [routerLink]="['/menus']">
-                        <li id="menus">MENUS</li>
-                    </button>
-                    <button class="lien-focus" [routerLink]="['/equipe']">
-                        <li id="equipe">L'ÉQUIPE</li>
-                    </button>
-                    <button class="lien-focus" [routerLink]="['/contact']">
-                        <li id="contacts">CONTACT</li>
-                    </button>
-                    <button class="lien-focus" (click)="openDialog()">
-                        <li id="accessibilite">ACCESSIBILITÉ</li>
-                    </button>
-                </ul>
+                <menu id="navigation" class="text">
+                    <li> <button class="lien-focus" [routerLink]="['/accueil']">
+                            <span id="accueil">ACCUEIL</span>
+                        </button></li>
+                    <li><button class="lien-focus" [routerLink]="['/menus']">
+                            <span id="menus">MENUS</span>
+                        </button></li>
+                    <li><button class="lien-focus" [routerLink]="['/equipe']">
+                            <span id="equipe">L'ÉQUIPE</span>
+                        </button></li>
+                    <li><button class="lien-focus" [routerLink]="['/contact']">
+                            <span id="contacts">CONTACT</span>
+                        </button></li>
+                    <li> <button class="lien-focus" (click)="openDialog()">
+                            <span id="accessibilite">ACCESSIBILITÉ</span>
+                        </button></li>
+                </menu>
             </div>
         </div>
         <div id="sous_bandeau">
 
-            <ul id="liste_logo">
+            <menu id="liste_logo">
                 <a href="https://www.facebook.com/InclusionRestaurant/" class="lien-focus"
                     onclick="window.open(this.href); return false;">
-                    <li id="icone"><img id="logoFacebook" alt="logo de Facebook"
+                    <li id="icone"><img id="logoFacebook" alt="lien vers Facebook"
                             src="../../assets/imgHeader/facebook.png" height="30" width="30"></li>
                 </a>
                 <a href="https://www.instagram.com/inclusion_restaurant/" class="lien-focus"
                     onclick="window.open(this.href); return false;">
-                    <li id="icone"><img id="logoInstagram" alt="logo d'Instagram"
+                    <li id="icone"><img id="logoInstagram" alt="lien vers Instagram"
                             src="../../assets/imgHeader/instagram.png" height="30" width="30"></li>
                 </a>
                 <a href="https://www.ubereats.com/fr-FR/stores/" class="lien-focus"
                     onclick="window.open(this.href); return false;">
-                    <li id="icone"><img id="logoUber" alt="logo d'Uber eats" src="../../assets/imgHeader/ubereats.png"
-                            height="30" width="30"></li>
+                    <li id="icone"><img id="logoUber" alt="lien vers Uber eats"
+                            src="../../assets/imgHeader/ubereats.png" height="30" width="30"></li>
                 </a>
                 <a href="https://www.tripadvisor.fr/" class="lien-focus"
                     onclick="window.open(this.href); return false;">
-                    <li id="icone"><img id="logoTripadvisor" alt="logo de trip advisor"
+                    <li id="icone"><img id="logoTripadvisor" alt="lien vers trip advisor"
                             src="../../assets/imgHeader/tripadvisor.png" height="30" width="30"></li>
                 </a>
-                <!-- <li id="icone"><a href="https://www.ubereats.com"
-                        onclick="window.open(this.href); return false;"><img id="logoTripadvisor"
-                            alt="logo de uber eats" src="../../assets/imgHeader/ubereatsV2.png" height="30"
-                            width="30"></a></li> -->
-            </ul>
+            </menu>
         </div>
 
 
