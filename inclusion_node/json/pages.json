@@ -83,15 +83,20 @@
         {
           "emplacement": "Entrée 1",
           "contenu": "Entree 1",
-          "prix": ""
+          "prix": "10",
+          "description": "pâtes, pâtes, pâtes"
         },
         {
           "emplacement": "Entrée 2",
-          "contenu": "La deuxième entrée"
+          "contenu": "La deuxième entrée",
+          "prix": "10",
+          "description": "pâtes, pâtes, pâtes"
         },
         {
           "emplacement": "Entrée 3",
-          "contenu": "La DAV"
+          "contenu": "La DAV",
+          "prix": "10",
+          "description": "pâtes, pâtes, pâtes"
         }
       ],
       [
@@ -271,7 +276,8 @@
         }
       ]
     ],
-    "photo-content": []
+    "photo-content": [],
+    "bandeau": []
   },
   "contact": {
     "name": "Contact",
@@ -324,6 +330,8 @@
   },
   "header": {
     "name": "Header",
-    "text-content": [[]]
+    "text-content": [
+      []
+    ]
   }
 }
