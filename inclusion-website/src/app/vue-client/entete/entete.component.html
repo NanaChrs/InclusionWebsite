@@ -54,98 +54,59 @@
     </div>
   </div>
 
-  <div id="bandeau_navigation">
-    <button id="bloc_image" [routerLink]="['/accueil']" class="lien-focus">
-      <img
-        id="logoSite"
-        alt="logo du site inclusion"
-        src="./assets/imgHeader/logoInclusion.png"
-      />
-    </button>
-    <div id="conteneur">
-      <div id="listeNavigation">
-        <menu id="navigation" class="text">
-          <button class="lien-focus" [routerLink]="['/accueil']">
-            <li id="accueil">ACCUEIL</li>
-          </button>
-          <button class="lien-focus" [routerLink]="['/menus']">
-            <li id="menus">MENUS</li>
-          </button>
-          <button class="lien-focus" [routerLink]="['/equipe']">
-            <li id="equipe">L'ÉQUIPE</li>
-          </button>
-          <button class="lien-focus" [routerLink]="['/contact']">
-            <li id="contact">CONTACT</li>
-          </button>
-          <button class="lien-focus" (click)="openDialog()">
-            <li id="accessibilite">ACCESSIBILITÉ</li>
-          </button>
-        </menu>
-      </div>
+    <div id="bandeau_navigation">
+        <button id="bloc_image" [routerLink]="['/accueil']" class="lien-focus"><img id="logoSite"
+                alt="logo du site inclusion" src="./assets/imgHeader/logoInclusion.png" />
+        </button>
+        <div id="conteneur">
+            <div id="listeNavigation">
+                <menu id="navigation" class="text">
+                    <button class="lien-focus" [routerLink]="['/accueil']">
+                        <li id="accueil">ACCUEIL</li>
+                    </button>
+                    <button class="lien-focus" [routerLink]="['/menus']">
+                        <li id="menus">MENUS</li>
+                    </button>
+                    <button class="lien-focus" [routerLink]="['/equipe']">
+                        <li id="equipe">L'ÉQUIPE</li>
+                    </button>
+                    <button class="lien-focus" [routerLink]="['/contact']">
+                        <li id="contact">CONTACT</li>
+                    </button>
+                    <button class="lien-focus" (click)="openDialog()">
+                        <li id="accessibilite">ACCESSIBILITÉ</li>
+                    </button>
+                </menu>
+            </div>
+        </div><audio style="display:none;" id="estearEgg" src="../../../assets/footer/carioca.mp3">
+        </audio>
+        <div id="sous_bandeau">
+
+            <menu id="liste_logo">
+                <a href="https://www.facebook.com/InclusionRestaurant/" class="lien-focus"
+                    onclick="window.open(this.href); return false;">
+                    <li id="icone"><img id="logoFacebook" alt="lien vers Facebook"
+                            src="../../assets/imgHeader/facebook.png" height="30" width="30"></li>
+                </a>
+                <a href="https://www.instagram.com/inclusion_restaurant/" class="lien-focus"
+                    onclick="window.open(this.href); return false;">
+                    <li id="icone"><img id="logoInstagram" alt="lien vers Instagram"
+                            src="../../assets/imgHeader/instagram.png" height="30" width="30"></li>
+                </a>
+                <a href="https://www.ubereats.com/fr-FR/stores/" class="lien-focus"
+                    onclick="window.open(this.href); return false;">
+                    <li id="icone"><img id="logoUber" alt="lien vers Uber eats"
+                            src="../../assets/imgHeader/ubereats.png" height="30" width="30"></li>
+                </a>
+                <a href="https://www.tripadvisor.fr/" class="lien-focus"
+                    onclick="window.open(this.href); return false;">
+                    <li id="icone"><img id="logoTripadvisor" alt="lien vers trip advisor"
+                            src="../../assets/imgHeader/tripadvisor.png" height="30" width="30"></li>
+                </a>
+            </menu>
+        </div>
+
+
     </div>
-    <div id="sous_bandeau">
-      <menu id="liste_logo" *ngIf="fb && uber && insta && tripAd">
-        <a
-          href="{{ fb }}"
-          class="lien-focus"
-          onclick="window.open(this.href); return false;"
-        >
-          <li id="icone">
-            <img
-              id="logoFacebook"
-              alt="lien vers Facebook"
-              src="../../assets/imgHeader/facebook.png"
-              height="30"
-              width="30"
-            />
-          </li>
-        </a>
-        <a
-          href="{{ insta }}"
-          class="lien-focus"
-          onclick="window.open(this.href); return false;"
-        >
-          <li id="icone">
-            <img
-              id="logoInstagram"
-              alt="lien vers Instagram"
-              src="../../assets/imgHeader/instagram.png"
-              height="30"
-              width="30"
-            />
-          </li>
-        </a>
-        <a
-          href="{{ uber }}"
-          class="lien-focus"
-          onclick="window.open(this.href); return false;"
-        >
-          <li id="icone">
-            <img
-              id="logoUber"
-              alt="lien vers Uber eats"
-              src="../../assets/imgHeader/ubereats.png"
-              height="30"
-              width="30"
-            />
-          </li>
-        </a>
-        <a
-          href="{{ tripAd }}"
-          class="lien-focus"
-          onclick="window.open(this.href); return false;"
-        >
-          <li id="icone">
-            <img
-              id="logoTripadvisor"
-              alt="lien vers trip advisor"
-              src="../../assets/imgHeader/tripadvisor.png"
-              height="30"
-              width="30"
-            />
-          </li>
-        </a>
-      </menu>
-    </div>
-  </div>
+
 </div>

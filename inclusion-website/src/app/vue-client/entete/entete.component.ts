@@ -14,6 +14,8 @@ import { Page } from "../../admin/Page/Page";
 export class EnteteComponent implements OnInit {
   cookieinverse: boolean = this.cookieService.check("inverse");
   fontsize: boolean = this.cookieService.check("fontSize");
+  compteur = 0;
+  sound;
   zone;
   text;
   private insta: String;
@@ -57,7 +59,13 @@ export class EnteteComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(MyDialogComponent, {});
+    this.dialog.open(MyDialogComponent, {
+    });
+    this.compteur++;
+    if (this.compteur == 22) {
+      this.sound = document.getElementById("estearEgg");
+      this.sound.play();
+    }
   }
 
   openMenu() {
