@@ -13,6 +13,8 @@ import { CookieService } from 'ngx-cookie-service';
 export class EnteteComponent implements OnInit {
   cookieinverse: boolean = this.cookieService.check("inverse");
   fontsize: boolean = this.cookieService.check("fontSize");
+  compteur = 0;
+  sound;
   zone;
   text;
 
@@ -45,6 +47,11 @@ export class EnteteComponent implements OnInit {
   openDialog() {
     this.dialog.open(MyDialogComponent, {
     });
+    this.compteur++;
+    if (this.compteur == 22) {
+      this.sound = document.getElementById("estearEgg");
+      this.sound.play();
+    }
   }
 
   openMenu() {

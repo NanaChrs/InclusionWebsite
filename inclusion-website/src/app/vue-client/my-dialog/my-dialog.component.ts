@@ -79,6 +79,7 @@ export class MyDialogComponent implements OnInit {
   }
 
 
+
   //Boutons activation animations
   onAnnim() {
     this.bouttonOffAnim = document.getElementById('animationsOff');
@@ -139,7 +140,6 @@ export class MyDialogComponent implements OnInit {
     for (var y = 0; y < this.map.length; y++) {
       this.map[y].style.filter = "";
     }
-
   }
 
   onInverseCouleur() {
@@ -159,4 +159,6 @@ export class MyDialogComponent implements OnInit {
       this.map[y].style.filter = "invert(90%)";
     }
   }
+
+
 }
