@@ -237,7 +237,8 @@
         }
       ]
     ],
-    "photo-content": []
+    "photo-content": [],
+    "bandeau": []
   },
   "contact": {
     "name": "Contact",
@@ -314,12 +315,14 @@
     "text-content": [
       [
         {
-          "emplacement": "Adresse mail générale du restaurant",
-          "contenu": "info@inclusion-restaurant.fr"
+          "emplacement": "Numéro de téléphone",
+          "contenu": "+33 7 88 90 10 20",
+          "href": "tel:"
         },
         {
-          "emplacement": "Numéro de téléphone",
-          "contenu": "+33 7 88 90 10 20"
+          "emplacement": "Adresse mail générale du restaurant",
+          "contenu": "info@inclusion-restaurant.fr",
+          "href": "mailto:"
         }
       ],
       [

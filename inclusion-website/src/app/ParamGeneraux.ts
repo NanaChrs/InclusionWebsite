@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { JsoncontentService } from "./admin/content-admin/jsoncontent.service";
 
 @Injectable()
-export class ParamGeneraux {
-  public mail: String;
-  public tel: String;
+export class ParamGeneraux implements OnInit {
+  public mail: String[];
+  public tel: String[];
   public rue: String;
   public ville: String;
   public pays: String;
@@ -13,17 +13,19 @@ export class ParamGeneraux {
   public uber: String;
   public tripAd: String;
 
-  constructor(public jsonContentService: JsoncontentService) {
+  constructor(private jsonContentService: JsoncontentService) {}
+
+  ngOnInit() {
     this.jsonContentService.getPageByName("param").subscribe(page => {
-      this.mail = page[0][0]["contenu"];
-      this.tel = page[0][1]["contenu"];
-      this.rue = page[1][0]["contenu"];
-      this.ville = page[1][1]["contenu"];
-      this.pays = page[1][2]["contenu"];
-      this.insta = page[2][0]["contenu"];
-      this.fb = page[2][1]["contenu"];
-      this.uber = page[2][2]["contenu"];
-      this.tripAd = page[2][3]["contenu"];
+      this.mail = page["text-content"][0][0];
+      this.tel = page["text-content"][0][1];
+      this.rue = page["text-content"][1][0]["contenu"];
+      this.ville = page["text-content"][1][1]["contenu"];
+      this.pays = page["text-content"][1][2]["contenu"];
+      this.insta = page["text-content"][2][0]["contenu"];
+      this.fb = page["text-content"][2][1]["contenu"];
+      this.uber = page["text-content"][2][2]["contenu"];
+      this.tripAd = page["text-content"][2][3]["contenu"];
     });
   }
 }
