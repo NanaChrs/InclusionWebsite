@@ -9,7 +9,6 @@ import { CookieService } from "ngx-cookie-service";
 })
 export class MenuComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check("animationOFF");
-  // inverse: boolean = this.cookieService.check("inverse");
   //duré d'une photo dans le diapo
   duration = 7;
 
@@ -19,8 +18,6 @@ export class MenuComponent implements OnInit {
   //numero de la photo en cours sur le diapo
   i = 0;
   i2 = 0;
-
-  // zone;
 
   // recupération des element sur la page internet
   @ViewChild("myslideshowcontainer") slideshowcontainer;
@@ -74,11 +71,6 @@ export class MenuComponent implements OnInit {
         this.slideshowcontainer2.nativeElement.style.height =
           this.height + "px";
         this.setContainerStyle();
-        //   this.zone = document.getElementsByClassName('menu');
-        //   if (this.inverse) {
-        //     this.zone[0].style.filter = "invert(90%)";
-        //     this.zone[1].style.filter = "invert(90%)";
-        //   }
       }
       this.play();
       this.play2();

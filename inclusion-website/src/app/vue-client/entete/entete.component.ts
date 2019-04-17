@@ -11,7 +11,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class EnteteComponent implements OnInit {
-  // inverse: boolean = this.cookieService.check("inverse");
+  cookieinverse: boolean = this.cookieService.check("inverse");
+  zone;
 
   dialogResult = "";
   isOpen = true;
@@ -20,17 +21,15 @@ export class EnteteComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
-  constructor(public dialog: MatDialog, private router: Router) { }
-  // constructor(public dialog: MatDialog, private router: Router, private cookieService: CookieService) { }
+  constructor(public dialog: MatDialog, private router: Router, private cookieService: CookieService) { }
 
 
   ngOnInit() {
-    // this.checkaccess();
+
   }
 
 
   ngAfterViewInit() {
-    // var header = document.getElementById('header');
     var path = this.router.url;
     var chemin = path.substr(1);
     var idBalise = document.getElementById(chemin);
@@ -38,9 +37,7 @@ export class EnteteComponent implements OnInit {
       idBalise.style.backgroundColor = 'whitesmoke';
       idBalise.style.color = 'brown';
     }
-    // if(this.inverse){
-    //   header.style.filter="invert(90%)";
-    // }
+    this.checkaccess();
   }
 
   openDialog() {
@@ -59,17 +56,21 @@ export class EnteteComponent implements OnInit {
   }
 
 
-  // checkaccess = function () {
-  //   var header = document.getElementById('header');
-  //   this.inverse = this.cookieService.check("inverse");
-  //   if (this.inverse) {
-  //     header.style.filter = "invert(90%)"
-  //   }
-  //   else { header.style.filter = ""; }
-  //   setTimeout(() => {
-  //     this.checkaccess();
-  //   }, 100);
-  // };
+
+
+
+  checkaccess = function () {
+    this.cookieinverse = this.cookieService.check("inverse");
+    if (this.cookieinverse) {
+      this.zone = document.getElementsByClassName('zone');
+      for (var i = 0; i < this.zone.length; i++) {
+        this.zone[i].style.filter = "invert(90%)";
+      }
+    }
+    setTimeout(() => {
+      this.checkaccess();
+    }, 100);
+  };
 
 
 }

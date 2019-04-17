@@ -9,7 +9,8 @@ import { CookieService } from "ngx-cookie-service";
 })
 export class EquipeComponent implements OnInit {
   animationOFF: boolean = this.cookieService.check("animationOFF");
-  // inverse: boolean = this.cookieService.check("inverse");
+  cookieinverse: boolean = this.cookieService.check("inverse");
+
   //duré d'une photo dans le diapo
   duration = 7;
 
@@ -27,8 +28,8 @@ export class EquipeComponent implements OnInit {
   nousRejoindre: String[];
   nom: String;
 
-  // img;
-  // zone;
+  img;
+
 
   // recupération des element sur la page internet
   @ViewChild("myslideshowcontainer") slideshowcontainer;
@@ -68,16 +69,6 @@ export class EquipeComponent implements OnInit {
       if (this.height > 0) {
         this.slideshowcontainer.nativeElement.style.height = this.height + "px";
         this.setContainerStyle();
-        // this.zone = document.getElementById('zone');
-        // this.img = document.getElementsByClassName('photo');
-        // // console.log("img", img);
-        // if (this.inverse) {
-        //   this.zone.style.filter = "invert(90%)";
-        //   for (var y = 0; y < this.img.length; y++) {
-        //     this.img[y].style.filter = "invert(90%)";
-        //   }
-
-        // }
       }
       this.play();
     } else {
@@ -114,6 +105,13 @@ export class EquipeComponent implements OnInit {
   // fonction permettant de verifier les modifications "accessibilité"
   checkaccess = function () {
     this.animationOFF = this.cookieService.check("animationOFF");
+    this.cookieinverse = this.cookieService.check("inverse");
+    if (this.cookieinverse) {
+      this.img = document.getElementsByClassName('photo');
+      for (var i = 0; i < this.img.length; i++) {
+        this.img[i].style.filter = "invert(90%)";
+      }
+    }
     setTimeout(() => {
       this.checkaccess();
     }, 100);

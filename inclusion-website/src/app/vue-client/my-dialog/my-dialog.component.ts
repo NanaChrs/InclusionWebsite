@@ -50,7 +50,7 @@ export class MyDialogComponent implements OnInit {
       this.colorDefaut.style.backgroundColor = '';
       general.style.filter = "invert(90%)";
       this.zone = document.getElementsByClassName('zone');
-      for (var i = 0; i < NgZone.length; i++) {
+      for (var i = 0; i < this.zone.length; i++) {
         this.zone[i].style.filter = "invert(90%)";
       }
     }
