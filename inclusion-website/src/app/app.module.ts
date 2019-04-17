@@ -69,7 +69,7 @@ import { RecaptchaModule } from 'angular-google-recaptcha';
     ReactiveFormsModule,
     RecaptchaModule.forRoot({
       siteKey: '6Leuzp0UAAAAAM4BZfnOoI8h-fGkOAnO0IiEZ4eQ',//Version local
-      //siteKey: '6Lf8iJ4UAAAAAEf9I9l2sch22qFhFEhjsNrRVLMs',//Version Serveur
+      // siteKey: '6Lf8iJ4UAAAAAEf9I9l2sch22qFhFEhjsNrRVLMs',//Version Serveur
 
     }),
   ],
