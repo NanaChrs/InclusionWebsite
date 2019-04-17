@@ -22,7 +22,7 @@ export class MyDialogComponent implements OnInit {
   zone;
 
 
-  taillePolice = 1;
+  taillePolice = 1.0;
   text;
   pasModificationTaillePolice = 0.2;
 
@@ -60,7 +60,7 @@ export class MyDialogComponent implements OnInit {
     }
 
     if (!this.checkTaillePolice) {
-      this.taillePolice = 1;
+      this.taillePolice = 1.0;
     }
     else {
       this.taillePolice = +this.cookieService.get("fontSize")

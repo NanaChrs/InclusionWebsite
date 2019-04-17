@@ -46,7 +46,7 @@ export class MenuComponent implements OnInit {
       this.imageBandeau = this.pageContent["bandeau"];
       this.plat = this.textContent.slice(1, 4);
       this.boisson = this.textContent.slice(4, 7);
-      // this.lancementdiapo();
+      this.lancementdiapo();
     });
   }
 

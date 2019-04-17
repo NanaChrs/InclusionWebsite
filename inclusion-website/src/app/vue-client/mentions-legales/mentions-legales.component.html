@@ -1,7 +1,15 @@
 <app-entete></app-entete>
-<div id="mentionslegales" class="text">
-  <div id="top-mentionslegales" *ngIf="textContent">
-    <div id="mention" *ngFor="let text of textContent">
+<div id="mentionslegales" class="text zone">
+  <div id="top-mentionslegales" *ngIf="topmention">
+    <div id="mention" *ngFor="let text of topmention">
+      <h1>{{ text[0]["contenu"] }}</h1>
+      <div *ngFor="let item of text; let i = index">
+        <p *ngIf="i > 0">{{ item["contenu"] }}</p>
+      </div>
+    </div>
+  </div>
+  <div id="bot-mentionslegales" *ngIf="botmention">
+    <div id="mention" *ngFor="let text of botmention">
       <h1>{{ text[0]["contenu"] }}</h1>
       <div *ngFor="let item of text; let i = index">
         <p *ngIf="i > 0">{{ item["contenu"] }}</p>
