@@ -23,8 +23,8 @@ export class ContentAdminComponent implements OnInit {
   public uploaderbandeau: FileUploader;
   private newContent;
   private newPerson;
-  // private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
-  private uploadURL: string = "http://localhost:8000/api/pages/";
+  private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
+  // private uploadURL: string = "http://localhost:8000/api/pages/";
   uploadbandeauURL = "";
 
   constructor(
@@ -39,7 +39,7 @@ export class ContentAdminComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   getPage(): void {
     this.newContent = [];
@@ -91,9 +91,9 @@ export class ContentAdminComponent implements OnInit {
       });
     console.log(this.route.snapshot.paramMap.get("url"));
     this.uploadURL =
-      "http://localhost:8000/api/pages/" +
+      "https://dev.inclusion-restaurant.fr/api/pages/" +
       this.route.snapshot.paramMap.get("url") +
-      "/upload";
+      "/upload"; //dev.
     this.uploader = new FileUploader({
       url: this.uploadURL,
       itemAlias: "photo"
@@ -113,9 +113,9 @@ export class ContentAdminComponent implements OnInit {
     };
 
     this.uploadbandeauURL =
-      "http://localhost:8000/api/pages/" +
+      "https://dev.inclusion-restaurant.fr/api/pages/" +
       this.route.snapshot.paramMap.get("url") +
-      "/uploadbandeau";
+      "/uploadbandeau"; //dev.
     this.uploaderbandeau = new FileUploader({
       url: this.uploadbandeauURL,
       itemAlias: "bandeau"
