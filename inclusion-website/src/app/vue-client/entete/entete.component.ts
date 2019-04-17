@@ -42,7 +42,6 @@ export class EnteteComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(MyDialogComponent, {
-      width: '25%',
     });
   }
 

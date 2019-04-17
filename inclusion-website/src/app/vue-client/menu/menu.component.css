@@ -46,13 +46,17 @@
     text-align: center;
 }
 
-@media screen and (max-width:516px)
+@media screen and (max-width:735px)
 {
     #general
     {
         margin-top: 0;
         background-color: #E6E5E5;
     }
+}
+
+@media screen and (max-width:516px)
+{
 
     #slideshow-text
     {
