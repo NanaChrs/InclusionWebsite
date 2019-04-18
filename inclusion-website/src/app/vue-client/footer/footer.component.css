@@ -74,6 +74,12 @@ button {
   border: solid white;
 }
 
+#logoUber
+{
+    border-radius: 8px;
+    border: 1px solid whitesmoke;
+}
+
 @media screen and (max-width: 1280px) {
 }
 
@@ -181,7 +187,7 @@ button {
     color: black;
     border-radius: 50px;
     text-align: center;
-    padding: 0px 20px 0px 20px;
+    padding: 3px 20px 3px 20px;
   }
 
   #bloc_lientelephone {
@@ -189,12 +195,12 @@ button {
     flex-direction: column;
     justify-content: center;
   }
-
+/* 216 rue solfé */
   #liste_logo {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-    margin-bottom: 85px;
+    margin-bottom: 100px;
     margin-left: 0;
     padding: 0;
   }
