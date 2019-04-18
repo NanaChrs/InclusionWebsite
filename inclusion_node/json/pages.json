@@ -23,13 +23,22 @@
     "name": "Footer",
     "text-content": [
       [
-        { "emplacement": "Titre horaires d'ouverture", "contenu": "OUVERTURE" },
+        {
+          "emplacement": "Titre horaires d'ouverture",
+          "contenu": "Ouverture :"
+        },
         {
           "emplacement": "Horaires d'ouverture",
           "contenu": "Mardi - Samedi : 12h - 14h & 19h - 22h"
         },
-        { "emplacement": "Titre fermeture", "contenu": "FERMETURE" },
-        { "emplacement": "Jours de fermeture", "contenu": "Lundi & Dimanche" }
+        {
+          "emplacement": "Titre fermeture",
+          "contenu": "Fermeture :"
+        },
+        {
+          "emplacement": "Jours de fermeture",
+          "contenu": "Lundi & Dimanche"
+        }
       ]
     ]
   },
@@ -47,7 +56,10 @@
         }
       ],
       [
-        { "emplacement": "Titre entrées", "contenu": "Nos entrées" },
+        {
+          "emplacement": "Titre entrées",
+          "contenu": "Nos entrées"
+        },
         {
           "emplacement": "Entrée 1",
           "contenu": "Entree 1",
@@ -68,7 +80,10 @@
         }
       ],
       [
-        { "emplacement": "Titre plats", "contenu": "Nos plats" },
+        {
+          "emplacement": "Titre plats",
+          "contenu": "Nos plats"
+        },
         {
           "emplacement": "Plat1",
           "contenu": "Le premier plat",
@@ -95,7 +110,10 @@
         }
       ],
       [
-        { "emplacement": "Titre desserts", "contenu": "Nos desserts" },
+        {
+          "emplacement": "Titre desserts",
+          "contenu": "Nos desserts"
+        },
         {
           "emplacement": "Dessert1",
           "contenu": "Le premier dessert",
@@ -162,7 +180,10 @@
         }
       ],
       [
-        { "emplacement": "Titre Bières", "contenu": "Nos bières" },
+        {
+          "emplacement": "Titre Bières",
+          "contenu": "Nos bières"
+        },
         {
           "emplacement": "Bière1",
           "contenu": "Le premier bière",
@@ -190,7 +211,10 @@
     "name": "L'équipe",
     "text-content": [
       [
-        { "emplacement": "Texte du bandeau Photo", "contenu": "L'Equipe !" },
+        {
+          "emplacement": "Texte du bandeau Photo",
+          "contenu": "L'Equipe !"
+        },
         {
           "emplacement": "Description globale",
           "contenu": "Le restaurant inclusion est un super resto à base d'amour et d'eau fraiche"
@@ -201,32 +225,53 @@
         }
       ],
       [
-        { "emplacement": "Nom", "contenu": "Clément" },
+        {
+          "emplacement": "Nom",
+          "contenu": "Clément"
+        },
         {
           "emplacement": "Description",
           "contenu": "J'ajoute encore qqn pour tester"
         },
-        { "photo": "Numéro de la photo", "source": "" }
+        {
+          "photo": "Numéro de la photo",
+          "source": ""
+        }
       ],
       [
-        { "emplacement": "Nom", "contenu": "Thibaut" },
+        {
+          "emplacement": "Nom",
+          "contenu": "Thibaut"
+        },
         {
           "emplacement": "Description",
           "contenu": "J'ajoute ENCde qqn pour testereh bezochbhjaerg bdh&uové²"
         },
-        { "photo": "Numéro de la photo", "source": "" }
+        {
+          "photo": "Numéro de la photo",
+          "source": ""
+        }
       ],
       [
-        { "emplacement": "Nom", "contenu": "Barbara" },
+        {
+          "emplacement": "Nom",
+          "contenu": "Barbara"
+        },
         {
           "emplacement": "Description",
           "contenu": "La petite amie de François",
           "source": ""
         },
-        { "photo": "Numéro de la photo", "source": "" }
+        {
+          "photo": "Numéro de la photo",
+          "source": ""
+        }
       ],
       [
-        { "emplacement": "Recrutement Titre", "contenu": "Nous rejoindre..." },
+        {
+          "emplacement": "Recrutement Titre",
+          "contenu": "Nous rejoindre..."
+        },
         {
           "emplacement": "Texte de recrutement",
           "contenu": "Vous avez des questions ? Vous voulez rejoindre l'équipe du restaurant inclusion ? Vous pouvez nous envoyer un mail"
@@ -248,7 +293,10 @@
           "emplacement": "Titre contact téléphone",
           "contenu": "Vous pouvez nous contacter par téléphone"
         },
-        { "emplacement": "Titre contact mail", "contenu": "Ou par mail" }
+        {
+          "emplacement": "Titre contact mail",
+          "contenu": "Ou par mail"
+        }
       ],
       [
         {
@@ -262,12 +310,20 @@
       ]
     ]
   },
-  "header": { "name": "Header", "text-content": [[]] },
+  "header": {
+    "name": "Header",
+    "text-content": [
+      []
+    ]
+  },
   "mentions": {
     "name": "Mentions Légales",
     "text-content": [
       [
-        { "emplacement": "Titre - Propriété", "contenu": "Propriété" },
+        {
+          "emplacement": "Titre - Propriété",
+          "contenu": "Propriété"
+        },
         {
           "emplacement": "Nom du Restaurant",
           "contenu": "Restaurant INCLUSION"
@@ -276,7 +332,10 @@
           "emplacement": "Adresse officielle",
           "contenu": "15 avenue Montaigne – 59000 LILLE"
         },
-        { "emplacement": "Téléphone", "contenu": "tel : +33 X XX XX XX XX" },
+        {
+          "emplacement": "Téléphone",
+          "contenu": "tel : +33 X XX XX XX XX"
+        },
         {
           "emplacement": "Capital Social",
           "contenu": "Capital social : X XXX, XX euros"
@@ -287,7 +346,10 @@
         }
       ],
       [
-        { "emplacement": "Titre - Hébergement", "contenu": "Hébergement" },
+        {
+          "emplacement": "Titre - Hébergement",
+          "contenu": "Hébergement"
+        },
         {
           "emplacement": "Hébergement assuré par...",
           "contenu": "Hébergement assuré par PlanetHoster"
@@ -298,7 +360,10 @@
         }
       ],
       [
-        { "emplacement": "Titre - Informations", "contenu": "Informations" },
+        {
+          "emplacement": "Titre - Informations",
+          "contenu": "Informations"
+        },
         {
           "emplacement": "Prix exprimés en..",
           "contenu": "Prix exprimés en €uros TTC."

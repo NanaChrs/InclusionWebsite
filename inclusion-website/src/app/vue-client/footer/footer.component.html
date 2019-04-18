@@ -24,15 +24,15 @@
 
     <div id="lientexte">
       <p>
-        Telephone : <a href="tel:{{ tel }}" class="lien"> {{ tel }} </a>
+        <span id="num-telephone"> Email : </span><a href="mailto:{{ mail }}" class="lien"> {{ tel }} </a>
       </p>
       <p>
-        Mail : <a href="mailto:{{ mail }}" class="lien">{{ mail }}</a>
+        <span id="mail-contact"> Telephone : </span><a href="tel:{{ tel }}" class="lien">{{ mail }}</a>
       </p>
     </div>
 
     <div id="lientexte">
-      <p>Adresse :</p>
+      <p id="adresse-restaurant">Adresse :</p>
       <div *ngFor="let item of adresse">
         <p>{{ item }}</p>
       </div>
@@ -40,7 +40,7 @@
 
     <div id="lientexte">
       <!-- <p>{{ text[0].contenu }}</p> -->
-      <p *ngFor="let item of textContent[0]; let y = index">
+      <p id="horaire-ouverture" *ngFor="let item of textContent[0]; let y = index">
         {{ item.contenu }}
       </p>
     </div>
