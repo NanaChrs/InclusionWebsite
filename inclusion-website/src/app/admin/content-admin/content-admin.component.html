@@ -14,7 +14,8 @@
           src="../../assets/img/croix_rouge.png"
           (click)="onClickSupprItem(i, j)"
           *ngIf="
-            textContent[i].length > 2 &&
+            textContent[i].length > 1 &&
+            i > 0 &&
             j > 0 &&
             url != 'contact' &&
             url != 'mentions' &&
