@@ -2,28 +2,17 @@
 <div id="general" *ngIf="textContent">
   <div #myslideshowcontainer id="slideshow-container" *ngIf="textContent">
     <div #myslideshow id="slideshow">
-      <img
-        *ngFor="let image of imageContent"
-        src="{{ image.source }}"
-        alt="{{ image.alt }}"
-        class="slideshow-image"
-      />
+      <img *ngFor="let image of imageContent" src="{{ image.source }}" alt="{{ image.alt }}" class="slideshow-image" />
     </div>
     <div id="slideshow-text">
       <p>{{ textContent[0][0]["contenu"] }}</p>
     </div>
     <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
-      <img
-        src="../../../assets/accueil/fleche-gauche.png"
-        alt="bouton précédent"
-      />
+      <img id="fleche" src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent" />
     </button>
 
     <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
-      <img
-        src="../../../assets/accueil/fleche-droite.png"
-        alt="bouton précédent"
-      />
+      <img id="fleche" src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent" />
     </button>
 
     <div *ngIf="!animationOFF" id="zoneclicable">
@@ -51,28 +40,17 @@
 
   <div #myslideshowcontainer2 id="slideshow-container" *ngIf="textContent">
     <div #myslideshow2 id="slideshow">
-      <img
-        *ngFor="let image of imageBandeau"
-        src="{{ image.source }}"
-        alt="{{ image.alt }}"
-        class="slideshow-image"
-      />
+      <img *ngFor="let image of imageBandeau" src="{{ image.source }}" alt="{{ image.alt }}" class="slideshow-image" />
     </div>
     <div id="slideshow-text">
       <p>{{ textContent[0][1]["contenu"] }}</p>
     </div>
     <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev2()">
-      <img
-        src="../../../assets/accueil/fleche-gauche.png"
-        alt="bouton précédent"
-      />
+      <img id="fleche" src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent" />
     </button>
 
     <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext2()">
-      <img
-        src="../../../assets/accueil/fleche-droite.png"
-        alt="bouton précédent"
-      />
+      <img id="fleche" src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent" />
     </button>
 
     <div *ngIf="!animationOFF" id="zoneclicable">
