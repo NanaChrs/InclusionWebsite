@@ -62,11 +62,11 @@ export class EnteteComponent implements OnInit {
   openDialog() {
     this.dialog.open(MyDialogComponent, {
     });
-    this.compteur++;
-    if (this.compteur == 22) {
-      this.sound = document.getElementById("estearEgg");
-      this.sound.play();
-    }
+    // this.compteur++;
+    // if (this.compteur == 22) {
+    //   this.sound = document.getElementById("estearEgg");
+    //   this.sound.play();
+    // }
   }
 
   openMenu() {

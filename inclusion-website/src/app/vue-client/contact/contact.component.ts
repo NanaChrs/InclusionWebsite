@@ -40,7 +40,6 @@ export class ContactComponent implements OnInit {
       this.tel = page["text-content"][0][0]["contenu"];
       this.mailtext = page["text-content"][0][1]["contenu"];
       this.adress = page["text-content"][1][0]["contenu"] + " " + page["text-content"][1][1]["contenu"];
-      console.log(this.mailtext);
     });
   }
 
@@ -66,9 +65,6 @@ export class ContactComponent implements OnInit {
     this.cookieinverse = this.cookieService.check("inverse");
     if (this.cookieinverse) {
       this.map = document.getElementsByClassName("googlemap");
-      // for (var i = 0; i < this.map.length; i++) {
-      //   this.map[i].style.filter = "invert(90%)";
-      // }
     }
     setTimeout(() => {
       this.checkaccess();
