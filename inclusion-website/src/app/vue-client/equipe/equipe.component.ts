@@ -54,7 +54,7 @@ export class EquipeComponent implements OnInit {
         this.descriptions.length - 1,
         1
       );
-      this.lancementdiapo();
+      // this.lancementdiapo();
     });
     this.jsonContentService.getPageByName("param").subscribe(page => {
       this.mail = page["text-content"][0][1]["contenu"];
