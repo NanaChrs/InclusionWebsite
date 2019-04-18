@@ -80,6 +80,14 @@ button {
     border: 1px solid whitesmoke;
 }
 
+.detailadresse{
+  display: inline-block;
+}
+
+#adressefooter p{
+  margin: 0 3px 0 0;
+}
+
 @media screen and (max-width: 1280px) {
 }
 
