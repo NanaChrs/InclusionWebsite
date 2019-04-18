@@ -9,11 +9,11 @@
       <p>{{ descriptionGlobale[0]["contenu"] }}</p>
     </div>
     <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
-      <img src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent" />
+      <img id="fleche" src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent" />
     </button>
 
     <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
-      <img src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent" />
+      <img id="fleche" src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent" />
     </button>
 
     <div *ngIf="!animationOFF" id="zoneclicable">

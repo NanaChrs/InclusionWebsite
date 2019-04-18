@@ -54,10 +54,21 @@
         margin-top: 0;
         background-color: #E6E5E5;
     }
+
+    #fleche
+    {
+        height: 50px;
+        width: 50px;
+    }
 }
 
 @media screen and (max-width:516px)
 {
+    #fleche
+    {
+        height: 50px;
+        width: 50px;
+    }
 
     #slideshow-text
     {
