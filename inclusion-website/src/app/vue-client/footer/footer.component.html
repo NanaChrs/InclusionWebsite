@@ -81,7 +81,7 @@
 
 <!-- Mode responsive : Bandeau avec un raccourci pour téléphoner -->
 <div id="bloc_lientelephone">
-  <a id="lientelephone" href="tel:+33619459393"><img id="logotelephone" src="../../../assets/footer/phone.png"
+  <a id="lientelephone" href="tel:{{tel}}" *ngIf="tel"><img id="logotelephone" src="../../../assets/footer/phone.png"
       alt="Numéro de téléphone du restaurant" height="20" width="20" />
     APPELEZ-NOUS !</a>
   <a id="lienmaps" href="http://maps.google.com/?q=41 boulevard Vauban, Lille, France"><img id="logotelephone"
