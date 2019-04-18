@@ -25,7 +25,7 @@
             [
                 {
                     "emplacement": "Titre horaires d'ouverture",
-                    "contenu": "OUVERTURE"
+                    "contenu": "Ouverture :"
                 },
                 {
                     "emplacement": "Horaires d'ouverture",
@@ -33,7 +33,7 @@
                 },
                 {
                     "emplacement": "Titre fermeture",
-                    "contenu": "FERMETURE"
+                    "contenu": "Fermeture :"
                 },
                 {
                     "emplacement": "Jours de fermeture",
