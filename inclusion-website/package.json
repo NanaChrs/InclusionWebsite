@@ -32,6 +32,7 @@
     "ngx-cookie-service": "^2.1.0",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.4.0",
+    "save-file": "^2.3.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },

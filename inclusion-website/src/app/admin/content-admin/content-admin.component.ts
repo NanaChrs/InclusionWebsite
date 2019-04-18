@@ -7,6 +7,7 @@ import {
 } from "@angular/router";
 import { JsoncontentService } from "./jsoncontent.service";
 import { FileUploader } from "ng2-file-upload";
+import { saveAs } from "file-saver";
 
 @Component({
   selector: "app-content-admin",
@@ -39,7 +40,7 @@ export class ContentAdminComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   getPage(): void {
     this.newContent = [];
@@ -215,5 +216,11 @@ export class ContentAdminComponent implements OnInit {
     this.textContent[i].splice(j, 1);
     console.log(this.textContent[i].length);
     this.save();
+  }
+
+  download() {
+    this.jsonContentService.downloadAllImages(this.url).subscribe(e => {
+      saveAs(e, this.url + "images");
+    });
   }
 }

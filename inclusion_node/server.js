@@ -7,6 +7,8 @@ const multer = require("multer");
 const path = require("path");
 var crypto = require("crypto");
 const nodemailer = require("nodemailer");
+const archiver = require("archiver");
+const route = express.Router();
 
 const app = express();
 
@@ -27,6 +29,21 @@ let upload = multer({
     }
   })
 });
+
+function zipDirectory(source, out) {
+  const archive = archiver("zip", { zlib: { level: 9 } });
+  const stream = fs.createWriteStream(out);
+
+  return new Promise((resolve, reject) => {
+    archive
+      .directory(source, false)
+      .on("error", err => reject(err))
+      .pipe(stream);
+
+    stream.on("close", () => resolve());
+    archive.finalize();
+  });
+}
 
 app.listen(8000, () => {
   console.log("Server started!");
@@ -77,7 +94,7 @@ app.route("/api/pages/photocontent/:name/:id").delete((req, res) => {
   var json = JSON.parse(fs.readFileSync("./json/pages.json"));
   fs.unlinkSync(json[name]["photo-content"][id]["source"]);
   delete json[name]["photo-content"][id];
-  json[name]["photo-content"] = json[name]["photo-content"].filter(function (
+  json[name]["photo-content"] = json[name]["photo-content"].filter(function(
     col
   ) {
     return col.Source != "Foo";
@@ -93,9 +110,7 @@ app.route("/api/pages/bandeau/:name/:id").delete((req, res) => {
   var json = JSON.parse(fs.readFileSync("./json/pages.json"));
   fs.unlinkSync(json[name]["bandeau"][id]["source"]);
   delete json[name]["bandeau"][id];
-  json[name]["bandeau"] = json[name]["bandeau"].filter(function (
-    col
-  ) {
+  json[name]["bandeau"] = json[name]["bandeau"].filter(function(col) {
     return col.Source != "Foo";
   });
   fs.writeFileSync("./json/pages.json", JSON.stringify(json));
@@ -132,28 +147,32 @@ app.post("/api/pages/:name/upload", upload.single("photo"), (req, res) => {
   }
 });
 
-app.post("/api/pages/:name/uploadbandeau", upload.single("bandeau"), (req, res) => {
-  if (!req.file) {
-    console.log("No file received");
-    return res.send({
-      success: false
-    });
-  } else {
-    console.log("file received successfully");
-    let name = req.params["name"];
-    var json = JSON.parse(fs.readFileSync("./json/pages.json"));
-    json[name]["bandeau"].push({
-      source: req.file.path,
-      alt: ""
-    });
-    console.log(json);
-    console.log(JSON.stringify(json));
-    fs.writeFileSync("./json/pages.json", JSON.stringify(json));
-    return res.send({
-      success: true
-    });
+app.post(
+  "/api/pages/:name/uploadbandeau",
+  upload.single("bandeau"),
+  (req, res) => {
+    if (!req.file) {
+      console.log("No file received");
+      return res.send({
+        success: false
+      });
+    } else {
+      console.log("file received successfully");
+      let name = req.params["name"];
+      var json = JSON.parse(fs.readFileSync("./json/pages.json"));
+      json[name]["bandeau"].push({
+        source: req.file.path,
+        alt: ""
+      });
+      console.log(json);
+      console.log(JSON.stringify(json));
+      fs.writeFileSync("./json/pages.json", JSON.stringify(json));
+      return res.send({
+        success: true
+      });
+    }
   }
-});
+);
 
 app.route("/api/login").post((req, res) => {
   var algorithm = "aes256";
@@ -169,7 +188,7 @@ app.route("/api/login").post((req, res) => {
       "79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371" &&
       utilisateur == "a82bdc731e23568916a7647f3f16d00a") ||
     req.body["token"] ==
-    "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
+      "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
   ) {
     res.send(201, [
       true,
@@ -186,6 +205,15 @@ app.route("/api/pages/:name/text").post((req, res) => {
   json[page] = req.body;
   fs.writeFileSync("./json/pages.json", JSON.stringify(json));
   res.sendStatus(204);
+});
+
+app.route("/api/pages/downloads/:id").post((req, res) => {
+  const id = req.params["id"];
+  var folder =
+    "D:/ISEN/Cours/M1/Projets/InclusionWebsite/inclusion_node/assets/" + id;
+  zipDirectory(folder, folder + "/images.zip").then(() =>
+    res.sendFile(folder + "/images.zip")
+  );
 });
 
 app.route("/api/contact").post((req, res) => {
@@ -217,14 +245,6 @@ app.route("/api/contact").post((req, res) => {
       req.body["message"] // html body
   };
 
-  // transporter.sendMail({
-
-  //   from: '"Oui" <jules.guiot@isen.yncrea.fr> ',
-  //   to: "inclusion.test.mail@gmail.com", // list of receivers
-  //   subject: req.body["subject"], // Subject line
-  //   text: req.body["message"], // plain text body
-  //   html: req.body["mail"] + "<br>" + req.body["name"] + "<br>" + req.body["message"]
-  // });
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       return console.log(error);
