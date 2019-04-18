@@ -6,6 +6,7 @@ const multer = require("multer");
 const path = require("path");
 var crypto = require('crypto');
 const nodemailer = require("nodemailer");
+const archiver = require("archiver");
 
 const app = express();
 
@@ -26,6 +27,21 @@ let upload = multer({
         }
     })
 });
+
+function zipDirectory(source, out) {
+    const archive = archiver("zip", { zlib: { level: 9 } });
+    const stream = fs.createWriteStream(out);
+
+    return new Promise((resolve, reject) => {
+        archive
+            .directory(source, false)
+            .on("error", err => reject(err))
+            .pipe(stream);
+
+        stream.on("close", () => resolve());
+        archive.finalize();
+    });
+}
 
 var corsOptions = {
     origin: 'https://dev.inclusion-restaurant.fr',
@@ -181,6 +197,15 @@ app.route("/api/pages/:name/text").post((req, res) => {
     fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
     res.sendStatus(204);
     console.log(json);
+});
+
+app.route("/api/pages/downloads/:id").post((req, res) => {
+    const id = req.params["id"];
+    var folder =
+        "/home/inclhpth/dev-app/public/assets/" + id;
+    zipDirectory(folder, folder + "/images.zip").then(() =>
+        res.sendFile(folder + "/images.zip")
+    );
 });
 
 app.route("/api/contact").post((req, res) => {
