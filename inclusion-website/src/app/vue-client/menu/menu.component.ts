@@ -37,7 +37,7 @@ export class MenuComponent implements OnInit {
   constructor(
     private cookieService: CookieService,
     private jsonContentService: JsoncontentService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.jsonContentService.getPageByName("carte").subscribe(page => {
@@ -47,7 +47,7 @@ export class MenuComponent implements OnInit {
       this.imageBandeau = this.pageContent["bandeau"];
       this.plat = this.textContent.slice(1, 4);
       this.boisson = this.textContent.slice(4, 7);
-      this.lancementdiapo();
+      // this.lancementdiapo();
     });
   }
 
@@ -79,7 +79,7 @@ export class MenuComponent implements OnInit {
   }
 
   // fonction pour appliquer la hauteur du dipoa et la position relative
-  setContainerStyle = function() {
+  setContainerStyle = function () {
     if (
       this.slideshow.nativeElement.children[this.i] == undefined &&
       this.slideshow2.nativeElement.children[this.i2] == undefined &&
@@ -98,14 +98,14 @@ export class MenuComponent implements OnInit {
   };
 
   // fonction permettant de verifier les modifications "accessibilité"
-  checkaccess = function() {
+  checkaccess = function () {
     this.animationOFF = this.cookieService.check("animationOFF");
     setTimeout(() => {
       this.checkaccess();
     }, 100);
   };
 
-  play = function() {
+  play = function () {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow.nativeElement.className = "fadeOut";
@@ -132,7 +132,7 @@ export class MenuComponent implements OnInit {
     }, this.duration * 1000);
   };
 
-  play2 = function() {
+  play2 = function () {
     if (!this.animationOFF) {
       // application de la classe fadeOut pour appliquer la transition apparition petit à petit
       this.slideshow2.nativeElement.className = "fadeOut";

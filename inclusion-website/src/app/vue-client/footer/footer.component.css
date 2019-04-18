@@ -1,3 +1,9 @@
+/* @font-face
+{
+  font-family: "test";
+  src: url(../../../assets/police/ModernSans-Light.otf)
+} */
+
 #logoFooter {
   display: none;
 }
@@ -16,7 +22,7 @@
 }
 
 #footer-general {
-  font-family: "Calibri";
+  font-family: Arial;
   background-color: #88181c;
   color: white;
   width: 100%;
@@ -72,6 +78,26 @@ button {
 }
 .lien-focus:focus {
   border: solid white;
+}
+
+#logoUber
+{
+    border-radius: 8px;
+    border: 1px solid whitesmoke;
+}
+
+#num-telephone, #mail-contact, #adresse-restaurant, #horaire-ouverture, #mentions-legales, #plan-site
+{
+  font-weight: bold;
+}
+
+
+.detailadresse{
+  display: inline-block;
+}
+
+#adressefooter p{
+  margin: 0 3px 0 0;
 }
 
 @media screen and (max-width: 1280px) {
@@ -181,7 +207,7 @@ button {
     color: black;
     border-radius: 50px;
     text-align: center;
-    padding: 0px 20px 0px 20px;
+    padding: 3px 20px 3px 20px;
   }
 
   #bloc_lientelephone {
@@ -189,12 +215,12 @@ button {
     flex-direction: column;
     justify-content: center;
   }
-
+/* 216 rue solfé */
   #liste_logo {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-    margin-bottom: 85px;
+    margin-bottom: 100px;
     margin-left: 0;
     padding: 0;
   }
