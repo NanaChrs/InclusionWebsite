@@ -155,7 +155,7 @@ button {
 
 .card {
   width: 20%;
-  margin: 10px;
+  margin: 25px;
   /* border: 2px solid #88181c; */
   border-radius: 5px;
   /* box-shadow: 0px 0px 5px #343434; */
@@ -173,7 +173,7 @@ button {
 }
 
 #contenu {
-  text-align: center;
+  text-align: justify;
 }
 
 h4 {
