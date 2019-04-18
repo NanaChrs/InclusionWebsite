@@ -30,7 +30,7 @@
         <span id="mail-contact"> Telephone : </span><a href="tel:{{ tel }}" class="lien">{{ mail }}</a>
       </p>
       <div id="adressefooter">
-        <p class="detailadresse">
+        <p id="adresse-restaurant" class="detailadresse">
           Adresse :
         </p>
 
@@ -50,9 +50,11 @@
 
     <div id="lientexte">
       <!-- <p>{{ text[0].contenu }}</p> -->
-      <p id="horaire-ouverture" *ngFor="let item of textContent[0]; let y = index">
-        {{ item.contenu }}
-      </p>
+      <div id="horaire-content" *ngFor="let item of textContent[0]; let y = index">
+        <div *ngIf="y==0 || y == 2" id="horaire-ouverture"> {{ item.contenu }}</div>
+        <div *ngIf="y==1 || y == 3"> {{ item.contenu }}</div>
+
+      </div>
     </div>
 
     <div class="footer-center-right">
