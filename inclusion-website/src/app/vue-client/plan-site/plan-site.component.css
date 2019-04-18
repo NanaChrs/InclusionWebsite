@@ -3,6 +3,7 @@
     margin-top: 104px;
     background-color: #E6E5E5;
     width: 100% ;
+    font-size: 1.2em;
 }
 
 /* _______________________________________________________________________________ */
@@ -129,7 +130,7 @@
 }
 
 #lien{
-    margin: 15px;
+    margin: 20px;
 }
 
 #lien:hover{
