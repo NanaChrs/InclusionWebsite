@@ -10,7 +10,7 @@ export class JsoncontentService {
   // private urlPages: string = "https://dev.inclusion-restaurant.fr/api/pages/";
   private urlPages: string = "http://localhost:8000/api/pages/";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getPageByName(name: string): Observable<String[]> {
     const url = this.urlPages + name;
@@ -30,5 +30,13 @@ export class JsoncontentService {
   postPageByName(name: string, body: String[]) {
     const url = this.urlPages + name + "/text";
     return this.http.post<string>(url, body);
+  }
+
+  downloadAllImages(name: String) {
+    const url = this.urlPages + "downloads/" + name;
+    console.log(url);
+    return this.http.post(url, "", {
+      responseType: "blob"
+    });
   }
 }
