@@ -44,7 +44,6 @@
     color: white;
     text-shadow: 0px 0px 10px black;
     position: absolute;
-    font-family: "Calibri";
     letter-spacing: .2em;
     font-size: 3em;
     width: 100%;
@@ -96,7 +95,6 @@
     color: white;
     text-shadow: 0px 0px 10px black;
     position: absolute;
-    font-family: "Calibri";
     letter-spacing: .2em;
     font-size: 1.5em;
     width: 100%;
@@ -175,7 +173,6 @@ button{
 
 #presentation-restaurant{
     text-align: center;
-    font-family: "Calibri";
     padding: 5% 20%;
     letter-spacing: 0.2em;
     background: #E6E5E5;

@@ -1,6 +1,5 @@
 #general
 {
-    font-family: 'Calibri';
     margin-top: 104px;
     background-color: #E6E5E5;
     width: 100%;
@@ -44,7 +43,6 @@ h1
 
 .text
 {
-    font-family: "Calibri";
     letter-spacing: .2em;
     /* padding: 2% 2% 5% 2%; */
 }
@@ -127,11 +125,9 @@ a:hover{
 {
     width: 100%;
     font-size: 1.2em;
-    font-family: 'Calibri';
 }
 #message::placeholder 
 {
-    font-family: 'Calibri';
     font-size: 1.2em;
 }
 
