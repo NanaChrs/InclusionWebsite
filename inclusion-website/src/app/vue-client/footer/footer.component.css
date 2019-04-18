@@ -91,6 +91,10 @@ button {
   font-weight: bold;
 }
 
+#horaire-content
+{
+  line-height: 2em;
+}
 
 .detailadresse{
   display: inline-block;
