@@ -22,6 +22,7 @@ export class ContactComponent implements OnInit {
   private imageContent: String;
   private mailtext: String;
   private tel: String;
+  private adress: String;
 
   constructor(
     private http: HttpClientService,
@@ -38,6 +39,7 @@ export class ContactComponent implements OnInit {
     this.jsonContentService.getPageByName("param").subscribe(page => {
       this.tel = page["text-content"][0][0]["contenu"];
       this.mailtext = page["text-content"][0][1]["contenu"];
+      this.adress = page["text-content"][1][0]["contenu"] + " " + page["text-content"][1][1]["contenu"];
       console.log(this.mailtext);
     });
   }

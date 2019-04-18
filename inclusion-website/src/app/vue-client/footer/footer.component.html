@@ -24,25 +24,37 @@
 
     <div id="lientexte">
       <p>
-        Telephone : <a href="tel:{{ tel }}" class="lien"> {{ tel }} </a>
+        <span id="num-telephone"> Email : </span><a href="mailto:{{ mail }}" class="lien"> {{ tel }} </a>
       </p>
       <p>
-        Mail : <a href="mailto:{{ mail }}" class="lien">{{ mail }}</a>
+        <span id="mail-contact"> Telephone : </span><a href="tel:{{ tel }}" class="lien">{{ mail }}</a>
       </p>
-    </div>
+      <div id="adressefooter">
+        <p id="adresse-restaurant" class="detailadresse">
+          Adresse :
+        </p>
 
-    <div id="lientexte">
-      <p>Adresse :</p>
-      <div *ngFor="let item of adresse">
-        <p>{{ item }}</p>
+        <div *ngFor="let item of adresse; let j = index" class="detailadresse">
+          <div *ngIf="j != 0" class="detailadresse"> , </div>
+          {{ item }}
+
+        </div>
+
       </div>
     </div>
 
+    <!-- <div id="lientexte">
+      <p></p>
+      
+    </div> -->
+
     <div id="lientexte">
       <!-- <p>{{ text[0].contenu }}</p> -->
-      <p *ngFor="let item of textContent[0]; let y = index">
-        {{ item.contenu }}
-      </p>
+      <div id="horaire-content" *ngFor="let item of textContent[0]; let y = index">
+        <div *ngIf="y==0 || y == 2" id="horaire-ouverture"> {{ item.contenu }}</div>
+        <div *ngIf="y==1 || y == 3"> {{ item.contenu }}</div>
+
+      </div>
     </div>
 
     <div class="footer-center-right">

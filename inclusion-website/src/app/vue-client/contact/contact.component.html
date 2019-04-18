@@ -1,56 +1,44 @@
 <app-entete></app-entete>
 <div id="general" class="zone" *ngIf="textContent && mailtext && tel">
-  <iframe
-    id="googlemap"
-    class="googlemap"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6126113518494!2d3.046428169606164!3d50.63431288341961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sISEN+Lille!5e0!3m2!1sfr!2sfr!4v1554128878294!5m2!1sfr!2sfr"
-    frameborder="0"
-    style="border:0"
-    allowfullscreen
-  >
-  </iframe>
-  <div id="contact-intro" *ngFor="let text of textContent; let i = index">
-    <div id="description" class="text">
-      <div *ngFor="let content of text; let j = index">
-        <h1>{{ content["contenu"] }}</h1>
-        <div *ngIf="i == 0">
-          <a *ngIf="j == 0" href="tel:{{ tel }}"> {{ tel }}</a>
-          <a *ngIf="j == 1" href="mailto:{{ mailtext }}">{{ mailtext }}</a>
+  <div id="container-googlemap">
+    <iframe id="googlemap" class="googlemap"
+      src="https://maps.google.com/maps?q=216%20Rue%20Solf%C3%A9rino%2C%20Lille&t=&z=17&ie=UTF8&iwloc=&output=embed"
+      frameborder="0" style="border:0" allowfullscreen>
+    </iframe>
+  </div>
+  <div id="text-contact">
+    <div class="form-group" id="divMain">
+      <h1>{{textContent[1][0].contenu}}</h1>
+      <h2>{{textContent[1][1].contenu}}</h2>
+      <form ngNativeValidate (ngSubmit)="sendMail()" id="mail" action="">
+        <!-- <div id="content-nom-mail"> -->
+        <!-- <h4>Votre nom :</h4> -->
+        <input type="text" name="name" id="name" [(ngModel)]="name" placeholder="Nom" required />
+        <!-- <hr> -->
+        <!-- <h4>Votre mail :</h4> -->
+        <input type="email" name="sender" id="sender" [(ngModel)]="sender" placeholder="Votre adresse mail" required />
+        <!-- </div> -->
+        <!-- <h4>Sujet :</h4> -->
+        <input type="text" name="object" id="object" [(ngModel)]="object" placeholder="Objet" required />
+        <!-- <h4>Votre message :</h4> -->
+        <textarea name="message" id="message" [(ngModel)]="message" placeholder="Ecrivez votre message ici"
+          required></textarea>
+        <br />
+        <input id="mailTo" type="submit" class="btn btn-success text" />
+      </form>
+    </div>
+    <div id="contact-intro">
+      <div id="description" class="text" *ngFor="let text of textContent; let i = index">
+        <div *ngFor="let content of text; let j = index">
+          <h1 *ngIf="i == 0">{{ content["contenu"] }}</h1>
+          <div *ngIf="i == 0">
+            <a *ngIf="j == 0" href="tel:{{ tel }}"> {{ tel }}</a>
+            <a *ngIf="j == 1" href="mailto:{{ mailtext }}">{{ mailtext }}</a>
+            <a *ngIf="j == 2" href="http://maps.google.com/?q={{adress}}" target="_blank">{{ adress }}</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="form-group" id="divMain">
-    <br />
-    <form ngNativeValidate (ngSubmit)="sendMail()" id="mail" action="">
-      <div id="content-nom-mail">
-        <h4>Votre nom :</h4>
-        <input type="text" name="name" id="name" [(ngModel)]="name" placeholder="Nom" required />
-        <hr>
-        <h4>Votre mail :</h4>
-        <input
-          type="email"
-          name="sender"
-          id="sender"
-          [(ngModel)]="sender"
-          placeholder="Votre adresse mail"
-          required
-        />
-      </div>
-      <h4>Sujet :</h4>
-      <input
-        type="text"
-        name="object"
-        id="object"
-        [(ngModel)]="object"
-        placeholder="Sujet"
-        required
-      />
-      <h4>Votre message :</h4>
-      <textarea name="message" id="message" [(ngModel)]="message" placeholder="Ecrivez votre message ici"></textarea>
-      <br />
-      <input id="mailTo" type="submit" class="btn btn-success text" />
-    </form>
   </div>
 </div>
 

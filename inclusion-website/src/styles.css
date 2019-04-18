@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face 
+{
+    font-family: 'Modern';
+	src: url('assets/police/ModernSans-Light.otf');
+}
+
 body, html
 {
 	margin: 0;
 	/* height: 100%; */
-	font-family: "Calibri";
+	/*font-family: "Modern","fantasy";*/
 	font-size: 1em;
+	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
-
 

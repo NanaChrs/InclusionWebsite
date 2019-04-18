@@ -16,7 +16,6 @@
 }
 
 #footer-general {
-  font-family: "Calibri";
   background-color: #88181c;
   color: white;
   width: 100%;
@@ -60,7 +59,6 @@
 button {
   background: none;
   border: none;
-  font-family: "Calibri";
   font-size: 1em;
   padding: 0;
   color: white;
@@ -78,6 +76,24 @@ button {
 {
     border-radius: 8px;
     border: 1px solid whitesmoke;
+}
+
+#num-telephone, #mail-contact, #adresse-restaurant, #horaire-ouverture, #mentions-legales, #plan-site
+{
+  font-weight: bold;
+}
+
+#horaire-content
+{
+  line-height: 2em;
+}
+
+.detailadresse{
+  display: inline-block;
+}
+
+#adressefooter p{
+  margin: 0 3px 0 0;
 }
 
 @media screen and (max-width: 1280px) {
@@ -131,7 +147,6 @@ button {
     padding-left: 40px;
     padding-top: 3px;
     padding-bottom: 3px;
-    font-family: "Calibri";
     font-size: 1em;
     /* background-color: #0060f1cc; */
     background-color: whitesmoke;
@@ -147,7 +162,6 @@ button {
     padding-bottom: 3px;
     padding-right: 40px;
     padding-left: 40px;
-    font-family: "Calibri";
     font-size: 1em;
     /* background-color: #f19100be; */
     background-color: whitesmoke;
@@ -165,7 +179,6 @@ button {
 @media screen and (max-width: 458px) {
   #lientelephone,
   #lienmaps {
-    font-family: "Calibri";
     font-size: 1em;
     /* background-color: #0060f1cc; */
     background-color: whitesmoke;
@@ -179,7 +192,6 @@ button {
 @media screen and (max-width: 376px) {
   #lientelephone,
   #lienmaps {
-    font-family: "Calibri";
     font-size: 1em;
     /* background-color: #0060f1cc; */
     background-color: whitesmoke;

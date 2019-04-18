@@ -19,7 +19,6 @@
     width: 100%;
     background-color: none;
     letter-spacing: .2em;
-    font-family: 'Calibri';
 }
 
 #sous_bandeau
@@ -46,7 +45,7 @@
     display: flex;
     justify-content: space-between;
     /* flex-wrap: wrap; */
-    background-color: #88181c;    
+    background-color: #88181c;  
 }
 
 #icone
@@ -119,7 +118,6 @@
 button{
     background: none;
     border: none;
-    font-family: 'Calibri';
     font-size: 1.2em; 
     padding: 0;
 }

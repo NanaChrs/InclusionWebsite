@@ -1,5 +1,4 @@
 #content {
-  font-family: "Calibri";
   margin-top: 104px;
   background-color: #e6e5e5;
 }
@@ -42,7 +41,6 @@
   color: white;
   text-shadow: 0px 0px 10px black;
   position: absolute;
-  font-family: "Calibri";
   letter-spacing: 0.2em;
   font-size: 3em;
   width: 100%;
@@ -57,7 +55,6 @@
     color: white;
     text-shadow: 0px 0px 10px black;
     position: absolute;
-    font-family: "Calibri";
     letter-spacing: 0.2em;
     font-size: 1.5em;
     width: 100%;
@@ -155,7 +152,7 @@ button {
 
 .card {
   width: 20%;
-  margin: 10px;
+  margin: 25px;
   /* border: 2px solid #88181c; */
   border-radius: 5px;
   /* box-shadow: 0px 0px 5px #343434; */
@@ -168,12 +165,11 @@ button {
   /* text-justify: inter-word; */
   line-height: 150%;
   text-indent: 5%;
-  font-family: "Calibri";
   letter-spacing: 0.15em;
 }
 
 #contenu {
-  text-align: center;
+  text-align: justify;
 }
 
 h4 {
@@ -226,9 +222,14 @@ hr {
 }
 
 @media screen and (max-width: 736px) {
+  #fleche
+  {
+    height: 50px;
+    width: 50px;
+  }
+  
   #content {
     margin-top: 0;
-    font-family: "Calibri";
     background-color: #e6e5e5;
   }
 
