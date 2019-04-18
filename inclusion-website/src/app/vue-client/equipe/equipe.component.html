@@ -2,28 +2,18 @@
 <div id="content" *ngIf="textContent && mail">
   <div #myslideshowcontainer id="slideshow-container">
     <div #myslideshow id="slideshow">
-      <img
-        *ngFor="let image of bandeauContent"
-        src="{{ image.source }}"
-        alt="{{ image.alt }}"
-        class="slideshow-image"
-      />
+      <img *ngFor="let image of bandeauContent" src="{{ image.source }}" alt="{{ image.alt }}"
+        class="slideshow-image" />
     </div>
     <div id="slideshow-text">
       <p>{{ descriptionGlobale[0]["contenu"] }}</p>
     </div>
     <button *ngIf="animationOFF" id="fleche-gauche" (click)="onPrev()">
-      <img
-        src="../../../assets/accueil/fleche-gauche.png"
-        alt="bouton précédent"
-      />
+      <img src="../../../assets/accueil/fleche-gauche.png" alt="bouton précédent" />
     </button>
 
     <button *ngIf="animationOFF" id="fleche-droite" (click)="onNext()">
-      <img
-        src="../../../assets/accueil/fleche-droite.png"
-        alt="bouton précédent"
-      />
+      <img src="../../../assets/accueil/fleche-droite.png" alt="bouton précédent" />
     </button>
 
     <div *ngIf="!animationOFF" id="zoneclicable">
@@ -42,13 +32,8 @@
       <div class="card" *ngFor="let text of descriptions; let i = index">
         <div id="test">
           <div id="imgcontent">
-            <img
-              class="photo"
-              src="{{ text[2]['source'] }}"
-              alt="Photo de {{ text[0]['contenu'] }}"
-              width="150"
-              height="150"
-            />
+            <img class="photo" src="{{ text[2]['source'] }}" alt="Photo de {{ text[0]['contenu'] }}" width="150"
+              height="150" />
           </div>
           <div id="contenu">
             <h4>{{ text[0]["contenu"] }}</h4>

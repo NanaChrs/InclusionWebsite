@@ -29,14 +29,24 @@
       <p>
         <span id="mail-contact"> Telephone : </span><a href="tel:{{ tel }}" class="lien">{{ mail }}</a>
       </p>
-    </div>
+      <div id="adressefooter">
+        <p class="detailadresse">
+          Adresse :
+        </p>
 
-    <div id="lientexte">
-      <p id="adresse-restaurant">Adresse :</p>
-      <div *ngFor="let item of adresse">
-        <p>{{ item }}</p>
+        <div *ngFor="let item of adresse; let j = index" class="detailadresse">
+          <div *ngIf="j != 0" class="detailadresse"> , </div>
+          {{ item }}
+
+        </div>
+
       </div>
     </div>
+
+    <!-- <div id="lientexte">
+      <p></p>
+      
+    </div> -->
 
     <div id="lientexte">
       <!-- <p>{{ text[0].contenu }}</p> -->

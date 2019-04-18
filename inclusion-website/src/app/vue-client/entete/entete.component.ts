@@ -17,6 +17,7 @@ export class EnteteComponent implements OnInit {
   compteur = 0;
   sound;
   zone;
+  map;
   text;
   private insta: String;
   private fb: String;
@@ -35,7 +36,7 @@ export class EnteteComponent implements OnInit {
     private router: Router,
     private cookieService: CookieService,
     private jsonContentService: JsoncontentService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.text = document.getElementsByClassName("text");
@@ -77,13 +78,17 @@ export class EnteteComponent implements OnInit {
     }
   }
 
-  checkaccess = function() {
+  checkaccess = function () {
     this.cookieinverse = this.cookieService.check("inverse");
     this.fontsize = this.cookieService.check("fontSize");
     if (this.cookieinverse) {
       this.zone = document.getElementsByClassName("zone");
+      this.map = document.getElementsByClassName("googlemap");
       for (var i = 0; i < this.zone.length; i++) {
         this.zone[i].style.filter = "invert(90%)";
+      }
+      for (var i = 0; i < this.map.length; i++) {
+        this.map[i].style.filter = "invert(90%)";
       }
     }
     if (this.fontsize) {
