@@ -40,7 +40,7 @@ export class ContentAdminComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   getPage(): void {
     this.newContent = [];
