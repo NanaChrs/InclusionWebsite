@@ -1,9 +1,7 @@
 <app-entete></app-entete>
 <div id="general" class="zone" *ngIf="textContent && mailtext && tel">
   <div id="container-googlemap">
-    <iframe id="googlemap" class="googlemap"
-      src="https://maps.google.com/maps?q=216%20Rue%20Solf%C3%A9rino%2C%20Lille&t=&z=17&ie=UTF8&iwloc=&output=embed"
-      frameborder="0" style="border:0" allowfullscreen>
+    <iframe id="googlemap" class="googlemap" [src]="src_maps | safe" frameborder="0" style="border:0" allowfullscreen>
     </iframe>
   </div>
   <div id="text-contact">

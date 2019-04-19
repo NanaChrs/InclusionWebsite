@@ -24,6 +24,8 @@ export class FooterComponent implements OnInit {
   private mail: String;
   private tel: String;
   private adresse: String[] = [];
+  private adresse_maps: String;
+  private src_maps: String;
   private insta: String;
   private fb: String[];
   private uber: String;
@@ -44,6 +46,8 @@ export class FooterComponent implements OnInit {
       this.adresse.push(page["text-content"][1][0]["contenu"]);
       this.adresse.push(page["text-content"][1][1]["contenu"]);
       this.adresse.push(page["text-content"][1][2]["contenu"]);
+      this.adresse_maps = encodeURIComponent(this.adresse[0] + ' ' + this.adresse[1]);
+      this.src_maps = "https://maps.google.com/maps?q=" + this.adresse_maps + "&t=&z=17&ie=UTF8&iwloc=&output=embed";
       this.insta = page["text-content"][2][0]["contenu"];
       this.fb = page["text-content"][2][1]["contenu"];
       this.uber = page["text-content"][2][2]["contenu"];

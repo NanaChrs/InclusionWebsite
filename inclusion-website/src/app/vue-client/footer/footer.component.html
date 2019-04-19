@@ -71,9 +71,7 @@
     </div>
 
     <div id="imap">
-      <iframe id="googlemap" class="googlemap"
-        src="https://maps.google.com/maps?q=216%20Rue%20Solf%C3%A9rino%2C%20Lille&t=&z=17&ie=UTF8&iwloc=&output=embed"
-        frameborder="0" style="border:0" allowfullscreen>
+      <iframe id="googlemap" class="googlemap" [src]="src_maps | safe" frameborder="0" style="border:0" allowfullscreen>
       </iframe>
     </div>
   </div>
@@ -84,7 +82,7 @@
   <a id="lientelephone" href="tel:{{tel}}" *ngIf="tel"><img id="logotelephone" src="../../../assets/footer/phone.png"
       alt="Numéro de téléphone du restaurant" height="20" width="20" />
     APPELEZ-NOUS !</a>
-  <a id="lienmaps" href="http://maps.google.com/?q=41 boulevard Vauban, Lille, France"><img id="logotelephone"
+  <a id="lienmaps" href="http://maps.google.com/?q={{adresse}}"><img id="logotelephone"
       src="../../../assets/footer/location.png" alt="Lien vers le plan d'accès du restaurant" height="22" width="12" />
     NOUS TROUVEZ !</a>
 </div>

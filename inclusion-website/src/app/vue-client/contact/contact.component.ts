@@ -23,6 +23,8 @@ export class ContactComponent implements OnInit {
   private mailtext: String;
   private tel: String;
   private adress: String;
+  private adresse_maps: String;
+  private src_maps: String;
 
   constructor(
     private http: HttpClientService,
@@ -40,6 +42,8 @@ export class ContactComponent implements OnInit {
       this.tel = page["text-content"][0][0]["contenu"];
       this.mailtext = page["text-content"][0][1]["contenu"];
       this.adress = page["text-content"][1][0]["contenu"] + " " + page["text-content"][1][1]["contenu"];
+      this.adresse_maps = encodeURIComponent(this.adress.toString());
+      this.src_maps = "https://maps.google.com/maps?q=" + this.adresse_maps + "&t=&z=17&ie=UTF8&iwloc=&output=embed"
     });
   }
 

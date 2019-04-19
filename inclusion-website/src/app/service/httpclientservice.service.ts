@@ -20,7 +20,7 @@ export class HttpClientService {
   }
   postMail(mail: Mail) {
     // console.log(Login);
-    // return this.httpClient.post<Login[]>("https://dev.inclusion-restaurant.fr/api/contact",mail);
+    // return this.httpClient.post<Login[]>("https://dev.inclusion-restaurant.fr/api/contact", mail);
     //console.log(Contact)
     return this.httpClient.post<Login[]>('http://localhost:8000/api/contact', mail);
   }
