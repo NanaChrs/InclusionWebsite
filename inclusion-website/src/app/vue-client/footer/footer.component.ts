@@ -29,7 +29,7 @@ export class FooterComponent implements OnInit {
   private uber: String;
   private tripAd: String;
 
-  constructor(private jsonContentService: JsoncontentService) {}
+  constructor(private jsonContentService: JsoncontentService) { }
 
   ngOnInit() {
     this.jsonContentService.getPageByName("footer").subscribe(page => {
@@ -39,8 +39,8 @@ export class FooterComponent implements OnInit {
     });
     this.jsonContentService.getPageByName("param").subscribe(page => {
       this.param = page;
-      this.mail = page["text-content"][0][0]["contenu"];
-      this.tel = page["text-content"][0][1]["contenu"];
+      this.mail = page["text-content"][0][1]["contenu"];
+      this.tel = page["text-content"][0][0]["contenu"];
       this.adresse.push(page["text-content"][1][0]["contenu"]);
       this.adresse.push(page["text-content"][1][1]["contenu"]);
       this.adresse.push(page["text-content"][1][2]["contenu"]);
@@ -51,5 +51,5 @@ export class FooterComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() { }
 }
