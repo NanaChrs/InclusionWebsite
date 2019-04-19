@@ -131,6 +131,13 @@ a:hover{
     font-size: 1.2em;
 }
 
+@media screen and (max-width:1350px){
+    #general
+    {
+        margin-top: 0;
+    }
+}
+
 @media screen and (max-width: 736px) 
 {
     #divMain

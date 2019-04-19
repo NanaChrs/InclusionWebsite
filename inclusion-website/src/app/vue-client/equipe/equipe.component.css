@@ -221,6 +221,13 @@ hr {
   color: aliceblue;
 }
 
+@media screen and (max-width:1350px){
+    #content
+    {
+        margin-top: 0;
+    }
+}
+
 @media screen and (max-width: 736px) {
   #fleche
   {
