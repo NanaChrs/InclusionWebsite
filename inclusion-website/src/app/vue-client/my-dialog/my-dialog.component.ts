@@ -40,16 +40,22 @@ export class MyDialogComponent implements OnInit {
     var general = document.getElementById('generaldial');
     if (this.animationOFF) {
       this.bouttonOffAnim.style.backgroundColor = 'whitesmoke';
+      this.bouttonOffAnim.style.color = '#000';
       this.bouttonOnAnim.style.backgroundColor = '';
+      this.bouttonOnAnim.style.color = '#fff';
     }
     else {
       this.bouttonOnAnim.style.backgroundColor = 'whitesmoke';
+      this.bouttonOnAnim.style.color = '#000';
       this.bouttonOffAnim.style.backgroundColor = '';
+      this.bouttonOffAnim.style.color = '#fff';
     }
 
     if (this.cookieinverse) {
       this.colorInverse.style.backgroundColor = 'whitesmoke';
+      this.colorInverse.style.color = '#000';
       this.colorDefaut.style.backgroundColor = '';
+      this.colorDefaut.style.color = '#fff';
       general.style.filter = "invert(90%)";
       this.map = document.getElementsByClassName('googlemap');
       this.zone = document.getElementsByClassName('zone');
@@ -59,7 +65,9 @@ export class MyDialogComponent implements OnInit {
     }
     else {
       this.colorDefaut.style.backgroundColor = 'whitesmoke';
+      this.colorDefaut.style.color = '#000';
       this.colorInverse.style.backgroundColor = '';
+      this.colorInverse.style.color = '#fff';
     }
 
     if (!this.checkTaillePolice) {
@@ -86,8 +94,10 @@ export class MyDialogComponent implements OnInit {
     this.bouttonOffAnim = document.getElementById('animationsOff');
     this.bouttonOnAnim = document.getElementById('animationsOn');
     this.cookieService.delete('animationOFF');
-    this.bouttonOnAnim.style.backgroundColor = 'white'
+    this.bouttonOnAnim.style.backgroundColor = 'whitesmoke';
+    this.bouttonOnAnim.style.color = '#000';
     this.bouttonOffAnim.style.backgroundColor = '';
+    this.bouttonOffAnim.style.color = '#fff';
   }
 
   offAnnim() {
@@ -95,7 +105,9 @@ export class MyDialogComponent implements OnInit {
     this.bouttonOnAnim = document.getElementById('animationsOn');
     this.cookieService.set('animationOFF', '', 365);
     this.bouttonOnAnim.style.backgroundColor = '';
-    this.bouttonOffAnim.style.backgroundColor = 'white'
+    this.bouttonOnAnim.style.color = '#fff';
+    this.bouttonOffAnim.style.backgroundColor = 'whitesmoke';
+    this.bouttonOffAnim.style.color = '#000';
   }
 
 
@@ -132,8 +144,10 @@ export class MyDialogComponent implements OnInit {
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
     this.cookieService.delete('inverse');
-    this.colorDefaut.style.backgroundColor = 'white'
+    this.colorDefaut.style.backgroundColor = 'white';
+    this.colorDefaut.style.color = '#000';
     this.colorInverse.style.backgroundColor = '';
+    this.colorInverse.style.color = '#fff';
     general.style.filter = "";
     this.zone = document.getElementsByClassName('zone');
     for (var i = 0; i < this.zone.length; i++) {
@@ -145,6 +159,10 @@ export class MyDialogComponent implements OnInit {
     for (var y = 0; y < this.img.length; y++) {
       this.img[y].style.filter = "";
     }
+    document.getElementById('titre_popup_police').style.filter = '';
+    document.getElementById('titre_popup_couleur').style.filter = '';
+    document.getElementById('titre_popup_animations').style.filter = '';
+    document.getElementById('close_popup').style.filter = '';
   }
 
   onInverseCouleur() {
@@ -154,8 +172,10 @@ export class MyDialogComponent implements OnInit {
     this.colorDefaut = document.getElementById('defaut');
     this.colorInverse = document.getElementById('inverse');
     this.cookieService.set('inverse', '', 365);
+    this.colorInverse.style.backgroundColor = 'white';
+    this.colorInverse.style.color = '#000';
     this.colorDefaut.style.backgroundColor = '';
-    this.colorInverse.style.backgroundColor = 'white'
+    this.colorDefaut.style.color = '#fff';
     general.style.filter = "invert(90%)";
     this.zone = document.getElementsByClassName('zone');
     for (var i = 0; i < this.zone.length; i++) {
@@ -167,7 +187,9 @@ export class MyDialogComponent implements OnInit {
     for (var y = 0; y < this.img.length; y++) {
       this.img[y].style.filter = "invert(90%)";
     }
+    document.getElementById('titre_popup_police').style.filter = 'invert(90)';
+    document.getElementById('titre_popup_couleur').style.filter = 'invert(90)';
+    document.getElementById('titre_popup_animations').style.filter = 'invert(90)';
+    document.getElementById('close_popup').style.filter = 'invert(90)';
   }
-
-
 }
