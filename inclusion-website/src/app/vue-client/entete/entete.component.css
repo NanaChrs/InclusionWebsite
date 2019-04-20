@@ -68,14 +68,17 @@
     color: #88181c;
     background-color: whitesmoke;
     outline-style: none;
+    -webkit-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
 }
 
 .lien-focus{
-    border: #88181c solid
+    border: #88181c solid;
 }
 
 .lien-focus:focus {
-    border: solid white;
+    box-shadow: inset 0px 0px 0px 3px white;
 }
 
 /*Partie inférieure du header*/
