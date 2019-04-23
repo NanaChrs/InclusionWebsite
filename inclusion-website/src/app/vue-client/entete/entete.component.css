@@ -45,7 +45,7 @@
     display: flex;
     justify-content: space-between;
     /* flex-wrap: wrap; */
-    background-color: #88181c;  
+    background-color: rgb(136, 24, 28);  
 }
 
 #icone
@@ -152,6 +152,7 @@ button{
     #lien, #accessibilite, #menus, #contact, #equipe,
     #menustelephone, #contactstelephone, #equipetelephone, #accessibilitetelephone
     {
+        color: black;
         cursor: pointer;
         padding: 5px;
         outline-style: none;
@@ -164,6 +165,11 @@ button{
         background-color: whitesmoke;
         outline-style: none;
     }
+
+    .lien-liste-telephone
+    {
+        color: black;
+    }
     
     #logo_menu_deroulant
     {
@@ -172,7 +178,7 @@ button{
         top: 25%;
         left: 1%;
         outline-style: none;
-        border: 2px solid rgb(104, 104, 104);
+        border: 2px solid #ffffff;
         border-radius: 5px;
         background-color: #88181c;
         background-image: url("../../../assets/imgHeader/vecteurmenu.png");
@@ -221,7 +227,7 @@ button{
         top: 10%;
         left: 1%;
         outline-style: none;
-        border: 2px solid rgb(104, 104, 104);
+        border: 2px solid #ffffff;
         border-radius: 5px;
         background-color: #88181c;
         background-image: url("../../../assets/imgHeader/vecteurmenu1.png");
