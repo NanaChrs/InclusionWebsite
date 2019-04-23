@@ -159,10 +159,18 @@ export class MyDialogComponent implements OnInit {
     for (var y = 0; y < this.img.length; y++) {
       this.img[y].style.filter = "";
     }
+
+    /*On inverse pas ce qu'il y a en dessous */
     document.getElementById('titre_popup_police').style.filter = '';
     document.getElementById('titre_popup_couleur').style.filter = '';
     document.getElementById('titre_popup_animations').style.filter = '';
     document.getElementById('close_popup').style.filter = '';
+    document.getElementById('btnSizeDown').style.filter = '';
+    document.getElementById('btnSizeUp').style.filter = '';
+    document.getElementById('defaut').style.filter = '';
+    document.getElementById('inverse').style.filter = '';
+    document.getElementById('animationsOff').style.filter = '';
+    document.getElementById('animationsOn').style.filter = '';
   }
 
   onInverseCouleur() {
@@ -187,9 +195,18 @@ export class MyDialogComponent implements OnInit {
     for (var y = 0; y < this.img.length; y++) {
       this.img[y].style.filter = "invert(90%)";
     }
+
+    /*On inverse pas ce qu'il y a en dessous */
     document.getElementById('titre_popup_police').style.filter = 'invert(90)';
     document.getElementById('titre_popup_couleur').style.filter = 'invert(90)';
     document.getElementById('titre_popup_animations').style.filter = 'invert(90)';
     document.getElementById('close_popup').style.filter = 'invert(90)';
+
+    document.getElementById('btnSizeDown').style.filter = 'invert(90)';
+    document.getElementById('btnSizeUp').style.filter = 'invert(90)';
+    document.getElementById('defaut').style.filter = 'invert(90)';
+    document.getElementById('inverse').style.filter = 'invert(90)';
+    document.getElementById('animationsOff').style.filter = 'invert(90)';
+    document.getElementById('animationsOn').style.filter = 'invert(90)';
   }
 }
