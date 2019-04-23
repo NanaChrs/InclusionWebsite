@@ -92,6 +92,11 @@ a:hover{
     margin-bottom: 8px;
 }
 
+#mailTo
+{
+    min-width: max-content;
+}
+
 #mailTo:hover
 {
    background-color: #88181c;
