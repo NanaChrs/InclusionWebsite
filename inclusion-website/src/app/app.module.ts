@@ -73,8 +73,8 @@ import { ParamGeneraux } from "./ParamGeneraux";
     ReactiveFormsModule,
     RecaptchaModule.forRoot({
       // siteKey: '6Leuzp0UAAAAAM4BZfnOoI8h-fGkOAnO0IiEZ4eQ',//Version local
-      // siteKey: '6Lfnt54UAAAAANYoOp9JQCdsNedIM8X4LG2Vf3U1',//Version Serveur
-      siteKey: '6Lf4tp8UAAAAADEc5uNv6wjAvbbs6qtdFhIi1DtA',//Version www Serveur
+      siteKey: '6Lfnt54UAAAAANYoOp9JQCdsNedIM8X4LG2Vf3U1',//Version Serveur
+      // siteKey: '6Lf4tp8UAAAAADEc5uNv6wjAvbbs6qtdFhIi1DtA',//Version www Serveur
 
     }),
   ],

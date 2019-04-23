@@ -152,7 +152,7 @@ button{
     #lien, #accessibilite, #menus, #contact, #equipe,
     #menustelephone, #contactstelephone, #equipetelephone, #accessibilitetelephone
     {
-        color: black;
+        color: #fff;
         cursor: pointer;
         padding: 5px;
         outline-style: none;

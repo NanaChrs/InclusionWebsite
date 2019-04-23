@@ -132,7 +132,7 @@
 </div>
 
 <!-- Page admin de la page Equipe -->
-<div *ngIf="url == 'equipe' && newPerson[-1] && newContent" class="formText">
+<div *ngIf="url == 'equipe' && newContent" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
     <div *ngFor="let item of textContent; let i = index" class="category">
       <img class="div-img-croix" src="../../assets/img/croix_rouge.png" (click)="onClickSupprCategory(i)"
@@ -190,7 +190,8 @@
         <input type="submit" class="btn btn-success btn-s btn-add-contenu" value="Ajouter un nouveau paragraphe !" />
       </form>
     </div>
-    <form ngNativeValidate (ngSubmit)="addNewPerson()" *ngIf="newPerson" class="formText">
+    <form ngNativeValidate (ngSubmit)="addNewPerson()" *ngIf="newPerson && newPerson[0] && newPerson[1]"
+      class="formText">
       <h1>Ajouter une nouvelle personne:</h1>
       <h2>Nom :</h2>
       <mat-form-field class="textContent">

@@ -47,12 +47,13 @@ export class LoginComponent implements OnInit {
     this.user.token = this.cookieService.get('token');
     console.log(this.user);
     this.http.postLogin(this.user).subscribe((e) => {
+      console.log("test");
+      console.log(e);
       if (e[0]) {
         this.router.navigate(['/admin']);
         let user = sessionStorage.setItem('username', e[0].toString())
         this.cookieService.set('token', e[1].toString(), 60);
         this.invalidLogin = false;
-        console.log(e);
       }
       else {
         this.invalidLogin = true;
