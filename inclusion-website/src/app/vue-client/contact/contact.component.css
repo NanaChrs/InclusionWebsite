@@ -35,6 +35,11 @@ h1
     margin-bottom: 5px;
 }
 
+#titre-formulaire
+{
+    font-size: 1.4em;
+}
+
 #mail
 {
     display: flex;
@@ -67,6 +72,11 @@ a:hover{
 
 .lien-focus:focus{
     border: solid #88181c;
+}
+
+#description
+{
+    text-align: center;
 }
 
 #mailTo

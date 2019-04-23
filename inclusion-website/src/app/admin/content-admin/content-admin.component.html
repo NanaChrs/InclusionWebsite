@@ -1,5 +1,5 @@
 <app-nav-admin></app-nav-admin>
-<div *ngIf="url != 'equipe'" class="formText">
+<div *ngIf="url != 'equipe' && newContent" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
     <div *ngFor="let item of textContent; let i = index; trackBy: trackByIndex" class="category">
       <div *ngFor="let text of item; let j = index" [ngClass]="{ 'category-title': j == 0, item: j != 0 }">
@@ -132,7 +132,7 @@
 </div>
 
 <!-- Page admin de la page Equipe -->
-<div *ngIf="url == 'equipe'" class="formText">
+<div *ngIf="url == 'equipe' && newPerson && newContent" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
     <div *ngFor="let item of textContent; let i = index" class="category">
       <img class="div-img-croix" src="../../assets/img/croix_rouge.png" (click)="onClickSupprCategory(i)"
@@ -162,7 +162,7 @@
             i == newContent.length - 1
           ">
           <textarea matInput [(ngModel)]="pageContent['text-content'][i][j]['contenu']" placeholder="Contenu"
-            name="{{ text.contenu }}"></textarea>
+            name="{{ text.contenu }}{{i}}{{j}}"></textarea>
         </mat-form-field>
         <select class="form-control" required *ngIf="imageContent && j == 2 && i < newContent.length - 1 && i > 0"
           [(ngModel)]="pageContent['text-content'][i][j]['source']" name="{{ text.photo }}{{ i }}">
