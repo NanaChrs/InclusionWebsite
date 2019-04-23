@@ -83,24 +83,26 @@ button {
   font-weight: bold;
 }
 
-#adresse-restaurant
-{
-  margin: 0;
-}
-
 #horaire-content
 {
   line-height: 2em;
-}
-
-.detailadresse{
-  display: inline-block;
 }
 
 .info{
   margin: 2% 0 27px 0;
 }
 
+#adresse{
+  display: flex;
+}
+
+#adresseinfo{
+  margin: 0 3%;
+}
+
+#adresse-detail{
+  margin: 0 0 5px 0
+}
 
 
 @media screen and (max-width: 1280px) {
