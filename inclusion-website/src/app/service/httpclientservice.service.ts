@@ -15,12 +15,12 @@ export class HttpClientService {
 
   postLogin(user: User) {
     // console.log(Login);
-    // return this.httpClient.post<Login[]>('https://dev.inclusion-restaurant.fr/api/pages/', user);
+    // return this.httpClient.post<Login[]>('https://www.dev.inclusion-restaurant.fr/api/pages/', user);
     return this.httpClient.post<Login[]>("http://localhost:8000/api/login", user);
   }
   postMail(mail: Mail) {
     // console.log(Login);
-    // return this.httpClient.post<Login[]>("https://dev.inclusion-restaurant.fr/api/pages/", mail);
+    // return this.httpClient.post<Login[]>("https://www.dev.inclusion-restaurant.fr/api/pages/", mail);
     //console.log(Contact)
     return this.httpClient.post<Login[]>('http://localhost:8000/api/contact', mail);
   }

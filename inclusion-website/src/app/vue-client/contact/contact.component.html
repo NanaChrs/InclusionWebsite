@@ -26,21 +26,40 @@
       </form>
     </div>
     <div id="contact-intro">
-      <div id="description" class="text" *ngFor="let text of textContent; let i = index">
-        <div *ngFor="let content of text; let j = index">
-          <h1 *ngIf="i == 0">{{ content["contenu"] }}</h1>
-          <div *ngIf="i == 0">
-            <a *ngIf="j == 0" href="tel:{{ tel }}"> {{ tel }}</a>
-            <a *ngIf="j == 1" href="mailto:{{ mailtext }}">{{ mailtext }}</a>
-            <a *ngIf="j == 2" href="http://maps.google.com/?q={{adress}}" target="_blank">
-              <div>
-                <p>{{adress_street}}</p>
-                <p>{{adress_city}}</p>
-              </div>
-            </a>
-          </div>
+      <div id="description" class="text">
+        <h1 id="titre-description">{{ textContent[0][0]["contenu"] }}</h1>
+        <div id="container-infos">
+          <a href="tel:{{ tel }}" class="description-info"> {{ tel }}</a>
+          <a href="mailto:{{ mailtext }}" class="description-info">{{ mailtext }}</a>
+          <a href="http://maps.google.com/?q={{adress}}" class="description-info" target="_blank">
+            <div>
+              <p class="adress-info description-info">{{adress_street}}</p>
+              <p class="adress-info description-info">{{adress_city}}</p>
+            </div>
+          </a>
         </div>
       </div>
+      <menu id="liste_logo">
+        <a href="https://www.facebook.com/InclusionRestaurant/" class="lien-focus"
+          onclick="window.open(this.href); return false;">
+          <li id="icone"><img id="logoFacebook" alt="lien vers Facebook" src="../../assets/imgHeader/facebook.png"
+              height="30" width="30"></li>
+        </a>
+        <a href="https://www.instagram.com/inclusion_restaurant/" class="lien-focus"
+          onclick="window.open(this.href); return false;">
+          <li id="icone"><img id="logoInstagram" alt="lien vers Instagram" src="../../assets/imgHeader/instagram.png"
+              height="30" width="30"></li>
+        </a>
+        <a href="https://www.ubereats.com/fr-FR/stores/" class="lien-focus"
+          onclick="window.open(this.href); return false;">
+          <li id="icone"><img id="logoUber" alt="lien vers Uber eats" src="../../assets/imgHeader/ubereats.png"
+              height="30" width="30"></li>
+        </a>
+        <a href="https://www.tripadvisor.fr/" class="lien-focus" onclick="window.open(this.href); return false;">
+          <li id="icone"><img id="logoTripadvisor" alt="lien vers trip advisor"
+              src="../../assets/imgHeader/tripadvisor.png" height="30" width="30"></li>
+        </a>
+      </menu>
     </div>
   </div>
 </div>

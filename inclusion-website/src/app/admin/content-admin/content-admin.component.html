@@ -132,7 +132,7 @@
 </div>
 
 <!-- Page admin de la page Equipe -->
-<div *ngIf="url == 'equipe' && newPerson && newContent" class="formText">
+<div *ngIf="url == 'equipe' && newPerson[-1] && newContent" class="formText">
   <form ngNativeValidate (ngSubmit)="save()">
     <div *ngFor="let item of textContent; let i = index" class="category">
       <img class="div-img-croix" src="../../assets/img/croix_rouge.png" (click)="onClickSupprCategory(i)"

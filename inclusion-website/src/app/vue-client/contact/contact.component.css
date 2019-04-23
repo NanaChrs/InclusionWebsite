@@ -35,9 +35,14 @@ h1
     margin-bottom: 5px;
 }
 
-#titre-formulaire
+#titre-formulaire, #titre-description
 {
     font-size: 1.4em;
+}
+
+#divMain
+{
+    max-width: 500px;
 }
 
 #mail
@@ -74,9 +79,21 @@ a:hover{
     border: solid #88181c;
 }
 
-#description
+#container-infos
 {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.adress-info
+{
+    margin: 0;
+}
+
+.description-info
+{
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 #mailTo
@@ -146,6 +163,48 @@ a:hover{
     font-size: 1.2em;
 }
 
+/* LOGO LIST */
+#logoSite
+{
+    height: 100px;
+    width: 300px;
+}
+
+.lien-focus{
+    border: #E6E5E5 solid;
+}
+
+#liste_logo
+{
+    padding: 5px;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+#icone{
+    margin: 0;
+}
+
+#logoFacebook:hover, #logoInstagram:hover, #logoTripadvisor:hover, #logoUber:hover
+{
+    border: solid #88181c;
+    background-color: #88181c;
+    border-radius: 8px;
+}
+
+#icone{
+    margin: 0 15px;
+}
+
+#logoFacebook, #logoInstagram, #logoTripadvisor, #logoUber
+{
+    border: solid black;
+    background-color: black;
+    border-radius: 8px;
+}
+
 @media screen and (max-width:1350px){
     #general
     {
@@ -177,7 +236,7 @@ a:hover{
         width: 100%;
     }
 
-    #googlemap
+    #googlemap, #liste_logo
     {
         display: none;
     }
