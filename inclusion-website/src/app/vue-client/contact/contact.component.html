@@ -5,8 +5,8 @@
     </iframe>
   </div>
   <div id="text-contact">
-    <div class="form-group" id="divMain">
-      <h1>{{textContent[1][0].contenu}}</h1>
+    <div class="form-group text" id="divMain">
+      <h1 id="titre-formulaire">{{textContent[1][0].contenu}}</h1>
       <h2>{{textContent[1][1].contenu}}</h2>
       <form ngNativeValidate (ngSubmit)="sendMail()" id="mail" action="">
         <!-- <div id="content-nom-mail"> -->
@@ -32,7 +32,12 @@
           <div *ngIf="i == 0">
             <a *ngIf="j == 0" href="tel:{{ tel }}"> {{ tel }}</a>
             <a *ngIf="j == 1" href="mailto:{{ mailtext }}">{{ mailtext }}</a>
-            <a *ngIf="j == 2" href="http://maps.google.com/?q={{adress}}" target="_blank">{{ adress }}</a>
+            <a *ngIf="j == 2" href="http://maps.google.com/?q={{adress}}" target="_blank">
+              <div>
+                <p>{{adress_street}}</p>
+                <p>{{adress_city}}</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>

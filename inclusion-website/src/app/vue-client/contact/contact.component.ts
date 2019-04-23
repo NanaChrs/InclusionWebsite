@@ -23,6 +23,8 @@ export class ContactComponent implements OnInit {
   private mailtext: String;
   private tel: String;
   private adress: String;
+  private adress_street: String;
+  private adress_city: String;
   private adresse_maps: String;
   private src_maps: String;
 
@@ -41,9 +43,11 @@ export class ContactComponent implements OnInit {
     this.jsonContentService.getPageByName("param").subscribe(page => {
       this.tel = page["text-content"][0][0]["contenu"];
       this.mailtext = page["text-content"][0][1]["contenu"];
-      this.adress = page["text-content"][1][0]["contenu"] + " " + page["text-content"][1][1]["contenu"];
+      this.adress_street = page["text-content"][1][0]["contenu"];
+      this.adress_city = page["text-content"][1][1]["contenu"];
+      this.adress = this.adress_street + " " + this.adress_city;
       this.adresse_maps = encodeURIComponent(this.adress.toString());
-      this.src_maps = "https://maps.google.com/maps?q=" + this.adresse_maps + "&t=&z=17&ie=UTF8&iwloc=&output=embed"
+      this.src_maps = "https://maps.google.com/maps?q=" + this.adresse_maps + "&t=&z=17&ie=UTF8&iwloc=&output=embed";
     });
   }
 
