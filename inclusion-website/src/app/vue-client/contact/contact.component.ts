@@ -27,12 +27,16 @@ export class ContactComponent implements OnInit {
   private adress_city: String;
   private adresse_maps: String;
   private src_maps: String;
+  private fb: String;
+  private insta: String;
+  private tripAd: String;
+  private uber: String;
 
   constructor(
     private http: HttpClientService,
     private jsonContentService: JsoncontentService,
     private cookieService: CookieService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.jsonContentService.getPageByName("contact").subscribe(page => {
@@ -47,7 +51,14 @@ export class ContactComponent implements OnInit {
       this.adress_city = page["text-content"][1][1]["contenu"];
       this.adress = this.adress_street + " " + this.adress_city;
       this.adresse_maps = encodeURIComponent(this.adress.toString());
-      this.src_maps = "https://maps.google.com/maps?q=" + this.adresse_maps + "&t=&z=17&ie=UTF8&iwloc=&output=embed";
+      this.src_maps =
+        "https://maps.google.com/maps?q=" +
+        this.adresse_maps +
+        "&t=&z=17&ie=UTF8&iwloc=&output=embed";
+      this.insta = page["text-content"][2][0]["contenu"];
+      this.fb = page["text-content"][2][1]["contenu"];
+      this.uber = page["text-content"][2][2]["contenu"];
+      this.tripAd = page["text-content"][2][3]["contenu"];
     });
   }
 
@@ -69,7 +80,7 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  checkaccess = function () {
+  checkaccess = function() {
     this.cookieinverse = this.cookieService.check("inverse");
     if (this.cookieinverse) {
       this.map = document.getElementsByClassName("googlemap");
