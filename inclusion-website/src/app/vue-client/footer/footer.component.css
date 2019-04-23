@@ -83,6 +83,11 @@ button {
   font-weight: bold;
 }
 
+#adresse-restaurant
+{
+  margin: 0;
+}
+
 #horaire-content
 {
   line-height: 2em;
