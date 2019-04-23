@@ -29,17 +29,13 @@
       <div class="info">
         <span id="mail-contact"> Email : </span><a href="mailto:{{ mail }}" class="lien lien-focus">{{ mail }}</a>
       </div>
-      <div id=" adressefooter" class="info">
-        <p id="adresse-restaurant" class="detailadresse">
-          Adresse :
-        </p>
-
-        <div *ngFor="let item of adresse; let j = index" class="detailadresse">
-          <div *ngIf="j != 0" class="detailadresse"> , </div>
-          {{ item }}
-
+      <div class="info" id="adresse">
+        <span id="adresse-restaurant"> Adresse : </span>
+        <div id="adresseinfo">
+          <div *ngFor="let item of adresse; let j = index" id="adresse-detail">
+            {{ item }}
+          </div>
         </div>
-
       </div>
     </div>
 
