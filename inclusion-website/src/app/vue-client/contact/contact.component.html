@@ -18,42 +18,17 @@
       <form ngNativeValidate (ngSubmit)="sendMail()" id="mail" action="">
         <!-- <div id="content-nom-mail"> -->
         <!-- <h4>Votre nom :</h4> -->
-        <input
-          type="text"
-          name="name"
-          id="name"
-          [(ngModel)]="name"
-          placeholder="Nom"
-          required
-        />
+        <input type="text" name="name" id="name" class="text" [(ngModel)]="name" placeholder="Nom" required />
         <!-- <hr> -->
         <!-- <h4>Votre mail :</h4> -->
-        <input
-          type="email"
-          name="sender"
-          id="sender"
-          [(ngModel)]="sender"
-          placeholder="Votre adresse mail"
-          required
-        />
+        <input type="email" name="sender" id="sender" class="text" [(ngModel)]="sender" placeholder="Votre adresse mail"
+          required />
         <!-- </div> -->
         <!-- <h4>Sujet :</h4> -->
-        <input
-          type="text"
-          name="object"
-          id="object"
-          [(ngModel)]="object"
-          placeholder="Objet"
-          required
-        />
+        <input type="text" name="object" id="object" class="text" [(ngModel)]="object" placeholder="Objet" required />
         <!-- <h4>Votre message :</h4> -->
-        <textarea
-          name="message"
-          id="message"
-          [(ngModel)]="message"
-          placeholder="Ecrivez votre message ici"
-          required
-        ></textarea>
+        <textarea name="message" id="message" class="text" [(ngModel)]="message" placeholder="Ecrivez votre message ici"
+          required></textarea>
         <br />
         <input id="mailTo" type="submit" class="btn btn-success text" />
       </form>

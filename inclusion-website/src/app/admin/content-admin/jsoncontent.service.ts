@@ -7,8 +7,8 @@ import { catchError, map, tap } from "rxjs/operators";
   providedIn: "root"
 })
 export class JsoncontentService {
-  private urlPages: string = "https://www.dev.inclusion-restaurant.fr/api/pages/";
-  // private urlPages: string = "http://localhost:8000/api/pages/";
+  // private urlPages: string = "https://www.dev.inclusion-restaurant.fr/api/pages/";
+  private urlPages: string = "http://localhost:8000/api/pages/";
 
   constructor(private http: HttpClient) { }
 

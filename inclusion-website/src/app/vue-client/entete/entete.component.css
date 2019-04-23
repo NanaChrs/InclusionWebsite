@@ -173,7 +173,7 @@ button{
     
     #logo_menu_deroulant
     {
-        display: inline;
+        background-size: cover;
         position: absolute;
         top: 25%;
         left: 1%;
