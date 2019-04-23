@@ -22,8 +22,8 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent, pathMatch: 'full' },
   { path: "mentions-legales", component: MentionsLegalesComponent, pathMatch: 'full' },
   { path: "plan-site", component: PlanSiteComponent, pathMatch: 'full' },
-  { path: "admin/:url", component: ContentAdminComponent, pathMatch: 'full' },
-  { path: "admin", component: AdminComponent, pathMatch: 'full' },
+  { path: "admin/:url", component: ContentAdminComponent, pathMatch: 'full', canActivate: [AuthGaurdService] },
+  { path: "admin", component: AdminComponent, pathMatch: 'full', canActivate: [AuthGaurdService] },
   { path: "login", component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService] },
   { path: "**", redirectTo: "/accueil" }
