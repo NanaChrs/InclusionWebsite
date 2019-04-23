@@ -61,6 +61,7 @@ export class ContactComponent implements OnInit {
     this.mail.sender = this.sender;
     this.mail.object = this.object;
     this.mail.message = this.message;
+    this.mail.mailDestinataire = this.mailtext;
     this.http.postMail(this.mail).subscribe(e => {
       if (e[0]) {
         return true;

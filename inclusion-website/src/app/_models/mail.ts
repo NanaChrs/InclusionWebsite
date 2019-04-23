@@ -3,4 +3,5 @@ export class Mail {
     sender: string;
     object: string;
     message: string;
+    mailDestinataire: String;
 }
