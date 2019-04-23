@@ -45,6 +45,12 @@ h1
     max-width: 500px;
 }
 
+#contact-intro
+{
+    height: max-content;
+    margin: auto;
+}
+
 #mail
 {
     display: flex;
