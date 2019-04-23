@@ -24,7 +24,7 @@ export class ContentAdminComponent implements OnInit {
   public uploaderbandeau: FileUploader;
   private newContent;
   private newPerson;
-  // private uploadURL = "https://dev.inclusion-restaurant.fr/api/pages/";
+  // private uploadURL = "https://www.dev.inclusion-restaurant.fr/api/pages/";
   private uploadURL: string = "http://localhost:8000/api/pages/";
   uploadbandeauURL = "";
 
