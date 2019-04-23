@@ -1,417 +1,361 @@
 {
-    "accueil": {
-        "name": "Accueil",
-        "text-content": [
-            [
-                {
-                    "emplacement": "Texte du bandeau",
-                    "contenu": "Savourez votre différence !"
-                },
-                {
-                    "emplacement": "Contenu de l'introduction",
-                    "contenu": "En plein coeur de Lille, à deux pas du théâtre le Sébastopol « Inclusion » s'impose comme un restaurant à la fois gourmand, inclusif et festif. "
-                },
-                {
-                    "emplacement": "2e paragraphe",
-                    "contenu": "Notre duo de Chef met à l'honneur les produits locaux pour vous régaler avec des plats audacieux et généreux."
-                }
-            ]
-        ],
-        "photo-content": []
-    },
-    "footer": {
-        "name": "Footer",
-        "text-content": [
-            [
-                {
-                    "emplacement": "Titre horaires d'ouverture",
-                    "contenu": "Ouverture :"
-                },
-                {
-                    "emplacement": "Horaires d'ouverture",
-                    "contenu": "Mardi - Samedi : 12h - 14h & 19h - 22h"
-                },
-                {
-                    "emplacement": "Titre fermeture",
-                    "contenu": "Fermeture :"
-                },
-                {
-                    "emplacement": "Jours de fermeture",
-                    "contenu": "Lundi & Dimanche"
-                }
-            ]
-        ]
-    },
-    "carte": {
-        "name": "Menu",
-        "text-content": [
-            [
-                {
-                    "emplacement": "Texte sur le bandeau d'images du haut/des plats",
-                    "contenu": "Nos petits plats"
-                },
-                {
-                    "emplacement": "Texte sur le bandeau d'images du bas/des boissons",
-                    "contenu": "Nos boissons !"
-                }
-            ],
-            [
-                {
-                    "emplacement": "Titre entrées",
-                    "contenu": "Nos entrées"
-                },
-                {
-                    "emplacement": "Entrée 1",
-                    "contenu": "Entree 1",
-                    "prix": "9",
-                    "description": "Une entrée très très bonne"
-                },
-                {
-                    "emplacement": "Entrée 2",
-                    "contenu": "La deuxième entrée",
-                    "prix": "",
-                    "description": ""
-                },
-                {
-                    "emplacement": "Entrée 3",
-                    "contenu": "La DAV",
-                    "prix": "",
-                    "description": ""
-                }
-            ],
-            [
-                {
-                    "emplacement": "Titre plats",
-                    "contenu": "Nos plats"
-                },
-                {
-                    "emplacement": "Plat1",
-                    "contenu": "Le premier plat",
-                    "prix": "",
-                    "description": ""
-                },
-                {
-                    "emplacement": "Plat2",
-                    "contenu": "Le deuxième plat",
-                    "prix": "",
-                    "description": ""
-                },
-                {
-                    "emplacement": "Plat3",
-                    "contenu": "Le troisième plat",
-                    "prix": "",
-                    "description": ""
-                },
-                {
-                    "emplacement": "Plat4",
-                    "contenu": "Le quatrième plat",
-                    "prix": "",
-                    "description": ""
-                }
-            ],
-            [
-                {
-                    "emplacement": "Titre desserts",
-                    "contenu": "Nos desserts"
-                },
-                {
-                    "emplacement": "Dessert1",
-                    "contenu": "Le premier dessert",
-                    "prix": ""
-                },
-                {
-                    "emplacement": "Dessert2",
-                    "contenu": "Le deuxième dessert",
-                    "prix": ""
-                },
-                {
-                    "emplacement": "Dessert3",
-                    "contenu": "Le troisième dessert",
-                    "prix": ""
-                }
-            ],
-            [
-                {
-                    "emplacement": "Titre Boisson1",
-                    "contenu": "Nos Vins Blancs & Champagnes"
-                },
-                {
-                    "emplacement": "VinB1",
-                    "contenu": "Le premier vin",
-                    "prix": "",
-                    "description": ""
-                },
-                {
-                    "emplacement": "VinB2",
-                    "contenu": "Le deuxième vin",
-                    "prix": "",
-                    "description": ""
-                },
-                {
-                    "emplacement": "VinB3",
-                    "contenu": "Le troisième vin",
-                    "prix": "",
-                    "description": ""
-                }
-            ],
-            [
-                {
-                    "emplacement": "Vin rouges",
-                    "contenu": "Nos vins rouges",
-                    "prix": ""
-                },
-                {
-                    "emplacement": "VinR1",
-                    "contenu": "Le premier vin",
-                    "prix": "",
-                    "description": ""
-                },
-                {
-                    "emplacement": "VinR2",
-                    "contenu": "Le deuxième vin",
-                    "prix": "",
-                    "description": ""
-                },
-                {
-                    "emplacement": "VinR3",
-                    "contenu": "Le troisième vin",
-                    "prix": "",
-                    "description": ""
-                }
-            ],
-            [
-                {
-                    "emplacement": "Titre Bières",
-                    "contenu": "Nos bières"
-                }
-            ]
-        ],
-        "photo-content": [],
-        "bandeau": []
-    },
-    "equipe": {
-        "name": "L'équipe",
-        "text-content": [
-            [
-                {
-                    "emplacement": "Texte du bandeau Photo",
-                    "contenu": "L'Equipe !"
-                },
-                {
-                    "emplacement": "Description globale",
-                    "contenu": "Le restaurant inclusion est un super resto à base d'amour et d'eau fraiche"
-                },
-                {
-                    "emplacement": "2e paragraphe",
-                    "contenu": "Fait à base de François aussi"
-                }
-            ],
-            [
-                {
-                    "emplacement": "Nom",
-                    "contenu": "Clément"
-                },
-                {
-                    "emplacement": "Description",
-                    "contenu": "J'ajoute encore qqn pour tester"
-                },
-                {
-                    "photo": "Numéro de la photo",
-                    "source": ""
-                }
-            ],
-            [
-                {
-                    "emplacement": "Nom",
-                    "contenu": "Thibaut"
-                },
-                {
-                    "emplacement": "Description",
-                    "contenu": "J'ajoute ENCde qqn pour testereh bezochbhjaerg bdh&uové²"
-                },
-                {
-                    "photo": "Numéro de la photo",
-                    "source": ""
-                }
-            ],
-            [
-                {
-                    "emplacement": "Nom",
-                    "contenu": "Barbara"
-                },
-                {
-                    "emplacement": "Description",
-                    "contenu": "La petite amie de François",
-                    "source": ""
-                },
-                {
-                    "photo": "Numéro de la photo",
-                    "source": ""
-                }
-            ],
-            [
-                {
-                    "emplacement": "Recrutement Titre",
-                    "contenu": "Nous rejoindre..."
-                },
-                {
-                    "emplacement": "Texte de recrutement",
-                    "contenu": "Vous avez des questions ? Vous voulez rejoindre l'équipe du restaurant inclusion ? Vous pouvez nous envoyer un mail"
-                },
-                {
-                    "emplacement": "Texte du bouton d'envoi de mail de recrutement",
-                    "contenu": "Nous écrire"
-                }
-            ]
-        ],
-        "photo-content": [],
-        "bandeau": []
-    },
-    "contact": {
-        "name": "Contact",
-        "text-content": [
-            [
-                {
-                    "emplacement": "Titre contact téléphone",
-                    "contenu": "Par téléphone"
-                },
-                {
-                    "emplacement": "Titre contact mail",
-                    "contenu": "Par email"
-                },
-                {
-                    "emplacement": "Titre contact rencontrer",
-                    "contenu": "Dans le restaurant"
-                }
-            ],
-            [
-                {
-                    "emplacement": "Titre formulaire de contact",
-                    "contenu": "Formulaire de contact"
-                },
-                {
-                    "emplacement": "Texte formulaire",
-                    "contenu": "Utilisez ce formulaire pour nous contacter rapidement"
-                }
-            ]
-        ]
-    },
-    "header": {
-        "name": "Header",
-        "text-content": [
-            []
-        ]
-    },
-    "mentions": {
-        "name": "Mentions Légales",
-        "text-content": [
-            [
-                {
-                    "emplacement": "Titre - Propriété",
-                    "contenu": "Propriété"
-                },
-                {
-                    "emplacement": "Nom du Restaurant",
-                    "contenu": "Restaurant INCLUSION"
-                },
-                {
-                    "emplacement": "Adresse officielle",
-                    "contenu": "15 avenue Montaigne – 59000 LILLE"
-                },
-                {
-                    "emplacement": "Téléphone",
-                    "contenu": "tel : +33 X XX XX XX XX"
-                },
-                {
-                    "emplacement": "Capital Social",
-                    "contenu": "Capital social : X XXX, XX euros"
-                },
-                {
-                    "emplacement": "Nom du gérant/propriétaire",
-                    "contenu": "François MARIEN, Gérant"
-                }
-            ],
-            [
-                {
-                    "emplacement": "Titre - Hébergement",
-                    "contenu": "Hébergement"
-                },
-                {
-                    "emplacement": "Hébergement assuré par...",
-                    "contenu": "Hébergement assuré par PlanetHoster"
-                },
-                {
-                    "emplacement": "Adresse de l'hébergeur",
-                    "contenu": "4416 Louis-B.-Mayer, Laval Québec, Canada H7P 0G1"
-                }
-            ],
-            [
-                {
-                    "emplacement": "Titre - Informations",
-                    "contenu": "Informations"
-                },
-                {
-                    "emplacement": "Prix exprimés en..",
-                    "contenu": "Prix exprimés en €uros TTC."
-                },
-                {
-                    "emplacement": "Informations sur le site",
-                    "contenu": "Présentation des plats, menus et décoration sujets à modification tout au long de l’année en fonctions des produits de saison."
-                },
-                {
-                    "emplacement": "Utilisation des cookies",
-                    "contenu": "Nous utilisons les cookies pour vous permettre une meilleure utilisation du site."
-                }
-            ]
-        ]
-    },
-    "param": {
-        "name": "Paramètres Généraux",
-        "text-content": [
-            [
-                {
-                    "emplacement": "Numéro de téléphone",
-                    "contenu": "+33 7 88 90 10 20",
-                    "href": "tel:"
-                },
-                {
-                    "emplacement": "Adresse mail générale du restaurant",
-                    "contenu": "info@inclusion-restaurant.fr",
-                    "href": "mailto:"
-                }
-            ],
-            [
-                {
-                    "emplacement": "Adresse - Rue",
-                    "contenu": "216 rue Solférino"
-                },
-                {
-                    "emplacement": "Adresse - Ville",
-                    "contenu": "59000 Lille"
-                },
-                {
-                    "emplacement": "Adresse - Pays",
-                    "contenu": "France"
-                }
-            ],
-            [
-                {
-                    "emplacement": "Réseaux sociaux - Instagram",
-                    "contenu": "https://www.instagram.com/inclusion_restaurant/"
-                },
-                {
-                    "emplacement": "Réseaux sociaux - Facebook",
-                    "contenu": "https://www.facebook.com/InclusionRestaurant/"
-                },
-                {
-                    "emplacement": "Réseaux sociaux - Uber Eats",
-                    "contenu": "https://www.ubereats.com/fr-FR/stores/"
-                },
-                {
-                    "emplacement": " Réseaux sociaux - TripAdvisor",
-                    "contenu": "https://www.tripadvisor.fr/"
-                }
-            ]
-        ]
-    }
+  "accueil": {
+    "name": "Accueil",
+    "text-content": [
+      [
+        {
+          "emplacement": "Texte du bandeau",
+          "contenu": "Savourez votre différence !"
+        },
+        {
+          "emplacement": "Contenu de l'introduction",
+          "contenu": "En plein cœur de Lille, à deux pas du théâtre le Sébastopol « Inclusion » est un nouveau  restaurant à la fois gourmand, inclusif et festif. "
+        },
+        {
+          "emplacement": "2e paragraphe",
+          "contenu": "Les produits locaux et de saison vous seront proposés mais surtout sublimés par notre Chef François."
+        }
+      ]
+    ],
+    "photo-content": []
+  },
+  "footer": {
+    "name": "Footer",
+    "text-content": [
+      [
+        { "emplacement": "Titre horaires d'ouverture", "contenu": "OUVERTURE" },
+        {
+          "emplacement": "Horaires d'ouverture",
+          "contenu": "Mardi - Samedi : 12h - 14h & 19h - 22h"
+        },
+        { "emplacement": "Titre fermeture", "contenu": "FERMETURE" },
+        { "emplacement": "Jours de fermeture", "contenu": "Lundi & Dimanche" }
+      ]
+    ]
+  },
+  "carte": {
+    "name": "Menu",
+    "text-content": [
+      [
+        {
+          "emplacement": "Texte sur le bandeau d'images du haut/des plats",
+          "contenu": "Nos petits plats"
+        },
+        {
+          "emplacement": "Texte sur le bandeau d'images du bas/des boissons",
+          "contenu": "Nos boissons !"
+        }
+      ],
+      [
+        { "emplacement": "Titre entrées", "contenu": "Nos entrées" },
+        {
+          "emplacement": "Entrée 1",
+          "contenu": "Entrée 1",
+          "prix": "9",
+          "description": "Une entrée très très bonne"
+        },
+        {
+          "emplacement": "Entrée 2",
+          "contenu": "La deuxième entrée",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "Entrée 3",
+          "contenu": "La DAV",
+          "prix": "",
+          "description": ""
+        }
+      ],
+      [
+        { "emplacement": "Titre plats", "contenu": "Nos plats" },
+        {
+          "emplacement": "Plat1",
+          "contenu": "Le premier plat",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "Plat2",
+          "contenu": "Le deuxième plat",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "Plat3",
+          "contenu": "Le troisième plat",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "Plat4",
+          "contenu": "Le quatrième plat",
+          "prix": "",
+          "description": ""
+        }
+      ],
+      [
+        { "emplacement": "Titre desserts", "contenu": "Nos desserts" },
+        {
+          "emplacement": "Dessert1",
+          "contenu": "Le premier dessert",
+          "prix": ""
+        },
+        {
+          "emplacement": "Dessert2",
+          "contenu": "Le deuxième dessert",
+          "prix": ""
+        },
+        {
+          "emplacement": "Dessert3",
+          "contenu": "Le troisième dessert",
+          "prix": ""
+        }
+      ],
+      [
+        {
+          "emplacement": "Titre Boisson1",
+          "contenu": "Nos Vins Blancs & Champagnes"
+        },
+        {
+          "emplacement": "VinB1",
+          "contenu": "Le premier vin",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "VinB2",
+          "contenu": "Le deuxième vin",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "VinB3",
+          "contenu": "Le troisième vin",
+          "prix": "",
+          "description": ""
+        }
+      ],
+      [
+        {
+          "emplacement": "Vin rouges",
+          "contenu": "Nos vins rouges",
+          "prix": ""
+        },
+        {
+          "emplacement": "VinR1",
+          "contenu": "Le premier vin",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "VinR2",
+          "contenu": "Le deuxième vin",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "VinR3",
+          "contenu": "Le troisième vin",
+          "prix": "",
+          "description": ""
+        }
+      ],
+      [
+        { "emplacement": "Titre Bières", "contenu": "Nos bières" },
+        {
+          "emplacement": "Bière1",
+          "contenu": "Le premier bière",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "Bière2",
+          "contenu": "Le deuxième bière",
+          "prix": "",
+          "description": ""
+        },
+        {
+          "emplacement": "Bière3",
+          "contenu": "Le troisième bière",
+          "prix": "",
+          "description": ""
+        }
+      ]
+    ],
+    "photo-content": [],
+    "bandeau": []
+  },
+  "equipe": {
+    "name": "L'équipe",
+    "text-content": [
+      [
+        { "emplacement": "Texte du bandeau Photo", "contenu": "L'Equipe !" },
+        {
+          "emplacement": "Description globale",
+          "contenu": "Le restaurant inclusion est un super resto à base d'amour et d'eau fraiche"
+        },
+        {
+          "emplacement": "2e paragraphe",
+          "contenu": "Fait à base de François aussi"
+        }
+      ],
+      [
+        { "emplacement": "Nom", "contenu": "Clément" },
+        {
+          "emplacement": "Description",
+          "contenu": "J'ajoute encore qqn pour tester"
+        },
+        { "photo": "Numéro de la photo", "source": "" }
+      ],
+      [
+        { "emplacement": "Nom", "contenu": "Thibaut" },
+        {
+          "emplacement": "Description",
+          "contenu": "J'ajoute ENCde qqn pour testereh bezochbhjaerg bdh&uové²"
+        },
+        { "photo": "Numéro de la photo", "source": "" }
+      ],
+      [
+        { "emplacement": "Nom", "contenu": "Barbara" },
+        {
+          "emplacement": "Description",
+          "contenu": "La petite amie de François"
+        },
+        { "photo": "Numéro de la photo", "source": "" }
+      ],
+      [
+        { "emplacement": "Recrutement Titre", "contenu": "Nous rejoindre..." },
+        {
+          "emplacement": "Texte de recrutement",
+          "contenu": "Vous avez des questions ? Vous voulez rejoindre l'équipe du restaurant inclusion ? Vous pouvez nous envoyer un mail"
+        },
+        {
+          "emplacement": "Texte du bouton d'envoi de mail de recrutement",
+          "contenu": "Nous écrire"
+        }
+      ]
+    ],
+    "photo-content": [],
+    "bandeau": []
+  },
+  "contact": {
+    "name": "Contact",
+    "text-content": [
+      [
+        {
+          "emplacement": "Titre contact téléphone",
+          "contenu": "Vous pouvez nous contacter par téléphone"
+        },
+        { "emplacement": "Titre contact mail", "contenu": "Ou par mail" }
+      ],
+      [
+        {
+          "emplacement": "Titre formulaire de contact",
+          "contenu": "Vous pouvez également nous écrire via le formulaire de contact ci-dessous :"
+        }
+      ]
+    ]
+  },
+  "header": { "name": "Header", "text-content": [[]] },
+  "mentions": {
+    "name": "Mentions Légales",
+    "text-content": [
+      [
+        { "emplacement": "Titre - Propriété", "contenu": "Propriété" },
+        {
+          "emplacement": "Nom du Restaurant",
+          "contenu": "Restaurant INCLUSION"
+        },
+        {
+          "emplacement": "Adresse officielle",
+          "contenu": "15 avenue Montaigne – 59000 LILLE"
+        },
+        { "emplacement": "Téléphone", "contenu": "tel : +33 X XX XX XX XX" },
+        {
+          "emplacement": "Capital Social",
+          "contenu": "Capital social : X XXX, XX euros"
+        },
+        {
+          "emplacement": "Nom du gérant/propriétaire",
+          "contenu": "François MARIEN, Gérant"
+        }
+      ],
+      [
+        { "emplacement": "Titre - Hébergement", "contenu": "Hébergement" },
+        {
+          "emplacement": "Hébergement assuré par...",
+          "contenu": "Hébergement assuré par PlanetHoster"
+        },
+        {
+          "emplacement": "Adresse de l'hébergeur",
+          "contenu": "4416 Louis-B.-Mayer, Laval Québec, Canada H7P 0G1"
+        }
+      ],
+      [
+        { "emplacement": "Titre - Informations", "contenu": "Informations" },
+        {
+          "emplacement": "Prix exprimés en..",
+          "contenu": "Prix exprimés en €uros TTC."
+        },
+        {
+          "emplacement": "Informations sur le site",
+          "contenu": "Présentation des plats, menus et décoration sujets à modification tout au long de l’année en fonctions des produits de saison."
+        },
+        {
+          "emplacement": "Utilisation des cookies",
+          "contenu": "Nous utilisons les cookies pour vous permettre une meilleure utilisation du site"
+        }
+      ]
+    ]
+  },
+  "param": {
+    "name": "Paramètres Généraux",
+    "text-content": [
+      [
+        {
+          "emplacement": "Numéro de téléphone",
+          "contenu": "+33 7 88 90 10 20",
+          "href": "tel:"
+        },
+        {
+          "emplacement": "Adresse mail générale du restaurant",
+          "contenu": "info@inclusion-restaurant.fr",
+          "href": "mailto:"
+        }
+      ],
+      [
+        {
+          "emplacement": "Adresse - Rue",
+          "contenu": "390 rue Solférino"
+        },
+        {
+          "emplacement": "Adresse - Ville",
+          "contenu": "59000 Lille"
+        },
+        {
+          "emplacement": "Adresse - Pays",
+          "contenu": "France"
+        }
+      ],
+      [
+        {
+          "emplacement": "Réseaux sociaux - Instagram",
+          "contenu": "https://www.instagram.com/inclusion_restaurant/"
+        },
+        {
+          "emplacement": "Réseaux sociaux - Facebook",
+          "contenu": "https://www.facebook.com/InclusionRestaurant/"
+        },
+        {
+          "emplacement": "Réseaux sociaux - Uber Eats",
+          "contenu": "https://www.ubereats.com/fr-FR/stores/"
+        },
+        {
+          "emplacement": " Réseaux sociaux - TripAdvisor",
+          "contenu": "https://www.tripadvisor.fr/"
+        }
+      ]
+    ]
+  }
 }

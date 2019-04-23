@@ -35,7 +35,7 @@
             matInput
             [(ngModel)]="textContent[i][j]['contenu']"
             placeholder="Contenu"
-            name="{{ text.emplacement }}"
+            name="{{ text.emplacement }}{{ i }}{{ j }}"
           ></textarea>
         </mat-form-field>
 
@@ -117,7 +117,7 @@
               </mat-form-field>
             </div>
             <div class="item" *ngIf="url == 'carte'">
-              <h2>Prix du nouveau plat :</h2>
+              <h2>Description du nouveau plat :</h2>
               <mat-form-field class="textContent">
                 <textarea
                   matInput
@@ -436,7 +436,7 @@
         value="Ajouter une nouvelle personne"
       />
     </form>
-    <h1>Photos d'identité </h1>
+    <h1>Photos d'identité</h1>
 
     <!-- Upload des photos d'identités des membres de l'équipe -->
     <div id="global-container-img">
