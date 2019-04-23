@@ -152,7 +152,6 @@ button{
     #lien, #accessibilite, #menus, #contact, #equipe,
     #menustelephone, #contactstelephone, #equipetelephone, #accessibilitetelephone
     {
-        color: black;
         cursor: pointer;
         padding: 5px;
         outline-style: none;
@@ -164,11 +163,6 @@ button{
         color: black;
         background-color: whitesmoke;
         outline-style: none;
-    }
-
-    .lien-liste-telephone
-    {
-        color: black;
     }
     
     #logo_menu_deroulant
