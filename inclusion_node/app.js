@@ -203,9 +203,7 @@ app.route("/api/pages/downloads/:id").post((req, res) => {
     const id = req.params["id"];
     var folder =
         "/home/inclhpth/dev-app/public/assets/" + id;
-    zipDirectory(folder, folder + "/images.zip").then(() =>
-        res.sendFile(folder + "/images.zip")
-    );
+        res.sendFile(folder + "/images.zip");
 });
 
 app.route("/api/contact").post((req, res) => {
