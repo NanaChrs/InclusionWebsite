@@ -46,7 +46,7 @@ function zipDirectory(source, out) {
 }
 
 var corsOptions = {
-  origin: "https://dev.inclusion-restaurant.fr",
+  origin: ["https://www.dev.inclusion-restaurant.fr", "https://dev.inclusion-restaurant.fr"],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -91,7 +91,7 @@ app.route("/api/pages/photocontent/:name/:id").delete((req, res) => {
   var source = "./public/" + json[name]["photo-content"][id]["source"];
   fs.unlinkSync(source);
   delete json[name]["photo-content"][id];
-  json[name]["photo-content"] = json[name]["photo-content"].filter(function(
+  json[name]["photo-content"] = json[name]["photo-content"].filter(function (
     col
   ) {
     return col.Source != "Foo";
@@ -108,7 +108,7 @@ app.route("/api/pages/bandeau/:name/:id").delete((req, res) => {
   var source = "./public/" + json[name]["bandeau"][id]["source"];
   fs.unlinkSync(source);
   delete json[name]["bandeau"][id];
-  json[name]["bandeau"] = json[name]["bandeau"].filter(function(col) {
+  json[name]["bandeau"] = json[name]["bandeau"].filter(function (col) {
     return col.Source != "Foo";
   });
   fs.writeFileSync("./public/json/pages.json", JSON.stringify(json));
@@ -183,7 +183,7 @@ app.route("/api/login").post((req, res) => {
       "79098e38085cfb3918982010ac21e1788c50a992460cae9b782288f381e01371" &&
       utilisateur == "a82bdc731e23568916a7647f3f16d00a") ||
     req.body["token"] ==
-      "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
+    "558e4feed81eb819966f85ce75846760a348d3468c78d7cc973a1f6bee026724"
   ) {
     res.send(201, [
       true,
@@ -258,7 +258,7 @@ app.route("/api/contact").post((req, res) => {
   res.send(201, true);
 });
 
-app.all("/*", function(req, res) {
+app.all("/*", function (req, res) {
   res.sendfile("public/index.html");
 });
 
