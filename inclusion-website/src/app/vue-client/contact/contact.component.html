@@ -1,14 +1,7 @@
 <app-entete></app-entete>
 <div id="general" class="zone" *ngIf="textContent && mailtext && tel">
   <div id="container-googlemap">
-    <iframe
-      id="googlemap"
-      class="googlemap"
-      [src]="src_maps | safe"
-      frameborder="0"
-      style="border:0"
-      allowfullscreen
-    >
+    <iframe id="googlemap" class="googlemap" [src]="src_maps | safe" frameborder="0" style="border:0" allowfullscreen>
     </iframe>
   </div>
   <div id="text-contact">
@@ -37,81 +30,41 @@
       <div id="description" class="text">
         <h1 id="titre-description">{{ textContent[0][0]["contenu"] }}</h1>
         <div id="container-infos">
-          <a href="tel:{{ tel }}" class="description-info"> {{ tel }}</a>
-          <a href="mailto:{{ mailtext }}" class="description-info">{{
-            mailtext
-          }}</a>
-          <a
-            href="http://maps.google.com/?q={{ adress }}"
-            class="description-info"
-            target="_blank"
-          >
+          <a href="http://maps.google.com/?q={{ adress }}" class="description-info" target="_blank">
             <div>
               <p class="adress-info description-info">{{ adress_street }}</p>
               <p class="adress-info description-info">{{ adress_city }}</p>
             </div>
           </a>
+          <a href="mailto:{{ mailtext }}" class="description-info">
+            {{mailtext}}</a>
+          <a href="tel:{{ tel }}" class="description-info"> {{ tel }}</a>
+
         </div>
       </div>
       <menu id="liste_logo">
-        <a
-          href="{{ fb }}"
-          class="lien-focus"
-          onclick="window.open(this.href); return false;"
-        >
+        <a href="{{ fb }}" class="lien-focus" onclick="window.open(this.href); return false;">
           <li id="icone">
-            <img
-              id="logoFacebook"
-              alt="lien vers Facebook"
-              src="../../assets/imgHeader/facebook.png"
-              height="30"
-              width="30"
-            />
+            <img id="logoFacebook" alt="lien vers Facebook" src="../../assets/imgHeader/facebook.png" height="30"
+              width="30" />
           </li>
         </a>
-        <a
-          href="{{ insta }}"
-          class="lien-focus"
-          onclick="window.open(this.href); return false;"
-        >
+        <a href="{{ insta }}" class="lien-focus" onclick="window.open(this.href); return false;">
           <li id="icone">
-            <img
-              id="logoInstagram"
-              alt="lien vers Instagram"
-              src="../../assets/imgHeader/instagram.png"
-              height="30"
-              width="30"
-            />
+            <img id="logoInstagram" alt="lien vers Instagram" src="../../assets/imgHeader/instagram.png" height="30"
+              width="30" />
           </li>
         </a>
-        <a
-          href="{{ uber }}"
-          class="lien-focus"
-          onclick="window.open(this.href); return false;"
-        >
+        <a href="{{ uber }}" class="lien-focus" onclick="window.open(this.href); return false;">
           <li id="icone">
-            <img
-              id="logoUber"
-              alt="lien vers Uber eats"
-              src="../../assets/imgHeader/ubereats.png"
-              height="30"
-              width="30"
-            />
+            <img id="logoUber" alt="lien vers Uber eats" src="../../assets/imgHeader/ubereats.png" height="30"
+              width="30" />
           </li>
         </a>
-        <a
-          href="{{ tripAd }}"
-          class="lien-focus"
-          onclick="window.open(this.href); return false;"
-        >
+        <a href="{{ tripAd }}" class="lien-focus" onclick="window.open(this.href); return false;">
           <li id="icone">
-            <img
-              id="logoTripadvisor"
-              alt="lien vers trip advisor"
-              src="../../assets/imgHeader/tripadvisor.png"
-              height="30"
-              width="30"
-            />
+            <img id="logoTripadvisor" alt="lien vers trip advisor" src="../../assets/imgHeader/tripadvisor.png"
+              height="30" width="30" />
           </li>
         </a>
       </menu>
