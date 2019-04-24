@@ -211,22 +211,22 @@ app.route("/api/pages/downloads/:id").post((req, res) => {
 });
 
 app.route("/api/contact").post((req, res) => {
-  /* Notre code pour nodemailer */
-  console.log("test"); // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
-    service: "gmail",
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: "inclusion.test.mail@gmail.com", // generated ethereal user
-      pass: "clementjules" // generated ethereal password
-    }
-  });
-  console.log(req.body);
-  // send mail with defined transport object
-  let mailOptions = {
-    from: req.body["name"] + req.body["sender"], // sender address
-    to: "mathilde.christiaens@isen.yncrea.fr", // list of receivers
-    subject: req.body["subject"], // Subject line
+    /* Notre code pour nodemailer */
+    console.log("test"); // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        service: "gmail",
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: "inclusion.test.mail@gmail.com", // generated ethereal user
+            pass: "clementjules" // generated ethereal password
+        }
+    });
+    console.log(req.body);
+    // send mail with defined transport object
+    let mailOptions = {
+        from: req.body["name"] + req.body["sender"], // sender address
+        to: req.body["mailDestinataire"], // list of receivers
+        subject: req.body["subject"], // Subject line
 
     html:
       "Email : " +
