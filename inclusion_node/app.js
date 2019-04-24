@@ -203,7 +203,7 @@ app.route("/api/pages/downloads/:id").post((req, res) => {
     const id = req.params["id"];
     var folder =
         "/home/inclhpth/dev-app/public/assets/" + id;
-        res.sendFile(folder + "/images.zip");
+    res.sendFile(folder + "/images.zip");
 });
 
 app.route("/api/contact").post((req, res) => {
@@ -221,7 +221,7 @@ app.route("/api/contact").post((req, res) => {
     // send mail with defined transport object
     let mailOptions = {
         from: req.body["name"] + req.body["sender"], // sender address
-        to: "mathilde.christiaens@isen.yncrea.fr", // list of receivers
+        to: req.body["mailDestinataire"], // list of receivers
         subject: req.body["subject"], // Subject line
 
         html:
