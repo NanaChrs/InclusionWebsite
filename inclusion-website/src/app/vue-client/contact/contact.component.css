@@ -137,7 +137,21 @@ a:hover{
     -ms-transition: background-color 250ms linear;
     transition: background-color 250ms linear;
 }
+#bloc-confirmation
+{
+    display: flex;
+}
 
+#confirmation-message
+{
+    margin-left: 5px;
+    letter-spacing: normal;
+    padding-top: 18px;
+    text-align: center;
+    display: none;
+    color: green;
+    font-size: 14px;
+}
 #name, #sender, #object
 {
     padding: 10px 10px 10px 1px;

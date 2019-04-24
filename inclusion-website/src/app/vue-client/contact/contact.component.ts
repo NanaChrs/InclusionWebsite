@@ -36,7 +36,7 @@ export class ContactComponent implements OnInit {
     private http: HttpClientService,
     private jsonContentService: JsoncontentService,
     private cookieService: CookieService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.jsonContentService.getPageByName("contact").subscribe(page => {
@@ -79,9 +79,18 @@ export class ContactComponent implements OnInit {
       }
       return false;
     });
+    document.getElementById('confirmation-message').style.display = 'inline';
+    var name = document.getElementById('name') as HTMLInputElement;
+    name.value = "";
+    var sender = document.getElementById('sender') as HTMLInputElement;
+    sender.value = "";
+    var object = document.getElementById('object') as HTMLInputElement;
+    object.value = "";
+    var message = document.getElementById('message') as HTMLInputElement;
+    message.value = "";
   }
 
-  checkaccess = function() {
+  checkaccess = function () {
     this.cookieinverse = this.cookieService.check("inverse");
     if (this.cookieinverse) {
       this.map = document.getElementsByClassName("googlemap");

@@ -23,8 +23,12 @@
         <textarea name="message" id="message" class="text" [(ngModel)]="message" placeholder="Ecrivez votre message ici"
           required></textarea>
         <br />
-        <input id="mailTo" type="submit" class="btn btn-success text" />
+        <div id="bloc-confirmation">
+          <input id="mailTo" type="submit" class="btn btn-success text" />
+          <div id="confirmation-message">Message envoyé !</div>
+        </div>
       </form>
+
     </div>
     <div id="contact-intro">
       <div id="description" class="text">
