@@ -40,7 +40,7 @@ export class ContentAdminComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   getPage(): void {
     this.newContent = [];
@@ -220,7 +220,7 @@ export class ContentAdminComponent implements OnInit {
 
   download() {
     this.jsonContentService.downloadAllImages(this.url).subscribe(e => {
-      saveAs(e);
+      saveAs(e, this.url + ".zip");
     });
   }
 }
