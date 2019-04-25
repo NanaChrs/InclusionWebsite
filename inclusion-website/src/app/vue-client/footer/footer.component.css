@@ -126,19 +126,30 @@ button {
 		display: flex;
 		justify-content: space-between;
 		list-style-type: none; 
-	}*/
+  }*/
+  
+  #sous_footer-general
+  {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
 
   #lientexte,
-  .footer-center-right,
   #imap {
     display: none;
+  }
+
+  .footer-center-right
+  {
+    display: flex;
+    justify-content: space-around;
   }
 
   #liste_logo {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-    margin-bottom: 60px;
+    /*margin-bottom: 60px;*/
     padding: 0;
   }
 
@@ -221,8 +232,25 @@ button {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-    margin-bottom: 100px;
+    /*margin-bottom: 100px;*/
     margin-left: 0;
     padding: 0;
+  }
+
+  #sous_footer-general
+  {
+    margin-bottom: 100px;
+  }
+
+  .footer-center-right
+  {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #plan-site,
+  #mentions-legales
+  {
+    font-size: 0.7em;
   }
 }
